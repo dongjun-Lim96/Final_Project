@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
- <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
 <style>
     .logo-container {
         margin-right: 220px;
@@ -43,7 +43,7 @@
         text-decoration: none;
         /* 글씨색 */
     }
-    .mainimg1 .text_cont { 
+    .mainimg1 .text_cont {
         margin-left: 20px;
     }
     .grayBox {
@@ -87,7 +87,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 	<div class="container-fluid">
 		<a class="navbar-brand" href="#"><img src="<%=conPath%>/resources/images/logo.png" width="190" height="80"></a>
-		<sapn style="margin-right: 30%;"></sapn>
+		<div style="width: 30%;"></div> <!-- 오른쪽 공백 -->
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -132,9 +132,9 @@
 						<li><a class="dropdown-item" href="#">카카오톡문의</a></li>
 					</ul>					
 				</li>
-				<li class="nav-item" style="margin-top: 20px;">			
-				<a class="bgColor" href="#" style="margin-top: 20px;">마이페이지</a>
-				</li> 
+				<li class="nav-item" style="display: block;">
+					<a class="bgColor" href="#" style=" display: block;">마이페이지</a>
+				</li>
 			</ul>
 		</div>
 	</div>
