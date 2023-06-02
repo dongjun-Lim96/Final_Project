@@ -13,32 +13,32 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
 <script>
 $(document).ready(function() {
-      $('.slider').slick({
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 4,
-        speed: 1500,
-        index: 2,
-        focusOnSelect:true,
-        responsive: [{
-          breakpoint: 768,
-          settings: {
-            arrows: true,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 3
-          }
-        }, {
-          breakpoint: 480,
-          settings: {
-            arrows: false,
-            centerMode: true,
-            centerPadding: '40px',
-            slidesToShow: 1
-          }
-        }]
-      });
-    });
+	$('.slider').slick({
+		centerMode: true,
+		centerPadding: '60px',
+		slidesToShow: 4,
+		speed: 1500,
+		index: 2,
+		focusOnSelect:true,
+		responsive: [{
+			breakpoint: 768,
+				settings: {
+					arrows: true,
+					centerMode: true,
+					centerPadding: '40px',
+					slidesToShow: 3
+					}
+	        }, {
+			breakpoint: 480,
+			settings: {
+				arrows: false,
+				centerMode: true,
+				centerPadding: '40px',
+				slidesToShow: 1
+			}
+		}]
+	});
+});
 </script>
 <style>
   body {
@@ -50,8 +50,8 @@ $(document).ready(function() {
   }
   
   .slider {
-    width: 600px;
-    height: 150px;
+    width: 1600px;
+    height: 400px;
     margin: 20px auto;
     text-align: center;
   }
