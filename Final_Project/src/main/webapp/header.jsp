@@ -43,7 +43,7 @@
         text-decoration: none;
         /* 글씨색 */
     }
-    .mainimg1 .text_cont {
+    .mainimg1 .text_cont { 
         margin-left: 20px;
     }
     .grayBox {
