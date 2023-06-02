@@ -1,0 +1,199 @@
+DROP TABLE ACCOUNTS CASCADE CONSTRAINTS;
+-- 계정 테이블
+CREATE TABLE ACCOUNTS( 
+   userId VARCHAR2(50) PRIMARY KEY,
+   userName VARCHAR2(50) NOT NULL,
+   userPw VARCHAR2(50) NOT NULL,
+   userBirth VARCHAR2(50) NOT NULL,
+   userEmail VARCHAR2(70) NOT NULL UNIQUE,
+   userPhone NUMBER NOT NULL UNIQUE,
+   userAddr VARCHAR2(30) NOT NULL,
+   userPoint NUMBER DEFAULT 0,
+   userChkEmail NUMBER DEFAULT 0, --동의안함0 동의함1
+   userChkPhone NUMBER DEFAULT 0,  --동의안함0 동의함1
+   userSubscribe NUMBER DEFAULT 0,  --구독안함0 구독함1
+   userJoinDate DATE DEFAULT SYSDATE,
+   userOut NUMBER DEFAULT 0  --탈퇴안함0 탈퇴함1
+);
+
+
+DROP TABLE ADMININFO CASCADE CONSTRAINTS;
+--관리자 테이블
+CREATE TABLE ADMININFO(
+   adminId VARCHAR2(50) PRIMARY KEY,   
+   adminPw VARCHAR2(50) NOT NULL
+);
+
+
+DROP TABLE CATEGORY CASCADE CONSTRAINTS;
+--카테고리 테이블
+CREATE TABLE CATEGORY(
+   categoryCode VARCHAR2(50) PRIMARY KEY,
+   categoryName VARCHAR2(50) NOT NULL
+);
+
+
+DROP TABLE COURSE CASCADE CONSTRAINTS;
+--강의 테이블
+CREATE TABLE COURSE(
+   courseCode VARCHAR2(50) PRIMARY KEY,
+   categoryCode VARCHAR2(50),
+   FOREIGN KEY (categoryCode) REFERENCES category(categoryCode),
+   
+   cousreName VARCHAR2(50) NOT NULL,
+   cousrePrice NUMBER NOT NULL,
+   cousreTeacher VARCHAR2(50) NOT NULL,
+   cousreImg VARCHAR2(50) NOT NULL,
+   cousreVideo VARCHAR2(50) NOT NULL,
+   cousreTerm NUMBER NOT NULL   
+);
+
+
+DROP TABLE CART CASCADE CONSTRAINTS;
+--장바구니 테이블
+CREATE TABLE CART(
+   cartNumber NUMBER PRIMARY KEY,
+   courseCode VARCHAR2(50),
+   FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode),
+   userId VARCHAR2(50),
+   FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId)
+);
+
+
+DROP TABLE WISHLIST CASCADE CONSTRAINTS;
+--위시리스트 테이블
+CREATE TABLE WISHLIST(
+   wishNumber NUMBER PRIMARY KEY,
+   courseCode VARCHAR2(50),
+   FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode),
+   userId VARCHAR2(50),
+   FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId)
+);
+
+
+DROP TABLE UNIT CASCADE CONSTRAINTS;
+--대단원 테이블
+CREATE TABLE UNIT(
+   courseCode VARCHAR2(50),
+   FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode),   
+   UNIT1 VARCHAR2(100) NULL,
+   UNIT2 VARCHAR2(100) NULL,
+   UNIT3 VARCHAR2(100) NULL,
+   UNIT4 VARCHAR2(100) NULL,
+   UNIT5 VARCHAR2(100) NULL,
+   UNIT6 VARCHAR2(100) NULL,
+   UNIT7 VARCHAR2(100) NULL,
+   UNIT8 VARCHAR2(100) NULL,
+   UNIT9 VARCHAR2(100) NULL,
+   UNIT10  VARCHAR2(100) NULL
+);
+
+
+
+drop sequence REVIEW_seq;
+create sequence REVIEW_seq
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;
+  
+DROP TABLE REVIEW CASCADE CONSTRAINTS;
+--수강후기게시판 테이블
+CREATE TABLE REVIEW(
+   reviewNumber NUMBER PRIMARY KEY,
+   courseCode VARCHAR2(50),
+   FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode),   
+   userId VARCHAR2(50),
+   FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId),
+   reviewTitle VARCHAR2(50) NOT NULL,
+   reviewContent VARCHAR2(500) NOT NULL,
+   reviewDate DATE DEFAULT SYSDATE, 
+   reviewCount NUMBER NOT NULL,
+   reviewView NUMBER DEFAULT 0
+);
+
+
+
+DROP TABLE COURSEORDER CASCADE CONSTRAINTS;
+--주문 테이블
+CREATE TABLE COURSEORDER(
+   orderNumber VARCHAR2(200) PRIMARY KEY,
+   courseCode VARCHAR2(50),
+   FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode),   
+   userId VARCHAR2(50),
+   FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId),
+   orderPoint NUMBER DEFAULT 0,
+   TotalPrice NUMBER NOT NULL 
+);
+
+
+
+drop sequence FAQ_seq;
+create sequence FAQ_seq
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;
+  
+DROP TABLE FAQ CASCADE CONSTRAINTS;
+--자주묻는질문 테이블
+CREATE TABLE FAQ(
+   faqNumber NUMBER PRIMARY KEY,
+   adminId VARCHAR2(50),
+   FOREIGN KEY (adminId) REFERENCES ADMININFO(adminId),
+   faqTitle VARCHAR2(50) NOT NULL,
+   faqContent VARCHAR2(500) NOT NULL,
+   faqImage1 VARCHAR2(50) NULL,
+   faqImage2 VARCHAR2(50) NULL,
+   faqDate DATE DEFAULT SYSDATE,
+   faqView NUMBER DEFAULT 0
+);
+
+
+
+drop sequence EVENT_seq;
+create sequence EVENT_seq
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;
+  
+DROP TABLE EVENT CASCADE CONSTRAINTS;
+--이벤트 테이블
+CREATE TABLE EVENT(
+   eventNumber NUMBER PRIMARY KEY,
+   adminId VARCHAR2(50),
+   FOREIGN KEY (adminId) REFERENCES ADMININFO(adminId),
+   eventTitle VARCHAR2(50) NOT NULL,
+   eventContent VARCHAR2(500) NOT NULL,
+   eventImage1 VARCHAR2(50) NULL,
+   eventImage2 VARCHAR2(50) NULL,
+   eventDate DATE DEFAULT SYSDATE,
+   eventView NUMBER DEFAULT 0
+);
+
+
+drop sequence NOTICE_seq;
+create sequence NOTICE_seq
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;
+  
+DROP TABLE NOTICE CASCADE CONSTRAINTS;
+--자주묻는질문 테이블
+CREATE TABLE NOTICE(
+   noticeNumber NUMBER PRIMARY KEY,
+   adminId VARCHAR2(50),
+   FOREIGN KEY (adminId) REFERENCES ADMININFO(adminId),
+   noticeTitle VARCHAR2(50) NOT NULL,
+   noticeContent VARCHAR2(500) NOT NULL,
+   noticeImage1 VARCHAR2(50) NULL,
+   noticeImage2 VARCHAR2(50) NULL,
+   noticeDate DATE DEFAULT SYSDATE,
+   noticeView NUMBER DEFAULT 0
+);

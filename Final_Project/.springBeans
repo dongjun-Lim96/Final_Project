@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.17.202106211030-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[true]]></enableImports>
+	<configs>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/accounts-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/adminInfo-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/category-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/course-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/cart-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/wishList-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/unit-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/review-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/courseOrder-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/faq-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/event-servlet.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/notice-servlet.xml</config>
+	</configs>
+	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/root-context.xml</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

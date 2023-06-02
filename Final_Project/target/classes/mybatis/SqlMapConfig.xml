@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	
+	<mappers>
+		<mapper resource="mybatis/accounts.xml"/>
+		<mapper resource="mybatis/adminInfo.xml"/>
+		<mapper resource="mybatis/cart.xml"/>
+		<mapper resource="mybatis/category.xml"/>
+		<mapper resource="mybatis/course.xml"/>
+		<mapper resource="mybatis/courseOrder.xml"/>
+		<mapper resource="mybatis/event.xml"/>
+		<mapper resource="mybatis/faq.xml"/>
+		<mapper resource="mybatis/notice.xml"/>
+		<mapper resource="mybatis/review.xml"/>
+		<mapper resource="mybatis/unit.xml"/>
+		<mapper resource="mybatis/wishList.xml"/>
+	</mappers>
+</configuration>
+
