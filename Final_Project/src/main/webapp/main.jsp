@@ -1,41 +1,88 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<style>
-	.carousel-item img {
-		width: 50%;
-		height: 50%;
-		object-fit: cover;
-	.carousel-inner .carousel-item.active,
-	.carousel-inner .carousel-item-next,
-	.carousel-inner .carousel-item-prev {
-	  display: flex;
-	}
-	
-	.carousel-inner .carousel-item-right.active,
-	.carousel-inner .carousel-item-next {
-	  transform: translateX(25%);
-	}
-	
-	.carousel-inner .carousel-item-left.active, 
-	.carousel-inner .carousel-item-prev {
-	  transform: translateX(-25%);
-	}
-	  
-	.carousel-inner .carousel-item-right,
-	.carousel-inner .carousel-item-left{ 
-	  transform: translateX(0);
-	}
-
-
-</style>
-<script>
-	
-</script>
+    
 <div class="header">
   <%@ include file="./header.jsp" %>
 </div>
 
-
+<!-- 캐러셀사용부분  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+<!-- 양옆 화살표 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+<script>
+$(document).ready(function() {
+      $('.slider').slick({
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 4,
+        speed: 1500,
+        index: 2,
+        focusOnSelect:true,
+        responsive: [{
+          breakpoint: 768,
+          settings: {
+            arrows: true,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 3
+          }
+        }, {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }]
+      });
+    });
+</script>
+<style>
+  body {
+    background-color: #0DCAF0;
+  }
+  
+  .slick-prev, .slick-next {
+    color: blue;
+  }
+  
+  .slider {
+    width: 600px;
+    height: 150px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .slide-h3 {
+    margin: 10% 0 10% 0;
+    padding: 40% 20%;
+    background: white;
+  }
+  
+  .slider div {
+    margin-right: 5px;
+  }
+  
+  .slick-slide {
+    opacity: .6;
+    width:10px;
+  }
+  
+  .slick-center {
+    display: block;
+    max-width: 10% !important;
+    max-height: 20% !important;
+    opacity: 1;
+  }
+     .carousel-image {
+    width: 100%;
+    height: auto;
+  }
+</style>
+<!-- 캐러셀사용부분  -->
 
 
 <div style="margin-top:100px">
@@ -63,35 +110,51 @@
 </div>
 
 
-<div class="promotion_2" style="height: 800px !important;">
-    <div class="container text-center my-5">
-        <h2 class="mb-3" style="padding: 100px 0 50px 0; font-weight: bold; font-size: 30pt;">BEST 인기강의</h2>
-        <div class="row mx-auto my-auto" style="height: 400px; width: 100%; overflow: hidden;">
-            <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-                <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
-                        <img class="d-block col-3 img-fluid" src="<%=conPath%>/resources/images/mainimg2.png" alt="Slide 1">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block col-3 img-fluid" src="<%=conPath%>/resources/images/mainimg2.png" alt="Slide 2">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block col-3 img-fluid" src="<%=conPath%>/resources/images/mainimg2.png" alt="Slide 3">
-                    </div>
-                    <!-- 다른 슬라이드 아이템 추가 -->
-                </div>
-                <a class="carousel-control-prev" href="#recipeCarousel" role="button" data-bs-slide="prev" style="margin-left: -100px;">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#recipeCarousel" role="button" data-bs-slide="next" style="margin-right: -100px;">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </a>
-            </div>
-        </div>
-    </div>
+<div class="slider">
+	<div>
+		<div class="slide-h3">
+			<i class="fa fa-lg fa-trash"></i>
+			<h3>
+				1
+			</h3>
+		</div>
+	</div>
+	<div>
+		<div class="slide-h3">
+			<i class="fa fa-lg fa-trash"></i>
+			<h3>
+				2
+			</h3>
+		</div>
+	</div>
+	<div>
+		<div class="slide-h3">
+			<i class="fa fa-lg fa-trash"></i>
+			<h3>
+				3
+			</h3>
+		</div>
+	</div>
+	<div>
+		<div class="slide-h3">
+			<i class="fa fa-lg fa-trash"></i>
+			<h3>
+				4
+			</h3>
+		</div>
+	</div>
+	<div>
+		<div class="slide-h3">
+			<i class="fa fa-lg fa-trash"></i>
+			<h3>
+				5
+			</h3>
+		</div>
+	</div>
+	
 </div>
+
+
 
 
 <div class="promotion_1" style="height:150px !important; background-color:#f3f7f8;">

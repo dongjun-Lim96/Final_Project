@@ -8,6 +8,7 @@
 
 <!-- 최신 버전의 jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <style>
     .logo-container {
         margin-right: 220px;
@@ -33,7 +34,7 @@
         width: 75%;
     }
     .bgColor {
-        background-color: #1BCEB8;
+        background-color: #0DCAF0;
         border-radius: 20px;        
         padding: 10px 20px;
         color : white;
