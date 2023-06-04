@@ -4,5 +4,13 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="accounts.model">
+	<select id="GetAccountsById" resultType="accounts.model.AccountsBean"> 
+	select * from accounts where userId=#{userId} 
+	</select>
 	
+	<select id="GetUserIdByUserEmail" resultType="accounts.model.AccountsBean">
+	select * from accounts where userEmail=#{userEmail}
+	 </select>
+	 
+	 
 </mapper>
