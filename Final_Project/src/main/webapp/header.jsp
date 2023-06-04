@@ -64,6 +64,11 @@
    
   }
 </style>
+<script type="text/javascript">
+function loginForm(){
+	window.location.href="/ex/loginForm.acc";
+}
+</script>
 <%
 	String conPath = request.getContextPath();
 %>
@@ -75,7 +80,7 @@
 <div class="row justify-content-end" style="background-color:white;">
 	<div class="col-4 text-end">
 		<div class="d-flex justify-content-end">
-			<button type="button" class="btn btn-outline-info">login</button>
+			<button type="button" class="btn btn-outline-info" onclick="loginForm();">login</button>
 			<button type="button" class="btn btn-outline-info">singin</button>
 			
 		<div style="width: 12%;"></div> <!-- 오른쪽 공백 -->
