@@ -26,7 +26,8 @@ import accounts.model.AccountsDao;
 
 @Controller
 public class AcoountsLoginController {
-
+	
+	
 	@Autowired
 	AccountsDao adao;
 	
@@ -74,6 +75,9 @@ public class AcoountsLoginController {
 				mav.setViewName((String)session.getAttribute("destination")); 
 				// "redirect:/insert.prd" : 상품 추가
 				// "redirect:/detail.prd" : 주문하기  
+				
+				
+				mav.setViewName("redirect:/main.jsp");
 				
 			}else { // 가입은 했는데 비번이 일치하지 않는다.
 				
