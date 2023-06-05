@@ -11,6 +11,10 @@
 	<select id="GetUserIdByUserEmail" resultType="accounts.model.AccountsBean">
 	select * from accounts where userEmail=#{userEmail}
 	 </select>
+
+	<select id="GetUserIdByUserName" resultType="accounts.model.AccountsBean">
+	select * from accounts where userName=#{userName}
+	 </select>
 	 
 	 
 </mapper>

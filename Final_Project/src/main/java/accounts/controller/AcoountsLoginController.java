@@ -104,48 +104,90 @@ public class AcoountsLoginController {
 	@RequestMapping(value="/searchAccountsUserId.acc", method = RequestMethod.POST)
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public void searchAccountsUserId(@RequestParam("userId") String input_userId,
-			@RequestParam("userEmail") String input_userEmail,HttpServletResponse response, Model model) {
-		System.out.println("aaaa");
-		AccountsBean ab = adao.GetUserIdByUserEmail(input_userEmail); // kim 1234
-		model.addAttribute("email", ab);
-		response.setContentType("text/html; charset=UTF-8");
-		PrintWriter out = null;
-		if(ab == null) { // 가입안함
-			System.out.println("가입하지 않은 회원"+input_userEmail);
-			String strJson = "{userEmail: "+input_userEmail+",checkGbn: N}";
-			JSONObject jsonObj = new JSONObject(strJson);
-			try {
-				response.getWriter().append(jsonObj.toString());
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}else { // 가입한 회원
-			System.out.println("가입한 회원");
-			String strJson = "{userId: "+ab.getUserId()+",checkGbn: Y}";
-			JSONObject jsonObj = new JSONObject(strJson);
-			try {
-				response.getWriter().append(jsonObj.toString());
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			if(ab.getUserEmail().equals(input_userEmail)) {
-				// 로그인
-				System.out.println();
-			}else { // 가입은 했는데 비번이 일치하지 않는다.
-				
-				
-			}
-		}
-		
-	}
-			
-	@RequestMapping(value="/searchAccountsUserPw.acc", method = RequestMethod.POST)
-	@ResponseBody
-	public void searchAccountsUserPw() {
-		System.out.println("aaaa");
+	public void searchAccountsUserId(@RequestParam("userName") String input_userName,
+	        @RequestParam("userEmail") String input_userEmail, HttpServletResponse response) {
+	    System.out.println("aaaa");
+	    AccountsBean ab = adao.GetAccountsByName(input_userName);
+	 
+	    response.setContentType("text/html; charset=UTF-8");
+	    PrintWriter out = null;
+	    if (ab == null) { // 가입안함
+	        System.out.println("가입하지 않은 회원");
+	        String strJson = "{userEmail: " + input_userEmail + ",checkGbn: N}";
+	        JSONObject jsonObj = new JSONObject(strJson);
+	        try {
+	            response.getWriter().append(jsonObj.toString());
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    } else { // 가입한 회원
+	        System.out.println("가입한 회원");
+	        if (ab.getUserEmail().equals(input_userEmail)) {
+	            String strJson = "{userName: " + ab.getUserName() + ",checkGbn: Y}";
+	            JSONObject jsonObj = new JSONObject(strJson);
+	            jsonObj.put("userId", ab.getUserId());
+	            try {
+	                response.getWriter().append(jsonObj.toString());
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        } else {
+	            String strJson = "{userName: " + input_userName + ",checkGbn: N}";
+	            JSONObject jsonObj = new JSONObject(strJson);
+	            try {
+	                response.getWriter().append(jsonObj.toString());
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        }
+	    }
 	}
 	
+	@RequestMapping(value="/accountPwSearchForm.acc", method = RequestMethod.GET)
+	public String searchAccountsPw() {
+		return "accountPwSearchForm";
+	}
+	
+	
+	@RequestMapping(value="/searchAccountsUserPw.acc", method = RequestMethod.POST)
+	@ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public void searchAccountsUserPw(@RequestParam("userId") String input_userId,
+	        @RequestParam("userEmail") String input_userEmail, HttpServletResponse response) {
+	    System.out.println("aaaa");
+	    AccountsBean ab = adao.GetAccountsById(input_userId);
+	 
+	    response.setContentType("text/html; charset=UTF-8");
+	    PrintWriter out = null;
+	    if (ab == null) { // 가입안함
+	        System.out.println("가입하지 않은 회원");
+	        String strJson = "{userEmail: " + input_userEmail + ",checkGbn: N}";
+	        JSONObject jsonObj = new JSONObject(strJson);
+	        try {
+	            response.getWriter().append(jsonObj.toString());
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    } else { // 가입한 회원
+	        System.out.println("가입한 회원");
+	        if (ab.getUserEmail().equals(input_userEmail)) {
+	            String strJson = "{userId: " + ab.getUserId() + ",checkGbn: Y}";
+	            JSONObject jsonObj = new JSONObject(strJson);
+	            jsonObj.put("userPw", ab.getUserPw());
+	            try {
+	                response.getWriter().append(jsonObj.toString());
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        } else {
+	            String strJson = "{userId: " + input_userId + ",checkGbn: N}";
+	            JSONObject jsonObj = new JSONObject(strJson);
+	            try {
+	                response.getWriter().append(jsonObj.toString());
+	            } catch (Exception e) {
+	                e.printStackTrace();
+	            }
+	        }
+	    }
+	}
 }

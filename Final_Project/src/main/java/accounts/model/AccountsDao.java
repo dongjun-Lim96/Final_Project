@@ -27,5 +27,21 @@ public class AccountsDao {
 		
 		return ab;
 	}
+
+
+	public AccountsBean GetAccountsByName(String input_userName) {
+		AccountsBean ab= new AccountsBean();
+		ab = sqlSessionTemplate.selectOne(namespace+".GetUserIdByUserName",input_userName); 
+		
+		return ab;
+	}
+
+
+	public AccountsBean GetAccountsByEmail(String input_userEmail) {
+		AccountsBean ab= new AccountsBean();
+		ab = sqlSessionTemplate.selectOne(namespace+".GetUserIdByUserEmail",input_userEmail); 
+		
+		return ab;
+	}
 	
 }

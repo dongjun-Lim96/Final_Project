@@ -16,6 +16,7 @@ public class AccountsBean {
 	private int userSubscribe;
 	private Timestamp userJoinDate;
 	private int userOut;
+	private int adminCheck;
 	
 	public String getUserId() {
 		return userId;
@@ -94,6 +95,12 @@ public class AccountsBean {
 	}
 	public void setUserOut(int userOut) {
 		this.userOut = userOut;
+	}
+	public int getAdminCheck() {
+		return adminCheck;
+	}
+	public void setAdminCheck(int adminCheck) {
+		this.adminCheck = adminCheck;
 	}
 	
 }
