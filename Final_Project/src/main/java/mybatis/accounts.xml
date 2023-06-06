@@ -11,6 +11,21 @@
 	<select id="GetUserIdByUserEmail" resultType="accounts.model.AccountsBean">
 	select * from accounts where userEmail=#{userEmail}
 	 </select>
+
+	<select id="GetUserIdByUserName" resultType="accounts.model.AccountsBean">
+	select * from accounts where userName=#{userName}
+	 </select>
 	 
+	  <select id="SearchId" resultType="int">
+	 	select count(*) from accounts where userId = #{userId}
+	 </select>
 	 
+	  <insert id="AccountsRegister">
+	 	insert into accounts(userId ,userName ,userPw ,
+	 	userBirth ,userEmail ,userPhone ,userChkEmail ,
+	 	userChkPhone)
+		values(#{userId}, #{userName}, #{userPw},
+		#{userBirth}, #{userEmail}, #{userPhone},
+		#{userChkEmail}, #{userChkPhone})
+	 </insert> 
 </mapper>

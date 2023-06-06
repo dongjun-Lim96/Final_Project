@@ -8,14 +8,15 @@ public class AccountsBean {
 	private String userPw;
 	private String userBirth;
 	private String userEmail;
-	private int userPhone;
-	private String userAddr;
+	private String userPhone;
+	//private String userAddr; 주소 빼기로 함
 	private int userPoint;
 	private int userChkEmail;
 	private int userChkPhone;
 	private int userSubscribe;
 	private Timestamp userJoinDate;
 	private int userOut;
+	private int adminCheck;
 	
 	public String getUserId() {
 		return userId;
@@ -47,18 +48,20 @@ public class AccountsBean {
 	public void setUserEmail(String userEmail) {
 		this.userEmail = userEmail;
 	}
-	public int getUserPhone() {
+	public String getUserPhone() {
 		return userPhone;
 	}
-	public void setUserPhone(int userPhone) {
+	public void setUserPhone(String userPhone) {
 		this.userPhone = userPhone;
 	}
+	/*
 	public String getUserAddr() {
 		return userAddr;
 	}
 	public void setUserAddr(String userAddr) {
 		this.userAddr = userAddr;
-	}
+	} 주소 빼기로 함
+	*/
 	public int getUserPoint() {
 		return userPoint;
 	}
@@ -94,6 +97,12 @@ public class AccountsBean {
 	}
 	public void setUserOut(int userOut) {
 		this.userOut = userOut;
+	}
+	public int getAdminCheck() {
+		return adminCheck;
+	}
+	public void setAdminCheck(int adminCheck) {
+		this.adminCheck = adminCheck;
 	}
 	
 }
