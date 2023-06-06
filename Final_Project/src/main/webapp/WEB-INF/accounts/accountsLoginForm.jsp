@@ -8,8 +8,11 @@
 	function listAccounts() {
 		location.href='list.acc';
 	}
-	function findPassOrId(){
+	function findUserId(){
 		location.href='accountSearchForm.acc';
+	}
+	function findUserPassword(){
+		location.href='accountPwSearchForm.acc';
 	}
 </script>
     
@@ -31,7 +34,8 @@ accounts\accountsLoginForm.jsp <br>
 		</tr>
 		<tr>
 			<td colspan="2">
-			<input type="button" value="아이디 비번찾기" onClick="findPassOrId()">
+			<input type="button" value="아이디 찾기" onClick="findUserId()">
+			<input type="button" value="비번 찾기" onClick="findUserPassword()">
 			</td>
 		</tr>
 		<tr>
@@ -39,7 +43,6 @@ accounts\accountsLoginForm.jsp <br>
 				<input type="submit" value="로그인">
 				<input type="reset" value="취소">
 				<input type="button" value="회원가입" onClick="register()">
-				<input type="button" value="회원목록보기" onClick="listAccounts()">
 			</td>
 		</tr>
 	</table>
