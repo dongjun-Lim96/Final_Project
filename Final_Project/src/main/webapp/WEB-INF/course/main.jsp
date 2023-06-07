@@ -2,9 +2,8 @@
     pageEncoding="UTF-8"%>
     
 <div class="header">
-  <%@ include file="./header.jsp" %>
+  <%@ include file="./../../header.jsp"%>
 </div>
-
 <!-- 캐러셀사용부분  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
@@ -12,11 +11,12 @@
 <!-- 양옆 화살표 -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
 <script>
+
 $(document).ready(function() {
 	$('.slider').slick({
 		centerMode: true,
 		centerPadding: '60px',
-		slidesToShow: 4,
+		slidesToShow: 3,
 		speed: 1500,
 		index: 2,
 		focusOnSelect:true,
@@ -39,6 +39,8 @@ $(document).ready(function() {
 		}]
 	});
 });
+
+
 </script>
 <style>
   body {
@@ -51,19 +53,19 @@ $(document).ready(function() {
   
   .slider {
     width: 1600px;
-    height: 400px;
+    height: 600px;
     margin: 20px auto;
     text-align: center;
   }
   
   .slide-h3 {
     margin: 10% 0 10% 0;
-    padding: 40% 20%;
+    padding: 10% 10%;
     background: white;
   }
   
   .slider div {
-    margin-right: 5px;
+    margin-right: 13px;
   }
   
   .slick-slide {
@@ -71,16 +73,31 @@ $(document).ready(function() {
     width:10px;
   }
   
-  .slick-center {
-    display: block;
-    max-width: 10% !important;
-    max-height: 20% !important;
-    opacity: 1;
+ .slick-center {
+   display: block;
+   max-width: 10% !important;
+   max-height: 20% !important;
+   opacity: 1;
+ }
+	.carousel-image {
+		 width: 100%;
+		height: auto;
+	}
+	#scrollToTopButton {
+		display: none; /* 초기에 숨김 */
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+		z-index: 99;
+	}
+	  .card-img-top {
+    width: 350px; /* 원하는 크기로 width 값을 조정하세요 */
+    height: auto; /* 이미지의 가로세로 비율을 유지하도록 설정합니다 */
+    border-radius: 10px; /* 원하는 값으로 border-radius를 조정하세요 */
   }
-     .carousel-image {
-    width: 100%;
-    height: auto;
-  }
+  .card {
+  width: 400px;
+}
 </style>
 <!-- 캐러셀사용부분  -->
 
@@ -109,49 +126,32 @@ $(document).ready(function() {
        	</div>     	
 </div>
 
-
+<div>
+<center>
+<span style="font-size : 40pt; font-style: bold; font-family:fantasy; color:white;">BEST 5</span>
+</center>
+</div>
 <div class="slider">
+
+	<c:forEach var="lists" items="${courseLists }">
 	<div>
 		<div class="slide-h3">
 			<i class="fa fa-lg fa-trash"></i>
-			<h3>
-				1
+			<h3 align="center">
+				<div class="card" style="width: 350px;">
+					<img src="<%=request.getContextPath() %>/resources/${lists.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style=" border-radius: 20%;">
+					<div class="card-body">
+						<p class="card-text" style="font-size:17pt">${lists.cousreName }</p>
+						<p class="card-text" style="font-size:15pt">기간 : ${lists.cousreTerm }일</p>
+						<p class="card-text" style="font-size:15pt">${lists.cousrePrice }원</p>
+					</div>
+				</div>
+
 			</h3>
 		</div>
 	</div>
-	<div>
-		<div class="slide-h3">
-			<i class="fa fa-lg fa-trash"></i>
-			<h3>
-				2
-			</h3>
-		</div>
-	</div>
-	<div>
-		<div class="slide-h3">
-			<i class="fa fa-lg fa-trash"></i>
-			<h3>
-				3
-			</h3>
-		</div>
-	</div>
-	<div>
-		<div class="slide-h3">
-			<i class="fa fa-lg fa-trash"></i>
-			<h3>
-				4
-			</h3>
-		</div>
-	</div>
-	<div>
-		<div class="slide-h3">
-			<i class="fa fa-lg fa-trash"></i>
-			<h3>
-				5
-			</h3>
-		</div>
-	</div>
-	
+	</c:forEach>
+
 </div>
 
 
@@ -197,5 +197,7 @@ $(document).ready(function() {
 
 
 
-
+<div class="footer">
+  <%@ include file="./../../footer.jsp"%>
+</div>
 
