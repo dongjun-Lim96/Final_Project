@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CourseDao {
 
-	private String namespace = "accounts.course";
+	private String namespace = "course.model";
 	
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
