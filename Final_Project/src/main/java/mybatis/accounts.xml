@@ -28,4 +28,12 @@
 		#{userBirth}, #{userEmail}, #{userPhone},
 		#{userChkEmail}, #{userChkPhone})
 	 </insert> 
+	 
+	 <select id="GetUserIdByUserNameEmail" resultType="accounts.model.AccountsBean">
+	select * from accounts where userName=#{userName} and userEmail=#{userEmail}
+	 </select>
+	<select id="GetUserIdByUserIdEmail" resultType="accounts.model.AccountsBean">
+	select * from accounts where userId=#{userId} and userEmail=#{userEmail}
+	 </select>
+	 
 </mapper>
