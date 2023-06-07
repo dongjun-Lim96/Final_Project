@@ -200,4 +200,3 @@ $(document).ready(function() {
 <div class="footer">
   <%@ include file="./../../footer.jsp"%>
 </div>
-
