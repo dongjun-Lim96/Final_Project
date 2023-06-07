@@ -7,10 +7,8 @@ CREATE TABLE ACCOUNTS(
    userName VARCHAR2(50) NOT NULL,
    userPw VARCHAR2(50) NOT NULL,
    userBirth VARCHAR2(50) NOT NULL,
-   userEmail VARCHAR2(70) NOT NULL UNIQUE,
    userPhone VARCHAR2(50) NOT NULL UNIQUE,
    userPoint NUMBER DEFAULT 0,
-   userChkEmail NUMBER DEFAULT 0, --동의안함0 동의함1
    userChkPhone NUMBER DEFAULT 0,  --동의안함0 동의함1
    userSubscribe NUMBER DEFAULT 0,  --구독안함0 구독함1
    userJoinDate DATE DEFAULT SYSDATE,
