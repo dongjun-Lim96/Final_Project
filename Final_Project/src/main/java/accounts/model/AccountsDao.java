@@ -4,6 +4,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
+
 @Component
 public class AccountsDao {
 
@@ -36,14 +38,34 @@ public class AccountsDao {
 		return ab;
 	}
 
-
 	public AccountsBean GetAccountsByEmail(String input_userEmail) {
 		AccountsBean ab= new AccountsBean();
 		ab = sqlSessionTemplate.selectOne(namespace+".GetUserIdByUserEmail",input_userEmail); 
 		
 		return ab;
 	}
-	
+
+	public AccountsBean GetAccountsByNameEmail(String input_userName, String input_userEmail) {
+		AccountsBean ab= new AccountsBean();
+		
+		HashMap<String, String> M =new HashMap<String, String>(); 
+		M.put("userName", input_userName);
+		M.put("userEmail", input_userEmail);
+		ab = sqlSessionTemplate.selectOne(namespace+".GetUserIdByUserNameEmail",M); 
+		
+		return ab;
+	}
+
+
+	public AccountsBean GetAccountsByIdEmail(String input_userId, String input_userEmail) {
+		AccountsBean ab= new AccountsBean();
+		HashMap<String, String> M =new HashMap<String, String>(); 
+		M.put("userId", input_userId);
+		M.put("userEmail", input_userEmail);
+		ab = sqlSessionTemplate.selectOne(namespace+".GetUserIdByUserIdEmail",M); 
+		
+		return ab;
+	}
 	
 	public boolean searchId(String userId) {
 		boolean result = false; 
@@ -61,4 +83,7 @@ public class AccountsDao {
 		
 		return cnt;
 	}
+	
+	
+	
 }
