@@ -95,13 +95,13 @@ CREATE TABLE COURSE(
 );
 --EIP1 EIP2 필기는 1 실기는 2로 임의설정 
 insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
-values('EIP1', 'EIP', '정보처리기사필기', 50000, 'Teacher 1', 'img1.jpg', 'video1.mp4', 30);
+values('EIP1', 'EIP', '정보처리기사필기', 50000, 'Teacher 1', 'img1.png', 'video1.mp4', 30);
 insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
-values('EIP2', 'EIP', '정보처리기사실기', 100000, 'Teacher 1', 'img2.jpg', 'video2.mp4', 30);
+values('EIP2', 'EIP', '정보처리기사실기', 100000, 'Teacher 1', 'img2.png', 'video2.mp4', 30);
 insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
-values('EBDA1', 'EBDA', '빅데이터분석기사필기', 70000, 'Teacher 2', 'img3.jpg', 'video3.mp4', 60);
+values('EBDA1', 'EBDA', '빅데이터분석기사필기', 70000, 'Teacher 2', 'img3.png', 'video3.mp4', 60);
 insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
-values('EBDA2', 'EBDA', '빅데이터분석기사실기', 1200000, 'Teacher 2', 'img4.jpg', 'video4.mp4', 60);
+values('EBDA2', 'EBDA', '빅데이터분석기사실기', 1200000, 'Teacher 2', 'img4.png', 'video4.mp4', 60);
 
 
 
