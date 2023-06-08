@@ -51,7 +51,7 @@ public class CategoryDao {
 
 	public int deleteCategory(String categoryCode) {
 		
-		int cnt = sqlSessionTemplate.delete(categoryCode+".DeleteCategory", categoryCode);
+		int cnt = sqlSessionTemplate.delete(namespace+".DeleteCategory", categoryCode);
 		return cnt;
 	}
 
