@@ -15,5 +15,5 @@
 		
 		<select id="GetCategoryList" resultType="category.model.CategoryBean">
 			select * from category 
-		</select>
+		</select> 
 	</mapper>
