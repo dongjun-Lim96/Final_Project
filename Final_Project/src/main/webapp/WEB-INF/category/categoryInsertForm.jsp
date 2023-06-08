@@ -127,7 +127,7 @@
 
 			
 
-			
+			 
 			<dl>
 				<dt>카테고리 이름 <span class="pointColor">*</span></dt>
 				<dd>
