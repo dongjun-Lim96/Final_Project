@@ -114,7 +114,7 @@ $(document).ready(function() {
         <div class="video_cont" style="margin-right:30px">
         	<a href="https://www.wannaedu.com/template/viewer.jsp?id=223&lid=305811"  target="_blank">
         	<img src="<%=request.getContextPath()%>/resources/images/mainbanner2.png" style="border-radius: 30px;"/>
-        	</a>
+        	</a> 
         </div>
         
         <div class="text_cont">        	

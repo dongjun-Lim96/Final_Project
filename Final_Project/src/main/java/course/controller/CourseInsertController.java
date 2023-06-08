@@ -10,7 +10,7 @@ import course.model.CourseDao;
 public class CourseInsertController {
 	private final String command="/insert.cs";
 	private final String getPage="CourseInsert";
-	
+	 
 	@Autowired
 	CourseDao coursedao;
 	
