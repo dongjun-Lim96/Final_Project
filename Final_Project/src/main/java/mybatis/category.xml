@@ -12,4 +12,8 @@
 			insert into CATEGORY(categoryCode, categoryName)
 			values(#{categoryCode},#{categoryName})
 		</insert>
+		
+		<select id="GetCategoryList" resultType="">
+		
+		</select>
 	</mapper>
