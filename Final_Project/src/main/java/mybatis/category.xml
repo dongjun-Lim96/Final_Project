@@ -13,7 +13,11 @@
 			values(#{categoryCode},#{categoryName})
 		</insert>
 		
-		<select id="GetCategoryList" resultType="category.model.CategoryBean">
+		<select id="GetCategoryList" resultType="category.model.CategoryBean" >
 			select * from category 
-		</select> 
+		</select>
+		
+		<delete id="DeleteCategory">
+			delete category where categoryCode=#{categoryCode}
+		</delete>
 	</mapper>
