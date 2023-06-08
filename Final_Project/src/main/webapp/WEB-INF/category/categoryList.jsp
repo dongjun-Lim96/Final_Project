@@ -8,7 +8,14 @@
 		location.href="delete.cg?categoryCode="+categoryCode;
 		
 	}
-</script>
+	
+    var message = "${message}";
+
+    if (message !== "") {
+        alert(message);
+    }
+
+</script> 
 <style>
   .category-heading {
     margin-bottom: 20px;

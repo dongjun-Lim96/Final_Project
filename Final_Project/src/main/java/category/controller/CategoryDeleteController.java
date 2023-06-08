@@ -26,7 +26,7 @@ public class CategoryDeleteController {
 		int cnt = categoryDao.deleteCategory(categoryCode);
 		
 		if(cnt >0) {
-			mav.addObject("message", "카테고리 삭제완료");
+			mav.addObject("message", "카테고리 삭제완료"); 
 			mav.setViewName(getPage);
 			return mav;
 		}else {
