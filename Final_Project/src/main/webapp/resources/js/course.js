@@ -49,19 +49,19 @@ function courseCodeCheck(){ // 중복체크 클릭
 		success : function(data){
 			
 			if($('input[name=courseCode]').val()==""){
-				$("#idmessage").html('<font color=red>카테고리코드를 입력하세요<font>').show();
+				$("#idmessage").html('<font color=red>강의코드를 입력하세요<font>').show();
 				$('input[name=courseCode]').focus();
 				use = "missing";
 				
 			}
 			else if($.trim(data) == "NO"){
-				$("#idmessage").html('<font color=red>이미 등록된 카테고리코드 입니다<font>').show();
+				$("#idmessage").html('<font color=red>이미 등록된 강의코드 입니다<font>').show();
 				$('input[name=courseCode]').select();
 				use = "impossible";
 				 
 			}
 			else if($.trim(data) == "YES"){
-				$("#idmessage").html('<font color=blue>사용가능한 카테고리코드 입니다<font>').show();
+				$("#idmessage").html('<font color=blue>사용가능한 강의코드 입니다<font>').show();
 				use = "possible";
 				
 			}
