@@ -13,7 +13,7 @@
 			values(#{categoryCode},#{categoryName})
 		</insert>
 		
-		<select id="GetCategoryList" resultType="">
-		
+		<select id="GetCategoryList" resultType="category.model.CategoryBean">
+			select * from category
 		</select>
 	</mapper>
