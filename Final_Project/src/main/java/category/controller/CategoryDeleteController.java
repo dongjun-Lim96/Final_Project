@@ -29,7 +29,7 @@ public class CategoryDeleteController {
 	    } else {
 	        redirectAttributes.addFlashAttribute("message", "카테고리 삭제실패");
 	    }
-	    
+	     
 	    return getPage;
 	}
 }
