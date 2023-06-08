@@ -175,6 +175,7 @@
         </button>
         <div class="collapse" id="account-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="category.cs" class="link-dark rounded" id="sidebarfont">카테고리 추가</a></li>
             <li><a href="insert.cs" class="link-dark rounded" id="sidebarfont">추가</a></li>
             <li><a href="#" class="link-dark rounded" id="sidebarfont">수정/삭제</a></li>  
           </ul>
