@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import category.model.CategoryDao;
 
@@ -19,21 +20,16 @@ public class CategoryDeleteController {
 	CategoryDao categoryDao;
 	
 	@RequestMapping(value = command)
-	public ModelAndView doAction(@RequestParam("categoryCode") String categoryCode) {
-		ModelAndView mav= new ModelAndView();
-		
-		System.out.println("categoryCodecategoryCode : " + categoryCode);
-		int cnt = categoryDao.deleteCategory(categoryCode);
-		
-		if(cnt >0) {
-			mav.addObject("message", "카테고리 삭제완료"); 
-			mav.setViewName(getPage);
-			return mav;
-		}else {
-			mav.addObject("message", "카테고리 삭제실패");
-			mav.setViewName(getPage);
-			return mav;
-		}
-		
+	public String doAction(@RequestParam("categoryCode") String categoryCode, RedirectAttributes redirectAttributes) {
+	    System.out.println("categoryCodecategoryCode : " + categoryCode);
+	    int cnt = categoryDao.deleteCategory(categoryCode);
+	    
+	    if (cnt > 0) {
+	        redirectAttributes.addFlashAttribute("message", "카테고리 삭제완료");
+	    } else {
+	        redirectAttributes.addFlashAttribute("message", "카테고리 삭제실패");
+	    }
+	    
+	    return getPage;
 	}
 }
