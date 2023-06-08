@@ -24,5 +24,5 @@ public class CategoryBean {
 		this.categoryCode = categoryCode;
 		this.categoryName = categoryName;
 	}
-	
+	 
 }

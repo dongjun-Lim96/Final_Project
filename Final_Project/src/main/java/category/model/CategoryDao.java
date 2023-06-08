@@ -48,7 +48,7 @@ public class CategoryDao {
 		return lists;
 	}
 
-
+ 
 	public int deleteCategory(String categoryCode) {
 		
 		int cnt = sqlSessionTemplate.delete(namespace+".DeleteCategory", categoryCode);
