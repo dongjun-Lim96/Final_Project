@@ -101,7 +101,7 @@
 <div class="login_cont member_cont">
 	<div class="login_in">
 		
-		<h3>강의 추가</h3>
+		<h3>카테고리 추가</h3>
 
 	</div>
 
