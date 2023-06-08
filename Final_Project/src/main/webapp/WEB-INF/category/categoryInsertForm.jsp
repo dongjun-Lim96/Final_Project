@@ -101,7 +101,7 @@
 <div class="login_cont member_cont">
 	<div class="login_in">
 		
-		<h3>강의 추가</h3>
+		<h3>카테고리 추가</h3>
 
 	</div>
 
@@ -146,7 +146,7 @@
 
 	<div class="btn_list">
 		<input type="button" class="moreBtn pointColor pointBorder" onclick="gotoCate()" value="카테고리 목록" />
-		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="회원가입하기" />
+		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="등록하기" />
 	</div>
 
 </form>

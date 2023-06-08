@@ -171,11 +171,21 @@
       <li class="border-top my-3"></li>
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed custom-button" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>카테고리
+        </button> 
+        <div class="collapse" id="account-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="categoryList.cg" class="link-dark rounded" id="sidebarfont">카테고리 목록</a></li>  
+            <li><a href="category.cg" class="link-dark rounded" id="sidebarfont">카테고리 추가</a></li>  
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed custom-button" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>강의관리
         </button> 
         <div class="collapse" id="account-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="category.cg" class="link-dark rounded" id="sidebarfont">카테고리 추가</a></li>
             <li><a href="insert.cs" class="link-dark rounded" id="sidebarfont">추가</a></li>
             <li><a href="#" class="link-dark rounded" id="sidebarfont">수정/삭제</a></li>  
           </ul>
