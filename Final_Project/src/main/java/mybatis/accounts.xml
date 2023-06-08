@@ -36,4 +36,9 @@
 	select * from accounts where userId=#{userId} and userEmail=#{userEmail}
 	 </select>
 	 
+	 
+	  <select id="GetOrderById" resultType="courseorder.model.CourseOrderBean">
+	 	select * from courseorder where userId = #{userId}
+	 </select>
+	 
 </mapper>

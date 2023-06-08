@@ -206,7 +206,7 @@ function logout() {
 				</li> 
 				<li class="nav-item" style="display: block;">
 					<c:if test="${loginInfo.adminCheck eq 0}">
-						<a class="bgColor" href="#" style=" display: block;">마이페이지</a>
+						<a class="bgColor" href="mypage.acc?userId=${loginInfo.userId}" style=" display: block;">마이페이지</a>
 					</c:if>
 					<c:if test="${loginInfo.adminCheck eq 1}">
 						<a class="bgColor" href="#" style=" display: block;">관리자페이지</a>
