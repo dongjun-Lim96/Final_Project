@@ -7,4 +7,8 @@
 		<select id="GetCourseList" resultType="course.model.CourseBean">
 			select * from course
 		</select>
+		 
+		<select id="SearchCourseCode" resultType="int">
+			select count(*) from course where courseCode = #{courseCode}
+		</select>
 	</mapper>
