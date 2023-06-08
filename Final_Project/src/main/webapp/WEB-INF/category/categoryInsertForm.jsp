@@ -146,7 +146,7 @@
 
 	<div class="btn_list">
 		<input type="button" class="moreBtn pointColor pointBorder" onclick="gotoCate()" value="카테고리 목록" />
-		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="회원가입하기" />
+		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="등록하기" />
 	</div>
 
 </form>
