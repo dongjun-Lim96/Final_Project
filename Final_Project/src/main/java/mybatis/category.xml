@@ -7,4 +7,9 @@
 		<select id="SearchCgCode" resultType="int">
 			select count(*) from category where categoryCode = #{categoryCode}
 		</select>
+		
+		<insert id="InsertCg">
+			insert into CATEGORY(categoryCode, categoryName)
+			values(#{categoryCode},#{categoryName})
+		</insert>
 	</mapper>

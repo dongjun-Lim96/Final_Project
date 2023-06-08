@@ -64,7 +64,14 @@
 </head>
 <body>
 
-<script type="text/javascript" src="<%=conPath%>/resources/js/course.js"></script>
+<script type="text/javascript" src="<%=conPath%>/resources/js/category.js"></script>
+<script>
+    var message = "${message}";
+
+    if (message !== "") {
+        alert(message);
+    }
+</script>
  <!--  <script type="text/javascript" src="https://www.wannaedu.com/theme/6/js/ui.js"></script> -->
 
  <!-- <link rel="stylesheet" type="text/css" href="https://www.wannaedu.com/theme/6/css/member.css" /> -->
@@ -85,7 +92,11 @@
 		.check_box {width:100%;}
 	</style>
 
- 
+ <script>
+ 	function gotoCate(){ 
+ 		
+ 	}
+ </script>
  
 <div class="login_cont member_cont">
 	<div class="login_in">
@@ -94,7 +105,7 @@
 
 	</div>
 
-	<form name="form1" method="POST" action="register.acc" onSubmit="return writeSave()">
+	<form name="form1" method="POST" action="category.cg" onSubmit="return writeSave()">
 	
 	<div class="mem_cont">
 		
@@ -102,117 +113,40 @@
 		<div class="myinfo_cont refund_info">
 			 
 			<dl>
-				<dt>카테고리명 <span class="pointColor">*</span></dt>
+				<dt>카테고리 코드 <span class="pointColor">*</span></dt>
 				<dd>
 					<input name=categoryCode class="input input_m2" id="categoryCode" maxlength="20" type="text"  onkeydown="keyd()" />&nbsp
 					<input type="button" class="moreBtn pointColor pointBorder" value="중복체크" onClick="categoryCheck()" > 
-					<div class="comment" id="checkLoginIdArea">
-						<span id="idmessage">영문으로 시작하는 2-20자 영문, 숫자 조합을 입력하세요.</span>
+					<div class="comment">
+						<span id="idmessage"></span>
 					</div>
 				</dd>
 				
 			</dl>
 			
-			
-			<dl>
-				<dt>비밀번호 <span class="pointColor">*</span></dt>
-				<dd>
-					<input name="userPw" class="input" id="userPw" maxlength="50" type="password" placeholder="영문, 숫자, 특수문자 8자 이상" onblur="return pwcheck()" />
-					<div class="comment" id="checkPasswordArea">
-						<span id="pwmessage">영문, 숫자, 특수문자 조합 8자 이상 입력하세요.</span>
-					</div>
-				</dd>
-				
-			</dl>
 
-			<dl>
-				<dt>비밀번호 재입력 <span class="pointColor">*</span></dt>
-				<dd>
-					<input name="userPw2" class="input" id="userPw2" maxlength="50" type="password" placeholder="영문, 숫자, 특수문자 8자 이상" onkeyup="pw2check()" />
-					<div class="comment" id="checkPasswordArea">
-						<span id="pwmessage2">영문, 숫자, 특수문자 조합 8자 이상 입력하세요.</span>
-					</div>
-				</dd>
-			</dl>
 			
 
 			
 			<dl>
-				<dt>이름 <span class="pointColor">*</span></dt>
+				<dt>카테고리 이름 <span class="pointColor">*</span></dt>
 				<dd>
-					<input name="userName" class="input" type="text" id="userName" maxlength="20" />
+					<input name="categoryName" class="input" type="text" id="categoryName" maxlength="20" />
 					<div class="comment">
 						
 					</div>
 				</dd>
 			</dl>
 			
-			<dl>
-				<dt>생년월일<span class="pointColor">*</span></dt>
-				<dd>
-					<input name="userBirth" class="input input_num" type="date" id="userBirth" maxlength="20" />
-					<div class="comment">
-						
-					</div>
-				</dd>
-			</dl>
-			
-			
-			<dl>
-				<dt>
-					이메일
-					
-					<span class="pointColor">*</span>
-					
-				</dt>
-				<dd>
-					<input name="userEmail" id="userEmail" type="text" class="input" onkeyup="emailcheck()">
-					<div class="comment" id="checkPasswordArea">
-						<span id="emailmsg"></span>
-					</div>
 
-					<div class="check_box">
-						<label><input name="userChkEmail" value="1" type="radio" class="radio" >수신동의</label>
-						<label><input name="userChkEmail" value="0" type="radio" class="radio" checked="checked">수신거부</label>
-					</div>
-				</dd>
-			</dl>
-			
-			
-			<dl>
-				<dt>
-					휴대전화
-					
-					<span class="pointColor">*</span>
-					
-				</dt>
-				<dd>
-					<div class="selectBox input_num">
-						<select name="mobile1" id="mobile1">
-							<option value="010">010</option>
-							<option value="011">011</option>
-							<option value="016">016</option>
-							<option value="017">017</option>
-						</select>
-					</div>
-					<span class="hipen">-</span>
-					<input name="mobile2" class="input input_num" type="text" id="mobile2" maxlength="4" onkeyup="telcheck1()">
-					<span class="hipen">-</span>
-					<input name="mobile3" class="input input_num" type="text" id="mobile3" maxlength="4" onchange='' onkeyup="telcheck2()">
-					<div class="check_box">
-						<label><input name="userChkPhone" value="1" type="radio" class="radio" />수신동의</label>
-						<label><input name="userChkPhone" value="0" type="radio" class="radio" checked="checked"/>수신거부</label>
-					</div>
-				</dd>
-			</dl>
 
 			
 		</div>
 	</div>
 
 	<div class="btn_list">
-		<input type="button" class="moreBtn pointColor pointBorder" onclick="location.href= '/member/agreement.jsp'" value="이전으로" />
-		<input type="submit" class="moreBtn bgColor pointBorder" id="btn_submit" value="회원가입하기" />
+		<input type="button" class="moreBtn pointColor pointBorder" onclick="gotoCate()" value="카테고리 목록" />
+		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="회원가입하기" />
 	</div>
 
 </form>

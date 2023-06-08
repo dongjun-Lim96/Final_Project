@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import category.model.CategoryDao;
 
@@ -16,9 +17,11 @@ public class CategoryCheckController {
 	@Autowired
 	CategoryDao categoryDao;
 	
+	@ResponseBody
 	@RequestMapping(command)
 	public String doAction(HttpServletResponse response ,
 			@RequestParam("categoryCode") String categoryCode) {
+		
 		System.out.println("categoryCode : " + categoryCode);
 		boolean result = categoryDao.searchCode(categoryCode);
 		System.out.println("result : " + result);
@@ -27,6 +30,7 @@ public class CategoryCheckController {
 		}else {
 			return "YES";
 		}
+		
 		
 	}
 }
