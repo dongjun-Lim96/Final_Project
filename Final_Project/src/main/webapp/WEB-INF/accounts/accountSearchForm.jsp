@@ -41,7 +41,7 @@
 
     <div class="login_cont member_cont idpw_cont">
 	<div class="login_in">
-		<a href="../../ex/main.jsp">
+		<a href='list.cs'>
 		<h1><img src="<%=conPath%>/resources/images/logo.png" alt="쌍용에듀 로고" class="svg_logo"/></h1>
 		</a>
 		<h3>아이디와 비밀번호가 생각이 안 나시나요?</h3>

@@ -76,7 +76,7 @@ public class AcoountsLoginController {
 				// "redirect:/insert.prd" : 상품 추가
 				// "redirect:/detail.prd" : 주문하기  
 				
-				
+				  
 				mav.setViewName("redirect:/list.cs");
 				
 			}else { // 가입은 했는데 비번이 일치하지 않는다.
