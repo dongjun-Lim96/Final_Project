@@ -4,5 +4,7 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 	<mapper namespace="category.model">
-		
+		<select id="SearchCgCode" resultType="int">
+			select count(*) from category where categoryCode = #{categoryCode}
+		</select>
 	</mapper>

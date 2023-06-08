@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import course.model.CourseDao;
 
 @Controller
-public class CourseInsertController {
+public class CourseInsertController {   
 	private final String command="/insert.cs";
-	private final String getPage="CourseInsert";
+	private final String getPage="CourseInsert"; 
 	 
 	@Autowired
 	CourseDao coursedao;
