@@ -3,6 +3,7 @@ package category.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import category.model.CategoryDao;
 
@@ -15,8 +16,11 @@ public class CategoryListController {
 	CategoryDao categoryDao;
 	
 	@RequestMapping(value=command)
-	public String doAction() {
+	public ModelAndView doAction() {
+		ModelAndView mav = new ModelAndView();
 		
-		return getPage;
+		
+		mav.setViewName(getPage);
+		return mav;
 	}
 }
