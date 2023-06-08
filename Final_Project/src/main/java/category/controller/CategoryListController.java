@@ -26,7 +26,7 @@ public class CategoryListController {
 		ModelAndView mav = new ModelAndView();
 		
 		List<CategoryBean> categoryLists = categoryDao.getCategory();
-		session.setAttribute("categoryLists", categoryLists);
+		session.setAttribute("sessionCategory", categoryLists);
 		mav.addObject("categoryLists",categoryLists);
 		
 		mav.setViewName(getPage);
