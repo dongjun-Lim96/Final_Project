@@ -19,5 +19,5 @@
 		
 		<delete id="DeleteCategory">
 			delete category where categoryCode=#{categoryCode}
-		</delete>
+		</delete> 
 	</mapper>
