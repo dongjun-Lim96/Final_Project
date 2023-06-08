@@ -19,15 +19,15 @@ public class CourseInsertController {
 	 
 	@Autowired
 	CourseDao coursedao;
-	@Autowired
-	CategoryDao categoryDao;
+
+	
 	
 	@RequestMapping(value = command,method = RequestMethod.GET)
 	public ModelAndView doAction() {
 		ModelAndView mav = new ModelAndView();
 		
-		List<CategoryBean> categoryLists = categoryDao.getCategory();
-		mav.addObject("categoryLists",categoryLists);
+		
+		
 		
 		mav.setViewName(getPage);
 		return mav;
