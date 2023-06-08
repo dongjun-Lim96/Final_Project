@@ -215,7 +215,7 @@ function logout() {
 				</li>
 			</ul>
 		</div>
-	</div>
+	</div> 
 </nav>
 
  <div onclick="scrollToTop()" id="scrollToTopText">&#9650; 위로</div>
