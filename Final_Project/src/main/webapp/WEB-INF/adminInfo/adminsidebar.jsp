@@ -175,10 +175,8 @@
         </button>
         <div class="collapse" id="account-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">11111</a></li>
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">22222</a></li>
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">33333</a></li>
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">44444</a></li>
+            <li><a href="#" class="link-dark rounded" id="sidebarfont">추가</a></li>
+            <li><a href="#" class="link-dark rounded" id="sidebarfont">수정/삭제</a></li>
           </ul>
         </div>
       </li>
