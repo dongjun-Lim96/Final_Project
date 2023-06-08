@@ -94,7 +94,7 @@
 
  <script>
  	function gotoCate(){ 
- 		
+ 		location.href="categoryList.cg";
  	}
  </script>
  
