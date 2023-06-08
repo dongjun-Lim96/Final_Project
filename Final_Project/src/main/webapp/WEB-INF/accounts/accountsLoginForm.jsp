@@ -51,7 +51,7 @@
 
 	<div class="login_cont">
 		<div class="login_in">
-			<a href='../../ex/main.jsp'>
+			<a href='list.cs'>
 				<h1>
 					<img src="<%=conPath%>/resources/images/logo.png" alt="워너에듀 로고"
 						class="svg_logo" />
@@ -74,7 +74,7 @@
 			</form>
 
 			<ul>
-				<li>아직 회원이 아니라면? <a href="../member/agreement.jsp">회원가입</a>
+				<li>아직 회원이 아니라면? <a href="register.acc">회원가입</a>
 				</li>
 				<li>아이디/비밀번호가 생각나지 않는다면? <a href='accountSearchForm.acc'>아이디/비밀번호 찾기</a>
 				</li>
