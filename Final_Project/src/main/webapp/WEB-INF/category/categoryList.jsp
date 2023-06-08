@@ -48,7 +48,7 @@ if (message !== "") {
   </thead>
   <tbody>
   <c:forEach var="cateList" items="${categoryLists}" varStatus="status">
-    <tr>
+    <tr> 
       <th scope="row">${status.count }</th>
       <td>${cateList.categoryCode }</td>
       <td>${cateList.categoryName }</td>
