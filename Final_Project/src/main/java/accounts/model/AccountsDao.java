@@ -4,6 +4,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import courseorder.model.CourseOrderBean;
+
 import java.util.HashMap;
 
 @Component
@@ -85,5 +87,10 @@ public class AccountsDao {
 	}
 	
 	
+	public CourseOrderBean getOrderById(String userId) {
+		CourseOrderBean cob = new CourseOrderBean();
+		cob = sqlSessionTemplate.selectOne(namespace+".GetOrderById",userId); 
+		return cob;
+	}
 	
 }
