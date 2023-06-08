@@ -10,8 +10,8 @@ public class CategoryBean {
 		this.categoryCode = categoryCode;
 	}
 	public String getCategoryName() {
-		return categoryName;
-	}
+		return categoryName; 
+	} 
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
