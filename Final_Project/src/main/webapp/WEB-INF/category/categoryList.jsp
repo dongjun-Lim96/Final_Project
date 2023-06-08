@@ -2,19 +2,20 @@
     pageEncoding="UTF-8"%>
 <%@ include file="./../../header.jsp" %>
 <script>
+var message = "${message}";
+
+if (message !== "") {
+    
+    alert(message);
+} else {
+    
+}
 	function deleteCategory(categoryCode){
 		//alert(1);
-		alert(categoryCode);
+		//alert(categoryCode);
 		location.href="delete.cg?categoryCode="+categoryCode;
-		
+		  
 	}
-	
-    var message = "${message}";
-
-    if (message !== "") {
-        alert(message);
-    }
-
 </script> 
 <style>
   .category-heading {
