@@ -34,6 +34,12 @@ public class CourseDao {
 		return result;
 	}
 
+	public int insertCourse(CourseBean courseBean) {
+		int cnt= -1;
+		cnt = sqlSessionTemplate.insert(namespace+".InsertCourse",courseBean);
+		return cnt;
+	}
+
 	
 	
 }
