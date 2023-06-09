@@ -24,6 +24,16 @@ public class CourseDao {
 		return lists;
 	}
 
+	public boolean searchCode(String courseCode) {
+		boolean result = false; 
+		int cnt = sqlSessionTemplate.selectOne(namespace+".SearchCourseCode", courseCode);
+		if (cnt>0) {
+			result = true;
+		}
+		
+		return result;
+	}
+
 	
 	
 }

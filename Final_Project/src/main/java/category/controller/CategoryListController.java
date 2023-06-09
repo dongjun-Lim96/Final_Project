@@ -2,6 +2,8 @@ package category.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,10 +22,11 @@ public class CategoryListController {
 	CategoryDao categoryDao;
 	
 	@RequestMapping(value=command)
-	public ModelAndView doAction() {
+	public ModelAndView doAction(HttpSession session) {
 		ModelAndView mav = new ModelAndView();
 		
 		List<CategoryBean> categoryLists = categoryDao.getCategory();
+		session.setAttribute("sessionCategory", categoryLists);
 		mav.addObject("categoryLists",categoryLists);
 		
 		mav.setViewName(getPage);
