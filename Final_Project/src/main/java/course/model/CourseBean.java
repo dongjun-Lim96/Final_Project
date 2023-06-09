@@ -1,5 +1,6 @@
 package course.model;
 
+import org.springframework.web.multipart.MultipartFile;
 
 public class CourseBean {
 	private String courseCode;
@@ -9,7 +10,43 @@ public class CourseBean {
 	private String cousreTeacher;
 	private String cousreImg;
 	private String cousreVideo;
-	private String cousreTerm;
+	private int cousreTerm;
+	 
+	private MultipartFile uploadimg;
+	private MultipartFile uploadvideo;
+	
+	
+	
+	
+	public MultipartFile getUploadimg() {
+		return uploadimg;
+	}
+	public void setUploadimg(MultipartFile uploadimg) {
+		this.uploadimg = uploadimg;
+	}
+	public MultipartFile getUploadvideo() {
+		return uploadvideo;
+	}
+	public void setUploadvideo(MultipartFile uploadvideo) {
+		this.uploadvideo = uploadvideo;
+	}
+	
+	
+
+	public CourseBean(String courseCode, String categoryCode, String cousreName, int cousrePrice, String cousreTeacher,
+			String cousreImg, String cousreVideo, int cousreTerm, MultipartFile uploadimg, MultipartFile uploadvideo) {
+		super();
+		this.courseCode = courseCode;
+		this.categoryCode = categoryCode;
+		this.cousreName = cousreName;
+		this.cousrePrice = cousrePrice;
+		this.cousreTeacher = cousreTeacher;
+		this.cousreImg = cousreImg;
+		this.cousreVideo = cousreVideo;
+		this.cousreTerm = cousreTerm;
+		this.uploadimg = uploadimg;
+		this.uploadvideo = uploadvideo;
+	}
 	public String getCourseCode() {
 		return courseCode;
 	}
@@ -52,24 +89,14 @@ public class CourseBean {
 	public void setCousreVideo(String cousreVideo) {
 		this.cousreVideo = cousreVideo;
 	}
-	public String getCousreTerm() {
+	public int getCousreTerm() {
 		return cousreTerm;
 	}
-	public void setCousreTerm(String cousreTerm) {
+	public void setCousreTerm(int cousreTerm) {
 		this.cousreTerm = cousreTerm;
 	}
-	public CourseBean(String courseCode, String categoryCode, String cousreName, int cousrePrice, String cousreTeacher,
-			String cousreImg, String cousreVideo, String cousreTerm) {
-		super();
-		this.courseCode = courseCode;
-		this.categoryCode = categoryCode;
-		this.cousreName = cousreName;
-		this.cousrePrice = cousrePrice;
-		this.cousreTeacher = cousreTeacher;
-		this.cousreImg = cousreImg;
-		this.cousreVideo = cousreVideo;
-		this.cousreTerm = cousreTerm;
-	}
+	
+
 	public CourseBean() {
 		super();
 		// TODO Auto-generated constructor stub
