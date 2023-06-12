@@ -11,4 +11,13 @@
 		<select id="SearchCourseCode" resultType="int">
 			select count(*) from course where courseCode = #{courseCode}
 		</select>
+		
+		<insert id="InsertCourse">
+			insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+			values(#{courseCode},#{categoryCode},#{cousreName},#{cousrePrice},#{cousreTeacher},#{cousreImg},#{cousreVideo},#{cousreTerm})   
+		</insert>
+		
+		<select id="GetAllCourseList" resultType="course.model.CourseBean">
+			select * from course
+		</select> 
 	</mapper>
