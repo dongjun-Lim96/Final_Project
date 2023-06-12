@@ -68,18 +68,6 @@
 	function gotoList(){
 		location.href="getlist.cs";
 	}
-	
-	
-	function showSelectedFileName(input) {
-		  var fileName = input.value.split("\\").pop(); // 파일 이름 가져오기
-		  var fileType = input.files[0].type; // 파일 유형 가져오기
-		  
-		  // 파일 정보를 표시할 위치를 가져와서 내용을 업데이트합니다.
-		  var commentDiv = input.parentElement.querySelector(".comment");
-		  commentDiv.innerText = "선택된 파일: " + fileName + ", 유형: " + fileType;
-	}
-	
-	
 </script>
  <!--  <script type="text/javascript" src="https://www.wannaedu.com/theme/6/js/ui.js"></script> -->
 
@@ -120,7 +108,7 @@
 			<dl>
 				<dt>강의코드 <span class="pointColor">*</span></dt>
 				<dd>
-					<input name="courseCode" class="input input_m2" id="courseCode" maxlength="20" type="text" value="${course.courseCode }"/>&nbsp
+					<input name="courseCode" class="input input_m2" id="courseCode" maxlength="20" type="text" value="${course.courseCode }"  readonly style="background-color: #F0F0F0; opacity: 0.8;"/>&nbsp
 					 
 					<div class="comment" >
 						<span id="idmessage"></span>
@@ -151,6 +139,7 @@
 				<dt>강의명 <span class="pointColor">*</span></dt>
 				<dd>
 					<input name="cousreName" class="input" type="text" id="cousreName" maxlength="20" value="${course.cousreName }"/>
+					
 					<div class="comment">
 						
 					</div>
@@ -185,8 +174,8 @@
 			<dl>
 				<dt>썸네일 <span class="pointColor">*</span></dt>
 				<dd>
-					<input name="uploadimg" class="input" type="file" id="uploadimg" maxlength="20" onchange="showSelectedFileName(this)" />
-
+					<input name="uploadimg" class="input" type="file" id="uploadimg" maxlength="20" value="${course.cousreImg }"/>
+					기존 선택된 썸네일 :  ${course.cousreImg }
 					<div class="comment">
 						
 					</div>
@@ -199,7 +188,8 @@
 			<dl>
 				<dt>강의동영상 <span class="pointColor">*</span></dt>
 				<dd>
-					<input name="uploadvideo" class="input" type="file" id="uploadvideo" maxlength="20" onchange="showSelectedFileName(this)" />
+					<input name="uploadvideo" class="input" type="file" id="uploadvideo" maxlength="20" value="${course.cousreVideo }"/>
+					기존 선택된 강의동영상 :  ${course.cousreVideo } 
 					<div class="comment">
 						
 					</div>
