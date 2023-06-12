@@ -60,6 +60,12 @@ public class CourseDao {
 
 		return cnt;
 	}
+ 
+	public CourseBean getOneCourseByCode(String courseCode) {
+		CourseBean courseBean = new CourseBean();
+		courseBean = sqlSessionTemplate.selectOne(namespace+".OneCourseByCode",courseCode);
+		return courseBean;
+	}
 
 	
 	
