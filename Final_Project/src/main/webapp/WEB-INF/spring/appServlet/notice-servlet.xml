@@ -16,4 +16,12 @@
 	</bean>
 	
 	<context:component-scan base-package="notice"/>
+	
+		<!-- 화일업로드(MultipartRequest)
+	CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+	-->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="10485760"/> 
+		<property name="defaultEncoding" value="UTF-8"/>
+	</bean>
 </beans>
