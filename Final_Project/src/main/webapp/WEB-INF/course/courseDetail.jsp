@@ -98,8 +98,8 @@
 
 	</div>
 
-	<form name="form1" method="post" enctype="multipart/form-data" action="updateCourse.cs">
-	
+	<form name="form1" method="get" enctype="multipart/form-data" action="updateCourse.cs">
+	<input type="hidden" name = "courseCode" value="${course.courseCode }">
 	<div class="mem_cont">
 		
  
@@ -131,7 +131,7 @@
 			</dl>
 			<dl>
 				<dt>강의</dt>
-				<dt><video src="<%=request.getContextPath() %>/resources/${course.cousreVideo}" class="video" controls style="width: 320px; height: 240px; border-radius: 20%;"></video> </dt>						
+				<dt><video src="<%=request.getContextPath() %>/resources/${course.cousreVideo}" class="video" controls   type="video/mp4" style="width: 320px; height: 240px;"></video> </dt>						
 			</dl>
 			<dl>
 				<dt>강의기간</dt>
