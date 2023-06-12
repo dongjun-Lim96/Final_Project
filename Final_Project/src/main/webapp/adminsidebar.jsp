@@ -206,8 +206,8 @@
         </button> 
         <div class="collapse" id="account-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="insertCourse.cs" class="link-dark rounded" id="sidebarfont">추가</a></li>
             <li><a href="getlist.cs" class="link-dark rounded" id="sidebarfont">목록</a></li>  
+            <li><a href="insertCourse.cs" class="link-dark rounded" id="sidebarfont">추가</a></li>
           </ul>
         </div>
       </li>
