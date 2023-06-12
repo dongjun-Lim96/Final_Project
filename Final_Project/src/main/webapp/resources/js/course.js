@@ -48,16 +48,56 @@ function writeSave(){ // 가입클릭
 		$('input[name=cousreTeacher]').focus();
 		return false;
 	}
-	if($('input[name=cousreImg]').val() ==''){
+	if($('input[name=uploadimg]').val() ==''){
 		alert('썸네일 입력해주세요.');
 		
 		return false;
 	}
-	if($('input[name=cousreVideo]').val() ==''){
+	if($('input[name=uploadvideo]').val() ==''){
 		alert('강의동영상을 입력해주세요.');
 		
 		return false;
 	}
+	if($('input[name=cousreTerm]').val() ==''){
+		alert('강의기간을 입력해주세요.');
+		$('input[name=cousreTerm]').focus();
+		return false;
+	}
+	if(termuse =='termerror'){
+		alert('기간이 잘못되었습니다');
+		return false;
+	}
+	if(priceuse =='priceerror'){
+		alert('금액이 잘못되었습니다');
+		return false;
+	}
+	
+}//writeSave()
+
+function updateSave(){ // 가입클릭
+	//alert(1);
+	
+	if($('input[name=categoryCode]').val() ==''){
+		alert('카테고리이름을 선택해주세요.');
+		$('input[name=categoryCode]').focus();
+		return false;
+	}
+	if($('input[name=cousreName]').val() ==''){
+		alert('강의명을 입력해주세요.');
+		$('input[name=cousreName]').focus();
+		return false;
+	}
+	if($('input[name=cousrePrice]').val() ==''){
+		alert('금액을 입력해주세요.');
+		$('input[name=cousrePrice]').focus();
+		return false;
+	}
+	if($('input[name=cousreTeacher]').val() ==''){
+		alert('강사명을 입력해주세요.');
+		$('input[name=cousreTeacher]').focus();
+		return false;
+	}
+
 	if($('input[name=cousreTerm]').val() ==''){
 		alert('강의기간을 입력해주세요.');
 		$('input[name=cousreTerm]').focus();
