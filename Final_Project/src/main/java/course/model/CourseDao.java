@@ -2,6 +2,7 @@ package course.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,11 +42,19 @@ public class CourseDao {
 		return cnt;
 	}
 
-	public List<CourseBean> getAllCourse() {
+	public List<CourseBean> getAllCourse(Map<String, String> map) {
 		List<CourseBean> lists = new ArrayList<CourseBean>();
-		lists = sqlSessionTemplate.selectList(namespace+".GetAllCourseList");
+		lists = sqlSessionTemplate.selectList(namespace+".GetAllCourseList",map);
 		
 		return lists;
+	}
+
+	public int getTotalCount(Map<String, String> map) {
+		int cnt = 0;
+
+		cnt = sqlSessionTemplate.selectOne(namespace+".CountCourse",map);
+
+		return cnt;
 	}
 
 	
