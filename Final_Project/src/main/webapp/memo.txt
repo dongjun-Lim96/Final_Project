@@ -18,11 +18,7 @@ CREATE TABLE ACCOUNTS(
    adminCheck NUMBER DEFAULT 0 -- 관리자 1 일반회원 0
 );
 
-userPhone NUMBER NOT NULL UNIQUE, --이거  VARCHAR2(50)로 바꿔야함 010이거 10으로알아들음
-userAddr VARCHAR2(500) NOT NULL, -- 빼기로 함
-alter table accounts modify userPhone VARCHAR2(50);
-alter table accounts drop column userAddr;
-alter table accounts ADD adminCheck number default 0;
+
 
 
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck )
