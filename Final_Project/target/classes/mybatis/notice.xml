@@ -3,6 +3,60 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-	<mapper namespace="notice.model">
-		
-	</mapper>
+<mapper namespace="notice.model">
+
+	<select id="GetNoticeList" resultType="notice.model.NoticeBean">
+		select  rownum as rank,noticeNumber, adminId, noticeTitle, noticeContent,
+		noticeImage, noticeDate, noticeView from (select rownum
+		as rank, noticeNumber, adminId, noticeTitle, noticeContent,
+		noticeImage, noticeDate, noticeView from
+		(select noticeNumber, adminId, noticeTitle, noticeContent,
+		noticeImage, noticeDate, noticeView from notice
+		<if test="whatColumn=='noticeTitle'"> where noticeTitle like #{keyword} </if>
+		<if test="whatColumn=='adminId'"> where adminId like #{keyword} </if>
+		<if test="whatColumn=='all'"> where noticeNumber like #{keyword} or adminId like
+			#{keyword} or noticeTitle like #{keyword} or noticeContent like #{keyword} or noticeDate like
+			#{keyword} or noticeView like #{keyword} </if>
+		order by noticeNumber asc )) order by rank desc
+	</select>
+
+	<select id="CountNotice" resultType="int">
+		select count(*) from notice
+		<if test="whatColumn=='noticeTitle'"> where noticeTitle like #{keyword} </if>
+		<if test="whatColumn=='adminId'"> where adminId like #{keyword} </if>
+		<if test="whatColumn=='all'"> where noticeNumber like #{keyword} or adminId like
+			#{keyword} or noticeTitle like #{keyword} or noticeDate like
+			#{keyword} or noticeView like #{keyword}
+		</if>
+	</select>
+	<insert id="WriteNotice"> insert into
+		notice(noticeNumber,adminId,noticeTitle,noticeContent,noticeImage,noticeDate,noticeView)
+		values(NOTICE_seq.nextval,#{adminId},#{noticeTitle},#{noticeContent},#{noticeImage},sysdate,0)
+	</insert>
+	
+	<!-- 조회수 증가 -->
+	<update id="UpdateNoticeView">
+		UPDATE notice SET noticeView = noticeView + 1 WHERE noticeNumber =
+		#{noticeNumber}
+	</update>
+
+	<!-- 해당 글 가져오기 -->
+	<select id="OneNotice" parameterType="int"
+		resultType="notice.model.NoticeBean">
+		SELECT * FROM notice WHERE noticeNumber = #{noticeNumber}
+	</select>
+
+
+	<delete id="DeleteOneNotice"> delete notice where noticeNumber = #{noticeNumber}
+	</delete>
+	
+	<update id="UpdateNotice"> update notice set adminId =#{adminId},
+		noticeTitle=#{noticeTitle}, noticeImage =#{noticeImage}
+		, noticeContent =#{noticeContent} where
+		noticeNumber =#{noticeNumber}
+	</update>
+	
+	<select id="CheckExistingAdminId" parameterType="String" resultType="int">
+    SELECT COUNT(*) FROM ADMININFO WHERE adminId = #{adminId}
+</select>
+</mapper>
