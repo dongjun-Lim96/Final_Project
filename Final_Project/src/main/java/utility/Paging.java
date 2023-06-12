@@ -1,4 +1,4 @@
-package utility;
+package utility; 
 
 public class Paging {
 	//페이징 관련 변수	 
