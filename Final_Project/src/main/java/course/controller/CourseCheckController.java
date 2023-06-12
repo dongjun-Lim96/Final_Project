@@ -16,7 +16,7 @@ public class CourseCheckController {
 	private final String command = "/CourseCheck.cs";
 	
 	@Autowired
-	CourseDao courseDao;
+	CourseDao courseDao; 
 	
 	@ResponseBody
 	@RequestMapping(command)

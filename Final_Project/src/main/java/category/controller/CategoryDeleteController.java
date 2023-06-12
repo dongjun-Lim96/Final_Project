@@ -15,7 +15,7 @@ import category.model.CategoryDao;
 public class CategoryDeleteController {
 	private final String command="delete.cg";
 	private final String getPage="redirect:/categoryList.cg";
-	
+	 
 	@Autowired
 	CategoryDao categoryDao;
 	

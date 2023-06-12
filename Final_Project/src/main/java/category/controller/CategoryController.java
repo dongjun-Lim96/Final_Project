@@ -12,7 +12,7 @@ import category.model.CategoryBean;
 import category.model.CategoryDao;
 
 @Controller
-public class CategoryController {
+public class CategoryController { 
 	
 	private final String command="/category.cg";
 	private final String getPage="categoryInsertForm";
@@ -31,7 +31,7 @@ public class CategoryController {
 		String categoryCode = request.getParameter("categoryCode");
 		String categoryName = request.getParameter("categoryName");
 		CategoryBean cb = new CategoryBean(categoryCode,categoryName);
-		//System.out.println("POSTPOSTPOST"+categoryCode+" , " + categoryName);
+		System.out.println("POSTPOSTPOST : "+categoryCode+" , " + categoryName);
 		int cnt = categoryDao.insertCategory(cb);
 		if(cnt >0) {
 			mav.addObject("message", "카테고리 등록완료");
