@@ -19,5 +19,5 @@
 		
 		<select id="GetAllCourseList" resultType="course.model.CourseBean">
 			select * from course
-		</select>
+		</select> 
 	</mapper>
