@@ -52,6 +52,21 @@
    		font-family: Lato, sans-serif;
    		 /* 추가적인 스타일 속성들 */
   	}
+  	.container {
+  	margin-left: 0;
+  display: flex;
+}
+
+.sidebar {
+  flex: 0 0 200px; /* 사이드바 너비 */
+  background-color: lightgray;
+}
+
+.content {
+  flex: 1; /* 내용물이 남은 공간을 채우도록 설정 */
+  width: 90%;
+  background-color: white;
+}
    
     </style>
 
@@ -120,6 +135,9 @@
   </symbol>
 </svg>
 
+
+<div class="container">
+	<div class="sidebar">
 <main>
 
   <div class="b-example-divider"></div>
@@ -195,6 +213,7 @@
   </div>
 
 </main>
+</div>
 
 
 
