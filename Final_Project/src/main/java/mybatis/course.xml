@@ -59,4 +59,8 @@
 			</if>
  
 		</select> 
+		
+		<select id="OneCourseByCode" resultType="course.model.CourseBean">
+			select * from COURSE where courseCode=#{courseCode}
+		</select>
 	</mapper>
