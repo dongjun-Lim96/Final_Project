@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.session.RowBounds;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import utility.Paging;
 
 
 
@@ -42,9 +45,10 @@ public class CourseDao {
 		return cnt;
 	}
 
-	public List<CourseBean> getAllCourse(Map<String, String> map) {
+	public List<CourseBean> getAllCourse(Paging pageInfo,Map<String, String> map) {
 		List<CourseBean> lists = new ArrayList<CourseBean>();
-		lists = sqlSessionTemplate.selectList(namespace+".GetAllCourseList",map);
+		RowBounds rowBounds = new RowBounds(pageInfo.getOffset(), pageInfo.getLimit());
+		lists = sqlSessionTemplate.selectList(namespace+".GetAllCourseList",map,rowBounds);
 		
 		return lists;
 	}
