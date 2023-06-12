@@ -174,7 +174,7 @@
 		               
 		<!-- 파일 업로드 관련 -->
 		<dependency>
-			<groupId>commons-fileupload</groupId>  
+			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.2.2</version>
 			<scope>runtime</scope>
