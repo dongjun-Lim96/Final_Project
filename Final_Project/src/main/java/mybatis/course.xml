@@ -57,6 +57,6 @@
 			<if test="whatColumn=='date'">
 				where cousreTerm like#{keyword}
 			</if>
-
+ 
 		</select> 
 	</mapper>
