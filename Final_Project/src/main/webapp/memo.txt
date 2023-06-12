@@ -268,7 +268,7 @@ CREATE TABLE NOTICE(
    adminId VARCHAR2(50),   
    noticeTitle VARCHAR2(200) NOT NULL,
    noticeContent VARCHAR2(2000) NOT NULL,
-   noticeImage VARCHAR2(50) NULL,
+   noticeImage VARCHAR2(50) NULL, 
    noticeDate DATE DEFAULT SYSDATE,
    noticeView NUMBER DEFAULT 0,
    FOREIGN KEY (adminId) REFERENCES ADMININFO(adminId)
