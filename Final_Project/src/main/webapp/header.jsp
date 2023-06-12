@@ -102,8 +102,18 @@ function showScrollToTopText() {
     }
 }
 function logout() {
-    window.location.href = "./logout.jsp";
-}
+	  $.ajax({
+	    url: "logout.acc",
+	    type: "POST",
+	    success: function() {
+	      window.location.reload(); 
+	    },
+	    error: function() {
+	      alert("로그아웃에 실패했습니다.");
+	      window.location.href = "list.cs"; 
+	    }
+	  });
+	}
 </script>
 <%
 	String conPath = request.getContextPath();
@@ -198,7 +208,7 @@ function logout() {
 					</a>
 					   
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">공지사항</a></li>
+						<li><a class="dropdown-item" href="/ex/list.nt">공지사항</a></li>
 						<li><a class="dropdown-item" href="#">이벤트</a></li>
 						<li><a class="dropdown-item" href="#">자주묻는질문</a></li>
 						<li><a class="dropdown-item" href="#">카카오톡문의</a></li>
@@ -209,13 +219,13 @@ function logout() {
 						<a class="bgColor" href="mypage.acc?userId=${loginInfo.userId}" style=" display: block;">마이페이지</a>
 					</c:if>
 					<c:if test="${loginInfo.adminCheck eq 1}">
-						<a class="bgColor" href="#" style=" display: block;">관리자페이지</a>
+						<a class="bgColor" href="adminsidebar.jsp" style=" display: block;">관리자페이지</a>
 					</c:if>
 					
 				</li>
 			</ul>
 		</div>
-	</div> 
+	</div>
 </nav>
 
  <div onclick="scrollToTop()" id="scrollToTopText">&#9650; 위로</div>
