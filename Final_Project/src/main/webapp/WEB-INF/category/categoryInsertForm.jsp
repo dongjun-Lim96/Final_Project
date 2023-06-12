@@ -98,7 +98,7 @@
  	}
  </script>
 
- <div class="content" align="center"> 
+ <div class="content" align="center">  
 <div class="login_cont member_cont">
 	<div class="login_in">
 		
