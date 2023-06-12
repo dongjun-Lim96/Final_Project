@@ -37,7 +37,15 @@ public class CourseDao {
 	public int insertCourse(CourseBean courseBean) {
 		int cnt= -1;
 		cnt = sqlSessionTemplate.insert(namespace+".InsertCourse",courseBean);
+		System.out.println("insertCourse cnt : " + cnt);
 		return cnt;
+	}
+
+	public List<CourseBean> getAllCourse() {
+		List<CourseBean> lists = new ArrayList<CourseBean>();
+		lists = sqlSessionTemplate.selectList(namespace+".GetAllCourseList");
+		
+		return lists;
 	}
 
 	
