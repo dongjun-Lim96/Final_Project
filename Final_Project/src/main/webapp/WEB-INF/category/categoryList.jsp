@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="./../../header.jsp" %>
+<%@ include file="./../../adminsidebar.jsp" %>
 <script>
 var message = "${message}";
 
@@ -32,11 +32,11 @@ if (message !== "") {
   }
 </style>
 
-    
-<center>
+ <div class="content" align="center" style="margin-left : 30% ;">     
+
 	<h1 class="category-heading" style="font-weight: bold;">카테고리 목록</h1>
-</center>
-<table class="table table-striped table-sm"  style="border-spacing: 5px;" >
+
+<table class="table table-striped table-sm" style="border-spacing: 5px; margin-right: 0 auto;" >
 
   <thead>
     <tr>
@@ -56,12 +56,13 @@ if (message !== "") {
     </tr>
 	</c:forEach>
 		<tr>
-		<td colspan="3">
-		
-		</td>
-		<td>
+		<td colspan="4" align="center">
 			<button type="button" class="btn btn-outline-info" onClick="insertCategory()">카테고리 추가하기</button>
 		</td>
 	</tr>
   </tbody>
 </table>
+</body>
+</html>
+</div>
+</div>
