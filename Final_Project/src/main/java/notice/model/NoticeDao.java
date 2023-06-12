@@ -74,7 +74,7 @@ public class NoticeDao {
 	}
 
 	public int updateNotice(NoticeBean noticeBean) {
-		int cnt=0;
+		int cnt=0; 
 		cnt = sqlSessionTemplate.update(namespace+".UpdateNotice", noticeBean);
 		return cnt;
 		

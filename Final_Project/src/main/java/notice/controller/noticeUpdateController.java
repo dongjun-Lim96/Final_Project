@@ -73,7 +73,7 @@ public class noticeUpdateController {
 				}
 
 			} // if cnt
-			mav.setViewName(gotoPage);
+			mav.setViewName(gotoPage); 
 	
 			
 

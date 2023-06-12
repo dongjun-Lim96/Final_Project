@@ -34,7 +34,7 @@ public void setRank(int rank) {
 		super();
 	}
 	public NoticeBean(int noticeNumber, String adminId, String noticeTitle, String noticeContent, String noticeImage,
-			Timestamp noticeDate, int noticeView, MultipartFile upload, String upload2) {
+			Timestamp noticeDate, int noticeView, MultipartFile upload, String upload2) { 
 		super();
 		this.noticeNumber = noticeNumber;
 		this.adminId = adminId;

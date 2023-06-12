@@ -33,7 +33,7 @@ table td {
 
 .form-field {
   width: 100%;
-}
+} 
 
 textarea {
   width: 100%;

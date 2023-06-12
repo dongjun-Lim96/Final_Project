@@ -47,7 +47,7 @@ input[type="button"],
 input[type="file"] {
   padding: 5px 10px;
   margin-right: 5px;
-}
+} 
 </style>
 
 <div class="container">

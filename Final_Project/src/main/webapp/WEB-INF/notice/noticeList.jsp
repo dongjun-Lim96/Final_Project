@@ -104,7 +104,7 @@
 		<input class="search-form__input" type="text" name="keyword">
 		<input class="search-form__submit" type="submit" value="검색">
 	</form>
-	<table class="table">
+	<table class="table"> 
 		<c:if test="${loginInfo.adminCheck eq 1}">
 			<tr>
 				<td colspan="6" align="right">

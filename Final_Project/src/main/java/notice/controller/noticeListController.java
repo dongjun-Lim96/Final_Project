@@ -54,5 +54,5 @@ public class noticeListController {
 		mav.setViewName(getPage);
 		System.out.println("¿©±â´Â listView pageNumber"+pageNumber);
 		return mav;
-	}
+	} 
 }

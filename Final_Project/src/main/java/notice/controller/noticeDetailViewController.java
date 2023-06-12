@@ -29,4 +29,4 @@ public class noticeDetailViewController {
 		model.addAttribute("notice",notice);
 		return getPage;
 	}
-}
+} 

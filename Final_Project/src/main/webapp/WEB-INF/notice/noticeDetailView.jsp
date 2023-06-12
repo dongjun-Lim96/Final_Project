@@ -59,7 +59,7 @@
 	
     </style>
 <script>
-		
+		 
 		function deleteNotice(noticeNumber, pageNumber) {
 		
 			alert("delete" +noticeNumber + "," + pageNumber);

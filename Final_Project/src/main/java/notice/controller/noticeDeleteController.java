@@ -59,6 +59,6 @@ public class noticeDeleteController {
 			System.out.println("삭제실패");
 			mav.setViewName(backPage);
 		}
-		return mav;
+		return mav; 
 	}
 }
