@@ -1,9 +1,8 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>    
 <!DOCTYPE html>
-<%@ include file="./../../header.jsp" %>
-<html>
+<%@ include file="./../../adminsidebar.jsp" %>
+<html> 
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -63,8 +62,13 @@
 
 </head>
 <body>
-
+<div class="content" align="center">
 <script type="text/javascript" src="<%=conPath%>/resources/js/course.js"></script>
+<script>
+	function gotoList(){
+		location.href="getlist.cs";
+	}
+</script>
  <!--  <script type="text/javascript" src="https://www.wannaedu.com/theme/6/js/ui.js"></script> -->
 
  <!-- <link rel="stylesheet" type="text/css" href="https://www.wannaedu.com/theme/6/css/member.css" /> -->
@@ -166,8 +170,7 @@
 			</dl>
 
 			
-			
-<!-- 			<dl>
+			 			<dl>
 				<dt>썸네일 <span class="pointColor">*</span></dt>
 				<dd>
 					<input name="uploadimg" class="input" type="file" id="uploadimg" maxlength="20" />
@@ -188,7 +191,7 @@
 						
 					</div>
 				</dd>
-			</dl> -->
+			</dl> 
 
 			
 			
@@ -212,7 +215,7 @@
 	</div>
 
 	<div class="btn_list">
-		<input type="button" class="moreBtn pointColor pointBorder" onclick="" value="강의목록" />
+		<input type="button" class="moreBtn pointColor pointBorder" onclick="gotoList()" value="강의목록" />
 		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="강의 등록" />
 	</div>
 
@@ -224,3 +227,5 @@
 
 </body>
 </html>
+</div>
+</div>

@@ -13,7 +13,7 @@ import category.model.CategoryBean;
 import category.model.CategoryDao;
 
 
-@Controller
+@Controller 
 public class CategoryListController {
 	private final String command="/categoryList.cg";
 	private final String getPage="categoryList";
