@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>    
 <!DOCTYPE html>
-<%@ include file="./../../header.jsp" %>
+<%@ include file="./../../adminsidebar.jsp" %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -97,7 +97,8 @@
  		location.href="categoryList.cg";
  	}
  </script>
- 
+
+ <div class="content" align="center"> 
 <div class="login_cont member_cont">
 	<div class="login_in">
 		
@@ -157,3 +158,5 @@
 
 </body>
 </html>
+</div>
+ </div>

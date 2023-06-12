@@ -59,7 +59,7 @@
 
 .sidebar {
   flex: 0 0 200px; /* 사이드바 너비 */
-  background-color: lightgray;
+  
 }
 
 .content {
