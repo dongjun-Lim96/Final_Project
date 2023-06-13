@@ -28,4 +28,4 @@ public class CourseDetailController {
 		mav.addObject("pageNumber", pageNumber);
 		return mav;
 	}
-}
+} 

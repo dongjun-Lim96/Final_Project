@@ -4,9 +4,11 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import courseorder.model.CourseOrderBean;
+import course.model.CourseBean;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @Component
 public class AccountsDao {
@@ -87,10 +89,19 @@ public class AccountsDao {
 	}
 	
 	
-	public CourseOrderBean getOrderById(String userId) {
-		CourseOrderBean cob = new CourseOrderBean();
-		cob = sqlSessionTemplate.selectOne(namespace+".GetOrderById",userId); 
-		return cob;
+	public List<CourseBean> getOrderById(String userId) {
+		List<CourseBean> lists = new ArrayList<CourseBean>();
+		lists = sqlSessionTemplate.selectList(namespace+".GetOrderById",userId); 
+		return lists;
 	}
+	
+	public int accountsUpdate(AccountsBean ab) {
+		int cnt = -1;
+		cnt = sqlSessionTemplate.update(namespace+".AccountsUpdate", ab);
+		
+		return cnt;
+	}
+	
+	
 	
 }

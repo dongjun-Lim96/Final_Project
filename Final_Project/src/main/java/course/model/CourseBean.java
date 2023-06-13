@@ -77,7 +77,7 @@ public class CourseBean {
 	}
 	public void setCategoryCode(String categoryCode) {
 		this.categoryCode = categoryCode;
-	}
+	} 
 	public String getCousreName() {
 		return cousreName;
 	}

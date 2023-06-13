@@ -143,7 +143,7 @@
 
 			
 		</div>
-	</div>
+	</div> 
 
 	<div class="btn_list">
 		<input type="button" class="moreBtn pointColor pointBorder" onclick="gotoList('${pageNumber }')" value="강의목록" />

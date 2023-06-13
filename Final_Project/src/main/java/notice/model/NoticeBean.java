@@ -2,13 +2,17 @@ package notice.model;
 
 import java.sql.Timestamp;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.web.multipart.MultipartFile;
 
 public class NoticeBean {
    private int noticeNumber;
    private String adminId;
+   @Length(min = 1, message = "내용을 입력하세요")
    private String noticeTitle;
+   @Length(min = 1, message = "내용을 입력하세요")
    private String noticeContent;
+   
    private String noticeImage;
    private Timestamp noticeDate;
    private int noticeView;
