@@ -102,6 +102,11 @@ public class AccountsDao {
 		return cnt;
 	}
 	
+	public void outUser(String userId) {
+		int cnt = -1;
+		cnt = sqlSessionTemplate.update(namespace+".OutUser", userId);
+	}
+	
 	
 	
 }
