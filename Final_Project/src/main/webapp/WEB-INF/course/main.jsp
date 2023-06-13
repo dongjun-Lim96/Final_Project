@@ -139,7 +139,7 @@ $(document).ready(function() {
 			<i class="fa fa-lg fa-trash"></i>
 			<h3 align="center">
 				<div class="card" style="width: 350px; --bs-card-border-color: none;">
-					<img src="<%=request.getContextPath() %>/resources/${lists.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style=" border-radius: 20%;">
+					<img src="<%=request.getContextPath() %>/resources/${lists.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style=" border-radius: 20%; width:350px; height:240px;">
 					<div class="card-body">
 						<p class="card-text" style="font-size:17pt">${lists.cousreName }</p>
 						<p class="card-text" style="font-size:15pt">기간 : ${lists.cousreTerm }일</p>
