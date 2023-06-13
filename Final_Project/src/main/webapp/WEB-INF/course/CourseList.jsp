@@ -117,7 +117,7 @@
 		<div class="myinfo_cont refund_info" align="center">
 			
 			<dl>
-				<dt>강의코드 </dt>
+				<dt>강의명 </dt>
 				<dt>가격</dt>						
 				<dt>기간</dt>						
 				<dt>썸네일</dt>						
@@ -126,7 +126,8 @@
 			
 			<c:forEach var="course" items="${courseLists}" varStatus="status">
 			<dl>
-				<dt><a href="courseDetail.cs?courseCode=${course.courseCode}&pageNumber=${pageInfo.pageNumber}">${course.cousreName }</a> </dt>
+				<dt><a href="courseDetail.cs?courseCode=${course.courseCode}&pageNumber=${pageInfo.pageNumber}" onmouseover="this.style.color='red'"
+        onmouseout="this.style.color='black'">${course.cousreName }</a> </dt>
 				<dt>${course.cousrePrice }</dt>
 				<dt>${course.cousreTerm }</dt>
 				<dt><img src="<%=request.getContextPath() %>/resources/${course.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style="width: 50px; height: 50px; border-radius: 20%;"> </dt>
