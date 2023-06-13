@@ -157,46 +157,6 @@ $(document).ready(function() {
 
 
 
-<div class="promotion_1" style="height:150px !important; background-color:#f3f7f8;">
-		
-        <div class="video_cont" style="margin-right:30px">
-        	<a href="https://www.wannaedu.com/template/viewer.jsp?id=735&lid=275874"  target="_blank">
-        	<img src="<%=request.getContextPath()%>/resources/images/mainbanner3.png" alt="배너이미지1" style="border-radius: 30px;"/>
-        	</a>
-        </div>
-        
-        <div class="text_cont">        	
-            <h2 style="font-weight: bold; color: black;">정보처리기사 필기 강의 맛보기</h2>            
-            <p class="stxt" style="margin: 10px 0;">
-                정보처리기사는 수제비!!<br>수제비쌤과 보안쌤의 찰떡 케미를 맛보세요~
-            </p>            
-            <a href="#" class="mypage bgColor" style="margin-top: 20px;">  ***  더 보러가기</a>
-       	</div>     	
-</div>
-
-
-
-<div class="promotion_1" style="height:150px !important; background-color:#f3f7f8;">
-		
-        <div class="video_cont" style="margin-right:30px">
-        	<a href="https://www.wannaedu.com/template/viewer.jsp?id=735&lid=276307"  target="_blank">
-        	<img src="<%=request.getContextPath()%>/resources/images/mainbanner4.png" alt="배너이미지1" style="border-radius: 30px;"/>
-        	</a>
-        </div>
-        
-        <div class="text_cont">        	
-            <h2 style="font-weight: bold; color: black;">ADsP 강의 맛보기</h2>            
-            <p class="stxt" style="margin: 10px 0;">
-                ADsP는 수제비!!<br>빅데이터쌤과 수제비쌤의 상세한 설명을 맛보세요~
-            </p>            
-            <a href="#" class="mypage bgColor" style="margin-top: 20px;">  ***  더 보러가기</a>
-       	</div>     	
-</div>
-
-
-
-
-
 <div class="footer">
   <%@ include file="./../../footer.jsp"%>
 </div>
