@@ -138,12 +138,15 @@ $(document).ready(function() {
 		<div class="slide-h3">
 			<i class="fa fa-lg fa-trash"></i>
 			<h3 align="center">
-				<div class="card" style="width: 350px;">
+				<div class="card" style="width: 350px; --bs-card-border-color: none;">
 					<img src="<%=request.getContextPath() %>/resources/${lists.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style=" border-radius: 20%;">
 					<div class="card-body">
 						<p class="card-text" style="font-size:17pt">${lists.cousreName }</p>
 						<p class="card-text" style="font-size:15pt">기간 : ${lists.cousreTerm }일</p>
-						<p class="card-text" style="font-size:15pt">${lists.cousrePrice }원</p>
+						
+						<p class="card-text" style="font-size:15pt">
+ 							<fmt:formatNumber value="${lists.cousrePrice}" pattern="#,###" />원
+						</p>
 					</div>
 				</div>
 
