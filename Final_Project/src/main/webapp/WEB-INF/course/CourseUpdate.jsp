@@ -94,11 +94,11 @@
 <div class="login_cont member_cont">
 	<div class="login_in">
 		
-		<h3>강의 추가</h3>
+		<h3>강의 수정</h3>
 
 	</div>
 
-	<form name="form1" method="post" enctype="multipart/form-data" action="insertCourse.cs" onSubmit="return writeSave()">
+	<form name="form1" method="post" enctype="multipart/form-data" action="updateCourse.cs" onSubmit="return updateSave()">
 	
 	<div class="mem_cont">
 		
@@ -108,8 +108,8 @@
 			<dl>
 				<dt>강의코드 <span class="pointColor">*</span></dt>
 				<dd>
-					<input name="courseCode" class="input input_m2" id="courseCode" maxlength="20" type="text"  onkeydown="keyd()" />&nbsp
-					<input type="button" class="moreBtn pointColor pointBorder" value="중복체크" onClick="courseCodeCheck()" > 
+					<input name="courseCode" class="input input_m2" id="courseCode" maxlength="20" type="text" value="${course.courseCode }"  readonly style="background-color: #F0F0F0; opacity: 0.8;"/>&nbsp
+					 
 					<div class="comment" >
 						<span id="idmessage"></span>
 					</div>
@@ -127,7 +127,7 @@
 					<div class="selectBox">
 						<select name="categoryCode" id="categoryCode" style="width: 100px">
 							<c:forEach var="categoryList" items="${sessionCategory}">
-							<option value="${categoryList.categoryCode }">${categoryList.categoryCode } | ${categoryList.categoryName }</option>							
+							<option value="${categoryList.categoryCode }" <c:if test="${course.categoryCode eq  categoryList.categoryCode}">selected</c:if>>${categoryList.categoryCode } | ${categoryList.categoryName }</option>							
 							</c:forEach>
 						</select>
 					</div>
@@ -138,7 +138,8 @@
 			<dl>
 				<dt>강의명 <span class="pointColor">*</span></dt>
 				<dd>
-					<input name="cousreName" class="input" type="text" id="cousreName" maxlength="20" />
+					<input name="cousreName" class="input" type="text" id="cousreName" maxlength="20" value="${course.cousreName }"/>
+					
 					<div class="comment">
 						
 					</div>
@@ -150,7 +151,7 @@
 			<dl>
 				<dt>가격 <span class="pointColor">*</span></dt>
 				<dd>
-					<input name="cousrePrice" class="input" type="text" id="cousrePrice"  placeholder="예) 30000 숫자만 입력" maxlength="20" onkeyup="priceCheck()"/>
+					<input name="cousrePrice" class="input" type="text" id="cousrePrice"  value="${course.cousrePrice }" placeholder="예) 30000 숫자만 입력" maxlength="20" onkeyup="priceCheck()"/>
 					<div class="comment">
 						<span id="pricemsg"></span>
 					</div>
@@ -162,7 +163,7 @@
 			<dl>
 				<dt>강사 <span class="pointColor">*</span></dt>
 				<dd>
-					<input name="cousreTeacher" class="input" type="text" id="cousreTeacher" maxlength="20" />
+					<input name="cousreTeacher" class="input" type="text" id="cousreTeacher" maxlength="20" value="${course.cousreTeacher }"/>
 					<div class="comment">
 						
 					</div>
@@ -170,10 +171,13 @@
 			</dl>
 
 			
-			 			<dl>
+			<dl>
 				<dt>썸네일 <span class="pointColor">*</span></dt>
 				<dd>
-					<input name="uploadimg" class="input" type="file" id="uploadimg" maxlength="20" />
+					<input name="uploadimg" class="input" type="file" id="uploadimg" maxlength="20"/>
+					기존 선택된 썸네일 :  ${course.cousreImg }
+					<img src="<%=request.getContextPath() %>/resources/${course.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style="width: 150px; height: 150px; border-radius: 20%;">
+					<input type="hidden" name="cousreImg2" id="cousreImg" value="${course.cousreImg}">
 					<div class="comment">
 						
 					</div>
@@ -186,7 +190,10 @@
 			<dl>
 				<dt>강의동영상 <span class="pointColor">*</span></dt>
 				<dd>
-					<input name="uploadvideo" class="input" type="file" id="uploadvideo" maxlength="20" />
+					<input name="uploadvideo" class="input" type="file" id="uploadvideo" maxlength="20"/>
+					기존 선택된 강의동영상 :  ${course.cousreVideo }
+					<video src="<%=request.getContextPath() %>/resources/${course.cousreVideo}" class="video" controls   type="video/mp4" style="width: 320px; height: 240px;"></video>
+					<input type="hidden" name="cousreVideo2" id="cousreVideo" value="${course.cousreVideo}">
 					<div class="comment">
 						
 					</div>
@@ -203,7 +210,7 @@
 					
 				</dt>
 				<dd>
-					<input name="cousreTerm" id="cousreTerm" type="text" class="input" onkeyup="termCheck()">
+					<input name="cousreTerm" id="cousreTerm" type="text" class="input" onkeyup="termCheck()" value="${course.cousreTerm }">
 					<div class="comment" id="checkPasswordArea">
 						<span id="termmsg"></span>
 					</div>
@@ -216,7 +223,7 @@
 
 	<div class="btn_list">
 		<input type="button" class="moreBtn pointColor pointBorder" onclick="gotoList()" value="강의목록" />
-		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="강의 등록" />
+		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="강의 수정" />
 	</div>
 
 </form>

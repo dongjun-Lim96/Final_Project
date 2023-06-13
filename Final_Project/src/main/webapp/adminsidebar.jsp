@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="./../../header.jsp" %>
-  <head>
+  <head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
@@ -52,6 +52,23 @@
    		font-family: Lato, sans-serif;
    		 /* 추가적인 스타일 속성들 */
   	}
+  	.container {
+  	margin-left: 0;
+  	margin-right: 0; 
+
+  display: flex;
+}
+
+.sidebar {
+  flex: 0 0 200px; /* 사이드바 너비 */
+  
+}
+
+.content {
+  flex: 1; /* 내용물이 남은 공간을 채우도록 설정 */
+  width: 90%;
+  background-color: white;
+}
    
     </style>
 
@@ -120,6 +137,9 @@
   </symbol>
 </svg>
 
+
+<div class="container">
+	<div class="sidebar">
 <main>
 
   <div class="b-example-divider"></div>
@@ -186,8 +206,8 @@
         </button> 
         <div class="collapse" id="account-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="getlist.cs" class="link-dark rounded" id="sidebarfont">목록</a></li>  
             <li><a href="insertCourse.cs" class="link-dark rounded" id="sidebarfont">추가</a></li>
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">수정/삭제</a></li>  
           </ul>
         </div>
       </li>
@@ -195,6 +215,7 @@
   </div>
 
 </main>
+</div>
 
 
 

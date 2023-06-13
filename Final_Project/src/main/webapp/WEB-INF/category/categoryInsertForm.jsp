@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>    
 <!DOCTYPE html>
-<%@ include file="./../../header.jsp" %>
+<%@ include file="./../../adminsidebar.jsp" %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -85,7 +85,7 @@
 		.qq-gallery .qq-upload-list li {height:78px;}
 		.qq-gallery .qq-thumbnail-wrapper {width:100px;height:40px;}
 		.qq-gallery .qq-file-info {padding-top:0;}
-	
+	 
 		.mem_cont .myinfo_cont .comment {width:100%;font-size:14px;padding:5px;}
 		.mem_cont .myinfo_cont .comment .good {color: #1758e0;}
 		.mem_cont .myinfo_cont .comment .bad {color: #e01717;}
@@ -97,7 +97,8 @@
  		location.href="categoryList.cg";
  	}
  </script>
- 
+
+ <div class="content" align="center">  
 <div class="login_cont member_cont">
 	<div class="login_in">
 		
@@ -112,7 +113,7 @@
 
 		<div class="myinfo_cont refund_info">
 			 
-			<dl>
+			<dl> 
 				<dt>카테고리 코드 <span class="pointColor">*</span></dt>
 				<dd>
 					<input name=categoryCode class="input input_m2" id="categoryCode" maxlength="20" type="text"  onkeydown="keyd()" />&nbsp
@@ -157,3 +158,5 @@
 
 </body>
 </html>
+</div>
+ </div>

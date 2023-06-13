@@ -65,16 +65,16 @@
 <div class="content" align="center">
 <script type="text/javascript" src="<%=conPath%>/resources/js/course.js"></script>
 <script>
-	function gotoList(){
-		location.href="getlist.cs";
+	function insertCategory(){
+		location.href="insertCourse.cs";
 	}
 </script>
  <!--  <script type="text/javascript" src="https://www.wannaedu.com/theme/6/js/ui.js"></script> -->
 
  <!-- <link rel="stylesheet" type="text/css" href="https://www.wannaedu.com/theme/6/css/member.css" /> -->
 	<link rel="stylesheet" type="text/css" href="resources/css/register.css" />
-
-    <style>
+ 
+    <style> 
 		.select_box {border:1px solid #dddfe3;transition:0.3s ease-in;padding:10px 20px 10px;border-radius:5px;margin-right:5px;}
 		#uploader {width:100%;height:100px;border:1px solid #DDD;overflow:auto;border-radius:5px;}
 		.qq-gallery.qq-uploader {line-height:68px;font-size:10px;padding:10px;}
@@ -91,135 +91,66 @@
 
  
  
-<div class="login_cont member_cont">
+<div class="login_cont member_cont" style="width: 85%; margin-left : 15%">
 	<div class="login_in">
 		
-		<h3>강의 추가</h3>
+		<h3>강의 목록</h3>
 
 	</div>
 
-	<form name="form1" method="post" enctype="multipart/form-data" action="insertCourse.cs" onSubmit="return writeSave()">
 	
-	<div class="mem_cont">
+	
+	<div class="mem_cont" align="center">
 		
  
-		<div class="myinfo_cont refund_info">
+		<div class="myinfo_cont refund_info" align="center">
 			
 			<dl>
-				<dt>강의코드 <span class="pointColor">*</span></dt>
-				<dd>
-					<input name="courseCode" class="input input_m2" id="courseCode" maxlength="20" type="text"  onkeydown="keyd()" />&nbsp
-					<input type="button" class="moreBtn pointColor pointBorder" value="중복체크" onClick="courseCodeCheck()" > 
-					<div class="comment" >
-						<span id="idmessage"></span>
-					</div>
-				</dd>				
+				<dt>강의코드 </dt>
+				<dt>가격</dt>						
+				<dt>기간</dt>						
+				<dt>썸네일</dt>						
+				<dt> </dt>						
 			</dl>
 			
+			<c:forEach var="course" items="${courseLists}" varStatus="status">
+			<dl>
+				<dt><a href="courseDetail.cs?courseCode=${course.courseCode}&pageNumber=${pageInfo.pageNumber}">${course.cousreName }</a> </dt>
+				<dt>${course.cousrePrice }</dt>
+				<dt>${course.cousreTerm }</dt>
+				<dt><img src="<%=request.getContextPath() %>/resources/${course.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style="width: 50px; height: 50px; border-radius: 20%;"> </dt>
+				<dt><button type="button" class="btn btn-outline-info" onClick="deleteCategory('${course.cousreTerm }')" style="display: inline;">삭제</button> </dt>
+				<dt> </dt>										
+			</dl>
+			</c:forEach>
 			
 			<dl>
-				<dt>
-					카테고리					
-					<span class="pointColor">*</span>
-					
+				<dt style="text-align: center;" colsapn="4">
+				<button type="button" class="btn btn-outline-info" onClick="insertCategory()">강의 추가하기</button>
 				</dt>
-				<dd>
-					<div class="selectBox">
-						<select name="categoryCode" id="categoryCode" style="width: 100px">
-							<c:forEach var="categoryList" items="${sessionCategory}">
-							<option value="${categoryList.categoryCode }">${categoryList.categoryCode } | ${categoryList.categoryName }</option>							
-							</c:forEach>
-						</select>
-					</div>
-
-				</dd>
 			</dl>
-			
-			<dl>
-				<dt>강의명 <span class="pointColor">*</span></dt>
-				<dd>
-					<input name="cousreName" class="input" type="text" id="cousreName" maxlength="20" />
-					<div class="comment">
-						
-					</div>
-				</dd>
-			</dl>
-
-			
-			
-			<dl>
-				<dt>가격 <span class="pointColor">*</span></dt>
-				<dd>
-					<input name="cousrePrice" class="input" type="text" id="cousrePrice"  placeholder="예) 30000 숫자만 입력" maxlength="20" onkeyup="priceCheck()"/>
-					<div class="comment">
-						<span id="pricemsg"></span>
-					</div>
-				</dd>
-			</dl>
-
-			
-			
-			<dl>
-				<dt>강사 <span class="pointColor">*</span></dt>
-				<dd>
-					<input name="cousreTeacher" class="input" type="text" id="cousreTeacher" maxlength="20" />
-					<div class="comment">
-						
-					</div>
-				</dd>
-			</dl>
-
-			
-			 			<dl>
-				<dt>썸네일 <span class="pointColor">*</span></dt>
-				<dd>
-					<input name="uploadimg" class="input" type="file" id="uploadimg" maxlength="20" />
-					<div class="comment">
-						
-					</div>
-				</dd>
-			</dl>
-
-			
-			
-			
-			<dl>
-				<dt>강의동영상 <span class="pointColor">*</span></dt>
-				<dd>
-					<input name="uploadvideo" class="input" type="file" id="uploadvideo" maxlength="20" />
-					<div class="comment">
-						
-					</div>
-				</dd>
-			</dl> 
-
-			
-			
-			
-			<dl>
-				<dt>
-					강의기간					
-					<span class="pointColor">*</span>
-					
-				</dt>
-				<dd>
-					<input name="cousreTerm" id="cousreTerm" type="text" class="input" onkeyup="termCheck()">
-					<div class="comment" id="checkPasswordArea">
-						<span id="termmsg"></span>
-					</div>
-				</dd>
-			</dl>
+			<center>
+			<form action="getlist.cs" method="get">
+		<select name="whatColumn" style="width: 100px;">
+			<option value="all">전체 검색
+			<option value="name">강의명</option>
+			<option value="price">가격</option>
+			<option value="date">기간</option>
+		</select> <input type="text" name="keyword"> <input type="submit" class="btn btn-outline-info" value="검색">
+	</form>
+	
+	<br>
+	${pageInfo.pagingHtml }
+	</center>
+				
 
 			
 		</div>
 	</div>
 
-	<div class="btn_list">
-		<input type="button" class="moreBtn pointColor pointBorder" onclick="gotoList()" value="강의목록" />
-		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="강의 등록" />
-	</div>
 
-</form>
+
+
 
 </div>
 

@@ -48,21 +48,38 @@ public class CourseInsertController {
 	
 	@RequestMapping(value = command,method = RequestMethod.POST)
 	public ModelAndView doAction(@ModelAttribute("courseBean") CourseBean courseBean) {
-	    String courseCode = courseBean.getCourseCode();
-	    String categoryCode = courseBean.getCategoryCode();
-	    String cousreName = courseBean.getCousreName();
-	    int cousrePrice = courseBean.getCousrePrice();
-	    String cousreTeacher = courseBean.getCousreTeacher();
-	     
-	    System.out.println(courseCode);
-	    System.out.println(categoryCode);
-	    System.out.println(cousreName);
-	    System.out.println(cousrePrice);
-	    System.out.println(cousreTeacher);
-		System.out.println("잘넘어옴미다");
+		String uploadPath = servletContext.getRealPath("/resources");
+		System.out.println("uploadPath : " + uploadPath);
 		ModelAndView mav= new ModelAndView();
-
-		mav.setViewName(gotoPage);
+		String str = "c:/tempUpload";
+		
+		File destination_img = new File(uploadPath+File.separator+courseBean.getUploadimg().getOriginalFilename());
+		MultipartFile multi_img = courseBean.getUploadimg();		
+		File destination_local_img = new File(str + File.separator + multi_img.getOriginalFilename());
+		
+		File destination_video = new File(uploadPath+File.separator+courseBean.getUploadvideo().getOriginalFilename());
+		MultipartFile multi_video = courseBean.getUploadvideo();
+		File destination_local_video = new File(str + File.separator + multi_video.getOriginalFilename());
+		
+		int cnt= coursedao.insertCourse(courseBean);
+		if(cnt > -1) {
+			
+			try {
+				multi_img.transferTo(destination_local_img);
+				multi_video.transferTo(destination_local_video);
+				
+				FileCopyUtils.copy(destination_img, destination_local_img); // 웹서버=>로컬
+				FileCopyUtils.copy(destination_video, destination_local_video); // 웹서버=>로컬
+			} catch (IllegalStateException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		mav.setViewName(getPage);
 		return mav;
 		
 	}

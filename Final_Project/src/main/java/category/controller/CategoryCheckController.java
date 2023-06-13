@@ -12,7 +12,7 @@ import category.model.CategoryDao;
 
 @Controller
 public class CategoryCheckController {
-	private final String command = "/CategoryDao.cg";
+	private final String command = "/CategoryDao.cg"; 
 	
 	@Autowired
 	CategoryDao categoryDao;

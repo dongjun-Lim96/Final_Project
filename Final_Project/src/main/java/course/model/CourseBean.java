@@ -1,7 +1,7 @@
 package course.model;
 
 import org.springframework.web.multipart.MultipartFile;
-
+ 
 public class CourseBean {
 	private String courseCode;
 	private String categoryCode;
@@ -10,6 +10,9 @@ public class CourseBean {
 	private String cousreTeacher;
 	private String cousreImg;
 	private String cousreVideo;
+	private String cousreImg2;
+	private String cousreVideo2;
+	 
 	private int cousreTerm;
 	 
 	private MultipartFile uploadimg;
@@ -18,17 +21,33 @@ public class CourseBean {
 	
 	
 	
+	public String getCousreImg2() {
+		return cousreImg2;
+	}
+	public void setCousreImg2(String cousreImg2) {
+		this.cousreImg2 = cousreImg2;
+	}
+	public String getCousreVideo2() {
+		return cousreVideo2;
+	}
+	public void setCousreVideo2(String cousreVideo2) {
+		this.cousreVideo2 = cousreVideo2;
+	}
 	public MultipartFile getUploadimg() {
 		return uploadimg;
 	}
 	public void setUploadimg(MultipartFile uploadimg) {
 		this.uploadimg = uploadimg;
+		String img = uploadimg.getOriginalFilename();
+		this.cousreImg = img;
 	}
 	public MultipartFile getUploadvideo() {
 		return uploadvideo;
 	}
 	public void setUploadvideo(MultipartFile uploadvideo) {
 		this.uploadvideo = uploadvideo;
+		String video = uploadvideo.getOriginalFilename();
+		this.cousreVideo = video;
 	}
 	
 	
