@@ -86,6 +86,15 @@ public class CourseDao {
 	    return cnt;
 	}
 
+	public List<CourseBean> getPaidCourse() {
+		List<CourseBean> lists = new ArrayList<CourseBean>();
+		
+		lists = sqlSessionTemplate.selectList(namespace+".GetPaidCourseList");
+		
+		
+		return lists;
+	}
+
 	
 	
 }
