@@ -26,7 +26,7 @@ public class CourseListController {
 	
 	@Autowired
 	CourseDao coursedao;
-	
+	 
 	@RequestMapping(value = command)
 	public ModelAndView doAction(@RequestParam(value = "whatColumn",required = false) String whatColumn,
 			@RequestParam(value = "keyword",required = false) String keyword,

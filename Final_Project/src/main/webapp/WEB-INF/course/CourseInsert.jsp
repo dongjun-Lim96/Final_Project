@@ -68,7 +68,7 @@
 	function gotoList(){
 		location.href="getlist.cs";
 	}
-</script>
+</script> 
  <!--  <script type="text/javascript" src="https://www.wannaedu.com/theme/6/js/ui.js"></script> -->
 
  <!-- <link rel="stylesheet" type="text/css" href="https://www.wannaedu.com/theme/6/css/member.css" /> -->

@@ -65,8 +65,19 @@
 <div class="content" align="center">
 <script type="text/javascript" src="<%=conPath%>/resources/js/course.js"></script>
 <script>
+	var message = "${message}";
+	
+	if (message !== "") {
+	    
+	    alert(message);
+	} else {
+	    
+	}
+	function deleteCategory(courseCode){
+		location.href="deleteCourse.cs?courseCode="+courseCode;
+	}
 	function insertCategory(){
-		location.href="insertCourse.cs";
+		location.href="insertCourse.cs"; 
 	}
 </script>
  <!--  <script type="text/javascript" src="https://www.wannaedu.com/theme/6/js/ui.js"></script> -->
@@ -119,7 +130,7 @@
 				<dt>${course.cousrePrice }</dt>
 				<dt>${course.cousreTerm }</dt>
 				<dt><img src="<%=request.getContextPath() %>/resources/${course.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style="width: 50px; height: 50px; border-radius: 20%;"> </dt>
-				<dt><button type="button" class="btn btn-outline-info" onClick="deleteCategory('${course.cousreTerm }')" style="display: inline;">삭제</button> </dt>
+				<dt><button type="button" class="btn btn-outline-info" onClick="deleteCategory('${course.courseCode }')" style="display: inline;">삭제</button> </dt>
 				<dt> </dt>										
 			</dl>
 			</c:forEach>
