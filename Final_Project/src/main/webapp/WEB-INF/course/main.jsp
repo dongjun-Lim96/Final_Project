@@ -68,10 +68,6 @@ $(document).ready(function() {
     margin-right: 13px;
   }
   
-  .slick-slide {
-    opacity: .6;
-    width:10px;
-  }
   
  .slick-center {
    display: block;
@@ -108,24 +104,6 @@ $(document).ready(function() {
 <div>
 	<a href="#"><img src="<%=conPath%>/resources/images/mainbanner1.png"></a>
 </div>
-
-<div class="promotion_1" style="height:150px !important; background-color:#f3f7f8;">
-		
-        <div class="video_cont" style="margin-right:30px">
-        	<a href="https://www.wannaedu.com/template/viewer.jsp?id=223&lid=305811"  target="_blank">
-        	<img src="<%=request.getContextPath()%>/resources/images/mainbanner2.png" style="border-radius: 30px;"/>
-        	</a> 
-        </div>
-        
-        <div class="text_cont">        	
-            <h2 style="font-weight: bold; color: black;">정보처리기사 실기 파이널 맛보기</h2>            
-            <p class="stxt" style="margin: 10px 0;">
-                정보처리기사 합격을 위한 확실한 방법!<br>모의고사와 기출문제 풀이로 실전에 대비하세요.
-            </p>            
-            <a href="#" class="mypage bgColor" style="margin-top: 20px;">  ***  수강신청 하러가기</a>
-       	</div>     	
-</div>
-
 <div>
 <center>
 <span style="font-size : 40pt; font-style: bold; font-family:fantasy; color:white;">BEST 5</span>
@@ -156,6 +134,25 @@ $(document).ready(function() {
 	</c:forEach>
 
 </div>
+<div class="promotion_1" style="height:150px !important; background-color:#f3f7f8;">
+		
+        <div class="video_cont" style="margin-right:30px">
+        	<a href="https://www.wannaedu.com/template/viewer.jsp?id=223&lid=305811"  target="_blank">
+        	<img src="<%=request.getContextPath()%>/resources/images/mainbanner2.png" style="border-radius: 30px;"/>
+        	</a> 
+        </div>
+        
+        <div class="text_cont">        	
+            <h2 style="font-weight: bold; color: black;">정보처리기사 실기 파이널 맛보기</h2>            
+            <p class="stxt" style="margin: 10px 0;">
+                정보처리기사 합격을 위한 확실한 방법!<br>모의고사와 기출문제 풀이로 실전에 대비하세요.
+            </p>            
+            <a href="#" class="mypage bgColor" style="margin-top: 20px;">  ***  수강신청 하러가기</a>
+       	</div>     	
+</div>
+
+
+
 
 
 
