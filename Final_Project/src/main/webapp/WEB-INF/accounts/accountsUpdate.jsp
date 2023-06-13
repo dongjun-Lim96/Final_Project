@@ -1,9 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
-    <head>
+ <head>
+ <link rel="stylesheet" type="text/css" href="https://www.wannaedu.com/theme/6/css/mypage/main.css" />
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>        
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -15,9 +18,10 @@
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
-    <%
-		String conPath = request.getContextPath();
-	%>
+   <%
+	String conPath = request.getContextPath();
+%>
+<script type="text/javascript" src="<%=conPath%>/resources/js/update.js"></script>
    <%--  <%@ include file="/WEB-INF/common/common.jsp" %> --%>
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
@@ -50,7 +54,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">마이페이지</div>
-                            <a class="nav-link" href="mypage.acc?userId=${loginInfo.userId}">
+                            <a class="nav-link" href="mypage.acc?userId=${accounts.userId}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -98,7 +102,7 @@
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading">회원정보</div>
-                            <a class="nav-link" href="updateCheck.acc?userId=${userId}">
+                            <a class="nav-link" href="updateCheck.acc?userId=${accounts.userId}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 개인정보 수정
                             </a>
@@ -114,118 +118,125 @@
                     </div>
                 </nav>
             </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">수강중인 과정</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">종료예정 과정</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">수료 완료</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">입금 대기</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area me-1"></i>
-                                        공지사항
-                                    </div>
-                                    <div class="card-body"><%-- <canvas id="myAreaChart" width="100%" height="40"></canvas> 그래프 --%></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        Q&A
-                                    </div>
-                                    <div class="card-body"><%-- <canvas id="myBarChart" width="100%" height="40"></canvas> 그래프--%></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                수강중인 과정
-                            </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
-                                        <tr>
-                                            <th>강의코드</th>
-                                            <th>카테고리코드</th>
-                                            <th>강의명</th>
-                                            <th>강사</th>
-                                            <th>강의기간</th>
-                                            <th>가격</th>
-                                        </tr>
-                                    </thead>
-                                    
-                                    <tbody>
-                                     
-                                    	<c:forEach var="list" items="${lists}">
-                                    		<tr>
-												<td>${list.courseCode}</td>
-												<td>${list.categoryCode}</td>
-												<td>${list.cousreName}</td>
-												<td>${list.cousreTeacher}</td>
-												<td>${list.cousreTerm}</td>
-												<td>${list.cousrePrice}</td>
-											</tr>	
-                                    	</c:forEach>
-                                    	 
-                                    <!-- 
-                                        <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
-                                        </tr>
-                                        -->
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </main>
+             <div id="layoutSidenav_content">
+            
+            
+            <form name="form1" method="post" action="update.acc" onSubmit="return writeSave()">
+				<input type="hidden" name="" value="">
+				<div class="whiteBox">
+					<h3 class="adm_tit marb30">개인정보수정</h3>
+				
+					<div class="myinfo_cont refund_info">
+						
+						<dl class="table">
+							<dt>아이디</dt>
+							<dd><p>${accounts.userId}</p></dd>
+						</dl>
+						
+				
+						
+						<dl class="table">
+							<dt>이름 </dt>
+							<dd>
+								<p><input name="userName" class="input input_m2" type="text" value="${accounts.userName}"/></p>
+								
+								
+							</dd>
+						</dl>
+
+						
+						<dl class="table">
+							<dt>생년월일</dt>
+							<dd>
+								
+								<p><input name="userBirth" class="input input_num" type="date" value="${accounts.userBirth}" /></p>
+								
+								
+							</dd>
+						</dl>
+				
+						
+						<dl class="table">
+							<dt>이메일</dt>
+							<dd>
+								
+								<%-- 
+								<span style="display:inline-block;margin-right:5px;line-height:60px;">
+									<input name="email1" id="email1" type="text" class="input input_m2" value="${fn:substringBefore(accounts.userEmail, '@')}"><span class='hipen2'>@</span>
+									<input name="email2" id="email2" type="text" class="input input_m2" value="${fn:substringAfter(accounts.userEmail, '@')}"/>
+								</span>
+								 --%>
+								 <p>
+								<input name="userEmail" id="userEmail" type="text" class="input input_m2" value="${accounts.userEmail}" onkeyup="emailcheck()">
+								<span id="emailmsg"></span>
+								</p>
+								<div class="check_box" style="display:block;padding-top:10px;">
+									
+									
+									<label><input name="userChkEmail" value="1" type="radio" class="radio" <c:if test="${accounts.userChkEmail == '1'}">checked</c:if> >수신동의</label>
+									<label><input name="userChkEmail" value="0" type="radio" class="radio" <c:if test="${accounts.userChkEmail == '0'}">checked</c:if> >수신거부</label>
+									
+								</div>
+								
+				
+							</dd>
+				
+						</dl>
+				
+						
+						<dl class="table">
+							<dt>휴대전화 </dt>
+							<dd>
+								<input name="mobile1" class="input input_num" type="text" value="${fn:substring(accounts.userPhone, 0, 3)}" maxlength="3">
+								<span class="hipen">-</span>
+								<input name="mobile2" class="input input_num" type="text" value="${fn:substring(accounts.userPhone, 3, 7)}" maxlength="4">
+								<span class="hipen">-</span>
+								<input name="mobile3" class="input input_num" type="text" value="${fn:substring(accounts.userPhone, 7, 11)}" maxlength="4">
+								
+								<div class="check_box" style="display:block;padding-top:10px;">
+									
+									<label><input name="userChkPhone" value="1" type="radio" class="radio" <c:if test="${accounts.userChkPhone == '1'}">checked</c:if> />수신동의</label>
+									<label><input name="userChkPhone" value="0" type="radio" class="radio" <c:if test="${accounts.userChkPhone == '0'}">checked</c:if> />수신거부</label>
+									
+								</div>
+								
+							</dd>
+						</dl>
+						
+						<dl class="table">
+							<dt>비밀번호</dt>
+							<dd>
+								<p>
+									<input name="userPw" class="input input_m2" maxlength="50" type="password"  onblur="return pwcheck()"/>
+									<span id="pwmessage">영문, 숫자, 특수문자 조합 8자 이상 입력하세요.</span>
+								</p>
+								
+							</dd>
+						</dl>
+						
+						<dl class="table">
+							<dt>비밀번호 확인</dt>
+							<dd>
+								<p>
+									<input name="userPw2" class="input input_m2" maxlength="50" type="password" onkeyup="pw2check()"/>
+									<span id="pwmessage2">영문, 숫자, 특수문자 조합 8자 이상 입력하세요.</span>
+								</p>
+							</dd>
+						</dl>
+				
+					</div>
+				
+				</div>
+				
+				<div class="bbs_btn">
+					<div>
+						<button type="reset" class="bgColor">취소</button>
+						<button type="submit" class="bgColor">정보수정</button>
+					</div>
+				</div>
+				</form>
+            
+            
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
