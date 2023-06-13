@@ -67,6 +67,25 @@ public class CourseDao {
 		return courseBean;
 	}
 
+	public int UpdateCourse(CourseBean courseBean) {
+		int cnt=0;
+		cnt = sqlSessionTemplate.update(namespace+".UpdateCourse",courseBean);
+		return cnt;
+	}
+
+	public int deleteOneCourse(String courseCode) {
+		int cnt=0;
+		try {
+			cnt = sqlSessionTemplate.delete(namespace+".DeleteCourse",courseCode);
+		}catch (Exception e) {
+	        // 예외 처리 로직
+	        e.printStackTrace(); // 예외 정보 출력 (선택 사항)
+	        // 추가적인 예외 처리 작업을 수행하고자 한다면 여기에 작성
+	        cnt = -1;
+	    } 
+	    return cnt;
+	}
+
 	
 	
 }

@@ -30,8 +30,8 @@ public class CourseUpdateController {
 	CourseDao courseDao;
 
 	@Autowired
-	ServletContext servletContext;
-
+	ServletContext servletContext; 
+ 
 	@RequestMapping(value = command, method = RequestMethod.GET)
 	public ModelAndView doAction(@RequestParam("courseCode") String courseCode) {
 		ModelAndView mav = new ModelAndView();
