@@ -1,13 +1,17 @@
 package accounts.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import accounts.model.AccountsDao;
+import course.model.CourseBean;
 import courseorder.model.CourseOrderBean;
 
 @Controller
@@ -19,14 +23,18 @@ public class AccountsMyPageController {
 	AccountsDao adao;
 	
 	@RequestMapping(value =  command , method = RequestMethod.GET)
-	public String doAction(Model model ,@RequestParam("userId") String userId) {
+	public ModelAndView doAction(@RequestParam("userId") String userId) {
 		
-		CourseOrderBean cob = new CourseOrderBean();
-		cob = adao.getOrderById(userId);
+		System.out.println("유저 아이디: "+userId);
 		
-		model.addAttribute("colists", cob);
+		ModelAndView mav = new ModelAndView();
+		List<CourseBean> lists = adao.getOrderById(userId);
 		
-		return getPage;
+		mav.addObject("userId", userId);
+		mav.addObject("lists", lists);
+		mav.setViewName(getPage);
+		
+		return mav;
 		// => accountsMyPage.jsp
 	}
 	

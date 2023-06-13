@@ -37,8 +37,21 @@
 	 </select>
 	 
 	 
-	  <select id="GetOrderById" resultType="courseorder.model.CourseOrderBean">
-	 	select * from courseorder where userId = #{userId}
+	  <select id="GetOrderById" resultType="course.model.CourseBean">
+	 	select c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm
+		from course c
+		join courseorder co ON c.coursecode = co.coursecode
+		where co.userid = #{userId}
 	 </select>
+	 
+	 
+	  <update id="AccountsUpdate">
+	  	update accounts set
+	  	userName = #{userName},
+	  	userPw = #{userPw} ,userBirth = #{userBirth},
+	  	userEmail = #{userEmail}, userPhone =#{userPhone},
+	  	userChkEmail = #{userChkEmail}, userChkPhone = #{userChkPhone}
+	  	where userId = #{userId}
+	  </update>
 	 
 </mapper>
