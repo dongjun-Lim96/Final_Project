@@ -113,7 +113,8 @@ function logout() {
 	    url: "logout.acc",
 	    type: "POST",
 	    success: function() {
-	      window.location.reload(); 
+	    	   /*  window.location.reload();  */
+		      window.location.href = "list.cs"; 
 	    },
 	    error: function() {
 	      alert("로그아웃에 실패했습니다.");
