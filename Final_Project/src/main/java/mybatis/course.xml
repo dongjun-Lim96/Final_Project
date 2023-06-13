@@ -8,7 +8,7 @@
 			SELECT *
 			FROM course
 			ORDER BY cousreName
-			FETCH FIRST 5 ROWS ONLY;
+			FETCH FIRST 5 ROWS ONLY
 		</select>
 		 
 		<select id="SearchCourseCode" resultType="int">
