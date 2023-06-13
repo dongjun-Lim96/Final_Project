@@ -33,7 +33,7 @@ public class CourseGetMainController {
 	public ModelAndView doAction() throws IOException {
 		
 		String uploadPath = servletContext.getRealPath("/resources/");
-		System.out.println("uploadPath: " + uploadPath);
+		System.out.println("uploadPath: " + uploadPath); 
 		File destination = new File(uploadPath);
 		
 		String str = "C:/tempUpload"; 
