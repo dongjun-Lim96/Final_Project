@@ -122,7 +122,7 @@
             
             
             <form name="form1" method="post" action="update.acc" onSubmit="return writeSave()">
-				<input type="hidden" name="" value="">
+				<input type="hidden" name="userId" value="${accounts.userId}">
 				<div class="whiteBox">
 					<h3 class="adm_tit marb30">개인정보수정</h3>
 				

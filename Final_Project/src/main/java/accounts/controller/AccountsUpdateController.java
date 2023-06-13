@@ -42,10 +42,19 @@ public class AccountsUpdateController {
 		String userphone = mobile1+mobile2+mobile3;
 		
 		accounts.setUserPhone(userphone);
-		
+		/*
+		System.out.println(accounts.getUserId());
+		System.out.println(accounts.getUserPw());
+		System.out.println(accounts.getUserName());
+		System.out.println(accounts.getUserBirth());
+		System.out.println(accounts.getUserEmail());
+		System.out.println(accounts.getUserChkEmail());
+		System.out.println(accounts.getUserPhone());
+		System.out.println(accounts.getUserChkPhone());
+		*/
 		int cnt = adao.accountsUpdate(accounts);
 		
-		mav.setViewName(gotoPage);
+		mav.setViewName(gotoPage+"?userId="+accounts.getUserId());
 		
 		return mav;
 	}
