@@ -74,6 +74,9 @@
             cursor: pointer;
         }
         
+        .dropdown:hover .dropdown-menu {
+  display: block;
+}
         
 </style>
 <script type="text/javascript">
@@ -118,6 +121,7 @@ function logout() {
 	    }
 	  });
 	}
+	
 </script>
 <%
 	String conPath = request.getContextPath();
@@ -176,19 +180,19 @@ function logout() {
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" >
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			
+			 
 		<div class="collapse navbar-collapse" id="navbarNavDropdown">
 			<ul class="navbar-nav">
 				
 				<li class="nav-item dropdown" style="margin-right: 30px;">
-					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-						 <span style="font-size: 25px; font-weight: bold; " >무료자료/자료<span>
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-hover="dropdown" aria-expanded="false">
+						<span style="font-size: 25px; font-weight: bold;">무료자료/자료</span>
 					</a>
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="#">무료 샘플강의</a></li>
 						<li><a class="dropdown-item" href="#">무료 특강</a></li>
 						<li><a class="dropdown-item" href="#">무료 자료</a></li>
-					</ul>					
+					</ul>
 				</li>
 				
 				<li class="nav-item dropdown" style="margin-right: 30px;">
