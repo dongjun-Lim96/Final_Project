@@ -98,7 +98,7 @@
 
 	</div>
 
-	<form name="form1" method="post" enctype="multipart/form-data" action="insertCourse.cs" onSubmit="return writeSave()">
+	<form name="form1" method="post" enctype="multipart/form-data" action="updateCourse.cs" onSubmit="return updateSave()">
 	
 	<div class="mem_cont">
 		
@@ -174,8 +174,10 @@
 			<dl>
 				<dt>썸네일 <span class="pointColor">*</span></dt>
 				<dd>
-					<input name="uploadimg" class="input" type="file" id="uploadimg" maxlength="20" value="${course.cousreImg }"/>
+					<input name="uploadimg" class="input" type="file" id="uploadimg" maxlength="20"/>
 					기존 선택된 썸네일 :  ${course.cousreImg }
+					<img src="<%=request.getContextPath() %>/resources/${course.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style="width: 150px; height: 150px; border-radius: 20%;">
+					<input type="hidden" name="cousreImg2" id="cousreImg" value="${course.cousreImg}">
 					<div class="comment">
 						
 					</div>
@@ -188,8 +190,10 @@
 			<dl>
 				<dt>강의동영상 <span class="pointColor">*</span></dt>
 				<dd>
-					<input name="uploadvideo" class="input" type="file" id="uploadvideo" maxlength="20" value="${course.cousreVideo }"/>
-					기존 선택된 강의동영상 :  ${course.cousreVideo } 
+					<input name="uploadvideo" class="input" type="file" id="uploadvideo" maxlength="20"/>
+					기존 선택된 강의동영상 :  ${course.cousreVideo }
+					<video src="<%=request.getContextPath() %>/resources/${course.cousreVideo}" class="video" controls   type="video/mp4" style="width: 320px; height: 240px;"></video>
+					<input type="hidden" name="cousreVideo2" id="cousreVideo" value="${course.cousreVideo}">
 					<div class="comment">
 						
 					</div>
@@ -219,7 +223,7 @@
 
 	<div class="btn_list">
 		<input type="button" class="moreBtn pointColor pointBorder" onclick="gotoList()" value="강의목록" />
-		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="강의 등록" />
+		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="강의 수정" />
 	</div>
 
 </form>

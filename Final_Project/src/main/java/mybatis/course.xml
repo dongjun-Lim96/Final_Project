@@ -63,4 +63,16 @@
 		<select id="OneCourseByCode" resultType="course.model.CourseBean">
 			select * from COURSE where courseCode=#{courseCode}
 		</select>
+		
+		<update id="UpdateCourse">
+			update course 
+			set categoryCode = #{categoryCode},
+			cousreName = #{cousreName},
+			cousrePrice = #{cousrePrice},
+			cousreTeacher = #{cousreTeacher},
+			cousreImg = #{cousreImg},
+			cousreVideo = #{cousreVideo},			
+			cousreTerm = #{cousreTerm}		
+			where courseCode =#{courseCode}
+		</update>
 	</mapper>
