@@ -202,7 +202,7 @@ function logout() {
 						 <span style="font-size: 25px; font-weight: bold; " >수강신청<span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">전체보기</a></li>
+						<li><a class="dropdown-item" href="paidCourse.cs">전체보기</a></li>
 					    <!-- 포문돌려서 나중에 고쳐야함 -->
 						<li><a class="dropdown-item" href="#">정보처리</a></li>
 						<li><a class="dropdown-item" href="#">빅테이터</a></li>
