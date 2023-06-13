@@ -5,7 +5,10 @@
  
 	<mapper namespace="course.model">
 		<select id="GetCourseList" resultType="course.model.CourseBean">
-			select * from course
+			SELECT *
+			FROM course
+			ORDER BY cousreName
+			FETCH FIRST 5 ROWS ONLY;
 		</select>
 		 
 		<select id="SearchCourseCode" resultType="int">
