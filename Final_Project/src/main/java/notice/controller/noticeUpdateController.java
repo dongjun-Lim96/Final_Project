@@ -53,11 +53,21 @@ public class noticeUpdateController {
 	
 	@RequestMapping(value = command, method = RequestMethod.POST)
 	public ModelAndView doAction(
-			@ModelAttribute("notice") NoticeBean notice,
+			@ModelAttribute("notice") @Valid NoticeBean notice,
+			BindingResult result,
 			@RequestParam("pageNumber") int pageNumber) {
 		
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("pageNumber", pageNumber);
+		
+		if(result.hasErrors()) {
+			// 수정실패했을때도 이미지 띄우려고 작성함.
+			// 또는 위에 if문처럼 작성해도 됨!
+			notice.setNoticeImage(notice.getUpload2());
+			mav.setViewName(getPage);
+		}else {
+
+			
 		
 	if(notice.getNoticeImage().equals("")) {
 			notice.setNoticeImage(notice.getUpload2());
@@ -111,6 +121,8 @@ public class noticeUpdateController {
 			} // if cnt
 			mav.setViewName(gotoPage);
 		}
+		
+	}
 		return mav;
 	}
 }

@@ -83,6 +83,13 @@ public class noticeWriteController {
 		
       noticeBean.setNoticeDate(new Timestamp(System.currentTimeMillis()));
 
+      
+      if(result.hasErrors()) {
+			System.out.println("유효성 검사 실패");
+			mav.setViewName(getPage);
+		}else {
+      
+      
       int cnt = ndao.writeNotice(noticeBean);
 
       if(cnt != -1) {
@@ -101,7 +108,7 @@ public class noticeWriteController {
          System.out.println("삽입 실패 : " + cnt);
          mav.setViewName(getPage);
       }
-   
+		}
    return mav;
 }
 }
