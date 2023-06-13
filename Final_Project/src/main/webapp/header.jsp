@@ -202,7 +202,7 @@ function logout() {
 					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						 <span style="font-size: 25px; font-weight: bold; " >수강신청<span>
 					</a>
-					<ul class="dropdown-menu">
+					<ul class="dropdown-menu">  
 						<li><a class="dropdown-item" href="paidCourse.cs">전체보기</a></li>
 						<li><hr class="dropdown-divider"></li>
 					    <!-- 포문돌려서 나중에 고쳐야함 -->

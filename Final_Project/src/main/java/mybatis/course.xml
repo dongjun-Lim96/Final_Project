@@ -84,8 +84,16 @@
 			where courseCode = #{courseCode}
 		</delete>
 		
-		<select id="GetPaidCourseList" resultType="course.model.CourseBean">
+		<select id="GetPaidCourseList" resultType="course.model.CourseBean"> 
 			select * from course
 			where cousrePrice > 0
 		</select>
+		
+			  <select id="GetOrderById" resultType="course.model.CourseBean">
+	 	select c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm
+		from course c
+		join courseorder co ON c.coursecode = co.coursecode
+		where co.userid = #{userId}
+	 </select>
+		
 	</mapper>

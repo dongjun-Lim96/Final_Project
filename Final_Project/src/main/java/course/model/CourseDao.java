@@ -9,6 +9,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import category.model.CategoryBean;
 import utility.Paging;
 
 
@@ -32,7 +33,7 @@ public class CourseDao {
 		boolean result = false; 
 		int cnt = sqlSessionTemplate.selectOne(namespace+".SearchCourseCode", courseCode);
 		if (cnt>0) {
-			result = true;
+			result = true; 
 		}
 		
 		return result;
@@ -95,6 +96,12 @@ public class CourseDao {
 		return lists;
 	}
 
-	
+	public List<CategoryBean> getCategory() {
+		List<CategoryBean> lists = new ArrayList<CategoryBean>();
+		
+		lists = sqlSessionTemplate.selectList(namespace+".GetCategoryList");
+		 
+		return lists;
+	}
 	
 }
