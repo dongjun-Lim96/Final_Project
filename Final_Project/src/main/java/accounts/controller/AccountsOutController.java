@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,6 +43,7 @@ public class AccountsOutController {
 	public ModelAndView doAction(@RequestParam("userId") String userId,
 								@RequestParam("userPw") String userPw,
 								@RequestParam("agree") String agree,
+								HttpSession session,
 								HttpServletResponse response) {
 		
 		ModelAndView mav = new ModelAndView();
@@ -53,6 +55,7 @@ public class AccountsOutController {
 		if (agree.equals("y")) {
 			if (ab.getUserPw().equals(userPw)) {
 				adao.outUser(userId);
+				session.removeAttribute("loginInfo");
 				mav.setViewName(gotoPage);
 			}else {
 				try {
@@ -64,7 +67,7 @@ public class AccountsOutController {
 				}
 				mav.setViewName(getPage);
 			}
-		}else if (!agree.equals("y")) {
+		}else {
 			try {
 				out = response.getWriter();
 				out.println("<script>alert('삭제 미동의');history.go(-1);</script>");

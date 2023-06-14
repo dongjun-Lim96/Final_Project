@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="resources/css/common.css" />
 <link rel="stylesheet" type="text/css" href="resources/css/mypage/main.css" />
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>        
         <meta charset="utf-8" />
@@ -136,7 +137,17 @@
 							<dt class="pad0">삭제 동의 <span class="pointColor">*</span></dt>
 							<dd>
 								<div class="check_box block_line">
-									<label><input name="agree" type="checkbox" class="checkbox" value="y">탈퇴 후에는 유료로 구매한 과정을 포함한 모든 수강정보가 삭제되어 복구가 불가능하며, 약관에 따라 일정 시일 후 모든 정보가 삭제됩니다.</label>
+									<label>
+										<input type="radio" name="agree" value="y"/>동의  &nbsp;
+										<input type="radio" name="agree" value="n" checked>미동의
+									</label>
+									<label>
+										
+									</label>
+									<br><br>
+									<label>
+									탈퇴 후에는 유료로 구매한 과정을 포함한 모든 수강정보가 삭제되어 복구가 불가능하며, 약관에 따라 일정 시일 후 모든 정보가 삭제됩니다.</label>
+									</label>
 								</div>
 							</dd>
 						</dl>
