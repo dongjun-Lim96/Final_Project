@@ -75,7 +75,7 @@
          cousreTeacher = #{cousreTeacher},
          cousreImg = #{cousreImg},
          cousreVideo = #{cousreVideo},         
-         cousreTerm = #{cousreTerm}      
+         cousreTerm = #{cousreTerm}       
          where courseCode =#{courseCode}
       </update>
       
