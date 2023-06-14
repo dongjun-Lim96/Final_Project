@@ -92,4 +92,9 @@
      <select id="getCategory" resultType="category.model.CategoryBean">
           select * from category
      </select>
+     
+     <select id="getReviewBycourseCode" resultType="review.model.ReviewBean">
+     	select * from REVIEW 
+     	where courseCode=#{cousreCode}
+     </select>
    </mapper>
