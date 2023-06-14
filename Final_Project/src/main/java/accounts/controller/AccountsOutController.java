@@ -33,6 +33,7 @@ public class AccountsOutController {
 		AccountsBean ab = adao.GetAccountsById(userId);
 		
 		mav.addObject("accounts", ab);
+		mav.addObject("userId", userId);
 		
 		mav.setViewName(getPage);
 		
