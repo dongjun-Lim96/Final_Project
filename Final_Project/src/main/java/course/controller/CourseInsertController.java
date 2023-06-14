@@ -39,7 +39,7 @@ public class CourseInsertController {
 	public ModelAndView doAction() {
 		ModelAndView mav = new ModelAndView();
 		
-
+ 
 		List<CategoryBean> lists = coursedao.getCategory();
 		
 		mav.addObject("lists", lists);
