@@ -8,10 +8,16 @@
     #sub_banner h2 {position:relative; top:50%; transform:translateY(-50%); font-size:2.941rem; color:#fff; text-align:center; letter-spacing:-0.7pt; line-height:1; font-weight:bold; z-index:99;}
     .bgColor {background-color:#0DCAF0;}
    
+    .card-img-top {
+		border-radius: 20%;
+		width: 350px;
+		height: 240px;
+		transition: filter 0.3s;
+	 }
 
-
-
-     
+  .card-img-top:hover {
+    filter: brightness(70%);
+  }
 </style>
 	<div id="sub_banner" class="bgColor">
     <h2 class="page_title">
@@ -24,7 +30,9 @@
     <br><br>
 <c:forEach var="paidCourse" items="${paidCourseLists }">
 <div class="card" style="display: inline-block; width: 350px; margin-left: 3%; margin-right: 3%; margin-bottom: 3%; text-align: center;">
-  <img src="<%=request.getContextPath() %>/resources/${paidCourse.cousreImg}" class="card-img-top" alt="..." style="border-radius: 20%; width: 350px; height: 240px;">
+  <a href="coursePaidDetail.cs?courseCode=${paidCourse.courseCode}">
+  <img src="<%=request.getContextPath() %>/resources/${paidCourse.cousreImg}" class="card-img-top" alt="...">
+</a>
   <div class="card-body">
   
     <h5 class="card-title">${paidCourse.cousreName }</h5>
