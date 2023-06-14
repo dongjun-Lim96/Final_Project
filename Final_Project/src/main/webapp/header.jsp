@@ -206,7 +206,7 @@ function logout() {
 						<li><a class="dropdown-item" href="paidCourse.cs">전체보기</a></li>
 						<li><hr class="dropdown-divider"></li>
 					    <!-- 포문돌려서 나중에 고쳐야함 -->
-						<li><a class="dropdown-item" href="#">정보처리</a></li>
+						<li><a class="dropdown-item" href="#">정보처리</a></li>  
 						<li><a class="dropdown-item" href="#">빅테이터</a></li>
 						<li><a class="dropdown-item" href="#">전자계산기</a></li>
 						<li><a class="dropdown-item" href="#">데이터자격</a></li>
