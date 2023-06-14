@@ -29,7 +29,6 @@ public class CourseInsertController {
 	private final String gotoPage="CourseList";
 	@Autowired
 	CourseDao coursedao;
-
 	
 	@Autowired
 	ServletContext servletContext;
@@ -39,10 +38,7 @@ public class CourseInsertController {
 	public ModelAndView doAction() {
 		ModelAndView mav = new ModelAndView();
 		
-
-		List<CategoryBean> lists = coursedao.getCategory();
 		
-		mav.addObject("lists", lists);
 		
 		
 		mav.setViewName(getPage);
@@ -72,8 +68,8 @@ public class CourseInsertController {
 				multi_img.transferTo(destination_local_img);
 				multi_video.transferTo(destination_local_video);
 				
-				FileCopyUtils.copy(destination_img, destination_local_img); // ì›¹ì„œë²„=>ë¡œì»¬
-				FileCopyUtils.copy(destination_video, destination_local_video); // ì›¹ì„œë²„=>ë¡œì»¬
+				FileCopyUtils.copy(destination_img, destination_local_img); // À¥¼­¹ö=>·ÎÄÃ
+				FileCopyUtils.copy(destination_video, destination_local_video); // À¥¼­¹ö=>·ÎÄÃ
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

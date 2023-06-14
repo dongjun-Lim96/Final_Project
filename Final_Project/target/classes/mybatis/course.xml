@@ -3,93 +3,97 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-	<mapper namespace="course.model">
-		<select id="GetCourseList" resultType="course.model.CourseBean">
-			SELECT *
-			FROM course
-			ORDER BY cousreName
-			FETCH FIRST 5 ROWS ONLY
-		</select>
-		 
-		<select id="SearchCourseCode" resultType="int">
-			select count(*) from course where courseCode = #{courseCode}
-		</select>
-		
-		<insert id="InsertCourse">
-			insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
-			values(#{courseCode},#{categoryCode},#{cousreName},#{cousrePrice},#{cousreTeacher},#{cousreImg},#{cousreVideo},#{cousreTerm})   
-		</insert>
-		
-		<select id="GetAllCourseList" resultType="course.model.CourseBean">
-			select * from course
-			<if test="whatColumn=='all'">
-				where cousreName like#{keyword} OR
-						courseCode like#{keyword} OR
-						categoryCode like#{keyword} OR
-						cousrePrice like#{keyword} OR
-						cousreTeacher like#{keyword} OR
-						cousreTerm like#{keyword} 
-			</if>
-			<if test="whatColumn=='name'">
-				where cousreName like#{keyword}
-			</if>
-			<if test="whatColumn=='price'">
-				where cousrePrice like#{keyword}
-			</if>
-			<if test="whatColumn=='date'">
-				where cousreTerm like#{keyword}
-			</if>
+   <mapper namespace="course.model">
+      <select id="GetCourseList" resultType="course.model.CourseBean">
+         SELECT *
+         FROM course
+         ORDER BY cousreName
+         FETCH FIRST 5 ROWS ONLY
+      </select>
+       
+      <select id="SearchCourseCode" resultType="int">
+         select count(*) from course where courseCode = #{courseCode}
+      </select>
+      
+      <insert id="InsertCourse">
+         insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+         values(#{courseCode},#{categoryCode},#{cousreName},#{cousrePrice},#{cousreTeacher},#{cousreImg},#{cousreVideo},#{cousreTerm})   
+      </insert>
+      
+      <select id="GetAllCourseList" resultType="course.model.CourseBean">
+         select * from course
+         <if test="whatColumn=='all'">
+            where cousreName like#{keyword} OR
+                  courseCode like#{keyword} OR
+                  categoryCode like#{keyword} OR
+                  cousrePrice like#{keyword} OR
+                  cousreTeacher like#{keyword} OR
+                  cousreTerm like#{keyword} 
+         </if>
+         <if test="whatColumn=='name'">
+            where cousreName like#{keyword}
+         </if>
+         <if test="whatColumn=='price'">
+            where cousrePrice like#{keyword}
+         </if>
+         <if test="whatColumn=='date'">
+            where cousreTerm like#{keyword}
+         </if>
 
-		</select> 
-		<select id="CountCourse" resultType="int">
-			select count(*) from course
-			<if test="whatColumn=='all'">
-				where cousreName like#{keyword} OR
-						courseCode like#{keyword} OR
-						categoryCode like#{keyword} OR
-						cousrePrice like#{keyword} OR
-						cousreTeacher like#{keyword} OR
-						cousreTerm like#{keyword} 
-			</if>
-			<if test="whatColumn=='name'">
-				where cousreName like#{keyword}
-			</if>
-			<if test="whatColumn=='price'">
-				where cousrePrice like#{keyword}
-			</if>
-			<if test="whatColumn=='date'">
-				where cousreTerm like#{keyword}
-			</if>
+      </select> 
+      <select id="CountCourse" resultType="int">
+         select count(*) from course
+         <if test="whatColumn=='all'">
+            where cousreName like#{keyword} OR
+                  courseCode like#{keyword} OR
+                  categoryCode like#{keyword} OR
+                  cousrePrice like#{keyword} OR
+                  cousreTeacher like#{keyword} OR
+                  cousreTerm like#{keyword} 
+         </if>
+         <if test="whatColumn=='name'">
+            where cousreName like#{keyword}
+         </if>
+         <if test="whatColumn=='price'">
+            where cousrePrice like#{keyword}
+         </if>
+         <if test="whatColumn=='date'">
+            where cousreTerm like#{keyword}
+         </if>
  
-		</select> 
-		
-		<select id="OneCourseByCode" resultType="course.model.CourseBean">
-			select * from COURSE where courseCode=#{courseCode}
-		</select>
-		
-		<update id="UpdateCourse">
-			update course 
-			set categoryCode = #{categoryCode},
-			cousreName = #{cousreName},
-			cousrePrice = #{cousrePrice},
-			cousreTeacher = #{cousreTeacher},
-			cousreImg = #{cousreImg},
-			cousreVideo = #{cousreVideo},			
-			cousreTerm = #{cousreTerm}		
-			where courseCode =#{courseCode}
-		</update>
-		
-		<delete id="DeleteCourse">
-			delete course
-			where courseCode = #{courseCode}
-		</delete>
-		
-		<select id="GetPaidCourseList" resultType="course.model.CourseBean"> 
-			select * from course
-			where cousrePrice > 0
-		</select>
-		  <select id="getCategory" resultType="category.model.CategoryBean">
-	 		select * from category 
-	 </select>
-
-	</mapper>
+      </select> 
+      
+      <select id="OneCourseByCode" resultType="course.model.CourseBean">
+         select * from COURSE where courseCode=#{courseCode}
+      </select>
+      
+      <update id="UpdateCourse">
+         update course 
+         set categoryCode = #{categoryCode},
+         cousreName = #{cousreName},
+         cousrePrice = #{cousrePrice},
+         cousreTeacher = #{cousreTeacher},
+         cousreImg = #{cousreImg},
+         cousreVideo = #{cousreVideo},         
+         cousreTerm = #{cousreTerm}      
+         where courseCode =#{courseCode}
+      </update>
+      
+      <delete id="DeleteCourse">
+         delete course
+         where courseCode = #{courseCode}
+      </delete>
+      
+      <select id="GetPaidCourseList" resultType="course.model.CourseBean"> 
+         select * from course
+         where cousrePrice > 0
+      </select>
+      
+           <select id="GetOrderById" resultType="course.model.CourseBean">
+       select c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm
+      from course c
+      join courseorder co ON c.coursecode = co.coursecode
+      where co.userid = #{userId}
+    </select>
+      
+   </mapper>
