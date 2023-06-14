@@ -237,8 +237,7 @@ CREATE TABLE EVENT(
    adminId VARCHAR2(50),
    eventTitle VARCHAR2(200) NOT NULL,
    eventContent VARCHAR2(2000) NOT NULL,
-   eventImage1 VARCHAR2(50) NULL,
-   eventImage2 VARCHAR2(50) NULL,
+   eventImage VARCHAR2(50) NULL,
    eventDate DATE DEFAULT SYSDATE,
    eventView NUMBER DEFAULT 0,
    FOREIGN KEY (adminId) REFERENCES ADMININFO(adminId)
@@ -254,7 +253,7 @@ create sequence NOTICE_seq
   increment by 1
   start with 1
   minvalue 1
-  maxvalue 10000
+  maxvalue 10000 
   nocache;
   
 DROP TABLE NOTICE CASCADE CONSTRAINTS;
