@@ -99,7 +99,7 @@ public class CourseDao {
 	public List<CategoryBean> getCategory() {
 		List<CategoryBean> lists = new ArrayList<CategoryBean>();
 		
-		lists = sqlSessionTemplate.selectList(namespace+".getCategory");
+		lists = sqlSessionTemplate.selectList(namespace+".getCategory"); 
 		 
 		return lists;
 	}
