@@ -126,7 +126,7 @@
 				<dd>
 					<div class="selectBox">
 						<select name="categoryCode" id="categoryCode" style="width: 100px">
-							<c:forEach var="categoryList" items="${sessionCategory}">
+							<c:forEach var="categoryList" items="${lists}">
 							<option value="${categoryList.categoryCode }">${categoryList.categoryCode } | ${categoryList.categoryName }</option>							
 							</c:forEach>
 						</select>
