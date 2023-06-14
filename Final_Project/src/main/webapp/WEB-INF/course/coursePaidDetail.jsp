@@ -120,6 +120,25 @@
 <div>
 <h2>강의목차</h2>
 </div>
+<c:if test="${empty unit }">
+	목차없습니다
+</c:if>
+<c:if test="${not empty unit }">
+	<c:forEach var="unit" items="${unit }">
+		${unit.UNIT1 }
+		${unit.UNIT2 }
+		${unit.UNIT3 }
+		${unit.UNIT4 }
+		${unit.UNIT5 }
+		${unit.UNIT6 }
+		${unit.UNIT7 }
+		${unit.UNIT8 }
+		${unit.UNIT9 }
+		${unit.UNIT10 }
+	</c:forEach>
+</c:if>
+
+
 <hr>
 
 
@@ -130,6 +149,7 @@
 <div id="gotoReview">
 	<h2>강의후기</h2>
 </div>
+
 <c:if test="${empty review }">
 	<span style="font-size: 20px;">수강후기가 없습니다.</span>
 </c:if>
