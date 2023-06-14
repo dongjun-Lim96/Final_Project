@@ -49,5 +49,5 @@ public class CourseGetMainController {
       mav.setViewName(getPage);
       return mav; 
    }
-    
+     
 }
