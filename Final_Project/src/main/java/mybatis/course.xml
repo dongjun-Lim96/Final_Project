@@ -103,4 +103,9 @@
          where cousrePrice = 0
       </select>
       
+      <select id="getUnitBycourseCode" resultType="unit.model.UnitBean">
+     	select * from unit
+     	where courseCode=#{cousreCode}
+     </select>
+      
    </mapper>
