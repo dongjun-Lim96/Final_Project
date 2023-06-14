@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import category.model.CategoryBean;
 import review.model.ReviewBean;
+import unit.model.UnitBean;
 import utility.Paging;
 
 
@@ -122,5 +123,11 @@ public class CourseDao {
 	      
 	      return lists; 
 	   }
+
+	public List<UnitBean> getUnitBycourseCode(String courseCode) {
+		List<UnitBean> lists = new ArrayList<UnitBean>();
+		lists = sqlSessionTemplate.selectList(namespace+".getUnitBycourseCode",courseCode);
+		return lists;
+	}
 	
 }

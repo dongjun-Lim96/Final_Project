@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import course.model.CourseBean;
 import course.model.CourseDao;
 import review.model.ReviewBean;
+import unit.model.UnitBean;
 
 @Controller
 public class CoursePaidDetailController {
@@ -44,7 +45,9 @@ public class CoursePaidDetailController {
 		System.out.println("¿©±â´Â CoursePaidDetailController : "+ courseCode);
 		CourseBean course = courseDao.getOneCourseByCode(courseCode);
 		List<ReviewBean> review= courseDao.getReviewBycourseCode(courseCode);
+		List<UnitBean> unit = courseDao.getUnitBycourseCode(courseCode);
 		mav.addObject("course", course);
+		mav.addObject("unit", unit);
 		mav.addObject("review", review);
 		
 		mav.setViewName(getPage);

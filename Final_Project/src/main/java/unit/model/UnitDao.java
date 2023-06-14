@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class unitDao {
+public class UnitDao {
 	private String namespace = "unit.model";
 	
 	@Autowired
