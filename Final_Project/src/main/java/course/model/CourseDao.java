@@ -113,6 +113,14 @@ public class CourseDao {
 		return review;
 	}
 
-	
+	public List<CourseBean> getFreeCourse() {
+	      
+	      List<CourseBean> lists = new ArrayList<CourseBean>();
+	      
+	      lists = sqlSessionTemplate.selectList(namespace+".GetFreeCourseList");
+	      
+	      
+	      return lists; 
+	   }
 	
 }
