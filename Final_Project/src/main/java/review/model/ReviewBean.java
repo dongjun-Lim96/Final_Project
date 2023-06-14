@@ -9,8 +9,8 @@ public class ReviewBean {
 	private String reviewTitle;
 	private String reviewContent;
 	private Timestamp reviewDate;
-	private String reviewCount;
-	private String reviewView;
+	private int reviewCount;
+	private int reviewView;
 	public int getReviewNumber() {
 		return reviewNumber;
 	}
@@ -47,16 +47,16 @@ public class ReviewBean {
 	public void setReviewDate(Timestamp reviewDate) {
 		this.reviewDate = reviewDate;
 	}
-	public String getReviewCount() {
+	public int getReviewCount() {
 		return reviewCount;
 	}
-	public void setReviewCount(String reviewCount) {
+	public void setReviewCount(int reviewCount) {
 		this.reviewCount = reviewCount;
 	}
-	public String getReviewView() {
+	public int getReviewView() {
 		return reviewView;
 	}
-	public void setReviewView(String reviewView) {
+	public void setReviewView(int reviewView) {
 		this.reviewView = reviewView;
 	}
 	

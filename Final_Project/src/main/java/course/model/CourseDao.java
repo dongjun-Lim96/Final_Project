@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import category.model.CategoryBean;
+import review.model.ReviewBean;
 import utility.Paging;
 
 
@@ -103,5 +104,15 @@ public class CourseDao {
 		 
 		return lists;
 	}
+
+	public List<ReviewBean> getReviewBycourseCode(String courseCode) {
+		List<ReviewBean> review = new ArrayList<ReviewBean>();
+		System.out.println("DAOÀÇ getReviewBycourseCode : " + courseCode);
+		review = sqlSessionTemplate.selectList(namespace+".getReviewBycourseCode",courseCode);
+		System.out.println("review size : " + review.size());
+		return review;
+	}
+
+	
 	
 }
