@@ -242,16 +242,17 @@ CREATE TABLE EVENT(
    eventView NUMBER DEFAULT 0,
    FOREIGN KEY (adminId) REFERENCES ADMININFO(adminId)
 );
-insert into EVENT(eventNumber, adminId, eventTitle, eventContent)
-values(1, 'son', '신학기 할인 혜택드립니다.', 'This is event 1.');
-insert into EVENT(eventNumber, adminId, eventTitle, eventContent)
-values(2, 'kim', '신규 강의 등록 이벤트입니다.', 'This is event 2.');
+insert into EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate,eventView)
+values(1, 'son', '신학기 할인 혜택드립니다.', 'This is event 1.','event1.png',sysdate,0);
+insert into EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate,eventView)
+values(2, 'kim', '신규 강의 등록 이벤트입니다.', 'This is event 2.','event1.png',sysdate,0);
 
+commit;
 
 drop sequence NOTICE_seq;
 create sequence NOTICE_seq
   increment by 1
-  start with 1
+  start with 1 
   minvalue 1
   maxvalue 10000 
   nocache;
