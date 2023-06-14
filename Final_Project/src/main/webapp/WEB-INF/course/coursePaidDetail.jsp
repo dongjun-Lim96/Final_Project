@@ -73,6 +73,10 @@
         border-collapse: collapse;       
     }
     
+    .rounded-row {
+        border-radius: 10px;
+        border: 1px solid black;
+    }
 </style>
 	<div id="sub_banner" class="bgColor">
     <h2 class="page_title">   
@@ -109,7 +113,7 @@
 
 
 <ul class="lnb_tab">
-    <li><a href="#table">강의목차</a></li>
+    <li><a href="#gotoUnit">강의목차</a></li>
     <li><a href="#gotoReview">강의후기</a></li>
 </ul>
 
@@ -117,27 +121,71 @@
 
 
 <hr>
-<div>
+<center>
+<div id="gotoUnit">
 <h2>강의목차</h2>
 </div>
 <c:if test="${empty unit }">
 	목차없습니다
 </c:if>
 <c:if test="${not empty unit }">
-	<c:forEach var="unit" items="${unit }">
-		${unit.UNIT1 }
-		${unit.UNIT2 }
-		${unit.UNIT3 }
-		${unit.UNIT4 }
-		${unit.UNIT5 }
-		${unit.UNIT6 }
-		${unit.UNIT7 }
-		${unit.UNIT8 }
-		${unit.UNIT9 }
-		${unit.UNIT10 }
-	</c:forEach>
-</c:if>
+	<table>
+    <c:forEach var="unit" items="${unit}">
+        <c:if test="${not empty unit.UNIT1}">
+            <tr class="rounded-row">
+                <td>${unit.UNIT1}</td>
+            </tr>
+        </c:if>
+        <c:if test="${not empty unit.UNIT2}">
+            <tr class="rounded-row">
+                <td>${unit.UNIT2}</td>
+            </tr>
+        </c:if>
+        <c:if test="${not empty unit.UNIT3}">
+            <tr class="rounded-row">
+                <td>${unit.UNIT3}</td>
+            </tr>
+        </c:if>
+        <c:if test="${not empty unit.UNIT4}">
+            <tr class="rounded-row">
+                <td>${unit.UNIT4}</td>
+            </tr>
+        </c:if>
+        <c:if test="${not empty unit.UNIT5}">
+            <tr class="rounded-row">
+                <td>${unit.UNIT5}</td>
+            </tr>
+        </c:if>
+        <c:if test="${not empty unit.UNIT6}">
+            <tr class="rounded-row">
+                <td>${unit.UNIT6}</td>
+            </tr>
+        </c:if>
+        <c:if test="${not empty unit.UNIT7}">
+            <tr class="rounded-row">
+                <td>${unit.UNIT7}</td>
+            </tr>
+        </c:if>
+        <c:if test="${not empty unit.UNIT8}">
+            <tr class="rounded-row">
+                <td>${unit.UNIT8}</td>
+            </tr>
+        </c:if>
+        <c:if test="${not empty unit.UNIT9}">
+            <tr class="rounded-row">
+                <td>${unit.UNIT9}</td>
+            </tr>
+        </c:if>
+        <c:if test="${not empty unit.UNIT10}">
+            <tr class="rounded-row">
+                <td>${unit.UNIT10}</td>
+            </tr>
+        </c:if>
+    </c:forEach>
+</table>
 
+</c:if>
+</center>
 
 <hr>
 
