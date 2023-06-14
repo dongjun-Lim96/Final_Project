@@ -88,12 +88,8 @@
          select * from course
          where cousrePrice > 0
       </select>
-      
-           <select id="GetOrderById" resultType="course.model.CourseBean">
-       select c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm
-      from course c
-      join courseorder co ON c.coursecode = co.coursecode
-      where co.userid = #{userId}
-    </select>
-      
+     
+     <select id="getCategory" resultType="category.model.CategoryBean">
+          select * from category
+     </select>
    </mapper>
