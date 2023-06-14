@@ -97,4 +97,10 @@
      	select * from REVIEW 
      	where courseCode=#{cousreCode}
      </select>
+     
+     <select id="GetFreeCourseList" resultType="course.model.CourseBean"> 
+         select * from course
+         where cousrePrice = 0
+      </select>
+      
    </mapper>
