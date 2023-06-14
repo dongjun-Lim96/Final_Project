@@ -84,12 +84,13 @@
 			where courseCode = #{courseCode}
 		</delete>
 		
-		<select id="GetPaidCourseList" resultType="course.model.CourseBean"> 
+		<select id="GetPaidCourseList" resultType="course.model.CourseBean">
 			select * from course
 			where cousrePrice > 0
 		</select>
-		  <select id="getCategory" resultType="category.model.CategoryBean">
-	 		select * from category 
+		
+			  <select id="getCategory" resultType="category.model.CategoryBean">
+	 	select * from category
 	 </select>
-
+		
 	</mapper>
