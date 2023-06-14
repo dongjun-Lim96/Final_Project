@@ -52,7 +52,7 @@ public class AcoountsLoginController {
 		AccountsBean ab = adao.GetAccountsById(input_userId); // kim 1234
 		System.out.println("ab:" + ab);
 		
-		if(ab == null) { // 가입안함
+		if(ab == null || ab.getUserOut() == 1) { // 가입안함
 			System.out.println("가입하지 않은 회원");
 			
 			try {
