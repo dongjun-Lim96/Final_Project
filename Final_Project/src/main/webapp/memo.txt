@@ -239,7 +239,7 @@ CREATE TABLE EVENT(
    eventContent VARCHAR2(2000) NOT NULL,
    eventImage VARCHAR2(50) NULL,
    eventDate DATE DEFAULT SYSDATE,
-   eventView NUMBER DEFAULT 0,
+   eventView NUMBER DEFAULT 0,  
    FOREIGN KEY (adminId) REFERENCES ADMININFO(adminId)
 );
 insert into EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate,eventView)
