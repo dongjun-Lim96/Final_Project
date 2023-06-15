@@ -152,13 +152,13 @@
     <ul class="list-unstyled ps-0">
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed custom-button" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-         <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>Home
+         <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>고객센터 관리
         </button>
         <div class="collapse show" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">11111</a></li>
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">22222</a></li>
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">33333</a></li>
+            <li><a href="write.nt" class="link-dark rounded" id="sidebarfont">공지사항 추가</a></li>
+            <li><a href="#" class="link-dark rounded" id="sidebarfont">이벤트 추가</a></li>
+            <li><a href="insert.faq" class="link-dark rounded" id="sidebarfont">FAQ 추가</a></li>
           </ul>
         </div>
       </li>
