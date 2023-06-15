@@ -41,6 +41,6 @@
 					</div>
 				</div>
 				</form>
-           
-            
+           		
+            	<!-- 시험용 -->
                <%@ include file="accountsMyPageFooter.jsp"%>
