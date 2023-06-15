@@ -18,7 +18,7 @@ import utility.Paging;
  
 @Component
 public class CourseDao {
-
+//주석처리입니다
 	private String namespace = "course.model";
 	
 	@Autowired
