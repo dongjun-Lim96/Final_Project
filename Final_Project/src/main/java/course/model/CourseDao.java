@@ -10,8 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import category.model.CategoryBean;
-import review.model.ReviewBean;
-import unit.model.UnitBean;
 import utility.Paging;
 
 
@@ -33,7 +31,7 @@ public class CourseDao {
 
 	public boolean searchCode(String courseCode) {
 		boolean result = false; 
-		int cnt = sqlSessionTemplate.selectOne(namespace+".SearchCourseCode", courseCode);
+		int cnt = sqlSessionTemplate.selectOne(namespace+".SearchCourseCode", courseCode); 
 		if (cnt>0) {
 			result = true; 
 		}
@@ -101,32 +99,8 @@ public class CourseDao {
 	public List<CategoryBean> getCategory() {
 		List<CategoryBean> lists = new ArrayList<CategoryBean>();
 		
-		lists = sqlSessionTemplate.selectList(namespace+".getCategory"); 
-		    
-		return lists;
-	}
-
-	public List<ReviewBean> getReviewBycourseCode(String courseCode) {
-		List<ReviewBean> review = new ArrayList<ReviewBean>();
-		System.out.println("DAOÀÇ getReviewBycourseCode : " + courseCode);
-		review = sqlSessionTemplate.selectList(namespace+".getReviewBycourseCode",courseCode);
-		System.out.println("review size : " + review.size());
-		return review;
-	}
-
-	public List<CourseBean> getFreeCourse() {
-	      
-	      List<CourseBean> lists = new ArrayList<CourseBean>();
-	      
-	      lists = sqlSessionTemplate.selectList(namespace+".GetFreeCourseList");
-	      
-	      
-	      return lists; 
-	   }
-
-	public List<UnitBean> getUnitBycourseCode(String courseCode) {
-		List<UnitBean> lists = new ArrayList<UnitBean>();
-		lists = sqlSessionTemplate.selectList(namespace+".getUnitBycourseCode",courseCode);
+		lists = sqlSessionTemplate.selectList(namespace+".getCategory");
+		 
 		return lists;
 	}
 	

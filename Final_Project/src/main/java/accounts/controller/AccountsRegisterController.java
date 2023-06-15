@@ -15,7 +15,7 @@ import accounts.model.AccountsDao;
 public class AccountsRegisterController {
 	private final String command = "/register.acc";
 	private String getPage = "register";
-	private String gotoPage = "redirect:/list.cs";
+	private String gotoPage = "redirect:/main.jsp";
 	
 	@Autowired
 	AccountsDao adao;

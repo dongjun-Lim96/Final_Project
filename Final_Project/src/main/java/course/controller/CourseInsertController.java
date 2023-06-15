@@ -39,7 +39,7 @@ public class CourseInsertController {
 	public ModelAndView doAction() {
 		ModelAndView mav = new ModelAndView();
 		
- 
+
 		List<CategoryBean> lists = coursedao.getCategory();
 		
 		mav.addObject("lists", lists);
@@ -72,8 +72,8 @@ public class CourseInsertController {
 				multi_img.transferTo(destination_local_img);
 				multi_video.transferTo(destination_local_video);
 				
-				FileCopyUtils.copy(destination_img, destination_local_img); // �쎒�꽌踰�=>濡쒖뺄
-				FileCopyUtils.copy(destination_video, destination_local_video); // �쎒�꽌踰�=>濡쒖뺄
+				FileCopyUtils.copy(destination_img, destination_local_img); // 웹서버=>로컬
+				FileCopyUtils.copy(destination_video, destination_local_video); // 웹서버=>로컬
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

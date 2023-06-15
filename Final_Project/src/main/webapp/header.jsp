@@ -190,7 +190,7 @@ function logout() {
 						<span style="font-size: 25px; font-weight: bold;">무료자료/자료</span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="freeCourse.cs">전체보기</a></li>
+						<li><a class="dropdown-item" href="#">전체보기</a></li>
 						<li><hr class="dropdown-divider"></li>
 						<li><a class="dropdown-item" href="#">무료 샘플강의</a></li>
 						<li><a class="dropdown-item" href="#">무료 특강</a></li>
@@ -206,7 +206,7 @@ function logout() {
 						<li><a class="dropdown-item" href="paidCourse.cs">전체보기</a></li>
 						<li><hr class="dropdown-divider"></li>
 					    <!-- 포문돌려서 나중에 고쳐야함 -->
-						<li><a class="dropdown-item" href="#">정보처리</a></li>  
+						<li><a class="dropdown-item" href="#">정보처리</a></li>
 						<li><a class="dropdown-item" href="#">빅테이터</a></li>
 						<li><a class="dropdown-item" href="#">전자계산기</a></li>
 						<li><a class="dropdown-item" href="#">데이터자격</a></li>
@@ -223,7 +223,7 @@ function logout() {
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="/ex/list.nt">공지사항</a></li>
 						<li><a class="dropdown-item" href="#">이벤트</a></li>
-						<li><a class="dropdown-item" href="/ex/list.faq">자주묻는질문</a></li>
+						<li><a class="dropdown-item" href="#">자주묻는질문</a></li>
 						<li><a class="dropdown-item" href="#">카카오톡문의</a></li>
 					</ul>					
 				</li> 
