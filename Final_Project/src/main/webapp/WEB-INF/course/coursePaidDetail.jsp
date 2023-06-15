@@ -106,6 +106,14 @@
 		<dd style="font-size: 40px; font-weight: bold;">
 			${course.cousreTerm}일
 		</dd>				
+	</dl>
+	<dl>
+		<dt>
+			<a href="#" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">장바구니</a>
+    	</dt> 
+    	<dt>
+    		<a href="#" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">구매하기</a>
+    	</dt>
 	</dl>			
 </div>
 </center>
@@ -133,7 +141,7 @@
     <c:forEach var="unit" items="${unit}">
         <c:if test="${not empty unit.UNIT1}">
             <tr class="rounded-row">
-                <td>${unit.UNIT1}</td>
+                <td style="width:300px;">${unit.UNIT1}</td>
             </tr>
         </c:if>
         <c:if test="${not empty unit.UNIT2}">
@@ -206,7 +214,7 @@
 		<table class="bordered-table" style=" margin-bottom: 20px;">
 			<tr>
 				<td>${review.userId} 님</td>
-				<td>
+				<td>  
 					<c:set var="filledStars" value="${(review.reviewCount/2)}" />
 					<c:set var="halfStar" value="${review.reviewCount % 2 == 1}" />
 					
