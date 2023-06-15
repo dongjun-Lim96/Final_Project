@@ -30,7 +30,7 @@ public class AcoountsLoginController {
 	 
 	@Autowired
 	AccountsDao adao;
-	
+	 
 	@RequestMapping(value="/loginForm.acc", method = RequestMethod.GET)
 	public String login() {
 		return "accountsLoginForm";
