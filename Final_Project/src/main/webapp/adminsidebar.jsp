@@ -217,8 +217,8 @@
         </button> 
         <div class="collapse" id="account-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="getUnit.cs" class="link-dark rounded" id="sidebarfont">목차목록</a></li>  
-            <li><a href="insertUnit.cs" class="link-dark rounded" id="sidebarfont">목차추가</a></li>
+            <li><a href="getUnit.un" class="link-dark rounded" id="sidebarfont">목차목록</a></li>  
+            <li><a href="insertUnit.un" class="link-dark rounded" id="sidebarfont">목차추가</a></li>
           </ul>
         </div>
       </li>
