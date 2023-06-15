@@ -4,5 +4,44 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 	<mapper namespace="unit.model">
+		<select id="getUnitList" resultType="unit.model.UnitBean">
+			select u.courseCode,c.cousreName,unit1,unit2,unit3,unit4,unit5,unit6,unit7,unit8,unit9,unit10
+			from unit u inner join course c
+			on u.courseCode = c.courseCode
+			<if test="whatColumn=='all'">
+				where c.courseCode like #{keyword} or
+						c.cousreName like #{keyword}
+			</if>
+			<if test="whatColumn=='name'">
+				where c.cousreName like #{keyword}
+			</if>			
+		</select>
 		
+		<select id="CountUnit" resultType="int">
+         	select count(*)
+         	from unit u inner join course c
+         	on u.courseCode = c.courseCode
+			<if test="whatColumn=='all'">
+				where c.courseCode like #{keyword} or
+						c.cousreName like #{keyword}
+			</if>
+			<if test="whatColumn=='name'">
+				where c.cousreName like #{keyword}
+			</if>	
+ 
+      	</select>
+      	
+      	<select id="getOneUnit" resultType="unit.model.UnitBean">
+      		select u.courseCode,c.cousreName,unit1,unit2,unit3,unit4,unit5,unit6,unit7,unit8,unit9,unit10
+			from unit u inner join course c
+			on u.courseCode = c.courseCode
+			where u.courseCode=#{courseCode}
+      	</select>
+      	
+      	<select id="NoUnitCourse" resultType="unit.model.UnitBean">
+      		SELECT c.courseCode, c.cousreName
+			FROM course c LEFT JOIN unit u 
+			ON c.courseCode = u.courseCode
+			WHERE u.courseCode IS NULL
+      	</select>
 	</mapper>
