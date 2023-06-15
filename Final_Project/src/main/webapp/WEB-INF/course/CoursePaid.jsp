@@ -42,7 +42,7 @@
 
     	<a href="#" class="btn btn-outline-info font-weight-bold">장바구니</a>
     	<a href="#" class="btn btn-outline-info font-weight-bold">구매하기</a> 
-    
+     
   </div>
 </div>
 </c:forEach>
