@@ -27,15 +27,15 @@ import accounts.model.AccountsDao;
 @Controller
 public class AcoountsLoginController {
 	
-	
+	 
 	@Autowired
 	AccountsDao adao;
-	
+	 
 	@RequestMapping(value="/loginForm.acc", method = RequestMethod.GET)
 	public String login() {
 		return "accountsLoginForm";
 	}
-
+	//실험
 	// submit클릭
 	@RequestMapping(value="/loginForm.acc", method = RequestMethod.POST)
 	public ModelAndView doAction(
