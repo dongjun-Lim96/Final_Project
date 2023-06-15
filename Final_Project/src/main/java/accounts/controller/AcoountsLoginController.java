@@ -35,7 +35,7 @@ public class AcoountsLoginController {
 	public String login() {
 		return "accountsLoginForm";
 	}
-
+	//실험
 	// submit클릭
 	@RequestMapping(value="/loginForm.acc", method = RequestMethod.POST)
 	public ModelAndView doAction(
