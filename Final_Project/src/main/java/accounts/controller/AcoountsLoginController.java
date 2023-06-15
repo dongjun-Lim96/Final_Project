@@ -27,7 +27,7 @@ import accounts.model.AccountsDao;
 @Controller
 public class AcoountsLoginController {
 	
-	
+	 
 	@Autowired
 	AccountsDao adao;
 	
