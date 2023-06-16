@@ -77,6 +77,11 @@
         border-radius: 10px;
         border: 1px solid black;
     }
+    
+
+	table tr:hover {
+	    background-color: #f5f5f5;
+	}
 </style>
 	<div id="sub_banner" class="bgColor">
     <h2 class="page_title">   

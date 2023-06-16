@@ -35,11 +35,23 @@ public class UnitInsertController {
 	}
 	
 	@RequestMapping(value = command,method=RequestMethod.POST)
-	public ModelAndView doAction(@RequestParam("courseCode") String courseCode) {
+	public ModelAndView doAction(@RequestParam("courseCode") String courseCode,UnitBean unitBean) {
 		System.out.println("여기는 insertUnit POST POST POST 입니다 : " + courseCode);
 		ModelAndView mav = new ModelAndView();
 		
-		mav.setViewName(gotoPage);
-		return mav;
+		System.out.println(unitBean.getCourseCode());
+		System.out.println(unitBean.getCousreName());
+		 
+		int result = unitDao.insertUnit(unitBean);
+		if(result >0) {
+			mav.addObject("message", "목차 등록완료");
+			mav.setViewName(gotoPage);
+			return mav;
+		}else {
+			mav.addObject("message", "목차 등록실패");
+			mav.setViewName(gotoPage);
+			return mav;
+		}
+
 	}
 }

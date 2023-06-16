@@ -41,6 +41,8 @@ public class UnitListController {
 		//∆‰¿Ã¬°
 		Paging pageInfo = new Paging(pageNumber, "5", totalCount, url, whatColumn, keyword, null);
 		
+		
+		
 		List<UnitBean> unitList =unitDao.getUnitList(pageInfo,map);
 		System.out.println("unitList.size() : " + unitList.size());
 		mav.addObject("unitList", unitList);
