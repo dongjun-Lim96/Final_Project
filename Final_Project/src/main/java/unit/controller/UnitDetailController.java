@@ -28,6 +28,7 @@ public class UnitDetailController {
 		UnitBean unitBean = unitDao.getOneUnitByCode(courseCode);
 		System.out.println("1 :" + unitBean.getCourseCode());
 		System.out.println("2 :" + unitBean.getCousreName());
+		mav.addObject("pageNumber", pageNumber);
 		mav.addObject("unitBean", unitBean); 
 		mav.setViewName(getPage);
 		return mav;
