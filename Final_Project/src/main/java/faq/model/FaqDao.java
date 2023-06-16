@@ -11,22 +11,30 @@ import org.springframework.stereotype.Component;
 public class FaqDao {
 
 private String namespace = "faq.model";
-	
-	@Autowired
-	SqlSessionTemplate sqlSessionTemplate;
+   
+   @Autowired
+   SqlSessionTemplate sqlSessionTemplate;
 
-	public List<FaqBean> getFaq() {
-		List<FaqBean> lists = new ArrayList<FaqBean>();
-		lists = sqlSessionTemplate.selectList(namespace+".GetFaqList");
-		
-		return lists;
-	}
+   public List<FaqBean> getFaq() {
+      List<FaqBean> lists = new ArrayList<FaqBean>();
+      lists = sqlSessionTemplate.selectList(namespace+".GetFaqList");
+      
+      return lists;
+   }
 
-	public int insertFaq(FaqBean fb) {
-		
-		
-		
-		return 0;
-	}
+   public int insertFaq(FaqBean fb) {
+      int cnt = 0;
+      cnt = sqlSessionTemplate.insert(namespace+".InsertFaq", fb);
+      
+      return cnt;
+   }
+
+   public int deleteFaq(String faqNumber) {
+      
+      int cnt = sqlSessionTemplate.delete(namespace+".DeleteFaq", faqNumber);
+
+      return cnt;
+
+   }
 
 }
