@@ -118,6 +118,7 @@
 
 	<form name="form1" method="get"  action="updateUnit.un">
 	<input type="hidden" name = "courseCode" value="${unitBean.courseCode }">
+	<input type="hidden" name = "pageNumber" value="${pageNumber }">
 	<div class="mem_cont">
 		
  
@@ -199,7 +200,7 @@
 
 	<div class="btn_list">
 		<input type="button" class="moreBtn pointColor pointBorder" onclick="gotoList('${pageNumber }')" value="목차 목록" />
-		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="강의 수정" />
+		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="목차 수정" />
 	</div>
 
 </form>
