@@ -32,7 +32,7 @@ public class UnitInsertController {
 		mav.addObject("noUnit", noUnit);
 		mav.setViewName(getPage);
 		return mav;
-	}
+	} 
 	
 	@RequestMapping(value = command,method=RequestMethod.POST)
 	public ModelAndView doAction(@RequestParam("courseCode") String courseCode,UnitBean unitBean) {

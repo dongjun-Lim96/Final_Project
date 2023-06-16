@@ -55,5 +55,11 @@
       		where courseCode = #{courseCode}
       	</delete>
       	
+      	<update id="UpdateUnit">
+      		update unit
+      		set UNIT1=#{unit1}, UNIT2=#{unit2}, UNIT3=#{unit3}, UNIT4=#{unit4}, UNIT5=#{unit5}, UNIT6=#{unit6}, UNIT7=#{unit7}, UNIT8=#{unit8}, UNIT9=#{unit9}, UNIT10=#{unit10} 
+      		where courseCode=#{courseCode}  
+      	</update>
+      	
       	
 	</mapper>

@@ -55,4 +55,11 @@ public class UnitDao {
 		cnt = sqlSessionTemplate.delete(namespace+".DeleteUnit", courseCode);
 		return cnt;
 	}
+
+	public int updateUnit(UnitBean unitBean) {
+		int cnt =0;
+		cnt = sqlSessionTemplate.delete(namespace+".UpdateUnit", unitBean);
+		return cnt;
+	}
+
 }

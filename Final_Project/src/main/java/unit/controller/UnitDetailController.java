@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import unit.model.UnitBean;
 import unit.model.UnitDao;
@@ -19,7 +20,8 @@ public class UnitDetailController {
 	
 	@RequestMapping(value = command)
 	public ModelAndView doAction(@RequestParam("courseCode") String courseCode,
-				@RequestParam("pageNumber") String pageNumber
+				@RequestParam(value ="pageNumber",required = false) String pageNumber,
+				 RedirectAttributes redirectAttributes
 			) {
 		
 		System.out.println("여기는 디테일 컨트롤러 : "+ courseCode);

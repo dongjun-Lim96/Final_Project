@@ -115,7 +115,7 @@
 		<h3>목차 상세보기</h3>
 
 	</div>
-
+ 
 	<form name="form1" method="get"  action="updateUnit.un">
 	<input type="hidden" name = "courseCode" value="${unitBean.courseCode }">
 	<input type="hidden" name = "pageNumber" value="${pageNumber }">
