@@ -26,7 +26,7 @@ import course.model.CourseDao;
 public class CourseInsertController {   
 	private final String command="/insertCourse.cs";
 	private final String getPage="CourseInsert"; 
-	private final String gotoPage="CourseList";
+	private final String gotoPage="redirect:/insertCourse.cs";
 	@Autowired
 	CourseDao coursedao;
 
@@ -72,8 +72,8 @@ public class CourseInsertController {
 				multi_img.transferTo(destination_local_img);
 				multi_video.transferTo(destination_local_video);
 				
-				FileCopyUtils.copy(destination_img, destination_local_img); // �쎒�꽌踰�=>濡쒖뺄
-				FileCopyUtils.copy(destination_video, destination_local_video); // �쎒�꽌踰�=>濡쒖뺄
+				FileCopyUtils.copy(destination_img, destination_local_img); // 사진복사
+				FileCopyUtils.copy(destination_video, destination_local_video); // 동영상복사 
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -83,7 +83,7 @@ public class CourseInsertController {
 			}
 			
 		}
-		mav.setViewName(getPage);
+		mav.setViewName(gotoPage);
 		return mav;
 		
 	}
