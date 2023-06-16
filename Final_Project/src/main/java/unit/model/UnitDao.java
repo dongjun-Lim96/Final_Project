@@ -49,4 +49,10 @@ public class UnitDao {
 		return cnt;
 		
 	}
+
+	public int deleteUnit(String courseCode) {
+		int cnt =0;
+		cnt = sqlSessionTemplate.delete(namespace+".DeleteUnit", courseCode);
+		return cnt;
+	}
 }

@@ -73,8 +73,9 @@
 	} else {
 	    
 	}
-	function deleteCategory(courseCode){
-		location.href="deleteCourse.cs?courseCode="+courseCode;
+	
+	function deleteUnit(courseCode,pageNumber){
+		location.href="deleteUnit.un?courseCode="+courseCode+"&pageNumber="+pageNumber;
 	}
 	function insertUnit(){
 		
@@ -137,7 +138,8 @@
 			
 			<dl>
 				<dt>목차코드</dt>
-				<dt>강의명</dt>										
+				<dt>강의명</dt>	
+				<dt></dt>									
 			</dl>
 			
 			<c:forEach var="unitList" items="${unitList }" varStatus="status">
@@ -149,7 +151,9 @@
 				<dt>
 					<a href="unitDetail.un?courseCode=${unitList.courseCode}&pageNumber=${pageInfo.pageNumber}" onmouseover="this.style.color='red'"onmouseout="this.style.color='black'">${unitList.cousreName }</a>				
 				</dt>
-										
+				<dt>
+					<button type="button" class="btn btn-outline-info" onClick="deleteUnit('${unitList.courseCode }','${pageInfo.pageNumber }')" style="display: inline;">삭제</button>
+				</dt>			
 			</dl>
 			</c:forEach>
 			
