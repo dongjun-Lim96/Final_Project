@@ -45,6 +45,7 @@ public class UnitListController {
 		
 		List<UnitBean> unitList =unitDao.getUnitList(pageInfo,map);
 		System.out.println("unitList.size() : " + unitList.size());
+		mav.addObject("pageInfo",pageInfo);
 		mav.addObject("unitList", unitList);
 		mav.setViewName(getPage);
 		return mav;

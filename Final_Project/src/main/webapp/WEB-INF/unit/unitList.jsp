@@ -165,7 +165,7 @@
 			
 			<center>
 	<form action="getUnit.un" method="get">
-		<select name="whatColumn" style="width: 100px;">
+		<select name="whatColumn" style="width: 100px;"> 
 			<option value="all">전체 검색
 			<option value="name">강의명</option>
 		</select> <input type="text" name="keyword"> <input type="submit" class="btn btn-outline-info" value="검색">
