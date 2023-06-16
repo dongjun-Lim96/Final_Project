@@ -107,5 +107,9 @@
      	select * from unit
      	where courseCode=#{cousreCode}
      </select>
-      
+     
+     <select id="SelectWishList" resultType="wishList.model.WishListBean">
+     	select * from wishlist
+     	where userId=#{userId}
+     </select>
    </mapper>

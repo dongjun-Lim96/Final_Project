@@ -106,6 +106,14 @@ insert into CART(cartNumber, courseCode, userId)
 values(4, 'EBDA2', 'kang');
 
 
+drop sequence WISH_seq;
+create sequence WISH_seq
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;
+
 
 DROP TABLE WISHLIST CASCADE CONSTRAINTS;
 --위시리스트 테이블
@@ -117,9 +125,9 @@ CREATE TABLE WISHLIST(
    FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId)
 );
 insert into WISHLIST(wishNumber, courseCode, userId)
-values(1, 'EIP2', 'jung');
+values(WISH_seq.nextval, 'EIP2', 'jung');
 insert into WISHLIST(wishNumber, courseCode, userId)
-values(2, 'EBDA1', 'kang');
+values(WISH_seq.nextval, 'EBDA1', 'kang');
 
 
 DROP TABLE UNIT CASCADE CONSTRAINTS;

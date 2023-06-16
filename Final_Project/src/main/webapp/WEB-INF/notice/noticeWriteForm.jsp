@@ -94,4 +94,3 @@ input[type="submit"], input[type="reset"], input[type="button"], input[type="fil
 </div>
 <br>
 <br>
-<%@ include file="./../../footer.jsp"%>
