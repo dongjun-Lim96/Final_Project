@@ -25,6 +25,7 @@ public class UnitDeleteController {
 		
 		int result = unitDao.deleteUnit(courseCode);
 		System.out.println("result : " + result);
+		mav.addObject("pageNumber", pageNumber);
 		mav.setViewName(getPage);
 		return mav;
 	}

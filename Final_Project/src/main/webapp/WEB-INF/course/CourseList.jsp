@@ -73,8 +73,8 @@
 	} else {
 	    
 	}
-	function deleteCategory(courseCode){
-		location.href="deleteCourse.cs?courseCode="+courseCode;
+	function deleteCategory(courseCode,pageNumber){
+		location.href="deleteCourse.cs?courseCode="+courseCode+"&pageNumber="+pageNumber;
 	}
 	function insertCategory(){
 		location.href="insertCourse.cs"; 
@@ -131,7 +131,7 @@
 				<dt>${course.cousrePrice }</dt>
 				<dt>${course.cousreTerm }</dt>
 				<dt><img src="<%=request.getContextPath() %>/resources/${course.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style="width: 50px; height: 50px; border-radius: 20%;"> </dt>
-				<dt><button type="button" class="btn btn-outline-info" onClick="deleteCategory('${course.courseCode }')" style="display: inline;">삭제</button> </dt>
+				<dt><button type="button" class="btn btn-outline-info" onClick="deleteCategory('${course.courseCode }','${pageInfo.pageNumber}')" style="display: inline;">삭제</button> </dt>
 				<dt> </dt>										
 			</dl>
 			</c:forEach>
