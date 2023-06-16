@@ -3,20 +3,20 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-	<mapper namespace="faq.model">
-		 <select id="GetFaqList" resultType="faq.model.FaqBean" >
+   <mapper namespace="faq.model">
+       <select id="GetFaqList" resultType="faq.model.FaqBean" >
          select * from faq 
       </select>
       
       <insert id="InsertFaq">
            insert into faq(faqNumber,faqTitle,faqContent)
-           values(ba_seq.nextval,#{faqTitle},#{faqContent})
+           values(FAQ_seq.nextval,#{faqTitle},#{faqContent})
         </insert>
         
         <delete id="DeleteFaq">
            delete faq where faqNumber=#{faqNumber}
         </delete>
-		
-		
-		
-	</mapper>
+      
+      
+      
+   </mapper>

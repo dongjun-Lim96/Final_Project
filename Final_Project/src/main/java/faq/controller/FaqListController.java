@@ -15,23 +15,23 @@ import faq.model.FaqDao;
 @Controller
 public class FaqListController {
 
-	private final String command = "/list.faq";
-	private final String getPage = "faqlist";
-		
-		@Autowired
-		FaqDao faqDao;
-		
-		@RequestMapping(value=command)
-		public ModelAndView doAction(HttpSession session) {
-			ModelAndView mav = new ModelAndView();
-			
-			List<FaqBean> faqLists = faqDao.getFaq();
-			session.setAttribute("sessionFaq", faqLists);
-			mav.addObject("faqLists",faqLists);
-			
-			mav.setViewName(getPage);
-			return mav;
-	}
+   private final String command = "/list.faq";
+   private final String getPage = "faqlist";
+      
+      @Autowired
+      FaqDao faqDao;
+      
+      @RequestMapping(value=command)
+      public ModelAndView doAction(HttpSession session) {
+         ModelAndView mav = new ModelAndView();
+         
+         List<FaqBean> faqLists = faqDao.getFaq();
+         session.setAttribute("sessionFaq", faqLists);
+         mav.addObject("faqLists",faqLists);
+         
+         mav.setViewName(getPage);
+         return mav;
+   }
 
-	
+   
 }
