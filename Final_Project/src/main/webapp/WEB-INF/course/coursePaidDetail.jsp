@@ -139,54 +139,54 @@
 <c:if test="${not empty unit }">
 	<table>
     <c:forEach var="unit" items="${unit}">
-        <c:if test="${not empty unit.UNIT1}">
+        <c:if test="${not empty unit.unit1}">
             <tr class="rounded-row">
-                <td style="width:300px;">${unit.UNIT1}</td>
+                <td style="width:300px;">${unit.unit1}</td>
             </tr>
         </c:if>
-        <c:if test="${not empty unit.UNIT2}">
+        <c:if test="${not empty unit.unit2}">
             <tr class="rounded-row">
-                <td>${unit.UNIT2}</td>
+                <td>${unit.unit2}</td>
             </tr>
         </c:if>
-        <c:if test="${not empty unit.UNIT3}">
+        <c:if test="${not empty unit.unit3}">
             <tr class="rounded-row">
-                <td>${unit.UNIT3}</td>
+                <td>${unit.unit3}</td>
             </tr>
         </c:if>
-        <c:if test="${not empty unit.UNIT4}">
+        <c:if test="${not empty unit.unit4}">
             <tr class="rounded-row">
-                <td>${unit.UNIT4}</td>
+                <td>${unit.unit4}</td>
             </tr>
         </c:if>
-        <c:if test="${not empty unit.UNIT5}">
+        <c:if test="${not empty unit.unit5}">
             <tr class="rounded-row">
-                <td>${unit.UNIT5}</td>
+                <td>${unit.unit5}</td>
             </tr>
         </c:if>
-        <c:if test="${not empty unit.UNIT6}">
+        <c:if test="${not empty unit.unit6}">
             <tr class="rounded-row">
-                <td>${unit.UNIT6}</td>
+                <td>${unit.unit6}</td>
             </tr>
         </c:if>
-        <c:if test="${not empty unit.UNIT7}">
+        <c:if test="${not empty unit.unit7}">
             <tr class="rounded-row">
-                <td>${unit.UNIT7}</td>
+                <td>${unit.unit7}</td>
             </tr>
         </c:if>
-        <c:if test="${not empty unit.UNIT8}">
+        <c:if test="${not empty unit.unit8}">
             <tr class="rounded-row">
-                <td>${unit.UNIT8}</td>
+                <td>${unit.unit8}</td>
             </tr>
         </c:if>
-        <c:if test="${not empty unit.UNIT9}">
+        <c:if test="${not empty unit.unit9}">
             <tr class="rounded-row">
-                <td>${unit.UNIT9}</td>
+                <td>${unit.unit9}</td>
             </tr>
         </c:if>
-        <c:if test="${not empty unit.UNIT10}">
+        <c:if test="${not empty unit.unit10}">
             <tr class="rounded-row">
-                <td>${unit.UNIT10}</td>
+                <td>${unit.unit10}</td>
             </tr>
         </c:if>
     </c:forEach>
