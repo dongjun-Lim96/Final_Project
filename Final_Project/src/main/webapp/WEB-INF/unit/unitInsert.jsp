@@ -129,7 +129,7 @@
 </button>
     </h2>
     <div id="collapseOne${noUnit }" class="accordion-collapse collapse" aria-labelledby="headingOne${noUnit }" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
+      <div class="accordion-body"> 
         <div class="myinfo_cont refund_info">
         	<form action="insertUnit.un" method="post">
         	<input type="hidden" name="courseCode" value="${noUnit.courseCode}">

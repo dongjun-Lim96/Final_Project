@@ -41,5 +41,12 @@ public class UnitDao {
 		List<UnitBean> lists = new ArrayList<UnitBean>();
 		lists = sqlSessionTemplate.selectList(namespace+".NoUnitCourse");				
 		return lists;
+	} 
+
+	public int insertUnit(UnitBean unitBean) {
+		int cnt =0;
+		cnt = sqlSessionTemplate.insert(namespace+".InsertUnit", unitBean);
+		return cnt;
+		
 	}
 }

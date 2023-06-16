@@ -44,4 +44,12 @@
 			ON c.courseCode = u.courseCode
 			WHERE u.courseCode IS NULL
       	</select>
+      	
+      	<insert id="InsertUnit">
+      		insert into UNIT(courseCode, UNIT1, UNIT2, UNIT3,UNIT4,UNIT5,UNIT6,UNIT7,UNIT8,UNIT9,UNIT10)
+      		values(#{courseCode}, #{unit1},#{unit2},#{unit3},#{unit4},#{unit5},#{unit6},#{unit7},#{unit8},#{unit9},#{unit10})
+      	</insert>
+      	
+      	
+      	
 	</mapper>
