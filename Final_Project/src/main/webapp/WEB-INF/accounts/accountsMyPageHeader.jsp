@@ -265,9 +265,7 @@ function showScrollToTopText() {
                                     </a>
                                     <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="401.html">수강신청</a>
-                                            <a class="nav-link" href="404.html">마켓</a>
-                                            <a class="nav-link" href="500.html">도서</a>
+                                            <a class="nav-link" href="wishlist.acc?userId=${userId}">수강신청</a>
                                         </nav>
                                     </div>
                                 </nav>

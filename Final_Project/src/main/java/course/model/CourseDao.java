@@ -13,6 +13,7 @@ import category.model.CategoryBean;
 import review.model.ReviewBean;
 import unit.model.UnitBean;
 import utility.Paging;
+import wishList.model.WishListBean;
 
 
  
@@ -127,6 +128,14 @@ public class CourseDao {
 	public List<UnitBean> getUnitBycourseCode(String courseCode) {
 		List<UnitBean> lists = new ArrayList<UnitBean>();
 		lists = sqlSessionTemplate.selectList(namespace+".getUnitBycourseCode",courseCode);
+		return lists;
+	}
+	
+	
+	public List<WishListBean> selectWishList(String userId) {
+		List<WishListBean> lists = new ArrayList<WishListBean>();
+		lists = sqlSessionTemplate.selectList(namespace+".SelectWishList", userId);
+		
 		return lists;
 	}
 	

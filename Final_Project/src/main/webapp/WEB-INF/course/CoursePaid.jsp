@@ -18,6 +18,7 @@
   .card-img-top:hover {
     filter: brightness(70%);
   }
+  
 </style>
 	<div id="sub_banner" class="bgColor">
     <h2 class="page_title">
@@ -42,7 +43,71 @@
 
     	<a href="#" class="btn btn-outline-info font-weight-bold">장바구니</a>
     	<a href="#" class="btn btn-outline-info font-weight-bold">구매하기</a> 
-     
+    	 
+    	  <c:set var="isWishlist" value="false" />
+      <c:forEach var="wishlist" items="${wishLists}">
+        <c:if test="${wishlist.courseCode == paidCourse.courseCode}">
+          <c:set var="isWishlist" value="true" />
+        </c:if>
+      </c:forEach>
+
+      <c:choose>
+        <c:when test="${isWishlist == 'true'}">
+          <a class="btn btn-outline-info font-weight-bold" onclick="toggleHeartColor(this, '${paidCourse.courseCode}')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill heart-icon text-danger" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg>
+          </a>
+        </c:when>
+        <c:otherwise>
+          <a class="btn btn-outline-info font-weight-bold" onclick="toggleHeartColor(this, '${paidCourse.courseCode}', '${userId}')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill heart-icon" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg>
+          </a>
+        </c:otherwise>
+      </c:choose>
+    	<script>
+    function toggleHeartColor(button,courseCode, userId) {
+    	var courseCode = courseCode;
+    	var userId = userId;
+    	//alert(1);
+    	//alert(courseCode);
+    	//alert(userId);
+        var heartIcon = button.querySelector("svg.heart-icon");
+        if (heartIcon.classList.contains("text-danger")) {
+        	
+        	heartIcon.classList.remove("text-danger");
+        	
+        	$.ajax({
+        	    url: "WLremove.wl",
+        	    data : {
+        	    	courseCode : courseCode
+        		},
+        	    success: function() {
+        		      //window.location.href = "paidCourse.cs"; 
+        	    }
+        	  });
+        	
+        } else {
+        	
+        	heartIcon.classList.add("text-danger");
+        	
+        	$.ajax({
+        	    url: "WLadd.wl",
+        	    data : {
+        	    	courseCode : courseCode,
+        			userId : userId
+        		},
+        	    success: function() {
+        		     // window.location.href = "paidCourse.cs"; 
+        	    }
+        	  });
+        	
+           /*  heartIcon.classList.remove("text-danger"); */
+        }
+    }
+</script>
   </div>
 </div>
 </c:forEach>

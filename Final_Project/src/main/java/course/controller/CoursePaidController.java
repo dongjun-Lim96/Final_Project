@@ -10,12 +10,15 @@ import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.ex.MyBean;
 
 import course.model.CourseBean;
 import course.model.CourseDao;
+import wishList.model.WishListBean;
+import wishList.model.WishListDao;
 
 @Controller
 public class CoursePaidController {
@@ -29,8 +32,7 @@ public class CoursePaidController {
 	ServletContext servletContext;
 	
 	@RequestMapping(value = command)
-	public ModelAndView doAction() throws IOException {
-		
+	public ModelAndView doAction(@RequestParam("userId") String userId) throws IOException {
 		
 		String uploadPath = servletContext.getRealPath("/resources/");
 		System.out.println("uploadPath: " + uploadPath);
@@ -43,6 +45,11 @@ public class CoursePaidController {
 
 		ModelAndView mav = new ModelAndView();
 		List<CourseBean> paidCourseLists= courseDao.getPaidCourse();
+		
+		List<WishListBean> wishLists= courseDao.selectWishList(userId);
+		
+		mav.addObject("userId", userId);
+		mav.addObject("wishLists", wishLists);
 		mav.addObject("paidCourseLists", paidCourseLists);
 		mav.setViewName(getPage);
 		return mav;
