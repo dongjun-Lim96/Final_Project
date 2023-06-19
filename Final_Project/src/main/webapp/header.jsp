@@ -236,7 +236,7 @@ function cartList(userId){
 						<a class="bgColor" href="mypage.acc?userId=${loginInfo.userId}" style=" display: block;">마이페이지</a>
 					</c:if>
 					<c:if test="${loginInfo.adminCheck eq 1}">
-						<a class="bgColor" href="adminsidebar.jsp" style=" display: block;">관리자페이지</a>
+						<a class="bgColor" href="adminmain.cs" style=" display: block;">관리자페이지</a>
 					</c:if>
 					
 				</li>
