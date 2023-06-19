@@ -138,5 +138,11 @@ public class CourseDao {
 		
 		return lists;
 	}
+
+	public List<CourseBean> getSotredPaidCourse(String categoryCode) {
+		List<CourseBean> lists = new ArrayList<CourseBean>();		
+		lists = sqlSessionTemplate.selectList(namespace+".GetSotredPaidCourseList",categoryCode);		
+		return lists;
+	}
 	
 }
