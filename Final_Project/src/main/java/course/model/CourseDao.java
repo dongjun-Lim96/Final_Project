@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import category.model.CategoryBean;
+import courseorder.model.CourseOrderBean;
 import review.model.ReviewBean;
 import unit.model.UnitBean;
 import utility.Paging;
@@ -142,6 +143,15 @@ public class CourseDao {
 	public List<CourseBean> getSotredPaidCourse(String categoryCode) {
 		List<CourseBean> lists = new ArrayList<CourseBean>();		
 		lists = sqlSessionTemplate.selectList(namespace+".GetSotredPaidCourseList",categoryCode);		
+		return lists;
+	}
+
+	public List<CourseOrderBean> getWeekOrder(Map<String,Object> param ) {
+		List<CourseOrderBean> lists = new ArrayList<CourseOrderBean>();
+		//System.out.println("1111111111111");
+		//System.out.println("map map map"  + param );
+		lists = sqlSessionTemplate.selectList(namespace+".GetWeekOrder",param );
+		//System.out.println("222222222222222");
 		return lists;
 	} 
 	

@@ -117,4 +117,14 @@
      	 select * from course
          where cousrePrice > 0 and categoryCode = #{categoryCode}
      </select>
+     
+
+	<select id="GetWeekOrder" resultType="courseorder.model.CourseOrderBean">
+		SELECT orderDate, SUM(TotalPrice) AS TotalPrice
+	    FROM COURSEORDER
+	    WHERE orderDate BETWEEN #{startDate} AND #{endDate}
+	    GROUP BY orderDate
+	    ORDER BY orderDate		
+	</select> 
+
    </mapper>
