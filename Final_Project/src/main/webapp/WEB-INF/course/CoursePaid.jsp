@@ -41,7 +41,7 @@
     <p class="card-text">강사 : ${paidCourse.cousreTeacher }</p>
     <p class="card-text">강의기간 : ${paidCourse.cousreTerm }일</p>
 
-    	<a href="#" class="btn btn-outline-info font-weight-bold">장바구니</a>
+    	<a href="cartAdd.ct?courseCode=${paidCourse.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold">장바구니</a>
     	<a href="#" class="btn btn-outline-info font-weight-bold">구매하기</a> 
     	 
     	  <c:set var="isWishlist" value="false" />

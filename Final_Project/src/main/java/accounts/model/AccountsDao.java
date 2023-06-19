@@ -107,6 +107,11 @@ public class AccountsDao {
 		cnt = sqlSessionTemplate.update(namespace+".OutUser", userId);
 	}
 	
+	public List<CourseBean> getWishList(String userId) {
+		List<CourseBean> lists = new ArrayList<CourseBean>();
+		lists = sqlSessionTemplate.selectList(namespace+".GetWishList", userId); 
+		return lists;
+	}
 	
 	
 }

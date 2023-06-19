@@ -123,6 +123,10 @@ function logout() {
 	  });
 	}
 	
+function cartList(userId){
+	window.location.href="/ex/cartList.ct?userId="+userId;
+}	
+	
 </script>
 <%
 	String conPath = request.getContextPath();
@@ -151,6 +155,7 @@ function logout() {
 		<div class="d-flex justify-content-end align-items-center">
 			<img src="<%=conPath%>/resources/images/loginimg.png">${loginInfo.userName} 님
 			<button type="button" class="btn btn-outline-info" onclick="logout();">logout</button>
+			<button type="button" class="btn btn-outline-info" onclick="cartList('${loginInfo.userId}');">장바구니</button>
 
 			
 		<div style="width: 12%;"></div> <!-- 오른쪽 공백 -->
