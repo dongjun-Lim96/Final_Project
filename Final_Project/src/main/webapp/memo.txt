@@ -206,7 +206,7 @@ CREATE TABLE COURSEORDER(
    userId VARCHAR2(50),
    FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId),
    orderPoint NUMBER DEFAULT 0,
-   TotalPrice NUMBER NOT NULL,
+   totalPrice NUMBER NOT NULL,
    orderDate DATE default SYSDATE,
    FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode)   
 );
