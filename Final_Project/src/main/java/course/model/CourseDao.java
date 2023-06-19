@@ -143,6 +143,6 @@ public class CourseDao {
 		List<CourseBean> lists = new ArrayList<CourseBean>();		
 		lists = sqlSessionTemplate.selectList(namespace+".GetSotredPaidCourseList",categoryCode);		
 		return lists;
-	}
+	} 
 	
 }
