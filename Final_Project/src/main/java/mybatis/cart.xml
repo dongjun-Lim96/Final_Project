@@ -4,5 +4,27 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 	<mapper namespace="cart.model">
+	
+		<insert id="CartAdd">
+		 	insert into cart
+		 	values(CART_seq.nextval,#{courseCode},#{userId})
+	 	</insert> 
 		
+		<select id="CartCheck" resultType="int">
+         select count(*) from cart where courseCode = #{courseCode}
+      	</select>
+		
+		<select id="CartList" resultType="cart.model.CartBean">
+		 	SELECT c.CARTNUMBER, c.COURSECODE, c.USERID, co.categoryCode, co.cousreName, co.cousrePrice
+			FROM cart c
+			JOIN course co ON c.COURSECODE = co.courseCode
+			WHERE c.USERID = #{userId}
+	 	</select>
+	 	
+	 	<delete id="CartDelete" parameterType="int[]">
+	 		delete cart where cartNumber in 
+	 		<foreach open="(" item="num" separator="," close=")" collection="array">
+	 			#{num}
+	 		</foreach>
+	 	</delete>
 	</mapper>

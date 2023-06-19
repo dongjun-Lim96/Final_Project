@@ -60,4 +60,11 @@
 	  	where userId = #{userId}
 	  </update>
 	 
+	 
+	  <select id="GetWishList" resultType="course.model.CourseBean">
+	 	select c.courseCode, c.categoryCode, c.cousreImg, c.cousreName, c.cousrePrice, c.cousreTeacher, c.cousreTerm, c.cousreVideo
+		from wishlist w
+		join course c on w.courseCode = c.courseCode
+		where w.userId = #{userId}
+	 </select>
 </mapper>
