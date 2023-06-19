@@ -1,6 +1,8 @@
 package event.model;
 
 import java.sql.Timestamp;
+import java.util.Date;
+
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,8 +15,13 @@ public class EventBean {
 	private String eventImage;
 	private Timestamp eventDate;
 	private int eventView;
+	private String  eventStart;
+	private String  eventEnd;
 	
-	 private int rank; 
+	
+	
+
+	private int rank; 
 	   
 	   
 	   public int getRank() {
@@ -28,9 +35,13 @@ public class EventBean {
 		private String upload2;
 		  
 	 
+		
+		public EventBean() {
+			super();
+		}
 
 	public EventBean(int eventNumber, String adminId, String eventTitle, String eventContent, String eventImage,
-				Timestamp eventDate, int eventView, int rank, MultipartFile upload, String upload2) { 
+				Timestamp eventDate, int eventView, String eventStart, String eventEnd, MultipartFile upload, String upload2) { 
 			super();
 			this.eventNumber = eventNumber;
 			this.adminId = adminId;
@@ -39,7 +50,8 @@ public class EventBean {
 			this.eventImage = eventImage;
 			this.eventDate = eventDate;
 			this.eventView = eventView;
-			this.rank = rank;
+			this.eventStart = eventStart;
+			this.eventEnd = eventEnd;
 			this.upload = upload;
 			this.upload2 = upload2;
 		}
@@ -110,6 +122,19 @@ public class EventBean {
 	}
 	public void setEventView(int eventView) {
 		this.eventView = eventView;
+	}
+	public String getEventStart() {
+		return eventStart;
+	}
+	public void setEventStart(String eventStart) {
+		this.eventStart = eventStart;
+	}
+	
+	public String getEventEnd() {
+		return eventEnd;
+	}
+	public void setEventEnd(String eventEnd) {
+		this.eventEnd = eventEnd;
 	}
 	
 	
