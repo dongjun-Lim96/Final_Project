@@ -103,10 +103,38 @@ public class AdminMain {
 	            return o1.getOrderDate().compareTo(o2.getOrderDate());
 	        }
 	    });
-
+	    System.out.println("weeklist.size(); : " + weeklist.size());
+	    
 	    
 
-		mav.addObject("weeklist",weeklist);
+	    List<CourseOrderBean> mergedList = new ArrayList<CourseOrderBean>();
+
+	    for (CourseOrderBean order : weeklist) {
+	        foundMatch = false;
+
+	        for (CourseOrderBean mergedOrder : mergedList) {
+	            if (mergedOrder.getOrderDate().equals(order.getOrderDate())) {
+	                // 중복된 날짜를 찾았을 때 가격을 합산
+	                mergedOrder.setTotalPrice(mergedOrder.getTotalPrice() + order.getTotalPrice());
+	                foundMatch = true;
+	                break;
+	            }
+	        }
+
+	        if (!foundMatch) {
+	            // 중복된 날짜가 없으면 새로운 객체로 추가
+	            CourseOrderBean mergedOrder = new CourseOrderBean();
+	            mergedOrder.setOrderDate(order.getOrderDate());
+	            mergedOrder.setTotalPrice(order.getTotalPrice());
+	            mergedList.add(mergedOrder);
+	        }
+	    }
+
+	    System.out.println("mergedList : " + mergedList.size());
+	    
+	    
+		mav.addObject("weeklist",mergedList);
+		
 		mav.setViewName(getPage);
 		return mav;
 	}
