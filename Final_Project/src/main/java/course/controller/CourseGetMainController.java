@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class CourseGetMainController {
    ServletContext servletContext;   
    
    @RequestMapping(value = command)
-   public ModelAndView doAction() throws IOException {		
+   public ModelAndView doAction(HttpSession session) throws IOException {		
 
       String uploadPath = servletContext.getRealPath("/resources/");
       System.out.println("uploadPath: " + uploadPath); 
@@ -47,7 +48,8 @@ public class CourseGetMainController {
 		 
       	List<CategoryBean> lists = coursedao.getCategory();
 		
-		mav.addObject("lists", lists);
+      	session.setAttribute("lists",lists);
+		
       List<CourseBean> courseLists = coursedao.getCourse();
       mav.addObject("courseLists",courseLists);
       mav.setViewName(getPage);
