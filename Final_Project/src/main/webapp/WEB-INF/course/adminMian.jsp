@@ -40,15 +40,6 @@
         display: true,
         text: '7일 매출'
       }
-    },
-    scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true,
-            max: 80000,
-            stepSize: 10000
-          }
-        }]
-      }
+    }
   });
 </script>
