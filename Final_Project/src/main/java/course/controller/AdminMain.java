@@ -35,7 +35,7 @@ public class AdminMain {
 		
 		
 		ModelAndView mav= new ModelAndView();
-		LocalDate endDate = LocalDate.now();
+		LocalDate endDate = LocalDate.now().plusDays(1);
 		LocalDate startDate = endDate.minusDays(6);
 
 		java.sql.Date sqlEndDate = java.sql.Date.valueOf(endDate);
