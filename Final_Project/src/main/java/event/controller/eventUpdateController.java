@@ -127,4 +127,4 @@ public class eventUpdateController {
 	
 		return mav;
 	}
-}
+} 

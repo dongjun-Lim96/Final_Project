@@ -96,7 +96,7 @@
 				<dt>시작일 <span class="pointColor">*</span></dt>
 				<dd><input type="date" name="eventStart" size="80" class="input"
               value="${event.eventStart}"></dd>
-  			</dl>
+  			</dl> 
 			<dl>
 				<dt>종료일 <span class="pointColor">*</span></dt>
 				<dd><input type="date" name="eventEnd" size="80" class="input"

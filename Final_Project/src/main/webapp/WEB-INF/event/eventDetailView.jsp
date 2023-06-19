@@ -139,7 +139,7 @@
                         	 <!-- loginInfo.userId eq adminId 관리자중 본인이 작성한경우에만 실행될 버튼 -->
  				 		 <c:if test="${sessionScope.loginInfo.userId eq event.adminId}">
                         <input type="button" value="글삭제" onClick="deleteEvent(${event.eventNumber}, ${pageNumber})">
-                        </c:if>
+                        </c:if> 
                     </c:if>
 
 					

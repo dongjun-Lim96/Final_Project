@@ -19,7 +19,7 @@ public class eventDetailViewController {
    EventDao edao;
    
    @RequestMapping(value = command)
-   public String doAtcion(Model model,@RequestParam("eventNumber") int eventNumber,
+   public String doAtcion(Model model,@RequestParam("eventNumber") int eventNumber, 
          @RequestParam("pageNumber") String pageNumber) {
       EventBean event= new EventBean();
       event = edao.getOneEventByNum(eventNumber);

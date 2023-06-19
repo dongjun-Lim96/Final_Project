@@ -18,7 +18,7 @@ import event.model.EventBean;
 import event.model.EventDao;
 
 import utility.Paging;
-
+ 
 
 @Controller
 public class eventListController {

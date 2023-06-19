@@ -164,7 +164,7 @@
 
 			
 		</div>
-	</div>
+	</div> 
 
 	<div class="btn_list">
 		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="이벤트 등록" />

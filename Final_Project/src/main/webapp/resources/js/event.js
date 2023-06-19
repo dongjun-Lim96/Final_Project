@@ -1,8 +1,8 @@
 /**
  * 
  */
- 
-var use;
+  
+var use; 
 var isCheck = false;
  
 function writeSave(){ // 등록 submit

@@ -77,7 +77,7 @@ public int writeEvent(EventBean eventBean) {
         cnt = sqlSessionTemplate.insert(namespace + ".WriteEvent", eventBean);
         System.out.println("cnt:"+cnt);
     } else {
-        // adminId 값이 존재하지 않으면 오류 처리
+        // adminId 값이 존재하지 않으면 오류 처리 
         cnt = -1;
     }
 

@@ -2,7 +2,7 @@
 <%@ include file="../common/common.jsp" %>
 
   <%@ include file="./../../header.jsp"%>
-
+ 
 <style>
    .body {
       font-family: Arial, sans-serif;

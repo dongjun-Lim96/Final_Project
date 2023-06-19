@@ -7,7 +7,7 @@ import java.util.Date;
 import org.springframework.web.multipart.MultipartFile;
 
 public class EventBean {
-
+ 
 	private int eventNumber;
 	private String adminId;
 	private String eventTitle;

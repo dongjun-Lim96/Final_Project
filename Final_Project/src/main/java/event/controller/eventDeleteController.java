@@ -56,7 +56,7 @@ public class eventDeleteController {
          }
       }
       else{
-         System.out.println("삭제실패");
+         System.out.println("삭제실패"); 
          mav.setViewName(backPage);
       }
       return mav; 
