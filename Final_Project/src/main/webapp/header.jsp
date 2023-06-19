@@ -212,7 +212,7 @@ function cartList(userId){
 						<li><hr class="dropdown-divider"></li>
 					    <!-- 포문돌려서 나중에 고쳐야함 -->
 					    <c:forEach var="categoryList" items="${lists}">
-					    	<li><a class="dropdown-item" href="sortedPaidCourse.cs?categoryCode=${categoryList.categoryCode }">${categoryList.categoryName }</a></li>  
+					    	<li><a class="dropdown-item" href="sortedPaidCourse.cs?categoryCode=${categoryList.categoryCode }&userId=${loginInfo.userId}">${categoryList.categoryName }</a></li>  
 						</c:forEach>
 						
 						<!-- 포문돌려서 나중에 고쳐야함 -->
