@@ -86,6 +86,14 @@ insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeac
 values('EBDA2', 'EBDA', '빅데이터분석기사실기', 1200000, 'Teacher 2', 'img4.png', 'video4.mp4', 60);
 
 
+drop sequence CART_seq;
+create sequence CART_seq
+  increment by 1
+  start with 1
+  minvalue 1
+  maxvalue 10000
+  nocache;
+
 
 DROP TABLE CART CASCADE CONSTRAINTS;
 --장바구니 테이블
@@ -97,13 +105,13 @@ CREATE TABLE CART(
    FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId)
 );
 insert into CART(cartNumber, courseCode, userId)
-values(1, 'EIP1', 'jung');
+values(CART_seq.nextval, 'EIP1', 'jung');
 insert into CART(cartNumber, courseCode, userId)
-values(2, 'EIP2', 'jung');
+values(CART_seq.nextval, 'EIP2', 'jung');
 insert into CART(cartNumber, courseCode, userId)
-values(3, 'EBDA1', 'kang');
+values(CART_seq.nextval, 'EBDA1', 'kang');
 insert into CART(cartNumber, courseCode, userId)
-values(4, 'EBDA2', 'kang');
+values(CART_seq.nextval, 'EBDA2', 'kang');
 
 
 drop sequence WISH_seq;
