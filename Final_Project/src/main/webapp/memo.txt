@@ -261,13 +261,16 @@ CREATE TABLE EVENT(
    eventContent VARCHAR2(2000) NOT NULL,
    eventImage VARCHAR2(50) NULL,
    eventDate DATE DEFAULT SYSDATE,
-   eventView NUMBER DEFAULT 0,  
+   eventView NUMBER DEFAULT 0, 
+   eventStart VARCHAR2(50) NOT NULL, 
+   eventEnd VARCHAR2(50) NOT NULL,   
    FOREIGN KEY (adminId) REFERENCES ADMININFO(adminId)
 );
-insert into EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate,eventView)
-values(1, 'son', '신학기 할인 혜택드립니다.', 'This is event 1.','event1.png',sysdate,0);
-insert into EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate,eventView)
-values(2, 'kim', '신규 강의 등록 이벤트입니다.', 'This is event 2.','event1.png',sysdate,0);
+
+INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
+VALUES (1, 'son', '신학기 할인 혜택드립니다.', 'This is event 1.', 'event1.png', SYSDATE, 0, '2023-06-11', '2023-06-13');
+INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
+values(2, 'kim', '신규 강의 등록 이벤트입니다.', 'This is event 2.','event1.png', SYSDATE, 0, '2023-06-02','2023-07-11');
 
 commit;
 
