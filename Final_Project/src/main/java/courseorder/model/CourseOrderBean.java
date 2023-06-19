@@ -1,12 +1,22 @@
 package courseorder.model;
 
+import java.sql.Timestamp;
+
 public class CourseOrderBean {
 	private String orderNumber;
 	private String courseCode;
 	private String userId;
 	private int orderPoint;
 	private int TotalPrice;
+	private Timestamp orderDate;
 	
+	
+	public Timestamp getOrderDate() {
+		return orderDate;
+	}
+	public void setOrderDate(Timestamp orderDate) {
+		this.orderDate = orderDate;
+	}
 	public String getOrderNumber() {
 		return orderNumber;
 	}
