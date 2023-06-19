@@ -226,7 +226,7 @@ function cartList(userId){
 					   
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="/ex/list.nt">공지사항</a></li>
-						<li><a class="dropdown-item" href="#">이벤트</a></li>
+						<li><a class="dropdown-item" href="/ex/list.ev">이벤트</a></li>
 						<li><a class="dropdown-item" href="/ex/list.faq">자주묻는질문</a></li>
 						<li><a class="dropdown-item" href="#">카카오톡문의</a></li>
 					</ul>					
