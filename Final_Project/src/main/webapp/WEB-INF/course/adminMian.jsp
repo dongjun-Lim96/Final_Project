@@ -6,23 +6,29 @@
 <!-- chart.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
-<canvas id="line-chart" width="100" height="50"></canvas>
-<script>
+<div style="position: relative; top: 50px;">
+<canvas id="line-chart" width="600" height="300"></canvas>
+</div>
+<script> 
   new Chart(document.getElementById("line-chart"), {
 	  type: 'line',
 	    data: {
-	      labels: [
-	        <c:forEach var="weeklists" items="${weeklist}">
-	          '${weeklists.orderDate}',
-	        </c:forEach>
-	      ],
-	      datasets: [{
-	        data: [
-	          <c:forEach var="weeklists" items="${weeklist}">
-	            ${weeklists.totalPrice},
-	          </c:forEach>
-	        ],
-	        label: "7일매출",
+	    	labels: [
+	    		  <c:forEach var="weeklists" items="${weeklist}" varStatus="status">
+	    		    <c:if test="${!status.last}">
+	    		      '${weeklists.orderDate}',
+	    		    </c:if>
+	    		  </c:forEach>
+	    		],
+	    		datasets: [{
+	    		  data: [
+	    		    <c:forEach var="weeklists" items="${weeklist}" varStatus="status">
+	    		      <c:if test="${!status.last}">
+	    		        ${weeklists.totalPrice},
+	    		      </c:if>
+	    		    </c:forEach>
+	    		  ],
+	        label: "일매출",
 	        borderColor: "#3e95cd",
 	        fill: false
 	      }]

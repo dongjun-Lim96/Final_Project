@@ -154,5 +154,11 @@ public class CourseDao {
 		//System.out.println("222222222222222");
 		return lists;
 	} 
+	public List<Integer> getOrderDetails(String userId) {
+	      
+	      List<Integer> oddArr = sqlSessionTemplate.selectList(namespace + ".GetOrderDetails", userId);
+	      System.out.println("userid:%%%%%%%%%%%%%%%%%%%%%%%%%%%%" + userId);
+	      return oddArr;
+	} 
 	
 }
