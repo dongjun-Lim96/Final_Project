@@ -46,9 +46,9 @@ public class CourseGetMainController {
       System.out.println("/list.cs/list.cs/list.cs");
       ModelAndView mav = new ModelAndView();
 		 
-      	List<CategoryBean> lists = coursedao.getCategory();
+      	List<CategoryBean> catelists = coursedao.getCategory();
 		
-      	session.setAttribute("lists",lists);
+      	session.setAttribute("catelists",catelists);
 		
       List<CourseBean> courseLists = coursedao.getCourse();
       mav.addObject("courseLists",courseLists);
