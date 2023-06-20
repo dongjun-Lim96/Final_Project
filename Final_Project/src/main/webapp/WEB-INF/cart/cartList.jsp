@@ -95,6 +95,18 @@ function alldelete() {
 function goBack() {
 	  window.history.back();
 	}
+	
+function payment(userId, totalPrice) {
+	//alert(userId);
+	//alert(totalPrice);
+	 if (confirm("결제하시겠습니까?")) {
+		 
+	    location.href = "payment.ct?userId="+userId;
+	    alert("결제가 완료되었습니다!");
+	  } else {
+	    alert("결제가 취소되었습니다.");
+	  }
+}	
 </script>
 
 <center>
@@ -151,7 +163,7 @@ function goBack() {
 			<td align=right>
 				<input type="button" value="계속 쇼핑하기" class="btn btn-secondary" onClick="goBack()">
 				&nbsp;&nbsp;
-				<input type="button" value="결제하기" class="btn btn-primary" onClick="location.href='payment.stu'">
+				<input type="button" value="결제하기" class="btn btn-primary" onClick="payment('${userId}','${totalprice}')">
 				<!-- <input type="submit" value="결제하기" class="btn btn-primary"> -->
 			</td>
 			<td width=50px></td>

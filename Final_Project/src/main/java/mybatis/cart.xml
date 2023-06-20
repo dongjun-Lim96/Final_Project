@@ -27,4 +27,13 @@
 	 			#{num}
 	 		</foreach>
 	 	</delete>
+	 	
+		<insert id="InsertOrder">
+			insert into COURSEORDER(orderNumber, courseCode, userId, totalPrice)
+			values(courseorder_seq.nextval, #{courseCode}, #{userId}, #{totalPrice})
+		</insert>
+		
+		<delete id="EndCart">
+			delete cart
+		</delete>
 	</mapper>
