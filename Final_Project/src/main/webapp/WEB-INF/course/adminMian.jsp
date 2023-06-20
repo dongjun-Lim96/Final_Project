@@ -16,7 +16,7 @@
 	    	labels: [
 	    		  <c:forEach var="weeklists" items="${weeklist}" varStatus="status">
 	    		    <c:if test="${!status.last}">
-	    		      '${weeklists.orderDate}',
+	    		      '<fmt:formatDate value="${weeklists.orderDate}" pattern="yyyy-MM-dd" />',
 	    		    </c:if>
 	    		  </c:forEach>
 	    		],
