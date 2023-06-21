@@ -2,13 +2,16 @@ package course.controller;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.Collections;
 import java.util.Comparator;
 
@@ -24,7 +27,7 @@ import courseorder.model.CourseOrderBean;
 
 @Controller
 public class AdminMain {
-   private final String command="adminmain.cs";
+   private final String command="/adminmain.cs";
    private final String getPage="adminMian";
    
    @Autowired
@@ -45,8 +48,8 @@ public class AdminMain {
       java.sql.Date sqlStartDate = java.sql.Date.valueOf(startDate);
       
       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-      //System.out.println("오늘 날짜 :" +sqlEndDate);
-      //System.out.println("7일전 날짜 :" + sqlStartDate);
+      System.out.println("위 오늘 날짜 :" +sqlEndDate);
+      System.out.println("위 7일전 날짜 :" + sqlStartDate);
       Calendar calendar = Calendar.getInstance();
       calendar.setTime(sqlStartDate);
       
@@ -135,17 +138,72 @@ public class AdminMain {
 
       System.out.println("mergedList : " + mergedList.size());
        
+      
+      
+      
       AccountsDao accountsDao = new AccountsDao();
       List<AccountsBean> countAccount = courseDao.getCountAccount();
       System.out.println("countAccount :" +countAccount.size());
-      for(AccountsBean x : countAccount) {
-    	  System.out.println("x.getJoin_date() :" + x.getJoin_date());
-    	  System.out.println("x.getCount() : "+x.getCount());
-    	  System.out.println();
+
+      
+      
+      
+
+      LocalDate currentDate = LocalDate.now();
+      LocalDate sevenDaysAgo = currentDate.minusDays(6);
+
+      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+      String accounttoday = currentDate.format(formatter);
+      String sevenDaysAgoString = sevenDaysAgo.format(formatter);
+
+      System.out.println("accounttoday 오늘 날짜: " + accounttoday);
+      System.out.println("7일 전 날짜: " + sevenDaysAgoString);
+      
+      
+      
+      Set<String> existingDates = new HashSet<String>();
+     
+
+      // 기존 데이터의 날짜를 Set에 추가
+      for (AccountsBean bean : countAccount) {
+          existingDates.add(bean.getJoin_date());
       }
+
+      String dateString = sevenDaysAgoString;
+      while (!dateString.equals(accounttoday)) {
+          // 날짜가 누락된 경우 bean 객체 생성 후 추가
+          if (!existingDates.contains(dateString)) {
+              AccountsBean bean = new AccountsBean();
+              bean.setJoin_date(dateString);
+              bean.setCount(0); // 초기값 0으로 설정
+              countAccount.add(bean);
+          }
+
+          LocalDate date = LocalDate.parse(dateString, formatter);
+          date = date.plusDays(1);
+          dateString = date.format(formatter);
+      }
+      Collections.sort(countAccount, new Comparator<AccountsBean>() {
+    	    public int compare(AccountsBean a1, AccountsBean a2) {
+    	        return a1.getJoin_date().compareTo(a2.getJoin_date());
+    	    }
+    	});
+      
+		/*
+		 * System.out.println("countAccount: " + countAccount.size()); for (AccountsBean
+		 * x : countAccount) { System.out.println("x.getJoin_date(): " +
+		 * x.getJoin_date()); System.out.println("x.getCount(): " + x.getCount());
+		 * System.out.println(); }
+		 */
+      
+      
+      mav.addObject("countAccount", countAccount);
+      
       mav.addObject("weeklist",mergedList);
       
       mav.setViewName(getPage);
       return mav;
    }
+   
 }
