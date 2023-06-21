@@ -3,7 +3,13 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-	<mapper namespace="courseOrder.model">
-		
+	<mapper namespace="courseorder.model">
+		<select id="GetAccountBuyList" resultType="accounts.model.AccountsBean">
+			SELECT a.USERID as userId, a.USERPW as userPw, a.USERNAME as userName, a.USERPHONE as userPhone, a.USEREMAIL as userEmail, COUNT(co.ORDERNUMBER) AS count
+			FROM accounts a
+			LEFT JOIN courseorder co ON a.USERID = co.USERID
+			WHERE a.ADMINCHECK = '0'
+			GROUP BY a.USERID, a.USERPW, a.USERNAME, a.USERPHONE, a.USEREMAIL		
+		</select>
 	
 	</mapper>
