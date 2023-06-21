@@ -21,7 +21,7 @@ public class CourseShowController {
    
 
    @Autowired
-   CourseDao courseDao;  
+   CourseDao courseDao;
    
    @RequestMapping(value=command , method = RequestMethod.GET)
    public ModelAndView  doAction(@RequestParam(value="courseCode", required=false) String courseCode,
