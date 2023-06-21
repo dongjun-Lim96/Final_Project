@@ -18,7 +18,14 @@ public class AccountsBean {
 	private int userOut;
 	private int adminCheck;
 	private String join_date;
+	private int count;
 	
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
+	}
 	public String getJoin_date() {
 		return join_date;
 	}
