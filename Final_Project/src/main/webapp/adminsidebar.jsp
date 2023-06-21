@@ -168,9 +168,7 @@
         </button>
         <div class="collapse" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">11111</a></li>
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">22222</a></li>
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">33333</a></li>
+            <li><a href="courseaccountList.co" class="link-dark rounded" id="sidebarfont">고객관리</a></li>
 
           </ul>
         </div>
