@@ -17,7 +17,14 @@ public class AccountsBean {
 	private Timestamp userJoinDate;
 	private int userOut;
 	private int adminCheck;
+	private String join_date;
 	
+	public String getJoin_date() {
+		return join_date;
+	}
+	public void setJoin_date(String join_date) {
+		this.join_date = join_date;
+	}
 	public String getUserId() {
 		return userId;
 	}
