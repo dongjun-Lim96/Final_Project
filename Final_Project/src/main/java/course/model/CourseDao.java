@@ -171,4 +171,11 @@ public class CourseDao {
 		return lists;
 	}
 	
+	public CourseBean getOneCourseByName(String courseCode) {
+	      CourseBean courseBean = new CourseBean();
+	      
+	      //System.out.println("888888888888"+courseCode);
+	      courseBean = sqlSessionTemplate.selectOne(namespace+".GetOneCourseByName",courseCode);
+	      return courseBean;
+	   }
 }

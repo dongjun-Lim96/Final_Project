@@ -127,5 +127,8 @@
       ORDER BY orderDate      
    </select> 
 
+	<select id="GetOneCourseByName" resultType="course.model.CourseBean">
+         select * from course where courseCode=#{courseCode}
+     </select>
 
    </mapper>

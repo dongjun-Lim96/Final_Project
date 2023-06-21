@@ -108,7 +108,7 @@
 							<tr>
 								<td>${list.courseCode}</td>
 								<td>${list.categoryCode}</td>
-								<td>${list.cousreName}</td>
+								<td><a href="goshow.cs?courseCode=${list.courseCode}">${list.cousreName}</a></td>
 								<td>${list.cousreTeacher}</td>
 								<td>${list.cousreTerm}</td>
 								<td>${list.cousrePrice}</td>
