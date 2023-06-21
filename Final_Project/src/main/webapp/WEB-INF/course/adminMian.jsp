@@ -11,28 +11,28 @@
 </div>
 <script> 
   new Chart(document.getElementById("line-chart"), {
-	  type: 'line',
-	    data: {
-	    	labels: [
-	    		  <c:forEach var="weeklists" items="${weeklist}" varStatus="status">
-	    		    <c:if test="${!status.last}">
-	    		      '${weeklists.orderDate}',
-	    		    </c:if>
-	    		  </c:forEach>
-	    		],
-	    		datasets: [{
-	    		  data: [
-	    		    <c:forEach var="weeklists" items="${weeklist}" varStatus="status">
-	    		      <c:if test="${!status.last}">
-	    		        ${weeklists.totalPrice},
-	    		      </c:if>
-	    		    </c:forEach>
-	    		  ],
-	        label: "일매출",
-	        borderColor: "#3e95cd",
-	        fill: false
-	      }]
-	    },
+     type: 'line',
+       data: {
+          labels: [
+               <c:forEach var="weeklists" items="${weeklist}" varStatus="status">
+                 <c:if test="${!status.last}">
+                   '<fmt:formatDate value="${weeklists.orderDate}" pattern="yyyy-MM-dd" />',
+                 </c:if>
+               </c:forEach>
+             ],
+             datasets: [{
+               data: [
+                 <c:forEach var="weeklists" items="${weeklist}" varStatus="status">
+                   <c:if test="${!status.last}">
+                     ${weeklists.totalPrice},
+                   </c:if>
+                 </c:forEach>
+               ],
+           label: "일매출",
+           borderColor: "#3e95cd",
+           fill: false
+         }]
+       },
     options: {
       responsive: true,
       maintainAspectRatio: false,
