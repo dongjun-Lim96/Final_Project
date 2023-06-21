@@ -29,8 +29,8 @@
 	 	</delete>
 	 	
 	 	<insert id="InsertOrder">
-			insert into COURSEORDER(orderNumber, courseCode, userId, totalPrice)
-			values(courseorder_seq.nextval, #{courseCode}, #{userId}, #{totalPrice})
+			insert into COURSEORDER(orderNumber, courseCode, userId, totalPrice,orderDate)
+			values(courseorder_seq.nextval, #{courseCode}, #{userId}, #{totalPrice},TO_CHAR(SYSDATE, 'YYYY-MM-DD'))
 		</insert>
 
 		<delete id="EndCart">
