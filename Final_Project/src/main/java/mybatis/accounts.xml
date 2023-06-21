@@ -4,67 +4,88 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="accounts.model">
-	<select id="GetAccountsById" resultType="accounts.model.AccountsBean"> 
-	select * from accounts where userId=#{userId} 
-	</select>
-	
-	<select id="GetUserIdByUserEmail" resultType="accounts.model.AccountsBean">
-	select * from accounts where userEmail=#{userEmail}
-	 </select>
+   <select id="GetAccountsById" resultType="accounts.model.AccountsBean"> 
+   select * from accounts where userId=#{userId} 
+   </select>
+   
+   <select id="GetUserIdByUserEmail" resultType="accounts.model.AccountsBean">
+   select * from accounts where userEmail=#{userEmail}
+    </select>
 
-	<select id="GetUserIdByUserName" resultType="accounts.model.AccountsBean">
-	select * from accounts where userName=#{userName}
-	 </select>
-	 
-	  <select id="SearchId" resultType="int">
-	 	select count(*) from accounts where userId = #{userId}
-	 </select>
-	 
-	  <insert id="AccountsRegister">
-	 	insert into accounts(userId ,userName ,userPw ,
-	 	userBirth ,userEmail ,userPhone ,userChkEmail ,
-	 	userChkPhone)
-		values(#{userId}, #{userName}, #{userPw},
-		#{userBirth}, #{userEmail}, #{userPhone},
-		#{userChkEmail}, #{userChkPhone})
-	 </insert> 
-	 
-	 <select id="GetUserIdByUserNameEmail" resultType="accounts.model.AccountsBean">
-	select * from accounts where userName=#{userName} and userEmail=#{userEmail}
-	 </select>
-	<select id="GetUserIdByUserIdEmail" resultType="accounts.model.AccountsBean">
-	select * from accounts where userId=#{userId} and userEmail=#{userEmail}
-	 </select>
-	 
-	 
-	  <select id="GetOrderById" resultType="course.model.CourseBean">
-	 	select c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm
-		from course c
-		join courseorder co ON c.coursecode = co.coursecode
-		where co.userid = #{userId}
-	 </select>
-	 
-	 
-	  <update id="AccountsUpdate">
-	  	update accounts set
-	  	userName = #{userName},
-	  	userPw = #{userPw} ,userBirth = #{userBirth},
-	  	userEmail = #{userEmail}, userPhone =#{userPhone},
-	  	userChkEmail = #{userChkEmail}, userChkPhone = #{userChkPhone}
-	  	where userId = #{userId}
-	  </update>
-	  
-	  <update id="OutUser">
-	  	update accounts set
-	  	userOut = 1
-	  	where userId = #{userId}
-	  </update>
-	 
-	 
-	  <select id="GetWishList" resultType="course.model.CourseBean">
-	 	select c.courseCode, c.categoryCode, c.cousreImg, c.cousreName, c.cousrePrice, c.cousreTeacher, c.cousreTerm, c.cousreVideo
-		from wishlist w
-		join course c on w.courseCode = c.courseCode
-		where w.userId = #{userId}
-	 </select>
+   <select id="GetUserIdByUserName" resultType="accounts.model.AccountsBean">
+   select * from accounts where userName=#{userName}
+    </select>
+    
+     <select id="SearchId" resultType="int">
+       select count(*) from accounts where userId = #{userId}
+    </select>
+    
+     <insert id="AccountsRegister">
+       insert into accounts(userId ,userName ,userPw ,
+       userBirth ,userEmail ,userPhone ,userChkEmail ,
+       userChkPhone)
+      values(#{userId}, #{userName}, #{userPw},
+      #{userBirth}, #{userEmail}, #{userPhone},
+      #{userChkEmail}, #{userChkPhone})
+    </insert> 
+    
+    <select id="GetUserIdByUserNameEmail" resultType="accounts.model.AccountsBean">
+   select * from accounts where userName=#{userName} and userEmail=#{userEmail}
+    </select>
+   <select id="GetUserIdByUserIdEmail" resultType="accounts.model.AccountsBean">
+   select * from accounts where userId=#{userId} and userEmail=#{userEmail}
+    </select>
+    
+    
+     <select id="GetOrderById" resultType="course.model.CourseBean">
+       select c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm, c.cousreImg
+      from course c
+      join courseorder co ON c.coursecode = co.coursecode
+      where co.userid = #{userId}
+    </select>
+    
+    
+     <update id="AccountsUpdate">
+        update accounts set
+        userName = #{userName},
+        userPw = #{userPw} ,userBirth = #{userBirth},
+        userEmail = #{userEmail}, userPhone =#{userPhone},
+        userChkEmail = #{userChkEmail}, userChkPhone = #{userChkPhone}
+        where userId = #{userId}
+     </update>
+     
+     <update id="OutUser">
+        update accounts set
+        userOut = 1
+        where userId = #{userId}
+     </update>
+    
+    
+     <select id="GetWishList" resultType="course.model.CourseBean">
+       select c.courseCode, c.categoryCode, c.cousreImg, c.cousreName, c.cousrePrice, c.cousreTeacher, c.cousreTerm, c.cousreVideo
+      from wishlist w
+      join course c on w.courseCode = c.courseCode
+      where w.userId = #{userId}
+    </select>
+    
+     <select id="GetPayList" resultType="courseorder.model.CourseOrderBean">
+       select * from courseorder where userId = #{userId}
+    </select>
+    
+    <select id="GetCourseList" resultType="course.model.CourseBean">
+       SELECT c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm, c.cousreImg, co.ORDERDATE
+      FROM course c
+      JOIN courseorder co ON c.coursecode = co.coursecode
+      WHERE co.userid = #{userId} AND <![CDATA[(sysdate - co.ORDERDATE) < c.cousreterm]]> 
+    </select>
+    
+    
+    <select id="GetCourseEndList" resultType="course.model.CourseBean">
+       SELECT c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm, c.cousreImg, co.ORDERDATE
+      FROM course c
+      JOIN courseorder co ON c.coursecode = co.coursecode
+      WHERE co.userid = #{userId} AND <![CDATA[(sysdate - co.ORDERDATE) > c.cousreterm]]> 
+    </select>
+    
+    
 </mapper>
