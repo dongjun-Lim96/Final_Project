@@ -1,6 +1,9 @@
 package category.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +29,7 @@ public class CategoryController {
 		return getPage;
 	}
 	@RequestMapping(value=command , method = RequestMethod.POST)
-	public ModelAndView  doAction(HttpServletRequest request) {
+	public ModelAndView  doAction(HttpServletRequest request,HttpSession session) {
 		ModelAndView mav = new ModelAndView();
 		String categoryCode = request.getParameter("categoryCode");
 		String categoryName = request.getParameter("categoryName");
@@ -34,6 +37,8 @@ public class CategoryController {
 		System.out.println("POSTPOSTPOST : "+categoryCode+" , " + categoryName);
 		int cnt = categoryDao.insertCategory(cb);
 		if(cnt >0) {
+			List<CategoryBean> categoryLists = categoryDao.getCategory();
+			session.setAttribute("catelists", categoryLists);
 			mav.addObject("message", "카테고리 등록완료");
 			mav.setViewName(getPage);
 			return mav;

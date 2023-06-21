@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,12 +52,14 @@ public class CourseInsertController {
 	}
 	
 	@RequestMapping(value = command,method = RequestMethod.POST)
-	public ModelAndView doAction(@ModelAttribute("courseBean") CourseBean courseBean) {
+	public ModelAndView doAction(@ModelAttribute("courseBean") CourseBean courseBean,HttpSession session) {
 		String uploadPath = servletContext.getRealPath("/resources");
 		System.out.println("uploadPath : " + uploadPath);
 		ModelAndView mav= new ModelAndView();
 		String str = "c:/tempUpload";
+      	List<CategoryBean> catelists = coursedao.getCategory();
 		
+      	session.setAttribute("catelists",catelists);
 		File destination_img = new File(uploadPath+File.separator+courseBean.getUploadimg().getOriginalFilename());
 		MultipartFile multi_img = courseBean.getUploadimg();		
 		File destination_local_img = new File(str + File.separator + multi_img.getOriginalFilename());
@@ -72,8 +75,8 @@ public class CourseInsertController {
 				multi_img.transferTo(destination_local_img);
 				multi_video.transferTo(destination_local_video);
 				
-				FileCopyUtils.copy(destination_img, destination_local_img); // 사진복사
-				FileCopyUtils.copy(destination_video, destination_local_video); // 동영상복사 
+				FileCopyUtils.copy(destination_img, destination_local_img); // �궗吏꾨났�궗
+				FileCopyUtils.copy(destination_video, destination_local_video); // �룞�쁺�긽蹂듭궗 
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
