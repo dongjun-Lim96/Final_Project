@@ -19,7 +19,9 @@
       lineChart.destroy(); // 기존 차트 삭제
     }
   }
-
+  window.onload = function() {
+	    displayChart(); // 페이지가 로드되면 displayChart() 함수를 호출하여 차트를 생성
+	  };
   function displayChart() {
     clearChart(); // 이전 차트 삭제
     let total = 0;
