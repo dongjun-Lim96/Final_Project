@@ -87,5 +87,7 @@
 		WHERE co.userid = #{userId} AND <![CDATA[(sysdate - co.ORDERDATE) > c.cousreterm]]> 
 	 </select>
 	 
-	 
+	<select id="GetAccountsEmail" resultType="accounts.model.AccountsBean"> 
+		select * from accounts where userEmail=#{userEmail} 
+	</select>
 </mapper>
