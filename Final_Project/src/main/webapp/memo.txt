@@ -198,6 +198,7 @@ create sequence courseorder_seq
   maxvalue 10000
   nocache;
 --주문 테이블
+DROP TABLE COURSEORDER CASCADE CONSTRAINTS;
 CREATE TABLE COURSEORDER(
    orderNumber VARCHAR2(200) PRIMARY KEY,
    courseCode VARCHAR2(50),
