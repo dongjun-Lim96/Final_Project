@@ -38,7 +38,7 @@
 	 
 	 
 	  <select id="GetOrderById" resultType="course.model.CourseBean">
-	 	select c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm
+	 	select c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm, c.cousreImg
 		from course c
 		join courseorder co ON c.coursecode = co.coursecode
 		where co.userid = #{userId}
@@ -60,4 +60,34 @@
 	  	where userId = #{userId}
 	  </update>
 	 
+	 
+	  <select id="GetWishList" resultType="course.model.CourseBean">
+	 	select c.courseCode, c.categoryCode, c.cousreImg, c.cousreName, c.cousrePrice, c.cousreTeacher, c.cousreTerm, c.cousreVideo
+		from wishlist w
+		join course c on w.courseCode = c.courseCode
+		where w.userId = #{userId}
+	 </select>
+	 
+	  <select id="GetPayList" resultType="courseorder.model.CourseOrderBean">
+	 	select * from courseorder where userId = #{userId}
+	 </select>
+	 
+	 <select id="GetCourseList" resultType="course.model.CourseBean">
+	 	SELECT c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm, c.cousreImg, co.ORDERDATE
+		FROM course c
+		JOIN courseorder co ON c.coursecode = co.coursecode
+		WHERE co.userid = #{userId} AND <![CDATA[(sysdate - co.ORDERDATE) < c.cousreterm]]> 
+	 </select>
+	 
+	 
+	 <select id="GetCourseEndList" resultType="course.model.CourseBean">
+	 	SELECT c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm, c.cousreImg, co.ORDERDATE
+		FROM course c
+		JOIN courseorder co ON c.coursecode = co.coursecode
+		WHERE co.userid = #{userId} AND <![CDATA[(sysdate - co.ORDERDATE) > c.cousreterm]]> 
+	 </select>
+	 
+	<select id="GetAccountsEmail" resultType="accounts.model.AccountsBean"> 
+		select * from accounts where userEmail=#{userEmail} 
+	</select>
 </mapper>

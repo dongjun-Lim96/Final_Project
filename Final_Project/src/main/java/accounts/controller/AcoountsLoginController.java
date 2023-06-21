@@ -232,7 +232,7 @@ public class AcoountsLoginController {
        AccountsBean ab = adao.GetAccountsByIdEmail(input_userId,input_userEmail);
     
        response.setContentType("text/html; charset=UTF-8");
-       PrintWriter out = null;
+       PrintWriter out = null;  
        if (ab == null) { // 가입안함
            System.out.println("가입하지 않은 회원");
            String strJson = "{userEmail: " + input_userEmail + ",checkGbn: N}";
