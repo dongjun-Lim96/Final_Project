@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import course.model.CourseBean;
-import courseorder.model.CourseOrderBean;
 
 @Component
 public class CartDao {
@@ -54,15 +53,7 @@ public class CartDao {
 		sqlSessionTemplate.delete(namespace+".CartDelete", array);
 	}
 
-	
-	public void insertOrder(CourseOrderBean coBean) {
-		System.out.println(coBean.getTotalPrice());
-		sqlSessionTemplate.insert(namespace+".InsertOrder", coBean);
-	}
 
-	public void endCart() {
-		sqlSessionTemplate.delete(namespace+".EndCart");
-	}
 	
 	
 }

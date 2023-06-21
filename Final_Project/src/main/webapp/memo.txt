@@ -207,7 +207,7 @@ CREATE TABLE COURSEORDER(
    FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId),
    orderPoint NUMBER DEFAULT 0,
    totalPrice NUMBER NOT NULL,
-   orderDate DATE default TO_DATE(SYSDATE, 'YYYY-MM-DD'),
+   orderDate DATE default SYSDATE,
    FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode)   
 );
 
@@ -217,12 +217,8 @@ insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
 values(courseorder_seq.nextval, 'EIP1', 'jung', 50000,'2023-06-17');
 insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
 values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,'2023-06-18');
-insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
-values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,TO_CHAR(SYSDATE, 'YYYY-MM-DD'));
-insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
-values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,TO_CHAR(SYSDATE, 'YYYY-MM-DD'));
-insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
-values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,'2023-06-20');
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice)
+values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000);
 
 
 drop sequence FAQ_seq;

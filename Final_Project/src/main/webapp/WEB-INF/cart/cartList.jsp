@@ -106,7 +106,11 @@ function payment(userId, totalPrice) {
 	  } else {
 	    alert("결제가 취소되었습니다.");
 	  }
+<<<<<<< HEAD
 }	
+=======
+}	
+>>>>>>> branch 'main' of https://github.com/dongjun-Lim96/Final_Project.git
 </script>
 
 <center>
