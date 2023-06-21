@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import course.model.CourseBean;
+import courseorder.model.CourseOrderBean;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -110,6 +111,26 @@ public class AccountsDao {
 	public List<CourseBean> getWishList(String userId) {
 		List<CourseBean> lists = new ArrayList<CourseBean>();
 		lists = sqlSessionTemplate.selectList(namespace+".GetWishList", userId); 
+		return lists;
+	}
+
+
+	public List<CourseOrderBean> getPayList(String userId) {
+		List<CourseOrderBean> lists = new ArrayList<CourseOrderBean>();
+		lists = sqlSessionTemplate.selectList(namespace+".GetPayList", userId);
+		return lists;
+	}
+
+
+	public List<CourseBean> getCourseList(String userId) {
+		List<CourseBean> lists = new ArrayList<CourseBean>();
+		lists = sqlSessionTemplate.selectList(namespace+".GetCourseList", userId); 
+		return lists;
+	}
+
+	public List<CourseBean> getCourseEndList(String userId) {
+		List<CourseBean> lists = new ArrayList<CourseBean>();
+		lists = sqlSessionTemplate.selectList(namespace+".GetCourseEndList", userId); 
 		return lists;
 	}
 	
