@@ -181,10 +181,7 @@
         </button>
         <div class="collapse" id="orders-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded" id="sidebarfont"></a></li>
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">11111</a></li>
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">22222</a></li>
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">33333</a></li>
+            <li><a href="courseOrderList.co" class="link-dark rounded" id="sidebarfont">주문현황</a></li>
           </ul>
         </div>   
       </li>

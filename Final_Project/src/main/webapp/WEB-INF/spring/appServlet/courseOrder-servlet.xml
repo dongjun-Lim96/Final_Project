@@ -12,8 +12,8 @@
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/courseOrder/"></property>
 		<property name="suffix" value=".jsp"></property>
-	</bean>
-	
-	<context:component-scan base-package="courseOrder"/>
+	</bean> 
+	 
+	<context:component-scan base-package="courseorder"/>
 
 </beans>

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CourseOrderDao {
 	
-	private String namespace = "courseOrder.model";
+	private String namespace = "courseorder.model";
 	
 	@Autowired
 	SqlSessionTemplate sqlSessionTemplate;
