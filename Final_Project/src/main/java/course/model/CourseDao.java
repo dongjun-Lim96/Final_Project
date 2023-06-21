@@ -9,6 +9,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import accounts.model.AccountsBean;
 import category.model.CategoryBean;
 import courseorder.model.CourseOrderBean;
 import review.model.ReviewBean;
@@ -159,6 +160,15 @@ public class CourseDao {
 	      List<Integer> oddArr = sqlSessionTemplate.selectList(namespace + ".GetOrderDetails", userId);
 	      System.out.println("userid:%%%%%%%%%%%%%%%%%%%%%%%%%%%%" + userId);
 	      return oddArr;
-	} 
+	}
+
+	public List<AccountsBean> getCountAccount() {
+		System.out.println("1111111111111");
+		List<AccountsBean> lists = new ArrayList<AccountsBean>();
+		System.out.println("22222222222222");
+		lists = sqlSessionTemplate.selectList(namespace+".GetCountAccount");
+		System.out.println("333333333333333");
+		return lists;
+	}
 	
 }
