@@ -145,7 +145,7 @@
   <div class="b-example-divider"></div>
 
   <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-    <a href="adminsidebar.jsp" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+    <a href="adminmain.cs" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
      
       <span class="fs-5 fw-semibold">관리자 페이지</span>
     </a>
