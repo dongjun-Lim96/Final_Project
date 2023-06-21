@@ -17,6 +17,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import accounts.model.AccountsBean;
+import accounts.model.AccountsDao;
 import course.model.CourseDao;
 import courseorder.model.CourseOrderBean;
 
@@ -27,6 +29,7 @@ public class AdminMain {
    
    @Autowired
    CourseDao courseDao;
+   
    
    @RequestMapping(value = command)
    public ModelAndView doAction() {
@@ -76,7 +79,7 @@ public class AdminMain {
                String orderDate = dateFormat.format(weeklist.get(i).getOrderDate());
 
                if (currentDate.equals(orderDate)) {
-                  //System.out.println("weeklist.get(i).getOrderDate(): " + orderDate);
+            	   //System.out.println("weeklist.get(i).getOrderDate(): " + orderDate);
                    //System.out.println("weeklist.get(i).getTotalPrice(): " + weeklist.get(i).getTotalPrice());
                    foundMatch = true;
                    break;
@@ -130,9 +133,16 @@ public class AdminMain {
            }
        }
 
-       System.out.println("mergedList : " + mergedList.size());
+      System.out.println("mergedList : " + mergedList.size());
        
-       
+      AccountsDao accountsDao = new AccountsDao();
+      List<AccountsBean> countAccount = courseDao.getCountAccount();
+      System.out.println("countAccount :" +countAccount.size());
+      for(AccountsBean x : countAccount) {
+    	  System.out.println("x.getJoin_date() :" + x.getJoin_date());
+    	  System.out.println("x.getCount() : "+x.getCount());
+    	  System.out.println();
+      }
       mav.addObject("weeklist",mergedList);
       
       mav.setViewName(getPage);

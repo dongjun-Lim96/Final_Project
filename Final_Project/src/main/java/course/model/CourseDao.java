@@ -163,7 +163,7 @@ public class CourseDao {
 	}
 
 	public List<AccountsBean> getCountAccount() {
-		System.out.println("1111111111111");
+		System.out.println("11111111  11111");
 		List<AccountsBean> lists = new ArrayList<AccountsBean>();
 		System.out.println("22222222222222");
 		lists = sqlSessionTemplate.selectList(namespace+".GetCountAccount");
