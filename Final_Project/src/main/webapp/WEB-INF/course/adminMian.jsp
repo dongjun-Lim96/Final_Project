@@ -53,7 +53,8 @@
         maintainAspectRatio: true, // 차트 크기 고정
         title: {
           display: true,
-          text: '7일 매출'
+          text: '7일 매출',
+          fontSize: 30
         }
       },
       
@@ -91,7 +92,8 @@
 	        maintainAspectRatio: true, // 차트 크기 고정
 	        title: {
 	          display: true,
-	          text: '가입자(명)'
+	          text: '가입자(명)',
+	          fontSize: 30
 	        }
 	      }
 	    });
