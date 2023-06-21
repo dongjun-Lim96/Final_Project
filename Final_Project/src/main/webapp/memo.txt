@@ -198,8 +198,6 @@ create sequence courseorder_seq
   maxvalue 10000
   nocache;
 --주문 테이블
-DROP TABLE COURSEORDER CASCADE CONSTRAINTS;
---주문 테이블
 CREATE TABLE COURSEORDER(
    orderNumber VARCHAR2(200) PRIMARY KEY,
    courseCode VARCHAR2(50),
@@ -210,16 +208,18 @@ CREATE TABLE COURSEORDER(
    orderDate DATE default SYSDATE,
    FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode)   
 );
-
 --COURSEORDER 주문 테이블
 
 insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
 values(courseorder_seq.nextval, 'EIP1', 'jung', 50000,'2023-06-17');
 insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
 values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,'2023-06-18');
-insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice)
-values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000);
-
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,TO_CHAR(SYSDATE, 'YYYY-MM-DD'));
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,TO_CHAR(SYSDATE, 'YYYY-MM-DD'));
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,'2023-06-20');
 
 drop sequence FAQ_seq;
 create sequence FAQ_seq

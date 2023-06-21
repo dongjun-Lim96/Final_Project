@@ -119,14 +119,16 @@
      </select>
      
 
-	<select id="GetWeekOrder" resultType="courseorder.model.CourseOrderBean">
-
-		SELECT TO_CHAR(orderDate, 'YYYY-MM-DD') AS orderDate, SUM(TotalPrice) AS TotalPrice
-	    FROM COURSEORDER
-	    WHERE orderDate BETWEEN #{startDate} AND #{endDate}
-	    GROUP BY orderDate
-	    ORDER BY orderDate	
-	    
-	</select> 
+   <select id="GetWeekOrder" resultType="courseorder.model.CourseOrderBean">
+      SELECT orderDate, SUM(TotalPrice) AS TotalPrice
+      FROM COURSEORDER
+      WHERE orderDate BETWEEN #{startDate} AND #{endDate}
+      GROUP BY orderDate
+      ORDER BY orderDate      
+   </select> 
+   
+    <select id="GetOneCourseByName" resultType="course.model.CourseBean">
+         select * from course where courseCode=#{courseCode}
+     </select>
 
    </mapper>
