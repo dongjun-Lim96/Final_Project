@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import accounts.model.AccountsBean;
 import accounts.model.AccountsDao;
 import course.model.CourseBean;
+import courseorder.model.CourseOrderBean;
 
 @Controller
-public class AccountsWishListController {
-	private final String command = "/wishlist.acc";
-	private String getPage = "accountsWishList";
+public class AccountsCourseController {
+	private final String command = "/aCourse.acc";
+	private String getPage = "accountsCourse";
 	
 	@Autowired
 	AccountsDao adao;
@@ -31,8 +31,9 @@ public class AccountsWishListController {
 	
 	@RequestMapping(value =  command , method = RequestMethod.GET)
 	public ModelAndView doAction(@RequestParam("userId") String userId) throws IOException{
-		
-		System.out.println("유저 아이디*****:  "+userId);
+	
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("userId", userId);
 		
 		String uploadPath = servletContext.getRealPath("/resources/");
 		System.out.println("uploadPath: " + uploadPath);
@@ -43,18 +44,16 @@ public class AccountsWishListController {
 		
 		FileUtils.copyDirectory(destination_local, destination); //폴더쨰 카피
 		
-		ModelAndView mav = new ModelAndView();
-		
-		List<CourseBean> wishList = adao.getWishList(userId);
-		
-		for (int i = 0; i < wishList.size(); i++) {
-			System.out.println("img1: "+wishList.get(i).getCousreImg());
-			System.out.println("img2: "+wishList.get(i).getCousreImg2());
+		List<CourseBean> lists = adao.getCourseList(userId);
+
+		for (int i = 0; i < lists.size(); i++) {
+			System.out.println(lists.get(i).getCousreImg());
 			
 		}
 		
+		
 		mav.addObject("userId", userId);
-		mav.addObject("wishList", wishList);
+		mav.addObject("courseList", lists);
 		
 		mav.setViewName(getPage);
 		
