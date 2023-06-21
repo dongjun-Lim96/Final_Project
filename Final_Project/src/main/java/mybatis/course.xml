@@ -130,5 +130,10 @@
 	<select id="GetOneCourseByName" resultType="course.model.CourseBean">
          select * from course where courseCode=#{courseCode}
      </select>
-
+	
+	<select id="GetCountAccount" resultType="accounts.model.AccountsBean">
+		SELECT TO_CHAR(userjoindate, 'YYYY-MM-DD') AS join_date, COUNT(userjoindate) as count
+		FROM accounts
+		GROUP BY TO_CHAR(userjoindate, 'YYYY-MM-DD')
+	</select>
    </mapper>
