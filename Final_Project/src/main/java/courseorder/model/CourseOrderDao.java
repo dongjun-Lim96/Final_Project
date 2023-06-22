@@ -7,6 +7,7 @@ import java.util.Map;
 import org.apache.ibatis.session.RowBounds;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Component;
 
 import accounts.model.AccountsBean;
@@ -43,7 +44,11 @@ public class CourseOrderDao {
 
 	public int deleteAccount(String userId) {
 		int cnt=0;
-		cnt = sqlSessionTemplate.delete(namespace+".DeleteAccount",userId);
+		try {
+			cnt = sqlSessionTemplate.delete(namespace+".DeleteAccount",userId);
+		} catch (DataIntegrityViolationException e) {
+			cnt=0;
+		}
 		return cnt;
 	}
 	

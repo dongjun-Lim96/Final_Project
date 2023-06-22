@@ -34,9 +34,11 @@ public class DeleteAccountController {
 		mav.setViewName(getPage);
 	    if (cnt > 0) {
 	        redirectAttributes.addFlashAttribute("message", "회원 삭제완료");
+	    }else if(cnt ==0){
+	    	 redirectAttributes.addFlashAttribute("message", "수강중인강의가 있습니다. 삭제실패");
 	    }else {
-	    	 redirectAttributes.addFlashAttribute("message", "회원 삭제실패");
-	    }
+			redirectAttributes.addFlashAttribute("message", "회원 삭제실패");
+		}
 		return mav;
 		
 	}
