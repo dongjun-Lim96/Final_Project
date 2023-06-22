@@ -178,4 +178,10 @@ public class CourseDao {
 	      courseBean = sqlSessionTemplate.selectOne(namespace+".GetOneCourseByName",courseCode);
 	      return courseBean;
 	   }
+
+	public List<CourseOrderBean> selectCourseList(String userId) {
+		List<CourseOrderBean> lists = new ArrayList<CourseOrderBean>();		
+		lists = sqlSessionTemplate.selectList(namespace+".SelectCourseList",userId);		
+		return lists;
+	}
 }

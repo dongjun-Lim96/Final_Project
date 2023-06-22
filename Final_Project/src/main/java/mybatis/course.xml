@@ -136,4 +136,13 @@
 		FROM accounts
 		GROUP BY TO_CHAR(userjoindate, 'YYYY-MM-DD')
 	</select>
+	
+	
+	<select id="SelectCourseList" resultType="course.model.CourseBean">
+        SELECT c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm, c.cousreImg, co.ORDERDATE
+		FROM course c
+		JOIN courseorder co ON c.coursecode = co.coursecode
+		WHERE co.userid = #{userId} AND <![CDATA[(sysdate - co.ORDERDATE) < c.cousreterm]]> 
+   </select> 
+   
    </mapper>

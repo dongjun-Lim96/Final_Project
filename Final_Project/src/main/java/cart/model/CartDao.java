@@ -63,5 +63,11 @@ public class CartDao {
 	public void endCart() {
 		sqlSessionTemplate.delete(namespace+".EndCart");
 	}
+
+	public CourseBean courseByCode(String courseCode) {
+		CourseBean courseBean = new CourseBean();
+		courseBean = sqlSessionTemplate.selectOne(namespace+".CourseByCode",courseCode);
+		return courseBean;
+	}
 	
 }

@@ -121,7 +121,21 @@ function showScrollToTopText() {
         scrollToTopText.style.display = "none";
     }
 }
-	
+
+function logout() {
+	  $.ajax({
+	    url: "logout.acc",
+	    type: "POST",
+	    success: function() {
+	    	   /*  window.location.reload();  */
+		      window.location.href = "list.cs"; 
+	    },
+	    error: function() {
+	      alert("로그아웃에 실패했습니다.");
+	      window.location.href = "list.cs"; 
+	    }
+	  });
+	}
 </script>
 
 
@@ -177,21 +191,16 @@ function showScrollToTopText() {
 					</ul>					
 				</li> 
 				<li class="nav-item" style="display: block;">
-					<c:if test="${loginInfo.adminCheck eq 0}">
-						<a class="bgColor" href="mypage.acc?userId=${loginInfo.userId}" style=" display: block;">마이페이지</a>
-					</c:if>
-					<c:if test="${loginInfo.adminCheck eq 1}">
-						<a class="bgColor" href="adminsidebar.jsp" style=" display: block;">관리자페이지</a>
-					</c:if>
-					
+					<a class="bgColor" onclick="logout()" style=" display: block;">로그아웃</a>
 				</li>
+					
 			</ul>
 		</div>
 	</div>
 </nav>
 
  <div onclick="scrollToTop()" id="scrollToTopText">&#9650; 위로</div>	
-	<%-- 
+	<%--  마이
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="mypage.acc?userId=${userId}"><img src="<%=conPath%>/resources/images/logo.png" width="190" height="80"></a>
@@ -281,8 +290,7 @@ function showScrollToTopText() {
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <div class="small">Logged in as: ${userId}님</div>
                     </div>
                 </nav>
             </div>

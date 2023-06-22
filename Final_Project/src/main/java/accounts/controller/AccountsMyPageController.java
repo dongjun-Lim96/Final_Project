@@ -28,7 +28,8 @@ public class AccountsMyPageController {
 		System.out.println("유저 아이디: "+userId);
 		
 		ModelAndView mav = new ModelAndView();
-		List<CourseBean> lists = adao.getOrderById(userId);
+		//List<CourseBean> lists = adao.getOrderById(userId);
+		List<CourseBean> lists = adao.getCourseList(userId);
 		
 		mav.addObject("userId", userId);
 		mav.addObject("lists", lists);

@@ -115,7 +115,7 @@
 						<i>배송금액<b class="red red_s">(무료)</b> <b>0원</b></i>
 						<span class="price_item minus"></span>
 						<i>할인금액 <b class="red">0원</b></p></i>
-					<h4>총 결제금액<span class="pointColor price"><strong class="eng">${tot_price}원</strong>원</span></h4>
+					<h4>총 결제금액<span class="pointColor price"><strong class="eng">${tot_price}</strong>원</span></h4>
 				</div>
 			</div>
 
