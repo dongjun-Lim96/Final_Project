@@ -11,6 +11,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Component;
 
 import accounts.model.AccountsBean;
+import course.model.CourseBean;
 import utility.Paging;
 
 
@@ -50,6 +51,18 @@ public class CourseOrderDao {
 			cnt=0;
 		}
 		return cnt;
+	}
+
+	public List<CourseBean> getProgressById(String userId) {
+		List<CourseBean> lists = new ArrayList<CourseBean>();
+		lists = sqlSessionTemplate.selectList(namespace+".GetProgressById",userId);
+		return lists;
+	}
+
+	public List<CourseBean> getFinishedById(String userId) {
+		List<CourseBean> lists = new ArrayList<CourseBean>();
+		lists = sqlSessionTemplate.selectList(namespace+".GetFinishedById",userId);
+		return lists;
 	}
 	
 }

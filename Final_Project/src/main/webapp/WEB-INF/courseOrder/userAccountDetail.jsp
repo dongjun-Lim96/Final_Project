@@ -73,12 +73,11 @@
 	} else {
 	    
 	}
-	function deleteAccount(userId,pageNumber){
-		alert(pageNumber);
-		var confirmDelete = confirm("정말 탈퇴 시키겠습니까?");
-		if (confirmDelete) {
-			location.href = "deleteUserAccount.co?userId=" + userId+"&pageNumber="+pageNumber;
-		}
+	function deleteCategory(courseCode,pageNumber){
+		location.href="deleteCourse.cs?courseCode="+courseCode+"&pageNumber="+pageNumber;
+	}
+	function insertCategory(){
+		location.href="insertCourse.cs"; 
 	}
 </script>
  <!--  <script type="text/javascript" src="https://www.wannaedu.com/theme/6/js/ui.js"></script> -->
@@ -99,94 +98,94 @@
 		.mem_cont .myinfo_cont .comment .good {color: #1758e0;}
 		.mem_cont .myinfo_cont .comment .bad {color: #e01717;}
 		.check_box {width:100%;}
-		
-		.myinfo_cont dt {
-			display: inline-block;
-			width: 550px;
-		}
 	</style>
 
  
- 
-<div class="login_cont member_cont" style="width: 1500px; margin-left : 15%">
-	<div class="login_in">
-		
-		<h3>회원 목록</h3>
-
+<div class="login_cont member_cont" style="width: 85%; margin-left : 15%">
+	<div class="login_in">		
+		<h3>수강 목록</h3>
 	</div>
-
-	
 	
 	<div class="mem_cont" align="center">
 		
- 
-		<div class="myinfo_cont refund_info" align="center">
-			
+		<div class="myinfo_cont refund_info" align="center">		
 			<dl>
-				<dt> </dt>
-				<dt>아이디</dt>						
-				<dt>이름</dt>						
-				<dt>비밀번호</dt>						
-				<dt>이메일</dt>						
-				<dt>총 구매금액</dt>						
-				<dt>구매횟수</dt>						
-				<dt> </dt>						
-				 	
+				<dt>강의명 </dt>
+				<dt>가격</dt>														
+				<dt>썸네일</dt>						
+				<dt>남은기간</dt>						
+				<dt>환불여부 </dt>										
 			</dl>
-			<c:if test="${not empty accountBuyList }">
-			<c:forEach var="accountBuyList" items="${accountBuyList }" varStatus="status">
-			<dl> 
-				<dt>${status.count }</dt>
-				<dt><a href="accountDetail.co?userId=${accountBuyList.userId }&pageNumber=${pageInfo.pageNumber}" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">${accountBuyList.userId }</a> </dt>
-				<dt>${accountBuyList.userName }</dt>
-				<dt>${accountBuyList.userPw }</dt>
-				<dt>${accountBuyList.userEmail }</dt>
+			<c:if test="${empty progressCousre}">
+			<dl>
+				<dt></dt>
+				<dt></dt>
+				<dt>수강중인 강의가 없습니다</dt>
+				<dt></dt>
+				<dt></dt>
+			</dl>
+			</c:if>
+			<c:if test="${not empty progressCousre}">
+			<c:forEach var="course" items="${progressCousre}" varStatus="status">
+			<dl>
+				<dt>${course.cousreName }</dt>
+				<dt>${course.cousrePrice }</dt>				
+				<dt><img src="<%=request.getContextPath() %>/resources/${course.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style="width: 50px; height: 50px; border-radius: 20%;"> </dt>				
+				<dt>${course.leftDay_s }일</dt>
 				<dt>
-					<c:set var="sum" value="${accountBuyList.sum}" />
-					<fmt:formatNumber value="${sum}" pattern="#,###" var="formattedSum" />
-						${formattedSum}원
-				</dt>
-				<dt>${accountBuyList.count }</dt>
-				<dt><button type="button" class="btn btn-outline-info" onClick="deleteAccount('${accountBuyList.userId }','${pageInfo.pageNumber}')">탈퇴</button></dt>						
+					<c:if test="${course.cousreTerm/2 < course.leftDay_s }">
+						<a style="color: blue;">환불하기</a>
+					</c:if>
+					<c:if test="${course.cousreTerm/2 >= course.leftDay_s }">
+						<span style="color: red;">환불불가</span>
+					</c:if>					
+				</dt>						
 			</dl>
 			</c:forEach>
-			</c:if>
-			<c:if test="${ empty accountBuyList }">
-			
-			<dl align="center">
-				<dt></dt>
-				<dt></dt>
-				<dt></dt>
-				<dt>검색 결과가 없습니다</dt>
-				<dt></dt>
-				<dt></dt>
-				<dt></dt>
-			</dl>
-			</c:if>
-<center>
-	<form action="courseAccountList.co" method="get">
-		<select name="whatColumn" style="width: 100px;">
-			<option value="all">전체 검색
-			<option value="userName">성명</option>
-			<option value=userId>아이디</option>
-			<option value="userEmail">이메일</option>
-		</select> <input type="text" name="keyword"> <input type="submit" class="btn btn-outline-info" value="검색">
-	</form>
-	
-<br>
-${pageInfo.pagingHtml }
-</center>
-				
-
-			
+			</c:if> 
 		</div>
 	</div>
 
-
-
-
-
 </div>
+<br><br>
+<div class="login_cont member_cont" style="width: 85%; margin-left : 15%">
+	<div class="login_in">		
+		<h3>수강 완료 목록</h3>
+	</div>
+		<div class="mem_cont" align="center">
+		
+		<div class="myinfo_cont refund_info" align="center">		
+			<dl>
+				<dt></dt>
+				<dt>강의명 </dt>
+				<dt>가격</dt>															
+				<dt>썸네일</dt>						
+				<dt></dt>						
+			</dl>
+			<c:if test="${empty finishedCousre}">
+			<dl>
+				<dt></dt>
+				<dt></dt>
+				<dt>수강완료 강의가 없습니다</dt>
+				<dt></dt>
+				<dt></dt>
+			</dl>
+			</c:if>
+			<c:if test="${not empty finishedCousre}">
+			<c:forEach var="fcourse" items="${finishedCousre}" varStatus="status">
+			<dl>
+				<dt></dt>
+				<dt>${fcourse.cousreName }</dt>
+				<dt>${fcourse.cousreprice }</dt>				
+				<dt><img src="<%=request.getContextPath() %>/resources/${fcourse.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style="width: 50px; height: 50px; border-radius: 20%;"> </dt>
+				<dt></dt>												
+			</dl>
+			</c:forEach>
+			</c:if>
+		</div>
+	</div>
+</div>
+
 
     <iframe src="" name="sysfrm" id="sysfrm" width="100%" height="0" scrolling="no" frameborder="0"></iframe>
 

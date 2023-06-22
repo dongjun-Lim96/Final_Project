@@ -40,6 +40,6 @@ public class DeleteAccountController {
 			redirectAttributes.addFlashAttribute("message", "회원 삭제실패");
 		}
 		return mav;
-		
+		 
 	}
 }
