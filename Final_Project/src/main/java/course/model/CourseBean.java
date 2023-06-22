@@ -1,5 +1,7 @@
 package course.model;
 
+import java.util.Date;
+
 import org.springframework.web.multipart.MultipartFile;
  
 public class CourseBean {
@@ -14,13 +16,27 @@ public class CourseBean {
 	private String cousreVideo2;
 	 
 	private int cousreTerm;
-	 
+	
 	private MultipartFile uploadimg;
 	private MultipartFile uploadvideo;
 	
+	private Date leftDay_d;
+	private String leftDay_s;
 	
 	
 	
+	public Date getLeftDay_d() {
+		return leftDay_d;
+	}
+	public void setLeftDay_d(Date leftDay_d) {
+		this.leftDay_d = leftDay_d;
+	}
+	public String getLeftDay_s() {
+		return leftDay_s;
+	}
+	public void setLeftDay_s(String leftDay_s) {
+		this.leftDay_s = leftDay_s;
+	}
 	public String getCousreImg2() {
 		return cousreImg2;
 	}
