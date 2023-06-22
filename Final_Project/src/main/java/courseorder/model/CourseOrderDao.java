@@ -2,12 +2,15 @@ package courseorder.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import org.apache.ibatis.session.RowBounds;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import accounts.model.AccountsBean;
+import utility.Paging;
 
 
 @Component
@@ -24,10 +27,24 @@ public class CourseOrderDao {
 		return cob;
 	}
 
-	public List<AccountsBean> getAccountBuyList() {
+	public List<AccountsBean> getAccountBuyList(Paging pageInfo,Map<String,String> map) {
 		List<AccountsBean> lists = new ArrayList<AccountsBean>();
-		lists = sqlSessionTemplate.selectList(namespace+".GetAccountBuyList");
+		RowBounds rowBounds = new RowBounds(pageInfo.getOffset(), pageInfo.getLimit());
+		lists = sqlSessionTemplate.selectList(namespace+".GetAccountBuyList",map,rowBounds);
 		return lists;
+	}
+
+	public int getTotalCount(Map<String, String> map) {
+		int cnt = 0;
+		cnt = sqlSessionTemplate.selectOne(namespace+".GetTotalCount",map);
+		System.out.println("cnt : " + cnt );
+		return cnt;
+	}
+
+	public int deleteAccount(String userId) {
+		int cnt=0;
+		cnt = sqlSessionTemplate.delete(namespace+".DeleteAccount",userId);
+		return cnt;
 	}
 	
 }
