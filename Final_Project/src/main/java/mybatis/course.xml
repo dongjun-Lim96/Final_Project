@@ -145,4 +145,17 @@
 		WHERE co.userid = #{userId} AND <![CDATA[(sysdate - co.ORDERDATE) < c.cousreterm]]> 
    </select> 
    
+   
+    <select id="SelectWishListDetail" resultType="wishList.model.WishListBean">
+     	select * from wishlist
+     	where userId=#{userId} and courseCode=#{courseCode}
+     </select>
+     
+     
+	<select id="SelectCourseListDetail" resultType="course.model.CourseBean">
+        SELECT c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreterm, c.cousreImg, co.ORDERDATE
+		FROM course c
+		JOIN courseorder co ON c.coursecode = co.coursecode
+		WHERE co.userid = #{userId} AND c.coursecode = #{courseCode} AND <![CDATA[(sysdate - co.ORDERDATE) < c.cousreterm]]> 
+   </select> 
    </mapper>

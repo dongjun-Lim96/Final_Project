@@ -184,4 +184,16 @@ public class CourseDao {
 		lists = sqlSessionTemplate.selectList(namespace+".SelectCourseList",userId);		
 		return lists;
 	}
+
+	public WishListBean selectWishListDetail(Map<String, Object> map) {
+		WishListBean wb = new WishListBean();
+		wb = sqlSessionTemplate.selectOne(namespace+".SelectWishListDetail",map);
+		return wb;
+	}
+
+	public CourseBean selectCourseListDetail(Map<String, Object> map) {
+		CourseBean cob = new CourseBean();
+		cob = sqlSessionTemplate.selectOne(namespace+".SelectCourseListDetail",map);
+		return cob;
+	}
 }

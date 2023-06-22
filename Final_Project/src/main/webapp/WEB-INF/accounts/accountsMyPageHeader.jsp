@@ -155,7 +155,7 @@ function logout() {
 						<span style="font-size: 25px; font-weight: bold;">무료자료/자료</span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="#">전체보기</a></li>
+						<li><a class="dropdown-item" href="freeCourse.cs?userId=${loginInfo.userId}">전체보기</a></li>
 						<li><hr class="dropdown-divider"></li>
 						<li><a class="dropdown-item" href="#">무료 샘플강의</a></li>
 						<li><a class="dropdown-item" href="#">무료 특강</a></li>
@@ -185,16 +185,28 @@ function logout() {
 					   
 					<ul class="dropdown-menu">
 						<li><a class="dropdown-item" href="/ex/list.nt">공지사항</a></li>
-						<li><a class="dropdown-item" href="#">이벤트</a></li>
+						<li><a class="dropdown-item" href="list.ev">이벤트</a></li>
 						<li><a class="dropdown-item" href="/ex/list.faq">자주묻는질문</a></li>
 						<li><a class="dropdown-item" href="#">카카오톡문의</a></li>
 					</ul>					
 				</li> 
-				<li class="nav-item" style="display: block;">
-					<a class="bgColor" onclick="logout()" style=" display: block;">로그아웃</a>
+				<li class="nav-item" style="display: block; margin-top: 5px;">
+					<a class="bgColor" style=" display: block;">${loginInfo.userId} 님 </a>
+					<!-- <a class="bgColor" onclick="logout()" style=" display: block;">로그아웃</a> -->
 				</li>
 					
 			</ul>
+			<ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="list.cs">home</a></li>
+                        <!-- <li><a class="dropdown-item" href="#!">Activity Log</a></li> -->
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" onclick="logout()">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
 		</div>
 	</div>
 </nav>
@@ -235,7 +247,7 @@ function logout() {
                             <div class="sb-sidenav-menu-heading">마이페이지</div>
                             <a class="nav-link" href="mypage.acc?userId=${userId}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                MyPage
                             </a>
                             <div class="sb-sidenav-menu-heading">강의정보</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
