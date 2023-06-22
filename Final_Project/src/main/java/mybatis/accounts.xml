@@ -23,10 +23,10 @@
 	  <insert id="AccountsRegister">
 	 	insert into accounts(userId ,userName ,userPw ,
 	 	userBirth ,userEmail ,userPhone ,userChkEmail ,
-	 	userChkPhone)
+	 	userChkPhone,userJoinDate)
 		values(#{userId}, #{userName}, #{userPw},
 		#{userBirth}, #{userEmail}, #{userPhone},
-		#{userChkEmail}, #{userChkPhone})
+		#{userChkEmail}, #{userChkPhone},TO_CHAR(SYSDATE, 'YYYY-MM-DD'))
 	 </insert> 
 	 
 	 <select id="GetUserIdByUserNameEmail" resultType="accounts.model.AccountsBean">
