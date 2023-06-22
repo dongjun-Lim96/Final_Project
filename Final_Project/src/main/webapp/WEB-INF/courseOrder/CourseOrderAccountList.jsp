@@ -108,7 +108,7 @@
 
  
  
-<div class="login_cont member_cont" style="width: 1200px; margin-left : 15%">
+<div class="login_cont member_cont" style="width: 1500px; margin-left : 15%">
 	<div class="login_in">
 		
 		<h3>회원 목록</h3>
@@ -128,6 +128,7 @@
 				<dt>이름</dt>						
 				<dt>비밀번호</dt>						
 				<dt>이메일</dt>						
+				<dt>총 구매금액</dt>						
 				<dt>구매횟수</dt>						
 				<dt> </dt>						
 					
@@ -140,6 +141,11 @@
 				<dt>${accountBuyList.userName }</dt>
 				<dt>${accountBuyList.userPw }</dt>
 				<dt>${accountBuyList.userEmail }</dt>
+				<dt>
+					<c:set var="sum" value="${accountBuyList.sum}" />
+					<fmt:formatNumber value="${sum}" pattern="#,###" var="formattedSum" />
+						${formattedSum}원
+				</dt>
 				<dt>${accountBuyList.count }</dt>
 				<dt><button type="button" class="btn btn-outline-info" onClick="deleteAccount('${accountBuyList.userId }','${pageInfo.pageNumber}')">탈퇴</button></dt>						
 			</dl>

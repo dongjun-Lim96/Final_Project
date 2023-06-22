@@ -5,7 +5,7 @@
 
 	<mapper namespace="courseorder.model">
 		<select id="GetAccountBuyList" resultType="accounts.model.AccountsBean">
-			SELECT a.USERID as userId, a.USERPW as userPw, a.USERNAME as userName, a.USERPHONE as userPhone, a.USEREMAIL as userEmail, COUNT(co.ORDERNUMBER) AS count
+			SELECT a.USERID as userId, a.USERPW as userPw, a.USERNAME as userName, a.USERPHONE as userPhone, a.USEREMAIL as userEmail, COUNT(co.ORDERNUMBER) AS count,nvl(sum(co.totalprice),0 )as sum
 			FROM accounts a
 			LEFT JOIN courseorder co ON a.USERID = co.USERID
 			<if test="whatColumn==null">
@@ -31,7 +31,8 @@
 			WHERE a.ADMINCHECK = '0'
 			and a.USEREMAIL like #{keyword}
 			</if>
-			GROUP BY a.USERID, a.USERPW, a.USERNAME, a.USERPHONE, a.USEREMAIL		
+			GROUP BY a.USERID, a.USERPW, a.USERNAME, a.USERPHONE, a.USEREMAIL
+			order by  sum desc		
 		</select>
 		
 		<select id="GetTotalCount" resultType="int">
@@ -65,4 +66,9 @@
 			GROUP BY a.USERID, a.USERPW, a.USERNAME, a.USERPHONE, a.USEREMAIL
 			)
 		</select>
+		
+		<delete id="DeleteAccount">
+			delete accounts
+			where userId = #{userId}
+		</delete>
 	</mapper>

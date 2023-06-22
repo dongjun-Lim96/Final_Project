@@ -47,7 +47,7 @@ public class CourseOrderAccountList {
 		
 		Paging pageInfo = new Paging(pageNumber, "5", totalCount, url, whatColumn, keyword, null);
 		
-		 
+		
 		List<AccountsBean> accountBuyList = courseOrderDao.getAccountBuyList(pageInfo,map);
 		System.out.println("accountBuyList : "+ accountBuyList.size());
 		for(AccountsBean x :accountBuyList) {
