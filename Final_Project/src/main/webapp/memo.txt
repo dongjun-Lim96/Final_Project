@@ -22,19 +22,60 @@ CREATE TABLE ACCOUNTS(
 
 
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck )
-values('kim','김철수','1234','2002/01/01','kim@gmail.com',01042172177,5000,1,1,1,sysdate,0,1);
+values('kim','김철수','1234','2002/01/01','kim@gmail.com',01042172177,5000,1,1,1,'2022-06-20',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck )
-values('park','박지성','1234','1998/11/11','park@gmail.com',01031651257,2000,1,1,1,sysdate,0,1);
+values('park','박지성','1234','1998/11/11','park@gmail.com',01031651257,2000,1,1,1,'2022-06-20',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('son','손흥민','7777','1996/02/22','son@gmail.com',01015123456,3000,1,1,1,sysdate,0,1);
+values('son','손흥민','7777','1996/02/22','son@gmail.com',01015123456,3000,1,1,1,'2022-06-20',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('kang','강한','1234','1986/08/26','kang@gmail.com',01015323454,3000,1,1,1,sysdate,0,0);
+values('kang','강한','1234','1986/08/26','kang@gmail.com',01015323454,3000,1,1,1,'2022-06-21',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung','정현수','1111','1994/12/02','jung@naver.com',01055553776,6000,1,1,1,sysdate,0,0);
+values('jung','정현수','1111','1994/12/02','jung@naver.com',01055553776,6000,1,1,1,'2022-06-17',0,0);
 
 
 
-
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung1','정현수','1111','1994/12/02','jung1@naver.com',01055553771,6000,1,1,1,'2022-06-17',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung2','정현수','1111','1994/12/02','jung2@naver.com',01055553772,6000,1,1,1,'2022-06-17',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung3','정현수','1111','1994/12/02','jung3@naver.com',01055553773,6000,1,1,1,'2022-06-17',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung4','정현수','1111','1994/12/02','jung4@naver.com',01055553774,6000,1,1,1,'2022-06-17',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung5','정현수','1111','1994/12/02','jung5@naver.com',01055553775,6000,1,1,1,'2022-06-17',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung6','정현수','1111','1994/12/02','jung6@naver.com',01055553777,6000,1,1,1,'2022-06-18',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung7','정현수','1111','1994/12/02','jung7@naver.com',01055553778,6000,1,1,1,'2022-06-19',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung8','정현수','1111','1994/12/02','jung8@naver.com',01055553779,6000,1,1,1,'2022-06-17',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung9','정현수','1111','1994/12/02','jung9@naver.com',01055553710,6000,1,1,1,'2022-06-17',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung10','정현수','1111','1994/12/02','jung10@naver.com',01055553711,6000,1,1,1,'2022-06-17',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung11','정현수','1111','1994/12/02','jung11@naver.com',01055553712,6000,1,1,1,'2022-06-17',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung12','정현수','1111','1994/12/02','jung12@naver.com',01055553713,6000,1,1,1,'2022-06-15',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung13','정현수','1111','1994/12/02','jung13@naver.com',01055553714,6000,1,1,1,'2022-06-15',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung14','정현수','1111','1994/12/02','jung14@naver.com',01055553715,6000,1,1,1,'2022-06-15',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung15','정현수','1111','1994/12/02','jung15@naver.com',01055553716,6000,1,1,1,'2022-06-15',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung16','정현수','1111','1994/12/02','jung16@naver.com',01055553717,6000,1,1,1,'2022-06-17',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung17','정현수','1111','1994/12/02','jung17@naver.com',01055553718,6000,1,1,1,'2022-06-20',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung18','정현수','1111','1994/12/02','jung18@naver.com',01055553719,6000,1,1,1,sysdate,0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung19','정현수','1111','1994/12/02','jung19@naver.com',01055553720,6000,1,1,1,sysdate,0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung20','정현수','1111','1994/12/02','jung20@naver.com',01055553721,6000,1,1,1,sysdate,0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('jung21','정현수','1111','1994/12/02','jung21@naver.com',01055553722,6000,1,1,1,sysdate,0,0);
 
 DROP TABLE ADMININFO CASCADE CONSTRAINTS;
 --관리자 테이블
@@ -73,7 +114,7 @@ CREATE TABLE COURSE(
    cousreImg VARCHAR2(50) NOT NULL,
    cousreVideo VARCHAR2(50) NOT NULL,
    cousreTerm NUMBER NOT NULL,
-   FOREIGN KEY (categoryCode) REFERENCES category(categoryCode)   
+   FOREIGN KEY (categoryCode) REFERENCES category(categoryCode)  
 );
 --EIP1 EIP2 필기는 1 실기는 2로 임의설정 
 insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
@@ -102,7 +143,7 @@ CREATE TABLE CART(
    courseCode VARCHAR2(50),
    userId VARCHAR2(50),
    FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode),
-   FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId)
+   FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId) ON DELETE CASCADE
 );
 insert into CART(cartNumber, courseCode, userId)
 values(CART_seq.nextval, 'EIP1', 'jung');
@@ -130,7 +171,7 @@ CREATE TABLE WISHLIST(
    courseCode VARCHAR2(50),
    userId VARCHAR2(50),
    FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode),
-   FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId)
+   FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId) ON DELETE CASCADE
 );
 insert into WISHLIST(wishNumber, courseCode, userId)
 values(WISH_seq.nextval, 'EIP2', 'jung');
@@ -181,7 +222,7 @@ CREATE TABLE REVIEW(
    reviewCount NUMBER NOT NULL,
    reviewView NUMBER DEFAULT 0,
    FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode),   
-   FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId)
+   FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId) ON DELETE CASCADE
 );
 insert into REVIEW(reviewNumber, courseCode, userId, reviewTitle, reviewContent, reviewCount)
 values(1, 'EIP1', 'jung', '강의재밌어요', '리뷰 1 입니다.', 10);
@@ -203,7 +244,7 @@ CREATE TABLE COURSEORDER(
    orderNumber VARCHAR2(200) PRIMARY KEY,
    courseCode VARCHAR2(50),
    userId VARCHAR2(50),
-   FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId),
+   FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId) ON DELETE CASCADE,
    orderPoint NUMBER DEFAULT 0,
    totalPrice NUMBER NOT NULL,
    orderDate DATE default SYSDATE,
