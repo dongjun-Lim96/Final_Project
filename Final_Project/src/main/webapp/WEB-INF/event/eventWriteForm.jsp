@@ -12,19 +12,19 @@
 <meta name="format-detection" content="telephone=no" />
 
     <style>
-	.select_box {border:1px solid #dddfe3;transition:0.3s ease-in;padding:10px 20px 10px;border-radius:5px;margin-right:5px;}
-	#uploader {width:100%;height:100px;border:1px solid #DDD;overflow:auto;border-radius:5px;}
-	.qq-gallery.qq-uploader {line-height:68px;font-size:10px;padding:10px;}
-	.qq-gallery .qq-upload-button {background:#fff;color:#999;font-size:14px;padding:5px;border:1px solid #DEDEDE;border-radius:5px;}
-	.qq-gallery .qq-upload-list li {height:78px;}
-	.qq-gallery .qq-thumbnail-wrapper {width:100px;height:40px;}
-	.qq-gallery .qq-file-info {padding-top:0;}
+   .select_box {border:1px solid #dddfe3;transition:0.3s ease-in;padding:10px 20px 10px;border-radius:5px;margin-right:5px;}
+   #uploader {width:100%;height:100px;border:1px solid #DDD;overflow:auto;border-radius:5px;}
+   .qq-gallery.qq-uploader {line-height:68px;font-size:10px;padding:10px;}
+   .qq-gallery .qq-upload-button {background:#fff;color:#999;font-size:14px;padding:5px;border:1px solid #DEDEDE;border-radius:5px;}
+   .qq-gallery .qq-upload-list li {height:78px;}
+   .qq-gallery .qq-thumbnail-wrapper {width:100px;height:40px;}
+   .qq-gallery .qq-file-info {padding-top:0;}
 
-	.mem_cont .myinfo_cont .comment {width:100%;font-size:14px;padding:5px;}
-	.mem_cont .myinfo_cont .comment .good {color: #1758e0;}
-	.mem_cont .myinfo_cont .comment .bad {color: #e01717;}
-	.check_box {width:100%;}
-	
+   .mem_cont .myinfo_cont .comment {width:100%;font-size:14px;padding:5px;}
+   .mem_cont .myinfo_cont .comment .good {color: #1758e0;}
+   .mem_cont .myinfo_cont .comment .bad {color: #e01717;}
+   .check_box {width:100%;}
+   
 
 </style>
 <title>Insert title here</title>
@@ -66,115 +66,146 @@
 <div class="content" align="center">
 <script type="text/javascript" src="<%=conPath%>/resources/js/event.js"></script>
 <script>
-	function gotoList(){
-		location.href="getlist.cs";
-	}
+   function gotoList(){
+      location.href="getlist.cs";
+   }
 </script> 
  <!--  <script type="text/javascript" src="https://www.wannaedu.com/theme/6/js/ui.js"></script> -->
 
  <!-- <link rel="stylesheet" type="text/css" href="https://www.wannaedu.com/theme/6/css/member.css" /> -->
-	<link rel="stylesheet" type="text/css" href="resources/css/register.css" />
+   <link rel="stylesheet" type="text/css" href="resources/css/register.css" />
 
     <style>
-		.select_box {border:1px solid #dddfe3;transition:0.3s ease-in;padding:10px 20px 10px;border-radius:5px;margin-right:5px;}
-		#uploader {width:100%;height:100px;border:1px solid #DDD;overflow:auto;border-radius:5px;}
-		.qq-gallery.qq-uploader {line-height:68px;font-size:10px;padding:10px;}
-		.qq-gallery .qq-upload-button {background:#fff;color:#999;font-size:14px;padding:5px;border:1px solid #DEDEDE;border-radius:5px;}
-		.qq-gallery .qq-upload-list li {height:78px;}
-		.qq-gallery .qq-thumbnail-wrapper {width:100px;height:40px;}
-		.qq-gallery .qq-file-info {padding-top:0;}
-	
-		.mem_cont .myinfo_cont .comment {width:100%;font-size:14px;padding:5px;}
-		.mem_cont .myinfo_cont .comment .good {color: #1758e0;}
-		.mem_cont .myinfo_cont .comment .bad {color: #e01717;}
-		.check_box {width:100%;}
-	</style>
+     #sub_banner {position:relative; height:200px; width:100%; }
+    #sub_banner::after {content:''; width:100%; height:100%; background:url('/theme/6/img/main/subtop_pattern.png')no-repeat center; background-size:contain; position:absolute; top:0; left:0;}
+    #sub_banner h2 {position:relative; top:50%; transform:translateY(-50%); font-size:2.941rem; color:#fff; text-align:center; letter-spacing:-0.7pt; line-height:1; font-weight:bold; z-index:99;}
+    .bgColor {background-color:#0DCAF0;}
+      .select_box {border:1px solid #dddfe3;transition:0.3s ease-in;padding:10px 20px 10px;border-radius:5px;margin-right:5px;}
+      #uploader {width:100%;height:100px;border:1px solid #DDD;overflow:auto;border-radius:5px;}
+      .qq-gallery.qq-uploader {line-height:68px;font-size:10px;padding:10px;}
+      .qq-gallery .qq-upload-button {background:#fff;color:#999;font-size:14px;padding:5px;border:1px solid #DEDEDE;border-radius:5px;}
+      .qq-gallery .qq-upload-list li {height:78px;}
+      .qq-gallery .qq-thumbnail-wrapper {width:100px;height:40px;}
+      .qq-gallery .qq-file-info {padding-top:0;}
+   
+      .mem_cont .myinfo_cont .comment {width:100%;font-size:14px;padding:5px;}
+      .mem_cont .myinfo_cont .comment .good {color: #1758e0;}
+      .mem_cont .myinfo_cont .comment .bad {color: #e01717;}
+      .check_box {width:100%;}
+            :root {
+    --point-color:#0DCAF0;
+}.bgColor {background-color:var(--point-color) !important;}
+   
+.pointBorder {border:1px solid var(--point-color) !important;}
+
+.pointColor {color:var(--point-color) !important;}
+   </style>
 
  
  
 <div class="login_cont member_cont">
-	<div class="login_in">
-		
-		<h3>이벤트 추가</h3>
+   <div class="login_in">
+      
+      <h3>이벤트 추가</h3>
 
-	</div>
+   </div>
 
-	<form name="form1" method="post" enctype="multipart/form-data" action="write.ev" onSubmit="return writeSave()">
-	
-	<div class="mem_cont">
-		
+   <form name="form1" method="post" enctype="multipart/form-data" action="write.ev" onSubmit="return writeSave()">
+   
+   <div class="mem_cont">
+      
  
-		<div class="myinfo_cont refund_info">
-			
-			
-			<dl>
-				<dt>아이디 <span class="pointColor">*</span></dt>
-				<dd>
-					<input name="adminId" class="input" type="text" id="adminId" maxlength="20"  value="${loginInfo.userId}" readonly />
-				</dd>
-			</dl>
-			<dl>
-				<dt>제목 <span class="pointColor">*</span></dt>
-				<dd>
-					<input name="eventTitle" class="input" type="text" id="eventTitle" maxlength="20" />
-					<div class="comment">
-						
-					</div>
-				</dd>
-			</dl>
-			<dl>
-				<dt>내용 <span class="pointColor">*</span></dt>
-				<dd>
-					<input name="eventContent" class="input" type="text" id="eventContent" maxlength="20" />
-					<div class="comment">
-						
-					</div>
-				</dd>
-			</dl>
+      <div class="myinfo_cont refund_info">
+         
+         
+         <dl>
+            <dt>아이디 <span class="pointColor">*</span></dt>
+            <dd>
+               <input name="adminId" class="input" type="text" id="adminId" maxlength="20"  value="${loginInfo.userId}" readonly />
+            </dd>
+         </dl>
+         <dl>
+            <dt>제목 <span class="pointColor">*</span></dt>
+            <dd>
+               <input name="eventTitle" class="input" type="text" id="eventTitle" maxlength="20" />
+               <span id="eventTitle_hint"  style="color:#0DCAF0;"></span>
+               <div class="comment">
+                  
+               </div>
+            </dd>
+         </dl>
+         <dl>
+            <dt>내용 <span class="pointColor">*</span></dt>
+            <dd>
+               <input name="eventContent" class="input" type="text" id="eventContent" maxlength="20" />
+               <span id="eventContent_hint"  style="color:#0DCAF0;"></span>
+               <div class="comment">
+                  
+               </div>
+            </dd>
+         </dl>
 
-			
-			 			<dl>
-				<dt>이미지 <span class="pointColor">*</span></dt>
-				<dd>
-					<input name="upload" class="input" type="file" id="upload" maxlength="20" />
-					<div class="comment">
-						
-					</div>
-				</dd>
-			</dl>
+         
+                   <dl>
+            <dt>이미지 <span class="pointColor">*</span></dt>
+            <dd>
+               <input name="upload" class="input" type="file" id="upload" maxlength="20" />
+               <div class="comment">
+                  
+               </div>
+            </dd>
+         </dl>
 
-			<dl>
-				<dt>시작일 <span class="pointColor">*</span></dt>
-				<dd>
-  			  <input type="date"  class="input"  name="eventStart" id="eventStart" required pattern="\d{4}-\d{2}-\d{2}">
-    		<div class="comment">
-						
-					</div>
-				</dd>
-			</dl>
-			<dl>
-				<dt>종료일 <span class="pointColor">*</span></dt>
-				<dd>
-  			  <input type="date"  class="input"  name="eventEnd" id="eventEnd" required pattern="\d{4}-\d{2}-\d{2}">
-    		<div class="comment">
-						
-					</div>
-				</dd>
-			</dl>
+         <dl>
+            <dt>시작일 <span class="pointColor">*</span></dt>
+            <dd>
+             <input type="date"  class="input"  name="eventStart" id="eventStart" required pattern="\d{4}-\d{2}-\d{2}">
+          <div class="comment">
+                  
+               </div>
+            </dd>
+         </dl>
+         <dl>
+            <dt>종료일 <span class="pointColor">*</span></dt>
+            <dd>
+             <input type="date"  class="input"  name="eventEnd" id="eventEnd" required pattern="\d{4}-\d{2}-\d{2}">
+          <div class="comment">
+                  
+               </div>
+            </dd>
+         </dl>
 
-			
-		</div>
-	</div> 
+         
+      </div>
+   </div> 
 
-	<div class="btn_list">
-		<input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="이벤트 등록" />
-		<input type="reset" class="moreBtn pointColor pointBorder"  value="다시 작성" />
-		<input type="button" class="moreBtn pointColor pointBorder" onClick="location.href = 'list.ev?pageNumber=${param.pageNumber}'" value="목록보기" />
-	</div>
+   <div class="btn_list">
+      <input type="submit" class="moreBtn pointColor pointBorder" id="btn_submit" value="이벤트 등록" />
+      <input type="reset" class="moreBtn pointColor pointBorder"  value="다시 작성" />
+      <input type="button" class="moreBtn pointColor pointBorder" onClick="location.href = 'list.ev?pageNumber=${param.pageNumber}'" value="목록보기" />
+   </div>
 
 </form>
 
 </div>
+<script type="text/javascript">
+  function checkCapsLock(element, hintElement) {
+    element.addEventListener('keyup', function(e){
+      if (e.getModifierState){
+        if (e.getModifierState('CapsLock')) {
+          $(hintElement).html('CAPS LOCK 켜져 있습니다.');
+          $(hintElement).css('display', 'block');
+        } else {
+          $(hintElement).css('display', 'none');
+        }
+      }
+    });
+  }
+  
+  checkCapsLock(document.querySelector('input[name=eventContent]'), '#eventContent_hint');
+  checkCapsLock(document.querySelector('input[name=eventTitle]'), '#eventTitle_hint');
+</script>
+
 
     <iframe src="" name="sysfrm" id="sysfrm" width="100%" height="0" scrolling="no" frameborder="0"></iframe>
 
