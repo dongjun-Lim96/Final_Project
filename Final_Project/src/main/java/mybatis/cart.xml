@@ -36,4 +36,8 @@
 		<delete id="EndCart">
 			delete cart
 		</delete>
+		
+		 <select id="CourseByCode" resultType="course.model.CourseBean">
+         select * from COURSE where courseCode=#{courseCode}
+      </select>
 	</mapper>
