@@ -42,7 +42,7 @@ public class AdminMain {
       
       ModelAndView mav= new ModelAndView();
       LocalDate endDate = LocalDate.now().plusDays(1);
-      LocalDate startDate = endDate.minusDays(6);
+      LocalDate startDate = endDate.minusDays(7);
 
       java.sql.Date sqlEndDate = java.sql.Date.valueOf(endDate);
       java.sql.Date sqlStartDate = java.sql.Date.valueOf(startDate);
@@ -149,7 +149,7 @@ public class AdminMain {
       
       
 
-      LocalDate currentDate = LocalDate.now();
+      LocalDate currentDate = LocalDate.now().plusDays(0);
       LocalDate sevenDaysAgo = currentDate.minusDays(6);
 
       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -159,32 +159,41 @@ public class AdminMain {
 
       System.out.println("accounttoday 오늘 날짜: " + accounttoday);
       System.out.println("7일 전 날짜: " + sevenDaysAgoString);
-      
-      
-      
+
       Set<String> existingDates = new HashSet<String>();
-     
-
-      // 기존 데이터의 날짜를 Set에 추가
-      for (AccountsBean bean : countAccount) {
-          existingDates.add(bean.getJoin_date());
-      }
-
-      String dateString = sevenDaysAgoString;
-      while (!dateString.equals(accounttoday)) {
-          // 날짜가 누락된 경우 bean 객체 생성 후 추가
-          if (!existingDates.contains(dateString)) {
-              AccountsBean bean = new AccountsBean();
-              bean.setJoin_date(dateString);
-              bean.setCount(0); // 초기값 0으로 설정
-              countAccount.add(bean);
+    
+      
+      List<AccountsBean> mergedList2 = new ArrayList<AccountsBean>();
+      
+      //mergedList2 에 해당하는건 그대루 넣어준다
+      LocalDate date = sevenDaysAgo;
+      while (!date.isAfter(currentDate)) {
+          String dateString = date.format(formatter);
+          boolean dateMatched = false;
+          
+          for (AccountsBean bean : countAccount) {
+              if (dateString.equals(bean.getJoin_date())) {
+                  AccountsBean mergedBean = new AccountsBean();
+                  mergedBean.setJoin_date(dateString);
+                  mergedBean.setCount(bean.getCount());
+                  mergedList2.add(mergedBean);
+                  dateMatched = true;
+                  break;
+              }
           }
-
-          LocalDate date = LocalDate.parse(dateString, formatter);
+          
+          if (!dateMatched) {
+              AccountsBean mergedBean = new AccountsBean();
+              mergedBean.setJoin_date(dateString);
+              mergedBean.setCount(0);
+              mergedList2.add(mergedBean);
+          }
+          
           date = date.plusDays(1);
-          dateString = date.format(formatter);
       }
-      Collections.sort(countAccount, new Comparator<AccountsBean>() {
+
+      //sort
+      Collections.sort(mergedList2, new Comparator<AccountsBean>() {
     	    public int compare(AccountsBean a1, AccountsBean a2) {
     	        return a1.getJoin_date().compareTo(a2.getJoin_date());
     	    }
@@ -198,7 +207,7 @@ public class AdminMain {
 		 */
       
       
-      mav.addObject("countAccount", countAccount);
+      mav.addObject("countAccount", mergedList2);
       
       mav.addObject("weeklist",mergedList);
       
