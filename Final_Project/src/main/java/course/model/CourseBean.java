@@ -21,7 +21,7 @@ public class CourseBean {
 	private MultipartFile uploadvideo;
 	
 	private Date leftDay_d;
-	private String leftDay_s;
+	private int leftDay_s;
 	
 	
 	
@@ -31,10 +31,10 @@ public class CourseBean {
 	public void setLeftDay_d(Date leftDay_d) {
 		this.leftDay_d = leftDay_d;
 	}
-	public String getLeftDay_s() {
+	public int getLeftDay_s() {
 		return leftDay_s;
 	}
-	public void setLeftDay_s(String leftDay_s) {
+	public void setLeftDay_s(int leftDay_s) {
 		this.leftDay_s = leftDay_s;
 	}
 	public String getCousreImg2() {
