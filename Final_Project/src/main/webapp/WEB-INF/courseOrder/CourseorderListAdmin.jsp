@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>    
 <!DOCTYPE html>
 <%@ include file="./../../adminsidebar.jsp" %>
-<html> 
+<html>  
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
