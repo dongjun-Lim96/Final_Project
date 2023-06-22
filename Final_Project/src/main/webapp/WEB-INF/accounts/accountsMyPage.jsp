@@ -5,9 +5,9 @@
 
 <main>
 	<div class="container-fluid px-4">
-		<h1 class="mt-4">Dashboard</h1>
+		<h1 class="mt-4">MyPage</h1>
 		<ol class="breadcrumb mb-4">
-			<li class="breadcrumb-item active">Dashboard</li>
+			<li class="breadcrumb-item active">내 정보</li>
 		</ol>
 		<div class="row">
 			<div class="col-xl-3 col-md-6">
@@ -63,6 +63,7 @@
 				</div>
 			</div>
 		</div>
+		<%-- 
 		<div class="row">
 			<div class="col-xl-6">
 				<div class="card mb-4">
@@ -70,7 +71,8 @@
 						<i class="fas fa-chart-area me-1"></i> 공지사항
 					</div>
 					<div class="card-body">
-						<%-- <canvas id="myAreaChart" width="100%" height="40"></canvas> 그래프 --%>
+						
+						<canvas id="myAreaChart" width="100%" height="40"></canvas> 그래프
 					</div>
 				</div>
 			</div>
@@ -80,11 +82,12 @@
 						<i class="fas fa-chart-bar me-1"></i> Q&A
 					</div>
 					<div class="card-body">
-						<%-- <canvas id="myBarChart" width="100%" height="40"></canvas> 그래프--%>
+						<canvas id="myBarChart" width="100%" height="40"></canvas> 그래프
 					</div>
 				</div>
 			</div>
 		</div>
+		 --%>
 		<div class="card mb-4">
 			<div class="card-header">
 				<i class="fas fa-table me-1"></i> 수강중인 과정

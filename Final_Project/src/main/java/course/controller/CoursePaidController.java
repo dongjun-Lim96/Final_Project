@@ -51,7 +51,6 @@ public class CoursePaidController {
 		
 		List<CourseOrderBean> CourseIdLists = courseDao.selectCourseList(userId);
 		
-		
 		mav.addObject("userId", userId);
 		mav.addObject("wishLists", wishLists);
 		mav.addObject("CourseIdLists", CourseIdLists);

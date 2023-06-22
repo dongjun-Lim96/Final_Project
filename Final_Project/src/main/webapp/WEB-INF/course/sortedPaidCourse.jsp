@@ -44,7 +44,52 @@
     <p class="card-text">금액 : <fmt:formatNumber value="${paidCourse.cousrePrice}" pattern="#,###" /></p>
     <p class="card-text">강사 : ${paidCourse.cousreTeacher }</p>
     <p class="card-text">강의기간 : ${paidCourse.cousreTerm }일</p>
+    
+    <c:set var="isCourseEnrolled" value="false" />
+      <c:forEach var="courseId" items="${CourseIdLists}">
+        <c:if test="${courseId.courseCode eq paidCourse.courseCode}">
+          <c:set var="isCourseEnrolled" value="true" />
+        </c:if>
+      </c:forEach>
 
+      <c:choose>
+        <c:when test="${isCourseEnrolled}">
+          <!-- 학습하기 버튼 -->
+          <a href="" class="btn btn-outline-info font-weight-bold">학습하기</a>
+        </c:when>
+        <c:otherwise>
+          <!-- 장바구니 또는 구매하기 버튼 -->
+          <a href="cartAdd.ct?courseCode=${paidCourse.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold">장바구니</a>
+          <a onClick="paynow('${userId}','${paidCourse.courseCode}')" class="btn btn-outline-info font-weight-bold">구매하기</a>
+        </c:otherwise>
+      </c:choose>
+
+      <c:set var="isWishlist" value="false" />
+      <c:forEach var="wishlist" items="${wishLists}">
+        <c:if test="${wishlist.courseCode eq paidCourse.courseCode}">
+          <c:set var="isWishlist" value="true" />
+        </c:if>
+      </c:forEach>
+
+      <c:choose>
+        <c:when test="${isWishlist}">
+          <!-- 위시리스트에 추가됨 -->
+          <a class="btn btn-outline-info font-weight-bold" onclick="toggleHeartColor(this, '${paidCourse.courseCode}')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill heart-icon text-danger" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg>
+          </a>
+        </c:when>
+        <c:otherwise>
+          <!-- 위시리스트에 추가되지 않음 -->
+          <a class="btn btn-outline-info font-weight-bold" onclick="toggleHeartColor(this, '${paidCourse.courseCode}', '${userId}')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill heart-icon" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg>
+          </a>
+        </c:otherwise>
+      </c:choose>
+<%-- 
     	<a href="cartAdd.ct?courseCode=${paidCourse.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold">장바구니</a>
     	<a href="#" class="btn btn-outline-info font-weight-bold">구매하기</a> 
     	 
@@ -71,6 +116,7 @@
           </a>
         </c:otherwise>
       </c:choose>
+       --%>
     	<script>
     function toggleHeartColor(button,courseCode, userId) {
     	var courseCode = courseCode;

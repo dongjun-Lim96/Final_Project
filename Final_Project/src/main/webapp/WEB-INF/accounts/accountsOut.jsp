@@ -37,7 +37,7 @@
 				
 				<div class="bbs_btn">
 					<div>
-						<button type="submit" class="bgColor">탈퇴하기</button>
+						<button type="submit" >탈퇴하기</button>
 					</div>
 				</div>
 				</form>

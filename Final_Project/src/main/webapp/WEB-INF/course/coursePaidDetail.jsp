@@ -112,14 +112,149 @@
 			${course.cousreTerm}일
 		</dd>				
 	</dl>
+	
+	<%-- 
+	<c:set var="isCourseEnrolled" value="false" />
+      <c:forEach var="courseId" items="${CourseIdLists}">
+        <c:if test="${courseId.courseCode eq paidCourse.courseCode}">
+          <c:set var="isCourseEnrolled" value="true" />
+        </c:if>
+      </c:forEach>
+      
+	<c:choose>
+        <c:when test="${isCourseEnrolled}">
+          <!-- 학습하기 버튼 -->
+        <dt>
+          <a href="" class="btn btn-outline-info font-weight-bold">학습하기</a>
+       	</dt> 
+        </c:when>
+        <c:otherwise>
+          <!-- 장바구니 또는 구매하기 버튼 -->
+        <dt>
+          <a href="cartAdd.ct?courseCode=${paidCourse.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold">장바구니</a>
+        </dt> 
+        
+        <dt>
+          <a onClick="paynow('${userId}','${paidCourse.courseCode}')" class="btn btn-outline-info font-weight-bold">구매하기</a>
+        </dt>
+        </c:otherwise>
+      </c:choose>
+	 --%>
+	
 	<dl>
-		<dt>
-			<a href="#" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">장바구니</a>
-    	</dt> 
-    	<dt>
-    		<a href="#" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">구매하기</a>
-    	</dt>
-	</dl>			
+	<c:set var="isCourseEnrolled" value="false" />
+        <c:if test="${CourseIdLists.courseCode eq course.courseCode}">
+          <c:set var="isCourseEnrolled" value="true" />
+        </c:if>
+      
+	<c:choose>
+        <c:when test="${isCourseEnrolled}">
+          <!-- 학습하기 버튼 -->
+          <dt style="width: 80px;">
+         	 
+       	 </dt> 
+        <dt>
+          <a href="" class="btn btn-outline-info font-weight-bold" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">학습하기</a>
+       	</dt> 
+        </c:when>
+        <c:otherwise>
+          <!-- 장바구니 또는 구매하기 버튼 -->
+        <dt>
+          <a href="cartAdd.ct?courseCode=${course.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">장바구니</a>
+        </dt> 
+        
+        <dt>
+          <a onClick="paynow('${userId}','${course.courseCode}')" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">구매하기</a>
+        </dt>
+        </c:otherwise>
+      </c:choose>
+		
+    	
+    	<c:set var="isWishlist" value="false" />
+        <c:if test="${wishLists.courseCode eq course.courseCode}">
+          <c:set var="isWishlist" value="true" />
+        </c:if>
+
+      <c:choose>
+        <c:when test="${isWishlist}">
+          <!-- 위시리스트에 추가됨 -->
+          <dt style="width: 50px;">
+          <a class="btn btn-outline-info font-weight-bold" style="font-size:25px;" onclick="toggleHeartColor(this, '${course.courseCode}')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart-fill heart-icon text-danger" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg>
+          </a>
+          </dt> 
+        </c:when>
+        <c:otherwise>
+          <!-- 위시리스트에 추가되지 않음 -->
+          <dt style="width: 50px;">
+          <a class="btn btn-outline-info font-weight-bold" style="font-size:25px;" onclick="toggleHeartColor(this, '${course.courseCode}', '${userId}')">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-heart-fill heart-icon" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+            </svg>
+          </a>
+          </dt>
+        </c:otherwise>
+      </c:choose>
+    	
+	</dl>
+	
+<script>
+    function toggleHeartColor(button,courseCode, userId) {
+    	var courseCode = courseCode;
+    	var userId = userId;
+    	//alert(1);
+    	//alert(courseCode);
+    	//alert(userId);
+        var heartIcon = button.querySelector("svg.heart-icon");
+        if (heartIcon.classList.contains("text-danger")) {
+        	
+        	heartIcon.classList.remove("text-danger");
+        	
+        	$.ajax({
+        	    url: "WLremove.wl",
+        	    data : {
+        	    	courseCode : courseCode
+        		},
+        	    success: function() {
+        		      //window.location.href = "paidCourse.cs"; 
+        	    }
+        	  });
+        	
+        } else {
+        	
+        	heartIcon.classList.add("text-danger");
+        	
+        	$.ajax({
+        	    url: "WLadd.wl",
+        	    data : {
+        	    	courseCode : courseCode,
+        			userId : userId
+        		},
+        	    success: function() {
+        		     // window.location.href = "paidCourse.cs"; 
+        	    }
+        	  });
+        	
+           /*  heartIcon.classList.remove("text-danger"); */
+        }
+    }
+    
+    function paynow(userId, courseCode) {
+    	//alert(userId);
+    	//alert(courseCode);
+    	 if (confirm("결제하시겠습니까? (구매시 장바구니 모두 구매)")) {
+    		
+    	    location.href = "paynow.ct?userId="+userId+"&courseCode="+courseCode;
+    	  } else {
+    	    alert("결제가 취소되었습니다.");
+    	  }
+    }	
+</script>	
+	
+	
+				
 </div>
 </center>
 <br><br>

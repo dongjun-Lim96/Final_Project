@@ -34,10 +34,11 @@
     <p class="card-text">금액 : <fmt:formatNumber value="${wishList.cousrePrice}" pattern="#,###" /></p>
     <p class="card-text">강사 : ${wishList.cousreTeacher }</p>
     <p class="card-text">강의기간 : ${wishList.cousreTerm }일</p>
-
+    
+	<!-- 
     	<a href="#" class="btn btn-outline-info font-weight-bold">장바구니</a>
     	<a href="#" class="btn btn-outline-info font-weight-bold">구매하기</a> 
-    	 
+    -->
     	  
   </div>
 </div>

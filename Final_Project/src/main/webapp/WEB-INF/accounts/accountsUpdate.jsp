@@ -112,8 +112,8 @@
 				
 				<div class="bbs_btn">
 					<div>
-						<button type="reset" class="bgColor">취소</button>
-						<button type="submit" class="bgColor">정보수정</button>
+						<button type="reset" >취소</button>
+						<button type="submit" >정보수정</button>
 					</div>
 				</div>
 				</form>

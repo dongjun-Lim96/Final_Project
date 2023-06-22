@@ -25,6 +25,7 @@ public class AccountsUpdateController {
 		ModelAndView mav = new ModelAndView();
 		AccountsBean ab = adao.GetAccountsById(userId);
 		
+		mav.addObject("userId", userId);
 		mav.addObject("accounts", ab);
 		
 		mav.setViewName(getPage);
@@ -54,6 +55,8 @@ public class AccountsUpdateController {
 		*/
 		int cnt = adao.accountsUpdate(accounts);
 		
+		
+		mav.addObject("userId", accounts.getUserId());
 		mav.setViewName(gotoPage+"?userId="+accounts.getUserId());
 		
 		return mav;

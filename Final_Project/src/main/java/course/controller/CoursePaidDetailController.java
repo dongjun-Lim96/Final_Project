@@ -2,7 +2,9 @@ package course.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletContext;
 
@@ -15,8 +17,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import course.model.CourseBean;
 import course.model.CourseDao;
+import courseorder.model.CourseOrderBean;
 import review.model.ReviewBean;
 import unit.model.UnitBean;
+import wishList.model.WishListBean;
 
 @Controller
 public class CoursePaidDetailController {
@@ -30,7 +34,11 @@ public class CoursePaidDetailController {
 	ServletContext servletContext;
 	
 	@RequestMapping(value=command)
-	public ModelAndView doAction(@RequestParam("courseCode") String courseCode) throws IOException {
+	public ModelAndView doAction(@RequestParam("courseCode") String courseCode,
+								@RequestParam("userId") String userId) throws IOException {
+		
+		//System.out.println("&8####888%%:  "+courseCode);
+		//System.out.println("&8####888%%:  "+userId);
 		
 		String uploadPath = servletContext.getRealPath("/resources/");
 		System.out.println("uploadPath: " + uploadPath);
@@ -46,6 +54,20 @@ public class CoursePaidDetailController {
 		CourseBean course = courseDao.getOneCourseByCode(courseCode);
 		List<ReviewBean> review= courseDao.getReviewBycourseCode(courseCode);
 		List<UnitBean> unit = courseDao.getUnitBycourseCode(courseCode);
+		
+		
+		Map<String,Object> map  = new HashMap<String,Object>();
+		map.put("courseCode", courseCode);
+		map.put("userId", userId);
+		
+		WishListBean wishLists= courseDao.selectWishListDetail(map);
+		//System.out.println("&8####888%%:  "+wishLists.getCourseCode());
+		
+		CourseBean CourseIdLists = courseDao.selectCourseListDetail(map);
+		
+		mav.addObject("userId", userId);
+		mav.addObject("wishLists", wishLists);
+		mav.addObject("CourseIdLists", CourseIdLists);
 		mav.addObject("course", course);
 		mav.addObject("unit", unit);
 		mav.addObject("review", review);
