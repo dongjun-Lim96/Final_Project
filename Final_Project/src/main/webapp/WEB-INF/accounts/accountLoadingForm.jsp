@@ -38,7 +38,7 @@
                         location.href="list.cs"  
                     },
                     error: function(xhr, type){
-                        console.log(xhr); 
+                        console.log(xhr);  
                         console.log(type);
                         alert("가입되지 않은 회원입니다. 확인 후 로그인 또는 회원가입을 해주세요.");
                         location.href="loginForm.acc";

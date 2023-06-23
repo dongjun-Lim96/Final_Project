@@ -310,7 +310,7 @@ public class AcoountsLoginController {
   		AccountsBean ab1= adao.GetUserIdByUserEmail(naverEmail);
   		if (ab1 == null) {
   		    // ab1이 null인 경우 register.acc로 리디렉션
-  			System.out.println("네이버 이메일로 가입하지 않은 회원"); 
+  			System.out.println("네이버 이메일로 가입하지 않은 회원");  
   		    return "redirect:/loginForm.acc";
   		}
   		session.setAttribute("loginInfo",ab1); //세션 생성
