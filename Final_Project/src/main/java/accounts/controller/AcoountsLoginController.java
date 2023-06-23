@@ -2,6 +2,7 @@ package accounts.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,6 +23,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.github.scribejava.core.model.OAuth2AccessToken;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import accounts.model.AccountsBean;
 import accounts.model.AccountsDao;
 
@@ -31,9 +37,17 @@ public class AcoountsLoginController {
     
    @Autowired
    AccountsDao adao;
-    
+	private String apiResult = null;  
+	
    @RequestMapping(value="/loginForm.acc", method = RequestMethod.GET)
-   public String login() {
+   public String login(Model model, HttpSession session) {
+	   String naverAuthUrl = adao.getAuthorizationUrl(session);
+		
+	 		//header에서 로그인 클릭시 url정보 넘어옴
+	 		System.out.println("네이버:" + naverAuthUrl);
+	 		
+	 		//네이버 
+	 		model.addAttribute("url", naverAuthUrl);
       return "accountsLoginForm";
    }
    //실험
@@ -188,16 +202,16 @@ public class AcoountsLoginController {
         
         AccountsBean kakao_ab = adao.GetAccountsEmail(kakao_email);
   System.out.println("kakao_ab"+kakao_ab);
-        if(kakao_ab==null||kakao_email==null){
+        if(kakao_ab==null){
            
            System.out.println("카카오 이메일로 가입되지 않은 회원");
            ab1.setUserId(kakao_nickname);
            ab1.setUserEmail(kakao_email);
         //   adao.joinKakao(ab);
            
-           return "redirect:/register.acc";
+           return "loginForm.acc";
            
-        }else {
+        }
            
         // 만약 이미 회원가입 된 회원이라면? 로그인하기
         HttpSession session = req.getSession(); // session 생성
@@ -207,7 +221,7 @@ public class AcoountsLoginController {
        session.setAttribute("loginInfo", ab);
         System.out.println("카카오로 로그인 하기~!");
         return "redirect:/list.cs"; //
-        }
+        
     }
    
 
@@ -254,4 +268,55 @@ public class AcoountsLoginController {
                }
        }
    }
-}
+ //네이버 로그인 성공시 callback호출 메소드
+  	@RequestMapping(value = "/loadingN.acc", method = { RequestMethod.GET, RequestMethod.POST })
+  	public String callback(Model model, @RequestParam String code, @RequestParam String state, HttpSession session) throws IOException, ParseException{
+  		
+  		System.out.println("여기는 callback");
+  		OAuth2AccessToken oauthToken;
+          oauthToken = adao.getAccessToken(session, code, state);
+   
+          //1. 로그인 사용자 정보를 읽어온다.
+  		apiResult = adao.getUserProfile(oauthToken);  //String형식의 json데이터
+  		
+  		/** apiResult json 구조
+  		{"resultcode":"00",
+  		 "message":"success",
+  		 "response":{"id":"33666449","nickname":"shinn****","age":"20-29","gender":"M","email":"sh@naver.com","name":"\uc2e0\ubc94\ud638"}}
+  		**/
+  		System.out.println("apiResult"+apiResult);
+  		//2. String형식인 apiResult를 json형태로 바꿈
+  		JsonParser parser = new JsonParser();
+  	    JsonElement element = parser.parse(apiResult);
+  	//	Object obj = parser.parse(apiResult);
+  	//	JSONObject jsonObj = (JSONObject) obj;
+  		System.out.println(apiResult);
+  		//3. 데이터 파싱 
+  		//Top레벨 단계 _response 파싱
+  		//JSONObject response_obj = (JSONObject)jsonObj.get("response");
+  		//response의 nickname값 파싱
+  		JsonObject jsonObj = element.getAsJsonObject();
+  		JsonObject responseObj = jsonObj.getAsJsonObject("response");
+  		String naverNickname = responseObj.get("nickname").getAsString();
+  		String naverEmail = responseObj.get("email").getAsString();
+
+  		//String naver_nickname = (String)response_obj.get("nickname");
+  		//String naver_email = (String)response_obj.get("email");
+   
+  		System.out.println(naverNickname);
+  		System.out.println(naverEmail);
+  		
+  		//4.파싱 닉네임 세션으로 저장
+  		AccountsBean ab1= adao.GetUserIdByUserEmail(naverEmail);
+  		if (ab1 == null) {
+  		    // ab1이 null인 경우 register.acc로 리디렉션
+  			System.out.println("네이버 이메일로 가입하지 않은 회원");  
+  		    return "redirect:/loginForm.acc";
+  		}
+  		session.setAttribute("loginInfo",ab1); //세션 생성
+  	   
+  		model.addAttribute("result", apiResult);
+  	     
+  		return "redirect:/list.cs";
+  	}
+} 
