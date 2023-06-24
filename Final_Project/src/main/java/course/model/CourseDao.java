@@ -207,4 +207,10 @@ public class CourseDao {
 		cnt = sqlSessionTemplate.selectOne(namespace+".GetLeaveAccount");
 		return cnt;
 	}
+
+	public List<AccountsBean> recentlyAccount() {
+		List<AccountsBean> lists  = new ArrayList<AccountsBean>();
+		lists = sqlSessionTemplate.selectList(namespace+".recentlyAccount");
+		return lists;
+	}
 }
