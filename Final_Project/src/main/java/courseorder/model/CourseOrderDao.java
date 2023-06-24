@@ -64,5 +64,15 @@ public class CourseOrderDao {
 		lists = sqlSessionTemplate.selectList(namespace+".GetFinishedById",userId);
 		return lists;
 	}
+
+	public int deleteCourseByOrderNumber(int orderNumber) {
+		int cnt=0;
+		try {
+			cnt = sqlSessionTemplate.delete(namespace+".DeleteCourseByOrderNumber",orderNumber);
+		} catch (DataIntegrityViolationException e) {
+			cnt=0;
+		}
+		return cnt;
+	}
 	
 }
