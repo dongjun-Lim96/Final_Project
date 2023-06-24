@@ -196,4 +196,15 @@ public class CourseDao {
 		cob = sqlSessionTemplate.selectOne(namespace+".SelectCourseListDetail",map);
 		return cob;
 	}
+
+	public int getTotalCountAccount() {
+		int cnt;
+		cnt = sqlSessionTemplate.selectOne(namespace+".GetTotalCountAccount");
+		return cnt;
+	}
+	public int getLeaveAccount() {
+		int cnt;
+		cnt = sqlSessionTemplate.selectOne(namespace+".GetLeaveAccount");
+		return cnt;
+	}
 }
