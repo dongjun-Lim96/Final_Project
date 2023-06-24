@@ -46,7 +46,7 @@ public class CourseOrderDao {
 	public int deleteAccount(String userId) {
 		int cnt=0;
 		try {
-			cnt = sqlSessionTemplate.delete(namespace+".DeleteAccount",userId);
+			cnt = sqlSessionTemplate.update(namespace+".DeleteAccount",userId);
 		} catch (DataIntegrityViolationException e) {
 			cnt=0;
 		}
