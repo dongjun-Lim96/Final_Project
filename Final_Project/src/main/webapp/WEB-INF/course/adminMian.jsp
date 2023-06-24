@@ -20,7 +20,7 @@
     <!-- 오른쪽 영역 내용 -->
     <div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); grid-gap: 30px; margin-top: 95px;">
      
-      <table style="background-color:#DCDCDC;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px;">
+      <table style="background-color:#DCDCDC;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width: 400px; height:100%;">
         <tr>
           <td>회원현황</td>
           <td></td>
@@ -44,7 +44,7 @@
           <td>${accountTotal } 명</td>
         </tr>
       </table>
-      <table style="background-color:#DCDCDC;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px;">
+      <table style="background-color:#DCDCDC;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width: 400px; height:100%;">
         <tr>
           <td>최근가입회원</td>
           <td></td>
@@ -55,27 +55,30 @@
           <td>아이디</td>
           <td>이름</td>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-        </tr>
+        <c:forEach var="recentlyAccount" items="${recentlyAccount }">
+        	<tr>
+        	
+	          <td><fmt:formatDate value="${recentlyAccount.userJoinDate}" pattern="yyyy-MM-dd" /></td>
+	          <td>${recentlyAccount.userId }</td>
+	          <td>${recentlyAccount.userName }</td>
+        	</tr>
+          </c:forEach>
       </table>
-       <table style="background-color:#DCDCDC;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px;">
+       <table style="background-color:#DCDCDC;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width:400px; height:100%;">
       	<tr>
-      		<td>등록현황 ${courseCount }건</td>
+      		<td>등록강의 현황 ${courseCount }건</td>
       		<td></td>
       		<td></td>
       	</tr>
         <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
+          <td></td>
+          <td></td>
+          <td></td>
         </tr>
         <tr>
           <td>1</td>
