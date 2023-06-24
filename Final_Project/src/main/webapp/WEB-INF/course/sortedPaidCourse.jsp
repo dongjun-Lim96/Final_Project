@@ -35,7 +35,7 @@
 <c:if test="${not empty paidCourseLists }">
 <c:forEach var="paidCourse" items="${paidCourseLists }">
 <div class="card" style="display: inline-block; width: 350px; margin-left: 3%; margin-right: 3%; margin-bottom: 3%; text-align: center;">
-  <a href="coursePaidDetail.cs?courseCode=${paidCourse.courseCode}">
+  <a href="coursePaidDetail.cs?courseCode=${paidCourse.courseCode}&userId=${userId}">
   <img src="<%=request.getContextPath() %>/resources/${paidCourse.cousreImg}" class="card-img-top" alt="...">
 </a>
   <div class="card-body">
@@ -55,7 +55,7 @@
       <c:choose>
         <c:when test="${isCourseEnrolled}">
           <!-- 학습하기 버튼 -->
-          <a href="" class="btn btn-outline-info font-weight-bold">학습하기</a>
+          <a href="accountsLearning.acc?courseCode=${paidCourse.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold">학습하기</a>
         </c:when>
         <c:otherwise>
           <!-- 장바구니 또는 구매하기 버튼 -->

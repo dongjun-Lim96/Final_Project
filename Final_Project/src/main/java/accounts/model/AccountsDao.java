@@ -28,6 +28,8 @@ import com.google.gson.JsonParser;
 import accounts.controller.AccountsNaverLoginApi;
 import course.model.CourseBean;
 import courseorder.model.CourseOrderBean;
+import review.model.ReviewBean;
+import unit.model.UnitBean;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -364,6 +366,26 @@ System.out.println("1111111111111");
    }
 
     
-    
+   //6-24
+   public CourseBean getOneCourseByCode(String courseCode) {
+		CourseBean courseBean = new CourseBean();
+		courseBean = sqlSessionTemplate.selectOne(namespace+".OneCourseByCode",courseCode);
+		return courseBean;
+	}
    
+   
+   public List<ReviewBean> getReviewBycourseCode(String courseCode) {
+		List<ReviewBean> review = new ArrayList<ReviewBean>();
+		System.out.println("DAOÀÇ getReviewBycourseCode : " + courseCode);
+		review = sqlSessionTemplate.selectList(namespace+".getReviewBycourseCode",courseCode);
+		System.out.println("review size : " + review.size());
+		return review;
+	}
+   
+   
+   public List<UnitBean> getUnitBycourseCode(String courseCode) {
+		List<UnitBean> lists = new ArrayList<UnitBean>();
+		lists = sqlSessionTemplate.selectList(namespace+".getUnitBycourseCode",courseCode);
+		return lists;
+	}
 }

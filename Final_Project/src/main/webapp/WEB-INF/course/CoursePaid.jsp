@@ -52,7 +52,7 @@
       <c:choose>
         <c:when test="${isCourseEnrolled}">
           <!-- 학습하기 버튼 -->
-          <a href="" class="btn btn-outline-info font-weight-bold">학습하기</a>
+          <a href="accountsLearning.acc?courseCode=${paidCourse.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold">학습하기</a>
         </c:when>
         <c:otherwise>
           <!-- 장바구니 또는 구매하기 버튼 -->

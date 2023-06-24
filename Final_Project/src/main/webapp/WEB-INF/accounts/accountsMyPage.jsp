@@ -111,7 +111,8 @@
 							<tr>
 								<td>${list.courseCode}</td>
 								<td>${list.categoryCode}</td>
-								<td><a href="goshow.cs?courseCode=${list.courseCode}">${list.cousreName}</a></td>
+								<%-- <td><a href="goshow.cs?courseCode=${list.courseCode}">${list.cousreName}</a></td> --%>
+								<td><a href="accountsLearning.acc?courseCode=${list.courseCode}&userId=${userId}">${list.cousreName}</a></td>
 								<td>${list.cousreTeacher}</td>
 								<td>${list.cousreTerm}</td>
 								<td>${list.cousrePrice}</td>

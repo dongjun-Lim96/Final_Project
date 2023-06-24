@@ -24,7 +24,7 @@
 <h3 class="adm_tit marb30">수강중인 과정</h3>
   <c:forEach var="courseList" items="${courseList}">
 <div class="card" style="display: inline-block; width: 350px; margin-left: 3%; margin-right: 3%; margin-bottom: 3%; text-align: center;">
-  <a href="coursePaidDetail.cs?courseCode=${courseList.courseCode}">
+  <a href="accountsLearning.acc?courseCode=${courseList.courseCode}&userId=${userId}">
   <img src="<%=request.getContextPath() %>/resources/${courseList.cousreImg}" class="card-img-top" alt="...">
 </a>
   <div class="card-body">
@@ -32,7 +32,7 @@
     <h5 class="card-title">${courseList.cousreName }</h5>
     <p class="card-text">코스 코드 : ${courseList.courseCode }</p>
 
-    	<a href="#" class="btn btn-outline-info font-weight-bold">학습하기</a> 
+    	<a href="accountsLearning.acc?courseCode=${courseList.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold">학습하기</a> 
     	 
     	  
   </div>
