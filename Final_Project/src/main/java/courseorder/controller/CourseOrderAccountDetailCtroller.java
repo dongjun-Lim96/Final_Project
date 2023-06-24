@@ -44,10 +44,11 @@ public class CourseOrderAccountDetailCtroller {
 		
 		FileUtils.copyDirectory(destination_local, destination); //폴더쨰 카피
 		
-		
+		   
 		List<CourseBean> progressCousre = courseOrderDao.getProgressById(userId);
 		List<CourseBean> finishedCousre = courseOrderDao.getFinishedById(userId);
-		
+		 
+		mav.addObject("userId",userId);
 		mav.addObject("progressCousre", progressCousre);
 		mav.addObject("finishedCousre", finishedCousre);
 		mav.setViewName(getPage);

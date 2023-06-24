@@ -86,6 +86,9 @@
 		WHERE co.userid = #{userId} AND <![CDATA[(sysdate - co.ORDERDATE) >= c.cousreterm]]> 
 		</select> 
 		
-		
+		<delete id="DeleteCourseByOrderNumber">
+		delete courseorder
+		where ordernumber = #{ordernumber}
+		</delete>
 		
 	</mapper>
