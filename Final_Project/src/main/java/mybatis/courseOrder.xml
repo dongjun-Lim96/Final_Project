@@ -10,9 +10,11 @@
 			LEFT JOIN courseorder co ON a.USERID = co.USERID
 			<if test="whatColumn==null">
 			WHERE a.ADMINCHECK = '0'
+			and a.userOut = 0
 			</if>
 			<if test="whatColumn=='all'">
 			WHERE a.ADMINCHECK = '0'
+			and a.userOut = 0
 			and (a.USERID like #{keyword}
 			or a.USERPW like #{keyword}
 			or a.USERNAME like #{keyword}
@@ -21,14 +23,17 @@
 			</if>
 			<if test="whatColumn=='userName'">
 			WHERE a.ADMINCHECK = '0'
+			and a.userOut = 0
 			and a.USERNAME like #{keyword}
 			</if>
 			<if test="whatColumn=='userId'">
 			WHERE a.ADMINCHECK = '0'
+			and a.userOut = 0
 			and a.USERID like #{keyword}
 			</if>
 			<if test="whatColumn=='userEmail'">
 			WHERE a.ADMINCHECK = '0'
+			and a.userOut = 0
 			and a.USEREMAIL like #{keyword}
 			</if>
 			GROUP BY a.USERID, a.USERPW, a.USERNAME, a.USERPHONE, a.USEREMAIL
@@ -42,9 +47,11 @@
 			LEFT JOIN courseorder co ON a.USERID = co.USERID
 			<if test="whatColumn==null">
 			WHERE a.ADMINCHECK = '0'
+			and a.userOut = 0
 			</if>
 			<if test="whatColumn=='all'">
 			WHERE a.ADMINCHECK = '0'
+			and a.userOut = 0
 			and (a.USERID like #{keyword}
 			or a.USERPW like #{keyword}
 			or a.USERNAME like #{keyword}
@@ -53,24 +60,28 @@
 			</if>
 			<if test="whatColumn=='userName'">
 			WHERE a.ADMINCHECK = '0'
+			and a.userOut = 0
 			and a.USERNAME like #{keyword}
 			</if>
 			<if test="whatColumn=='userId'">
 			WHERE a.ADMINCHECK = '0'
+			and a.userOut = 0
 			and a.USERID like #{keyword}
 			</if>
 			<if test="whatColumn=='userEmail'">
 			WHERE a.ADMINCHECK = '0'
+			and a.userOut = 0
 			and a.USEREMAIL like #{keyword}
 			</if>
 			GROUP BY a.USERID, a.USERPW, a.USERNAME, a.USERPHONE, a.USEREMAIL
 			)
 		</select>
 		
-		<delete id="DeleteAccount">
-			delete accounts
+		<update id="DeleteAccount">
+			update accounts
+			set userOut = 1
 			where userId = #{userId}
-		</delete>
+		</update>
 		
 		<select id="GetProgressById" resultType="course.model.CourseBean">
 		SELECT c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreTerm, c.cousreImg, c.cousreterm-(sysdate-co.ORDERDATE) as leftDay_s, co.orderNumber
