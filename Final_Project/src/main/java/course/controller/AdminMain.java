@@ -207,10 +207,18 @@ public class AdminMain {
 		 */
       
       
-      mav.addObject("countAccount", mergedList2);
+      
+      int courseCount = courseDao.getTotalCount(null);
+      int accountLeave = courseDao.getLeaveAccount();
+      int accountTotal = courseDao.getTotalCountAccount();
+
       
       mav.addObject("weeklist",mergedList);
+      mav.addObject("countAccount", mergedList2);      
       
+      mav.addObject("courseCount", courseCount);
+      mav.addObject("accountLeave", accountLeave);
+      mav.addObject("accountTotal", accountTotal);
       mav.setViewName(getPage);
       return mav;
    }

@@ -8,8 +8,89 @@
 <div style="position: relative; top: 50px;">
 <button onclick="displayChart()" style="background-color: #0DCAF0; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 4px; cursor: pointer;">매출보기</button>
 <button onclick="accountlist()" style="background-color: #0DCAF0; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 4px; cursor: pointer;">가입회원보기</button>
-  <canvas id="line-chart" width="1000" height="700"></canvas>
+  <canvas id="line-chart" width="600" height="420"></canvas>
 </div>
+
+
+
+
+
+  <!-- 오른쪽 영역 -->
+  <div style="width: 50%;">
+    <!-- 오른쪽 영역 내용 -->
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 1fr); grid-gap: 30px; margin-top: 95px;">
+     
+      <table style="background-color:#DCDCDC;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px;">
+        <tr>
+          <td>회원현황</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>신규회원</td>
+          <td>탈퇴회원</td>
+          <td>Total</td>
+        </tr>
+        <tr>
+          <td>
+          	 <c:forEach var="countAccount" items="${countAccount}" varStatus="status">
+	            <c:set var="totalaccount" value="${totalaccount + countAccount.count}" />        
+	       	 </c:forEach>
+	         <fmt:formatNumber var="formattedTotalaccount" value="${totalaccount}" pattern="#,###" />   
+          	${formattedTotalaccount} 명
+          </td>
+           
+          <td>${accountLeave } 명</td>
+          <td>${accountTotal } 명</td>
+        </tr>
+      </table>
+      <table style="background-color:#DCDCDC;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px;">
+        <tr>
+          <td>최근가입회원</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>가입일시</td>
+          <td>아이디</td>
+          <td>이름</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+      </table>
+       <table style="background-color:#DCDCDC;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px;">
+      	<tr>
+      		<td>등록현황 ${courseCount }건</td>
+      		<td></td>
+      		<td></td>
+      	</tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+
+
 
 <script>
   let lineChart = null;
