@@ -154,7 +154,7 @@
          	 
        	 </dt> 
         <dt>
-          <a href="" class="btn btn-outline-info font-weight-bold" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">학습하기</a>
+          <a href="accountsLearning.acc?courseCode=${course.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">학습하기</a>
        	</dt> 
         </c:when>
         <c:otherwise>
