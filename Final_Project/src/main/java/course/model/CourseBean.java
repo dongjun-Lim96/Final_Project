@@ -22,9 +22,15 @@ public class CourseBean {
 	
 	private Date leftDay_d;
 	private int leftDay_s;
+	private int orderNumber;
 	
 	
-	
+	public int getOrderNumber() {
+		return orderNumber;
+	}
+	public void setOrderNumber(int orderNumber) {
+		this.orderNumber = orderNumber;
+	}
 	public Date getLeftDay_d() {
 		return leftDay_d;
 	}
