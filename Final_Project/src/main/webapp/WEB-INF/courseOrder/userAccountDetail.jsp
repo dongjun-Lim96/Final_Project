@@ -102,7 +102,8 @@
 
  
 <div class="login_cont member_cont" style="width: 85%; margin-left : 15%">
-	<div class="login_in">		
+	<div class="login_in">	
+		<h3>${userId} 님</h3>
 		<h3>수강 목록</h3>
 	</div>
 	
@@ -134,11 +135,11 @@
 				<dt>${course.leftDay_s }일</dt>
 				<dt>
 					<c:if test="${course.cousreTerm/2 < course.leftDay_s }">
-						<a style="color: blue;">환불하기</a>
+						<a href="orderRefund.co?orderNumber=${course.orderNumber }&userId=${userId}" style="color: blue;">환불하기</a>
 					</c:if>
 					<c:if test="${course.cousreTerm/2 >= course.leftDay_s }">
-						<span style="color: red;">환불불가</span>
-					</c:if>					
+						<span style="color: red;">환불 불가</span>
+					</c:if>
 				</dt>						
 			</dl>
 			</c:forEach>
