@@ -73,7 +73,7 @@
 		</delete>
 		
 		<select id="GetProgressById" resultType="course.model.CourseBean">
-		SELECT c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreTerm, c.cousreImg, c.cousreterm-(sysdate-co.ORDERDATE) as leftDay_s
+		SELECT c.coursecode, c.categorycode, c.cousreName, c.cousreprice, c.cousreteacher, c.cousreTerm, c.cousreImg, c.cousreterm-(sysdate-co.ORDERDATE) as leftDay_s, co.orderNumber
 		FROM course c
 		JOIN courseorder co ON c.coursecode = co.coursecode
 		WHERE co.userid = #{userId} AND <![CDATA[(sysdate - co.ORDERDATE) < c.cousreterm]]> 
