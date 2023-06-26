@@ -130,7 +130,8 @@
 			<c:forEach var="course" items="${progressCousre}" varStatus="status">
 			<dl>
 				<dt>${course.cousreName }</dt>
-				<dt>${course.cousrePrice }</dt>				
+				<fmt:formatNumber var="cousrePrice" value="${course.cousrePrice}" pattern="#,###" />
+				<dt>${cousrePrice}원</dt>				
 				<dt><img src="<%=request.getContextPath() %>/resources/${course.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style="width: 50px; height: 50px; border-radius: 20%;"> </dt>				
 				<dt>${course.leftDay_s }일</dt>
 				<dt>
