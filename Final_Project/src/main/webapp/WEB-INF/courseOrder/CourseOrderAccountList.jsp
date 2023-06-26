@@ -74,7 +74,7 @@
 	    
 	}
 	function deleteAccount(userId,pageNumber){
-		alert(pageNumber);
+		
 		var confirmDelete = confirm("정말 탈퇴 시키겠습니까?");
 		if (confirmDelete) {
 			location.href = "deleteUserAccount.co?userId=" + userId+"&pageNumber="+pageNumber;
