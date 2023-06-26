@@ -41,4 +41,8 @@
 			delete review where 
 			userId = #{userId} and courseCode = #{courseCode}
 		</delete>
+		
+		<select id="GetUserList" resultType="review.model.ReviewBean"> 
+			select * from review where userId = #{userId} 
+		</select>
 	</mapper>

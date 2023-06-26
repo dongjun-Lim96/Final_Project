@@ -259,6 +259,7 @@ function logout() {
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="aCourse.acc?userId=${userId}">수강중인 과정</a>
                                     <a class="nav-link" href="aCourseEnd.acc?userId=${userId}">종료된 과정</a>
+                                    <a class="nav-link" href="reviewList.rv?userId=${userId}">리뷰 관리</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

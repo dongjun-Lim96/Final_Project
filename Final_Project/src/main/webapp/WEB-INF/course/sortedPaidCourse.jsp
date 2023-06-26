@@ -157,6 +157,17 @@
            /*  heartIcon.classList.remove("text-danger"); */
         }
     }
+    
+    function paynow(userId, courseCode) {
+    	//alert(userId);
+    	//alert(courseCode);
+    	 if (confirm("결제하시겠습니까? (구매시 장바구니 모두 구매)")) {
+    		
+    	    location.href = "paynow.ct?userId="+userId+"&courseCode="+courseCode;
+    	  } else {
+    	    alert("결제가 취소되었습니다.");
+    	  }
+    }	
 </script>
   </div>
 </div>
