@@ -59,7 +59,7 @@
         	<tr>
         	
 	          <td><fmt:formatDate value="${recentlyAccount.userJoinDate}" pattern="yyyy-MM-dd" /></td>
-	          <td>${recentlyAccount.userId }</td>
+	          <td><a href="accountDetail.co?userId=${recentlyAccount.userId }" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">${recentlyAccount.userId }</a></td>	          
 	          <td>${recentlyAccount.userName }</td>
         	</tr>
           </c:forEach>
