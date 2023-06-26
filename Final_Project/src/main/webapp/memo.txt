@@ -45,7 +45,7 @@ values('son1','손기훈','0102','2000/01/02','son12@naver.com',01027146566,4000,1,
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
 values('jung1','정재완','0108','2000/01/27','waan@naver.com',01024898759,6000,1,1,1,'2023-04-17',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('lee1','이응욱','5274','1999/04/02','lee1@naver.com',01052745255,6000,1,1,1,'2023-05-18',0,1);
+values('lee1','이응욱','5274','1999/04/02','lee1@naver.com',01052745255,6000,1,1,1,'2023-05-18',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
 values('kim1','김소원','0820','1999/08/20','kim1@naver.com',01094899622,3000,1,1,1,'2023-06-19',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
