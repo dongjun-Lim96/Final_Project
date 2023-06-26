@@ -68,6 +68,14 @@
 	function gotoList(){
 		location.href="getlist.cs";
 	}
+	var message = "${message}";
+	
+	if (message !== "") {
+	    
+	    alert(message);
+	} else {
+	    
+	}
 </script> 
  <!--  <script type="text/javascript" src="https://www.wannaedu.com/theme/6/js/ui.js"></script> -->
 
