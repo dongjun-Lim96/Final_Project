@@ -11,58 +11,90 @@
 		</ol>
 		<div class="row">
 			<div class="col-xl-3 col-md-6">
-				<div class="card bg-primary text-white mb-4">
-					<div class="card-body">수강중인 과정</div>
+				<div class="card  text-white mb-4" style="border: 0px; background-color: transparent;">
+					<div class="card-body" align="center">
+				 	<div style="display: flex; justify-content: center;">
+			        	<img src="<%=conPath%>/resources/images/study.png" width="150" height="120">
+			        </div>
+					
+					</div>
 					<div
-						class="card-footer d-flex align-items-center justify-content-between">
-						<a class="small text-white stretched-link" href="#">View
-							Details</a>
-						<div class="small text-white">
+						class="card-footer d-flex align-items-center justify-content-between" align="center">
+						<a class="small text-black stretched-link" href="aCourse.acc?userId=${userId}" style="text-align: center; width: 100%;">
+							수강중인 과정
+						</a>
+						<!-- 
+						<div class="small text-black">
 							<i class="fas fa-angle-right"></i>
 						</div>
+						 -->
 					</div>
 				</div>
 			</div>
 			<div class="col-xl-3 col-md-6">
-				<div class="card bg-warning text-white mb-4">
-					<div class="card-body">종료예정 과정</div>
+				<div class="card text-white mb-4" style="border: 0px;">
+					<div class="card-body" align="center">
+						<div style="display: flex; justify-content: center;">
+			        		<img src="<%=conPath%>/resources/images/notice2.png" width="150" height="120">
+			       	 	</div>
+					</div>
 					<div
-						class="card-footer d-flex align-items-center justify-content-between">
-						<a class="small text-white stretched-link" href="#">View
-							Details</a>
-						<div class="small text-white">
+						class="card-footer d-flex align-items-center justify-content-between" align="center">
+						<a class="small text-black stretched-link" href="list.nt" style="text-align: center; width: 100%;">
+							공지사항
+						</a>
+						<!-- 
+						<div class="small text-black">
 							<i class="fas fa-angle-right"></i>
 						</div>
+						 -->
 					</div>
 				</div>
 			</div>
+			
 			<div class="col-xl-3 col-md-6">
-				<div class="card bg-success text-white mb-4">
-					<div class="card-body">수료 완료</div>
+				<div class="card text-white mb-4" style="border: 0px;">
+					<div class="card-body" align="center">
+						<div style="display: flex; justify-content: center;">
+			        		<img src="<%=conPath%>/resources/images/event.png" width="150" height="120">
+			       	 	</div>
+					</div>
 					<div
-						class="card-footer d-flex align-items-center justify-content-between">
-						<a class="small text-white stretched-link" href="#">View
-							Details</a>
-						<div class="small text-white">
+						class="card-footer d-flex align-items-center justify-content-between" align="center">
+						<a class="small text-black stretched-link" href="list.ev" style="text-align: center; width: 100%;">
+							이벤트
+						</a>
+						<!-- 
+						<div class="small text-black">
 							<i class="fas fa-angle-right"></i>
 						</div>
+						 -->
 					</div>
 				</div>
 			</div>
+			
 			<div class="col-xl-3 col-md-6">
-				<div class="card bg-danger text-white mb-4">
-					<div class="card-body">입금 대기</div>
+				<div class="card text-white mb-4" style="border: 0px;">
+					<div class="card-body" align="center">
+						<div style="display: flex; justify-content: center;">
+			        		<img src="<%=conPath%>/resources/images/faq.png" width="150" height="120">
+			       	 	</div>
+					</div>
 					<div
-						class="card-footer d-flex align-items-center justify-content-between">
-						<a class="small text-white stretched-link" href="#">View
-							Details</a>
-						<div class="small text-white">
+						class="card-footer d-flex align-items-center justify-content-between" align="center">
+						<a class="small text-black stretched-link" href="list.faq" style="text-align: center; width: 100%;">
+							FAQ
+						</a>
+						<!-- 
+						<div class="small text-black">
 							<i class="fas fa-angle-right"></i>
 						</div>
+						 -->
 					</div>
 				</div>
 			</div>
 		</div>
+		
 		<%-- 
 		<div class="row">
 			<div class="col-xl-6">
