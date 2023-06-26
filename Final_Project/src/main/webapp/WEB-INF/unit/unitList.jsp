@@ -27,7 +27,16 @@
 
 </style>
 <title>Insert title here</title>
+<script>
+var message = "${message}";
 
+if (message !== "") {
+    
+    alert(message);
+} else {
+    
+}
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y92N8GFN5"></script>
 
 <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
