@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import category.model.CategoryBean;
 import category.model.CategoryDao;
@@ -52,7 +53,8 @@ public class CourseInsertController {
 	}
 	
 	@RequestMapping(value = command,method = RequestMethod.POST)
-	public ModelAndView doAction(@ModelAttribute("courseBean") CourseBean courseBean,HttpSession session) {
+	public ModelAndView doAction(@ModelAttribute("courseBean") CourseBean courseBean,HttpSession session,
+			RedirectAttributes redirectAttributes) {
 		String uploadPath = servletContext.getRealPath("/resources");
 		System.out.println("uploadPath : " + uploadPath);
 		ModelAndView mav= new ModelAndView();
@@ -76,7 +78,8 @@ public class CourseInsertController {
 				multi_video.transferTo(destination_local_video);
 				
 				FileCopyUtils.copy(destination_img, destination_local_img); // �궗吏꾨났�궗
-				FileCopyUtils.copy(destination_video, destination_local_video); // �룞�쁺�긽蹂듭궗 
+				FileCopyUtils.copy(destination_video, destination_local_video); // �룞�쁺�긽蹂듭궗
+				redirectAttributes.addFlashAttribute("message", "강의 추가완료");
 			} catch (IllegalStateException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
