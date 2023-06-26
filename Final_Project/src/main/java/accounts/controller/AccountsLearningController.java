@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import accounts.model.AccountsDao;
 import course.model.CourseBean;
 import review.model.ReviewBean;
+import review.model.ReviewDao;
 import unit.model.UnitBean;
 
 @Controller
@@ -56,6 +57,14 @@ public class AccountsLearningController {
 		List<UnitBean> unit = adao.getUnitBycourseCode(courseCode);
 		
 		
+		Map<String,Object> map  = new HashMap<String,Object>();
+		map.put("courseCode", courseCode);
+		map.put("userId", userId);
+		
+		int reviewCount = adao.reviewCount(map);
+		//System.out.println("#######"+reviewCount);
+		
+		mav.addObject("reviewCount", reviewCount);
 		mav.addObject("userId", userId);
 		mav.addObject("course", course);
 		mav.addObject("unit", unit);
