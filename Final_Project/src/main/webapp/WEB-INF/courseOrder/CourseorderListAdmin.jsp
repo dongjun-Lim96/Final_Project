@@ -73,12 +73,9 @@
 	} else {
 	    
 	}
-	function deleteCategory(courseCode,pageNumber){
-		location.href="deleteCourse.cs?courseCode="+courseCode+"&pageNumber="+pageNumber;
-	}
-	function insertCategory(){
-		location.href="insertCourse.cs"; 
-	}
+
+	
+
 </script>
  <!--  <script type="text/javascript" src="https://www.wannaedu.com/theme/6/js/ui.js"></script> -->
 
@@ -100,12 +97,12 @@
 		.check_box {width:100%;}
 	</style>
 
- 
+
  
 <div class="login_cont member_cont" style="width: 85%; margin-left : 15%">
 	<div class="login_in">
 		
-		<h3>강의 목록</h3>
+		<h3>주문 목록</h3>
 
 	</div>
 
@@ -121,32 +118,27 @@
 				<dt>강의명</dt>						
 				<dt>결제자 명</dt>						
 				<dt>가격</dt>						
-				<dt>주문일자</dt>						
+				<dt><a  onclick="loadCourseList()">주문일자</a></dt>					
 				<dt> </dt>						
 			</dl>
-			
+			<div id="courseList">
 			<c:forEach var="courseOrderList" items="${courseOrderList}" varStatus="status">
 			<dl>
-				<dt>${courseOrderList.orderNumber }</dt>						
+				<dt>${status.index +1 }</dt>						
 				<dt>${courseOrderList.cousreName }</dt>						
-				<dt>${courseOrderList.userId }</dt>						
-				<dt>${courseOrderList.totalPrice }</dt>						
-				<dt>${courseOrderList.orderDate }</dt>						
+				<dt>${courseOrderList.userId }</dt>
+				<fmt:formatNumber var="totalPrice" value="${courseOrderList.totalPrice}" pattern="#,###" /> 						
+				<dt>${totalPrice }원</dt>										
+				<dt><fmt:formatDate value="${courseOrderList.orderDate}" pattern="yyyy-MM-dd" /></dt>						
 			</dl>
-			</c:forEach>
+			</c:forEach> 
+			</div>
 			
-			<dl>
-				<dt style="text-align: center;" colsapn="4">
-				<button type="button" class="btn btn-outline-info" onClick="insertCategory()">강의 추가하기</button>
-				</dt>
-			</dl>
 			<center>
-			<form action="getlist.cs" method="get">
+			<form action="courseOrderList.co" method="get">
 		<select name="whatColumn" style="width: 100px;">
 			<option value="all">전체 검색
-			<option value="name">강의명</option>
-			<option value="price">가격</option>
-			<option value="date">기간</option>
+			<option value="userId">아이디</option>
 		</select> <input type="text" name="keyword"> <input type="submit" class="btn btn-outline-info" value="검색">
 	</form>
 	

@@ -75,10 +75,17 @@ public class CourseOrderDao {
 		return cnt;
 	}
 
-	public List<CourseOrderBean> getOrderList() {
+	public List<CourseOrderBean> getOrderList(Paging pageInfo,Map<String,String> map) {
 		List<CourseOrderBean> lists = new ArrayList<CourseOrderBean>();
-		lists = sqlSessionTemplate.selectList(namespace+".GetOrderList");
+		RowBounds rowBounds = new RowBounds(pageInfo.getOffset(), pageInfo.getLimit());
+		lists = sqlSessionTemplate.selectList(namespace+".GetOrderList",map,rowBounds);
 		return lists;
+	}
+
+	public int getTotalOrderCount(Map<String, String> map) {
+		int cnt=0;
+		cnt = sqlSessionTemplate.selectOne(namespace+".GetTotalOrderCount",map);
+		return cnt;
 	}
 	
 }
