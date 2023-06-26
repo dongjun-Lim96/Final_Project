@@ -14,6 +14,8 @@
 
 $(document).ready(function() {
 	$('.slider').slick({
+	    autoplay: true, // 자동 재생 설정
+	    autoplaySpeed: 1000, // 재생 간격(2초)
 		centerMode: true,
 		centerPadding: '60px',
 		slidesToShow: 3,
@@ -114,6 +116,7 @@ $(document).ready(function() {
 	<c:forEach var="lists" items="${courseLists }">
 	<div>
 		<div class="slide-h3">
+			<a href="coursePaidDetail.cs?courseCode=${lists.courseCode}&userId=${userId}" style="text-decoration: none;">
 			<i class="fa fa-lg fa-trash"></i>
 			<h3 align="center">
 				<div class="card" style="width: 350px; --bs-card-border-color: none;">
@@ -129,6 +132,7 @@ $(document).ready(function() {
 				</div>
 
 			</h3>
+			</a>
 		</div>
 	</div>
 	</c:forEach>
