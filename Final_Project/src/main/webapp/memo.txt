@@ -495,6 +495,6 @@ CREATE TABLE DATA(
 );
 
 insert into DATA(dataNumber, adminId, dataTitle, dataContent,dataImage,dataDate,dataView)
-values(DATA_seq.NEXTVAL, 'son', '2023정보처리기사 총평', '자세한 내용은 네이버 수제비 카페에서 확인해주세요~ 카페글 보러가기 ->  https://cafe.naver.com/soojebi/160112','data1.PNG',sysdate,0);
+values(DATA_seq.NEXTVAL, 'son', '2023정보처리기사 총평', '자세한 내용은 네이버 수제비 카페에서 확인해주세요~ 카페글 보러가기 ->  https://cafe.naver.com/soojebi/160112','data1.png',sysdate,0);
 
 commit;
