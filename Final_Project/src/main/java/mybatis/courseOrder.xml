@@ -107,8 +107,7 @@
 			FROM courseorder co
 			JOIN course c ON co.coursecode = c.coursecode
 			<if test="whatColumn=='all'">
-			where co.ordernumber like #{keyword}
-			or co.userid like #{keyword}
+			where co.userid like #{keyword}
 			or co.totalprice like #{keyword}
 			or co.orderdate like #{keyword}
 			or c.cousrename like #{keyword}
@@ -124,8 +123,7 @@
 			FROM courseorder co
 			JOIN course c ON co.coursecode = c.coursecode
 			<if test="whatColumn=='all'">
-			where co.ordernumber like #{keyword}
-			or co.userid like #{keyword}
+			where co.userid like #{keyword}
 			or co.totalprice like #{keyword}
 			or co.orderdate like #{keyword}
 			or c.cousrename like #{keyword}
