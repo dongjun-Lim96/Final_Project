@@ -9,6 +9,15 @@ public class CourseOrderBean {
 	private int orderPoint;
 	private int totalPrice;
 	private Date orderDate;
+	
+	private String cousreName;
+	
+	public String getCousreName() {
+		return cousreName;
+	}
+	public void setCousreName(String cousreName) {
+		this.cousreName = cousreName;
+	}
 	public String getOrderNumber() {
 		return orderNumber;
 	}

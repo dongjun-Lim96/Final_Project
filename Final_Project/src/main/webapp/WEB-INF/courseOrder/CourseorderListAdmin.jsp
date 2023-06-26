@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>    
 <!DOCTYPE html>
 <%@ include file="./../../adminsidebar.jsp" %>
-<html>  
+<html> 
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
@@ -65,16 +65,27 @@
 <div class="content" align="center">
 <script type="text/javascript" src="<%=conPath%>/resources/js/course.js"></script>
 <script>
-	function gotoList(){
-		location.href="getlist.cs";
+	var message = "${message}";
+	
+	if (message !== "") {
+	    
+	    alert(message);
+	} else {
+	    
 	}
-</script> 
+	function deleteCategory(courseCode,pageNumber){
+		location.href="deleteCourse.cs?courseCode="+courseCode+"&pageNumber="+pageNumber;
+	}
+	function insertCategory(){
+		location.href="insertCourse.cs"; 
+	}
+</script>
  <!--  <script type="text/javascript" src="https://www.wannaedu.com/theme/6/js/ui.js"></script> -->
 
  <!-- <link rel="stylesheet" type="text/css" href="https://www.wannaedu.com/theme/6/css/member.css" /> -->
 	<link rel="stylesheet" type="text/css" href="resources/css/register.css" />
-
-    <style>
+ 
+    <style> 
 		.select_box {border:1px solid #dddfe3;transition:0.3s ease-in;padding:10px 20px 10px;border-radius:5px;margin-right:5px;}
 		#uploader {width:100%;height:100px;border:1px solid #DDD;overflow:auto;border-radius:5px;}
 		.qq-gallery.qq-uploader {line-height:68px;font-size:10px;padding:10px;}
@@ -90,5 +101,73 @@
 	</style>
 
  
- CourseorderListAdminCourseorderListAdminCourseorderListAdminCourseorderListAdmin
- ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ
+ 
+<div class="login_cont member_cont" style="width: 85%; margin-left : 15%">
+	<div class="login_in">
+		
+		<h3>강의 목록</h3>
+
+	</div>
+
+	
+	
+	<div class="mem_cont" align="center">
+		
+ 
+		<div class="myinfo_cont refund_info" align="center">
+			
+			<dl>
+				<dt>번호 </dt>
+				<dt>강의명</dt>						
+				<dt>결제자 명</dt>						
+				<dt>가격</dt>						
+				<dt>주문일자</dt>						
+				<dt> </dt>						
+			</dl>
+			
+			<c:forEach var="courseOrderList" items="${courseOrderList}" varStatus="status">
+			<dl>
+				<dt>${courseOrderList.orderNumber }</dt>						
+				<dt>${courseOrderList.cousreName }</dt>						
+				<dt>${courseOrderList.userId }</dt>						
+				<dt>${courseOrderList.totalPrice }</dt>						
+				<dt>${courseOrderList.orderDate }</dt>						
+			</dl>
+			</c:forEach>
+			
+			<dl>
+				<dt style="text-align: center;" colsapn="4">
+				<button type="button" class="btn btn-outline-info" onClick="insertCategory()">강의 추가하기</button>
+				</dt>
+			</dl>
+			<center>
+			<form action="getlist.cs" method="get">
+		<select name="whatColumn" style="width: 100px;">
+			<option value="all">전체 검색
+			<option value="name">강의명</option>
+			<option value="price">가격</option>
+			<option value="date">기간</option>
+		</select> <input type="text" name="keyword"> <input type="submit" class="btn btn-outline-info" value="검색">
+	</form>
+	
+	<br>
+	${pageInfo.pagingHtml }
+	</center>
+				
+
+			
+		</div>
+	</div>
+
+
+
+
+
+</div>
+
+    <iframe src="" name="sysfrm" id="sysfrm" width="100%" height="0" scrolling="no" frameborder="0"></iframe>
+
+</body>
+</html>
+</div>
+</div>
