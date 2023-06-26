@@ -5,4 +5,40 @@
 
 	<mapper namespace="review.model">
 		
+		<insert id="InsertReview">
+			insert into review(
+			reviewNumber,courseCode,
+			userId,reviewTitle,reviewContent,
+			reviewDate,reviewCount
+			) values(
+			REVIEW_seq.nextval, #{courseCode},
+			#{userId}, #{reviewTitle},#{reviewContent},
+			SYSDATE, #{reviewCount}
+			)
+		</insert>
+		
+		<select id="ReviewCount" resultType="int">
+	 		select count(*) from review where 
+	 		userId = #{userId} and courseCode = #{courseCode}
+	 	</select>
+	 	
+		<select id="GetUserReview" resultType="review.model.ReviewBean">
+	 		select * from review where 
+	 		userId = #{userId} and courseCode = #{courseCode}
+	 	</select>
+		
+		<update id="UpdateReview">
+			update review set
+		  	reviewTitle = #{reviewTitle},
+		  	reviewContent = #{reviewContent},
+		  	reviewDate = SYSDATE, 
+		  	reviewCount = #{reviewCount}
+		  	where userId = #{userId} and 
+		  	courseCode = #{courseCode}
+		</update>
+		
+		<delete id="DeleteReview">
+			delete review where 
+			userId = #{userId} and courseCode = #{courseCode}
+		</delete>
 	</mapper>

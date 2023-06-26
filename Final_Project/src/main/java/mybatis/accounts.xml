@@ -106,4 +106,10 @@
      	select * from unit
      	where courseCode=#{cousreCode}
      </select>
+     
+     
+     <select id="ReviewCount" resultType="int">
+	 	select count(*) from review where 
+	 	userId = #{userId} and courseCode = #{courseCode}
+	 </select>
 </mapper>

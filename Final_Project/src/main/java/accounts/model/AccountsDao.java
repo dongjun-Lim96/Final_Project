@@ -41,6 +41,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpSession;
@@ -387,5 +388,11 @@ System.out.println("1111111111111");
 		List<UnitBean> lists = new ArrayList<UnitBean>();
 		lists = sqlSessionTemplate.selectList(namespace+".getUnitBycourseCode",courseCode);
 		return lists;
+	}
+   
+   
+   public int reviewCount(Map<String, Object> map) {
+		int cnt = sqlSessionTemplate.selectOne(namespace+".ReviewCount", map);
+		return cnt;
 	}
 }

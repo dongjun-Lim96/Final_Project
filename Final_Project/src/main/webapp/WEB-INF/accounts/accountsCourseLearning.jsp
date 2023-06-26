@@ -116,9 +116,18 @@
         <dt style="text-align: right;">
           <a href="goshow.cs?courseCode=${course.courseCode}" class="btn btn-outline-info font-weight-bold" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">학습하기</a>
        	</dt> 
-        <dt>
-          <a href="review.rv?courseCode=${course.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">리뷰쓰기</a>
-        </dt> 
+       	
+       	<c:if test="${reviewCount > 0}">
+       		<dt>
+	          <a href="reviewUpdate.rv?courseCode=${course.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">리뷰수정</a>
+	        </dt> 
+       	</c:if>
+       	
+        <c:if test="${reviewCount <= 0}">
+	        <dt>
+	          <a href="review.rv?courseCode=${course.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">리뷰쓰기</a>
+	        </dt> 
+    	</c:if>
     	
 	</dl>
 	
