@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+   <mapper namespace="data.model">
+	<select id="GetDataList" resultType="data.model.DataBean">
+		select  rownum as rank,dataNumber, adminId, dataTitle, dataContent,
+		dataImage, dataDate, dataView from (select rownum
+		as rank, dataNumber, adminId, dataTitle, dataContent,
+		dataImage, dataDate, dataView from
+		(select dataNumber, adminId, dataTitle, dataContent,
+		dataImage, dataDate, dataView from data
+		<if test="whatColumn=='dataTitle'"> where dataTitle like #{keyword} </if>
+		<if test="whatColumn=='adminId'"> where adminId like #{keyword} </if>
+		<if test="whatColumn=='all'"> where dataNumber like #{keyword} or adminId like
+			#{keyword} or dataTitle like #{keyword} or dataContent like #{keyword} or dataDate like
+			#{keyword} or dataView like #{keyword} </if>
+		order by dataNumber asc )) order by rank desc
+	</select>
+
+	<select id="CountData" resultType="int">
+		select count(*) from data
+		<if test="whatColumn=='dataTitle'"> where dataTitle like #{keyword} </if>
+		<if test="whatColumn=='adminId'"> where adminId like #{keyword} </if>
+		<if test="whatColumn=='all'"> where dataNumber like #{keyword} or adminId like
+			#{keyword} or dataTitle like #{keyword} or dataDate like
+			#{keyword} or dataView like #{keyword}
+		</if>
+	</select>
+	<insert id="WriteData"> insert into
+		data(dataNumber,adminId,dataTitle,dataContent,dataImage,dataDate,dataView)
+		values(DATA_seq.nextval,#{adminId},#{dataTitle},#{dataContent},#{dataImage},sysdate,0)
+	</insert>
+	
+	<!-- 조회수 증가 -->
+	<update id="UpdateDataView">
+		UPDATE data SET dataView = dataView + 1 WHERE dataNumber =
+		#{dataNumber}
+	</update>
+
+	<!-- 해당 글 가져오기 -->
+	<select id="OneData" parameterType="int"
+		resultType="data.model.DataBean">
+		SELECT * FROM data WHERE dataNumber = #{dataNumber}
+	</select>
+
+
+	<delete id="DeleteOneData"> delete data where dataNumber = #{dataNumber}
+	</delete>
+	
+	<update id="UpdateData"> update data set adminId =#{adminId},
+		dataTitle=#{dataTitle}, dataImage =#{dataImage}
+		, dataContent =#{dataContent} where
+		dataNumber =#{dataNumber}
+	</update>
+	
+	<select id="CheckExistingAdminId" parameterType="String" resultType="int">
+    SELECT COUNT(*) FROM ADMININFO WHERE adminId = #{adminId}
+</select>
+      
+   </mapper>

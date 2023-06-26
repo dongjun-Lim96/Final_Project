@@ -19,6 +19,7 @@
 		<mapper resource="mybatis/review.xml"/>
 		<mapper resource="mybatis/unit.xml"/>
 		<mapper resource="mybatis/wishList.xml"/>
+		<mapper resource="mybatis/data.xml"/>
 	</mappers>
 </configuration>
 

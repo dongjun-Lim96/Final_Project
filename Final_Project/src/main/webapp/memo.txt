@@ -65,6 +65,23 @@ values('lim','임국빈','4444','1997/12/23','lim@naver.com',01044766758,5000,1,1,1
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
 values('pyo','표진주','3333','1997/12/04','pyo@naver.com',01032814422,10000,1,1,1,'2023-04-05',0,0);
 
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('pyo1','표주진','3333','1997/12/04','pyo1@naver.com',01032814421,10000,1,1,1,'2023-06-25',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('kim2','김영록','3333','1997/12/04','pyo2@naver.com',01032814423,10000,1,1,1,'2023-06-24',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('vitory3','강승묵','3333','1997/12/04','pyo3@naver.com',01032814424,10000,1,1,1,'2023-06-25',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('seongjiwoong','성지웅','3333','1997/12/04','pyo4@naver.com',01032814425,10000,1,1,1,'2023-06-24',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('holywater','배성수','3333','1997/12/04','pyo5@naver.com',01032814426,10000,1,1,1,'2023-06-25',0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('holywater2','배성수','3333','1997/12/04','pyo6@naver.com',01034814426,10000,1,1,1,sysdate,0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('holywater3','배성수','3333','1997/12/04','pyo7@naver.com',01032714426,10000,1,1,1,sysdate,0,0);
+insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
+values('holywater8','배성수','3333','1997/12/04','pyo8@naver.com',01030714426,10000,1,1,1,'2023-06-26',0,0);
+
 DROP TABLE ADMININFO CASCADE CONSTRAINTS;
 --관리자 테이블
 CREATE TABLE ADMININFO(
@@ -452,5 +469,32 @@ values(9, 'kim', '추석 휴무일 안내', '안녕하세요. 쌍용에듀입니다. 추석연휴 휴무�
 insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
 values(10, 'kim', '국민내일배움카드 추가지원 지침 안내', '8월 개강하는 주말 재직자 교육과정도 자부담 완화 적용을 받아
 [변경전] 103,770원 [변경후] 69,180원 으로 자부담액이 조정 되었습니다.','notice10.jpg',sysdate,0);
+
+
+
+
+drop sequence DATA_seq;
+create sequence DATA_seq
+  increment by 1
+  start with 1 
+  minvalue 1
+  maxvalue 10000 
+  nocache;
+  
+DROP TABLE DATA CASCADE CONSTRAINTS;
+--무료자료 테이블
+CREATE TABLE DATA(
+   dataNumber NUMBER PRIMARY KEY,
+   adminId VARCHAR2(50),   
+   dataTitle VARCHAR2(200) NOT NULL,
+   dataContent VARCHAR2(2000) NOT NULL,
+   dataImage VARCHAR2(50) NULL, 
+   dataDate DATE DEFAULT SYSDATE,
+   dataView NUMBER DEFAULT 0,
+   FOREIGN KEY (adminId) REFERENCES ADMININFO(adminId)
+);
+
+insert into DATA(dataNumber, adminId, dataTitle, dataContent,dataImage,dataDate,dataView)
+values(DATA_seq.NEXTVAL, 'son', '2023정보처리기사 총평', '자세한 내용은 네이버 수제비 카페에서 확인해주세요~ 카페글 보러가기 ->  https://cafe.naver.com/soojebi/160112','data1.PNG',sysdate,0);
 
 commit;
