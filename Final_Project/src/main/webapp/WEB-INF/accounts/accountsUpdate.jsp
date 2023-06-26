@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="accountsMyPageHeader.jsp"%>
-            
+<script type="text/javascript" src="<%=conPath%>/resources/js/accountsUpdate.js"></script>            
             
             <form name="form1" method="post" action="update.acc" onSubmit="return writeSave()">
 				<input type="hidden" name="userId" value="${accounts.userId}">
