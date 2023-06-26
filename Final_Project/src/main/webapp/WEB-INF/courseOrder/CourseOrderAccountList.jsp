@@ -109,9 +109,11 @@
  
  
 <div class="login_cont member_cont" style="width: 1500px; margin-left : 15%">
+	<input type="hidden" value="${pageInfo.pageNumber}" name="pageNumber">
 	<div class="login_in">
-		
-		<h3>회원 목록</h3>
+		<c:forEach var="accountBuyList" items="${accountBuyList }" varStatus="status">
+		</c:forEach>
+		<h3>회원 목록 (${totalCount } 명)</h3>
 
 	</div>
 
