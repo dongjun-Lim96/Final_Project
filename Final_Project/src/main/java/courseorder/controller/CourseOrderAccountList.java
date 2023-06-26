@@ -56,6 +56,8 @@ public class CourseOrderAccountList {
 		}
 		
 		System.out.println("asdfasdfasdf");
+		
+		mav.addObject("totalCount", totalCount);
 		mav.addObject("accountBuyList", accountBuyList);
 		mav.addObject("pageInfo", pageInfo);
 		mav.setViewName(getPage);

@@ -9,8 +9,7 @@
 			FROM accounts a
 			LEFT JOIN courseorder co ON a.USERID = co.USERID
 			<if test="whatColumn==null">
-			WHERE a.ADMINCHECK = '0'
-			and a.userOut = 0
+
 			</if>
 			<if test="whatColumn=='all'">
 			WHERE a.ADMINCHECK = '0'
@@ -45,13 +44,13 @@
 			SELECT a.USERID as userId, a.USERPW as userPw, a.USERNAME as userName, a.USERPHONE as userPhone, a.USEREMAIL as userEmail, COUNT(co.ORDERNUMBER) AS count
 			FROM accounts a
 			LEFT JOIN courseorder co ON a.USERID = co.USERID
-			<if test="whatColumn==null">
 			WHERE a.ADMINCHECK = '0'
 			and a.userOut = 0
+			<if test="whatColumn==null">
+
 			</if>
 			<if test="whatColumn=='all'">
-			WHERE a.ADMINCHECK = '0'
-			and a.userOut = 0
+
 			and (a.USERID like #{keyword}
 			or a.USERPW like #{keyword}
 			or a.USERNAME like #{keyword}
@@ -59,18 +58,15 @@
 			or a.USEREMAIL like #{keyword})
 			</if>
 			<if test="whatColumn=='userName'">
-			WHERE a.ADMINCHECK = '0'
-			and a.userOut = 0
+
 			and a.USERNAME like #{keyword}
 			</if>
 			<if test="whatColumn=='userId'">
-			WHERE a.ADMINCHECK = '0'
-			and a.userOut = 0
+
 			and a.USERID like #{keyword}
 			</if>
 			<if test="whatColumn=='userEmail'">
-			WHERE a.ADMINCHECK = '0'
-			and a.userOut = 0
+
 			and a.USEREMAIL like #{keyword}
 			</if>
 			GROUP BY a.USERID, a.USERPW, a.USERNAME, a.USERPHONE, a.USEREMAIL
