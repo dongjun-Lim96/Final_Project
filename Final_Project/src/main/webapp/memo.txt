@@ -35,47 +35,35 @@ values('jung','정현수','1111','1994/12/02','jung@naver.com',01055553776,6000,1,1
 
 
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung1','정현수','1111','1994/12/02','jung1@naver.com',01055553771,6000,1,1,1,'2023-06-17',0,0);
+values('eun','은종욱','0907','1999/09/07','jweun@naver.com',01083371442,10000,1,1,1,'2023-05-08',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung2','정현수','1111','1994/12/02','jung2@naver.com',01055553772,6000,1,1,1,'2023-06-17',0,0);
+values('moon','문상윤','0903','1999/09/03','moon@naver.com',01064361783,6000,1,1,1,'2023-06-17',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung3','정현수','1111','1994/12/02','jung3@naver.com',01055553773,6000,1,1,1,'2023-06-17',0,0);
+values('lee','이이경','1212','1990/12/02','leel2@naver.com',01024828759,6000,1,1,1,'2023-06-27',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung4','정현수','1111','1994/12/02','jung4@naver.com',01055553774,6000,1,1,1,'2023-06-17',0,0);
+values('son1','손기훈','0102','2000/01/02','son12@naver.com',01027146566,4000,1,1,1,'2023-06-07',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung5','정현수','1111','1994/12/02','jung5@naver.com',01055553775,6000,1,1,1,'2023-06-17',0,0);
+values('jung1','정재완','0108','2000/01/27','waan@naver.com',01024898759,6000,1,1,1,'2023-04-17',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung6','정현수','1111','1994/12/02','jung6@naver.com',01055553777,6000,1,1,1,'2023-06-18',0,0);
+values('lee1','이응욱','5274','1999/04/02','lee1@naver.com',01052745255,6000,1,1,1,'2023-05-18',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung7','정현수','1111','1994/12/02','jung7@naver.com',01055553778,6000,1,1,1,'2023-06-19',0,0);
+values('kim1','김소원','0820','1999/08/20','kim1@naver.com',01094899622,3000,1,1,1,'2023-06-19',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung8','정현수','1111','1994/12/02','jung8@naver.com',01055553779,6000,1,1,1,'2023-06-17',0,0);
+values('park1','박정연','1111','1998/06/07','park1@naver.com',01076048909,2000,1,1,1,'2023-06-19',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung9','정현수','1111','1994/12/02','jung9@naver.com',01055553710,6000,1,1,1,'2023-06-17',0,0);
+values('yoo','유록원','1111','1999/09/24','yoo@naver.com',01052746516,3000,1,1,1,'2023-06-01',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung10','정현수','1111','1994/12/02','jung10@naver.com',01055553711,6000,1,1,1,'2023-06-17',0,0);
+values('choi','최현도','8808','2000/02/24','choi@naver.com',01088089231,6000,1,1,1,'2023-06-02',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung11','정현수','1111','1994/12/02','jung11@naver.com',01055553712,6000,1,1,1,'2023-06-17',0,0);
+values('ji','지현','8888','1994/12/02','ji@naver.com',01066036703,6000,1,1,1,'2023-06-07',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung12','정현수','1111','1994/12/02','jung12@naver.com',01055553713,6000,1,1,1,'2023-06-15',0,0);
+values('lee2','이어현','1717','1994/12/02','lee2@naver.com',01035984649,4000,1,1,1,'2023-05-15',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung13','정현수','1111','1994/12/02','jung13@naver.com',01055553714,6000,1,1,1,'2023-06-15',0,0);
+values('jun','전세웅','4232','1996/12/22','jun@naver.com',01066778756,5000,1,1,1,'2023-05-25',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung14','정현수','1111','1994/12/02','jung14@naver.com',01055553715,6000,1,1,1,'2023-06-15',0,0);
+values('lim','임국빈','4444','1997/12/23','lim@naver.com',01044766758,5000,1,1,1,'2023-04-25',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung15','정현수','1111','1994/12/02','jung15@naver.com',01055553716,6000,1,1,1,'2023-06-15',0,0);
-insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung16','정현수','1111','1994/12/02','jung16@naver.com',01055553717,6000,1,1,1,'2023-06-17',0,0);
-insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung17','정현수','1111','1994/12/02','jung17@naver.com',01055553718,6000,1,1,1,'2023-06-20',0,0);
-insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung18','정현수','1111','1994/12/02','jung18@naver.com',01055553719,6000,1,1,1,sysdate,0,0);
-insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung19','정현수','1111','1994/12/02','jung19@naver.com',01055553720,6000,1,1,1,sysdate,0,0);
-insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung20','정현수','1111','1994/12/02','jung20@naver.com',01055553721,6000,1,1,1,sysdate,0,0);
-insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung21','정현수','1111','1994/12/02','jung21@naver.com',01055553722,6000,1,1,1,sysdate,0,0);
+values('pyo','표진주','3333','1997/12/04','pyo@naver.com',01032814422,10000,1,1,1,'2023-04-05',0,0);
 
 DROP TABLE ADMININFO CASCADE CONSTRAINTS;
 --관리자 테이블
@@ -100,18 +88,17 @@ CREATE TABLE CATEGORY(
 insert into CATEGORY(categoryCode, categoryName)
 values('EIP', '정보처리기사');
 insert into CATEGORY(categoryCode, categoryName)
+values('IEIP', '정보처리산업기사');
+insert into CATEGORY(categoryCode, categoryName)
+values('CIP', '정보처리기능사');
+insert into CATEGORY(categoryCode, categoryName)
 values('EBDA', '빅데이터분석기사');
 insert into CATEGORY(categoryCode, categoryName)
-values('sqld', 'SQLD');
+values('SQLD', 'SQL 개발자');
 insert into CATEGORY(categoryCode, categoryName)
-values('boan', '정보보안');
+values('ADsP', '데이터분석 준전문가');
 insert into CATEGORY(categoryCode, categoryName)
-values('CSTS', 'SW테스트전문가');
-insert into CATEGORY(categoryCode, categoryName)
-values('UC', '컴퓨터활용능력');
-
-
-
+values('ECSA', '전자계산기 조직응용기사');
 
 
 DROP TABLE COURSE CASCADE CONSTRAINTS;
@@ -129,13 +116,29 @@ CREATE TABLE COURSE(
 );
 --EIP1 EIP2 필기는 1 실기는 2로 임의설정 
 insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
-values('EIP1', 'EIP', '정보처리기사필기', 50000, 'Teacher 1', 'img1.png', 'video1.mp4', 30);
+values('EIP1', 'EIP', '정보처리기사필기', 85000, '김현숙', 'img1.PNG', 'video1.mp4', 30);
 insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
-values('EIP2', 'EIP', '정보처리기사실기', 100000, 'Teacher 1', 'img2.png', 'video2.mp4', 30);
+values('EIP2', 'EIP', '정보처리기사실기', 130000, '오동환', 'img2.PNG', 'video2.mp4', 90);
 insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
-values('EBDA1', 'EBDA', '빅데이터분석기사필기', 70000, 'Teacher 2', 'img3.png', 'video3.mp4', 60);
+values('IEIP1', 'IEIP', '정보처리산업기사필기', 89000, '양미정', 'img3.PNG', 'video3.mp4', 60);
 insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
-values('EBDA2', 'EBDA', '빅데이터분석기사실기', 1200000, 'Teacher 2', 'img4.png', 'video4.mp4', 60);
+values('IEIP2', 'IEIP', '정보처리산업기사실기', 119000, '양미정', 'img4.PNG', 'video4.mp4', 120);
+insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+values('CIP1', 'CIP', '정보처리기능사필기', 99000, '최현우', 'img5.PNG', 'video5.mp4', 60);
+insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+values('CIP2', 'CIP', '정보처리기능사실기', 129000, '곽미정', 'img6.PNG', 'video6.mp4', 90);
+insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+values('EBDA1', 'EBDA', '빅데이터분석기사필기', 70000, '김금례', 'img7.PNG', 'video7.mp4', 90);
+insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+values('EBDA2', 'EBDA', '빅데이터분석기사실기', 120000, '김금례', 'img8.png', 'video8.mp4', 240);
+insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+values('ADsP', 'ADsP', '데이터분석 준전문가시험', 99000, '노정선', 'img9.PNG', 'video9.mp4', 60);
+insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+values('SQLD', 'SQLD', 'SQLD시험', 109000, '김은미', 'img10.PNG', 'video10.mp4', 60);
+insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+values('ECSA1', 'ECSA', '전자계산기 조직응용기사필기', 130000, '박수완', 'img11.PNG', 'video11.mp4', 90);
+insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+values('ECSA2', 'ECSA', '전자계산기 조직응용기사실기', 160000, '이현지', 'img12.PNG', 'video12.mp4', 120);
 
 
 drop sequence CART_seq;
@@ -156,14 +159,7 @@ CREATE TABLE CART(
    FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode),
    FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId) ON DELETE CASCADE
 );
-insert into CART(cartNumber, courseCode, userId)
-values(CART_seq.nextval, 'EIP1', 'jung');
-insert into CART(cartNumber, courseCode, userId)
-values(CART_seq.nextval, 'EIP2', 'jung');
-insert into CART(cartNumber, courseCode, userId)
-values(CART_seq.nextval, 'EBDA1', 'kang');
-insert into CART(cartNumber, courseCode, userId)
-values(CART_seq.nextval, 'EBDA2', 'kang');
+
 
 
 drop sequence WISH_seq;
@@ -207,9 +203,29 @@ CREATE TABLE UNIT(
    FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode)   
 );
 insert into UNIT(courseCode, UNIT1, UNIT2, UNIT3,UNIT4,UNIT5,UNIT6,UNIT7,UNIT8,UNIT9,UNIT10)
-values('EIP1', 'Unit 1', 'Unit 2', 'Unit 3', 'Unit 3', 'Unit 3', 'Unit 3', 'Unit 3', 'Unit 3', 'Unit 3', 'Unit 3');
+values('EIP1', '데이터베이스', '전자계산기 구조', '회로구성 03. 기본 회로', '자료의 표현 01. 자료 표현', '자료의 표현 02. 자료 구조 및 알고리즘', '프로그래밍 01. 절차형 프로그래밍', '컴퓨터 시스템의 이해 01. 레지스터 전송과 마이크로 동작', '컴퓨터 시스템의 이해 04. 마이크로 프로그램 제어 구조 이해하기', '시스템 기반 기술 01. 운영체제', '시스템 기반 기술 02. 네트워크 및 프로토콜');
 insert into UNIT(courseCode, UNIT1, UNIT2, UNIT3,UNIT4,UNIT5,UNIT6,UNIT7,UNIT8,UNIT9,UNIT10)
-values('EIP2', 'Unit A', 'Unit B', 'Unit C', 'Unit 3', 'Unit 3', 'Unit 3', 'Unit 3', 'Unit 3', 'Unit 3', 'Unit 3');
+values('EIP2', '데이터 입출력 구현', '통합구현', '서버 프로그램 구현', '인터페이스 구현', '화면설계', '애플리케이션 테스트 관리', 'SQL응용', '소프트웨어 개발 보안 구축', '과목 응용 SW기초활용', '제품 소프트웨어 패키징');
+insert into UNIT(courseCode, UNIT1, UNIT2, UNIT3,UNIT4,UNIT5,UNIT6,UNIT7,UNIT8,UNIT9,UNIT10)
+values('IEIP1', '응용SW 기초 기술활용', '네트워크 기초 활용', '애플리케이션 설계', '객체지향 설계', '테스트 및 배포', '프로그래밍 언어 활용', '프로그램 구현', '데이터 입출력 구현', 'SQL 응용', '데이터베이스 프로그래밍');
+insert into UNIT(courseCode, UNIT1, UNIT2, UNIT3,UNIT4,UNIT5,UNIT6,UNIT7,UNIT8,UNIT9,UNIT10)
+values('IEIP2', '응용SW 기초 기술활용', '네트워크 기초 활용', '애플리케이션 설계', '객체지향 설계', '테스트 및 배포', '프로그래밍 언어 활용', '프로그램 구현', '데이터 입출력 구현', 'SQL 응용', '데이터베이스 프로그래밍');
+insert into UNIT(courseCode, UNIT1, UNIT2, UNIT3,UNIT4,UNIT5,UNIT6,UNIT7,UNIT8,UNIT9,UNIT10)
+values('CIP1', ' PC 운영체제', '전자계산기 일반', '패키지 활용', '정보통신 일반', '', '', '', '', '', '');
+insert into UNIT(courseCode, UNIT1, UNIT2, UNIT3,UNIT4,UNIT5,UNIT6,UNIT7,UNIT8,UNIT9,UNIT10)
+values('CIP2', ' PC 운영체제', '전자계산기 일반', '패키지 활용', '정보통신 일반', '', '', '', '', '', '');
+insert into UNIT(courseCode, UNIT1, UNIT2, UNIT3,UNIT4,UNIT5,UNIT6,UNIT7,UNIT8,UNIT9,UNIT10)
+values('EBDA1',  '빅데이터 개요 및 활용', '빅데이터 기술 및 제도', '분석방안수립', '분석 작업 계획', '데이터 수집 및 전환', '데이터 적재 및 저장', '', '', '', '');
+insert into UNIT(courseCode, UNIT1, UNIT2, UNIT3,UNIT4,UNIT5,UNIT6,UNIT7,UNIT8,UNIT9,UNIT10)
+values('EBDA2',  '데이터 정제', '분석 변수 처리', '데이터 탐색 기초', '고급 데이터 탐색', '기술통계', '추론통계', '분석기법', '고급 분석기법', '', '');
+insert into UNIT(courseCode, UNIT1, UNIT2, UNIT3,UNIT4,UNIT5,UNIT6,UNIT7,UNIT8,UNIT9,UNIT10)
+values('ADsP',  '데이터의 이해', '데이터의 가치와 미래', '가치 창조를 위한 데이터 사이언스와 전략 인사이트', '데이터 분석 기획', '데이터 분석', '통계분석', '정형 데이터 마이닝', '', '', '');
+insert into UNIT(courseCode, UNIT1, UNIT2, UNIT3,UNIT4,UNIT5,UNIT6,UNIT7,UNIT8,UNIT9,UNIT10)
+values('SQLD',  '데이터 모델링의 이해', '데이터 모델과 성능', 'SQL 기본', 'SQL 활용', 'SQL 최적화 기본 원리', '', '', '', '', '');
+insert into UNIT(courseCode, UNIT1, UNIT2, UNIT3,UNIT4,UNIT5,UNIT6,UNIT7,UNIT8,UNIT9,UNIT10)
+values('ECSA1',  '전자계산기프로그래밍', '자료구조 및 데이터통신', '전자계산기구조', '운영체제', '마이크로전자계산기', '', '', '', '', '');
+insert into UNIT(courseCode, UNIT1, UNIT2, UNIT3,UNIT4,UNIT5,UNIT6,UNIT7,UNIT8,UNIT9,UNIT10)
+values('ECSA2', '전자계산기프로그래밍', '자료구조 및 데이터통신', '전자계산기구조', '운영체제', '마이크로전자계산기', '', '', '', '', '');
 
 
 
@@ -236,9 +252,29 @@ CREATE TABLE REVIEW(
    FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId) ON DELETE CASCADE
 );
 insert into REVIEW(reviewNumber, courseCode, userId, reviewTitle, reviewContent, reviewCount)
-values(1, 'EIP1', 'jung', '강의재밌어요', '리뷰 1 입니다.', 10);
+values(REVIEW_seq.NEXTVAL, 'EIP1', 'jung', '정보처리기사 합격 후기', '강의가 없었다면 많이 헤매고 더 힘들었을텐데 농담도 던지며 재미있게 구성된 강의는 혼자 공부하는데 큰힘이 되었습니다. 선생님들 너무너무 감사합니다!!', 10);
 insert into REVIEW(reviewNumber, courseCode, userId, reviewTitle, reviewContent, reviewCount)
-values(2, 'EBDA1', 'kang', '감사합니다', '리뷰 2 입니다.', 5);
+values(REVIEW_seq.NEXTVAL, 'EIP1', 'kang', '필기 합격을 이루고.. 실기 합격의 길로 가...', '이번 시험은 약술형은 없고 단답형과 프로그래밍,SQL만 있었기 때문에 이러한 준비가 더 빛을 발했던 것 같습니다.', 10);
+insert into REVIEW(reviewNumber, courseCode, userId, reviewTitle, reviewContent, reviewCount)
+values(REVIEW_seq.NEXTVAL, 'EIP1', 'moon', '너무 좋은강의입니다.', '강사님의 강의는 정말 최고였던것같습니다!', 10);
+insert into REVIEW(reviewNumber, courseCode, userId, reviewTitle, reviewContent, reviewCount)
+values(REVIEW_seq.NEXTVAL, 'EBDA1', 'eun', '보고 도움이 많이 되었어요', '열띤 강의 감사합니다.', 5);
+insert into REVIEW(reviewNumber, courseCode, userId, reviewTitle, reviewContent, reviewCount)
+values(REVIEW_seq.NEXTVAL, 'EBDA1', 'kim1', '합격의 지름길', '이강의 추천드려요! 강의를 듣고 바로 합격했습니다.', 5);
+insert into REVIEW(reviewNumber, courseCode, userId, reviewTitle, reviewContent, reviewCount)
+values(REVIEW_seq.NEXTVAL, 'CIP1', 'jung1', '강의 구성부터해서 설명까지 쏙쏙', '너무 쉽게 가르쳐주셔서 감사합니다.', 10);
+insert into REVIEW(reviewNumber, courseCode, userId, reviewTitle, reviewContent, reviewCount)
+values(REVIEW_seq.NEXTVAL, 'CIP2', 'kang', '이 강의를 듣고나서..', '동생한테 바로 추천했습니다 ㅎㅎ', 10);
+insert into REVIEW(reviewNumber, courseCode, userId, reviewTitle, reviewContent, reviewCount)
+values(REVIEW_seq.NEXTVAL, 'EBDA1', 'kang', '조금 아쉬워요', '그냥 그랬어요', 5);
+insert into REVIEW(reviewNumber, courseCode, userId, reviewTitle, reviewContent, reviewCount)
+values(REVIEW_seq.NEXTVAL, 'EBDA1', 'ji', '최고의 강사님', '합격의 지름길입니다!', 10);
+insert into REVIEW(reviewNumber, courseCode, userId, reviewTitle, reviewContent, reviewCount)
+values(REVIEW_seq.NEXTVAL, 'EBDA1', 'moon', '강의는 정말 좋아요!', '다음에 또 들을게요', 10);
+insert into REVIEW(reviewNumber, courseCode, userId, reviewTitle, reviewContent, reviewCount)
+values(REVIEW_seq.NEXTVAL, 'EBDA1', 'eun', '최고!', '강의를 듣고나서 바로 합격했습니다~', 10);
+insert into REVIEW(reviewNumber, courseCode, userId, reviewTitle, reviewContent, reviewCount)
+values(REVIEW_seq.NEXTVAL, 'EBDA1', 'lee1', '안녕하세요!', '이 강의를 꼭 들으시길 바랍니다! 합격의 지름길입니다.', 10);
 
 
 
@@ -264,15 +300,40 @@ CREATE TABLE COURSEORDER(
 --COURSEORDER 주문 테이블
 
 insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
-values(courseorder_seq.nextval, 'EIP1', 'jung', 50000,'2023-06-17');
+values(courseorder_seq.nextval, 'EIP1', 'jung', 85000,'2023-06-17');
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'EIP2', 'ji', 130000,'2023-05-08');
 insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
 values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,'2023-06-18');
 insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
-values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,TO_CHAR(SYSDATE, 'YYYY-MM-DD'));
+values(courseorder_seq.nextval, 'EBDA2', 'kang', 120000,TO_CHAR(SYSDATE, 'YYYY-MM-DD'));
 insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
-values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,TO_CHAR(SYSDATE, 'YYYY-MM-DD'));
+values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,'2023-02-22');
 insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
-values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,'2023-06-20');
+values(courseorder_seq.nextval, 'SQLD', 'moon', 109000,TO_CHAR(SYSDATE, 'YYYY-MM-DD'));
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'ADsP', 'kang', 99000,'2023-01-12');
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'ECSA1', 'eun', 130000,TO_CHAR(SYSDATE, 'YYYY-MM-DD'));
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'ECSA2', 'lee1', 160000,'2023-05-05');
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'CIP1', 'jung', 99000,'2023-03-24');
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'CIP2', 'jung', 129000,'2023-05-17');
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'ECSA2', 'lee1', 160000,TO_CHAR(SYSDATE, 'YYYY-MM-DD'));
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'IEIP1', 'lee1', 89000,'2023-06-25');
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'IEIP2', 'ji', 119000,TO_CHAR(SYSDATE, 'YYYY-MM-DD'));
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'IEIP1', 'lee1', 89000,'2023-06-25');
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'IEIP1', 'lee1', 89000,'2023-06-25');
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'IEIP1', 'lee1', 89000,'2023-06-22');
+commit;
 
 drop sequence FAQ_seq;
 create sequence FAQ_seq
@@ -290,9 +351,19 @@ CREATE TABLE FAQ(
    faqContent VARCHAR2(2000) NOT NULL   
 );
 insert into FAQ(faqNumber,faqTitle, faqContent)
-values(FAQ_seq.NEXTVAL, '강의 수강 절차에 관해 안내드립니다.', '진또배기');
+values(FAQ_seq.NEXTVAL, '훈련과정에 사전지식이 없는 초보자도 수강이 가능한가요?', '교육과정에 사전지식이 없는 초보자도 기초부터 체계적으로 배울 수 있는 과정입니다. 교육과정중 선행학습이 필요한 경우는 모집 시 별도로 사전 공지합니다.');
 insert into FAQ(faqNumber, faqTitle, faqContent)
-values(FAQ_seq.NEXTVAL, '프리패스 상품에 관하여 안내드립니다.', 'This is FAQ 2.');
+values(FAQ_seq.NEXTVAL, '회원가입해도 개인정보유출 위험은 없나요?', '본 사이트는 개인정보보호법의 정보통신망 이용 촉진 및 정보보호에 관한 법률을 준수하고 있습니다. 회원가입 시 기재된 사항은 법률에 의거하여 보호되고 있습니다.');
+insert into FAQ(faqNumber, faqTitle, faqContent)
+values(FAQ_seq.NEXTVAL, '회원 아이디를 변경하고 싶어요. 아이디 변경 가능하나요?', '관리자에게 별도 문의 부탁드립니다.');
+insert into FAQ(faqNumber, faqTitle, faqContent)
+values(FAQ_seq.NEXTVAL, '회원탈퇴를 하고 싶어요', '로그인 후 마이페이지에서 정보수정을 선택하여 회원탈퇴를 진행합니다.');
+insert into FAQ(faqNumber, faqTitle, faqContent)
+values(FAQ_seq.NEXTVAL, '회원탈퇴 후 다시 재가입이 가능한가요?', '네, 가능합니다.  탈퇴된 이후 동일한 아이디로 재가입 요청 시 관리자에게 별도 문의 부탁드립니다. ');
+insert into FAQ(faqNumber, faqTitle, faqContent)
+values(FAQ_seq.NEXTVAL, '수강기간 연장은 가능한가요?', '연장가능여부는 관리자에게 별도 문의부탁드립니다.');
+insert into FAQ(faqNumber, faqTitle, faqContent)
+values(FAQ_seq.NEXTVAL, '해외에서도 수강이 가능한가요', '해외 수강이 가능합니다. 단, 인터넷 환경은 거주하고 계신곳에 따라 반영됩니다. ');
 
 
 
@@ -321,9 +392,19 @@ CREATE TABLE EVENT(
 );
 
 INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
-VALUES (1, 'son', '신학기 할인 혜택드립니다.', 'This is event 1.', 'event1.png', SYSDATE, 0, '2023-06-11', '2023-06-13');
+VALUES (1, 'son', '정보처리기사 필기 30일반 오픈 기념 이벤트', '정보처리기사 필기 30일반 지금 수강신청하면 수강기간 15일 더 추가!', 'event1.png', SYSDATE, 0, '2023-06-11', '2023-06-13');
 INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
-values(2, 'kim', '신규 강의 등록 이벤트입니다.', 'This is event 2.','event1.png', SYSDATE, 0, '2023-06-02','2023-07-11');
+values(2, 'kim', '수제비 정보처리기사 교재 구매 인증 이벤트', '책 사진과 함께 책 후기 남기기(블로그,카페 등 SNS), 쌍용에듀 카카오톡으로 후기 url 전송','event2.png', SYSDATE, 0, '2023-06-02','2023-08-11');
+INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
+values(3, 'kim', '환승할인 이벤트', '쌍용에듀 카카오톡으로 이름/연락처/캡처이미지 내용을 보내주세요!','event3.PNG', SYSDATE, 0, '2023-06-02','2023-08-12');
+INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
+values(4, 'kim', '재수강 할인', '쌍용에듀 카카오톡으로 성함/연락처/재수강 강의 내용을 보내주세요!','event4.PNG', SYSDATE, 0, '2023-06-02','2023-07-12');
+INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
+values(5, 'kim', '불합격 인증 연장 이벤트', '합격자 발표 이후 카카오톡으로 불합격 화면과 실명,연락처를 남기면 확인 후 연장 진행','event5.PNG', SYSDATE, 0, '2023-06-02','2023-07-03');
+INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
+values(6, 'kim', '실기 FINAL 무료 제공 이벤트', '해당 강의는 강의교안 제공이 불가합니다. 2023년 1회 실기시험이 종료된 이후 해당 무료강의는 삭제됩니다.','event6.png', SYSDATE, 0, '2023-06-02','2023-06-10');
+INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
+values(7, 'kim', '전조기 실기 오픈 1+1 이벤트', '전조기 실기강의는 현재 업데이트 중이며 4월 중순까지 과목별로 업로드 예정입니다.','event7.PNG', SYSDATE, 0, '2023-06-02','2023-07-11');
 
 commit;
 
@@ -348,6 +429,28 @@ CREATE TABLE NOTICE(
    FOREIGN KEY (adminId) REFERENCES ADMININFO(adminId)
 );
 insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
-values(1, 'son', '연휴 및 휴무일 안내입니다. ', '공지사항 1입니다.','notice1.png',sysdate,0);
+values(1, 'son', '2023년 근로자의 날 휴무 안내', '쌍용에듀 휴무일 안내드립니다.2023년 4월 29일(토) ~ 2023년 5월 1일(월) 위의 휴무 기간에도 전화 상담과 카카오톡 상담은 정상적으로 운영하오니 문의 바랍니다.','notice1.png',sysdate,0);
 insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
-values(2, 'kim', '서버 점검 및 보수 일정 안내드립니다.', 'This is notice 2.','notice2.png',sysdate,0);
+values(2, 'kim', '2023년 설연휴 휴관 안내', '안녕하세요. 쌍용에듀입니다. 휴관 안내드립니다. 2023년 1월 21일(토) ~ 2023년 1월 24일(화)','notice2.png',sysdate,0);
+insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
+values(3, 'kim', '쌍용에듀 휴관 안내', '안녕하세요. 쌍용에듀입니다. 휴무 안내드립니다. 2022년 12월 30일(금) ~ 2023년 1월 1일(일)','notice3.png',sysdate,0);
+insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
+values(4, 'kim', '2022년 10월 휴무일 안내', '안녕하세요. 쌍용에듀입니다. 10월 휴무일 안내입니다. 
+10월 3일 월요일 - 개천절 , 10월 10일 월요일 - 대체공휴일','notice4.jpg',sysdate,0);
+insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
+values(5, 'kim', '2022년 추석 휴무일 안내', '안녕하세요. 쌍용에듀입니다. 추석 휴무일 안내입니다. 2022년 9월 9일(금) ~ 9월 12일(월)','notice5.jpg',sysdate,0);
+insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
+values(6, 'kim', '2021 추석 휴무일 안내', '안녕하세요. 쌍용에듀입니다. 추석 휴무일 안내입니다. 추석연휴 기간동안 전화상담과 카카오톡상담은 정상적으로 운영하오니 문의바랍니다.','notice6.jpg',sysdate,0);
+insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
+values(7, 'kim', '필독)국민내일배움카드 안내사항', '2020년 1월부로 국민내일배움카드제 시행에 따라 관련사항 안내 드립니다.','notice7.png',sysdate,0);
+insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
+values(8, 'kim', '코로나19 대응 특별 훈련수당 안내', '안녕하세요 쌍용에듀입니다. 코로나19에 대응하여 올해 종료되는 과정부터 한시적으로 특별 훈련수당이 지급됩니다.
+지원대상이 확대되었고, 지원금액도 상향 조정 되었네요.','notice8.jpg',sysdate,0);
+insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
+values(9, 'kim', '추석 휴무일 안내', '안녕하세요. 쌍용에듀입니다. 추석연휴 휴무일 안내입니다.
+9/30(수)~10/4(일) 전화상담과 카카오톡상담은 정상적으로 운영하오니 문의바랍니다.','notice9.jpg',sysdate,0);
+insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
+values(10, 'kim', '국민내일배움카드 추가지원 지침 안내', '8월 개강하는 주말 재직자 교육과정도 자부담 완화 적용을 받아
+[변경전] 103,770원 [변경후] 69,180원 으로 자부담액이 조정 되었습니다.','notice10.jpg',sysdate,0);
+
+commit;
