@@ -5,10 +5,14 @@
  
    <mapper namespace="course.model">
       <select id="GetCourseList" resultType="course.model.CourseBean">
-         SELECT *
-         FROM course
-         ORDER BY cousreName
-         FETCH FIRST 5 ROWS ONLY
+		select count(*) as cnt, c.courseCode, c.cousreImg, c.cousreName, c.cousrePrice, c.cousreTerm
+		from courseorder co
+		join course c 
+		on co.COURSECODE = c.coursecode
+		group by co.coursecode, c.coursecode, c.cousreImg, c.cousreName, c.COUSREPRICE, 
+		c.COUSRETERM
+		order by cnt desc
+		FETCH FIRST 5 ROWS ONLY
       </select>
        
       <select id="SearchCourseCode" resultType="int">
