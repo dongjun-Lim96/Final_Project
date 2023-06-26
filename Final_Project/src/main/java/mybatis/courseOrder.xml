@@ -102,4 +102,10 @@
 		where ordernumber = #{ordernumber}
 		</delete>
 		
+		<select id="GetOrderList" resultType="courseorder.model.CourseOrderBean">
+			SELECT co.ordernumber, co.userid, co.totalprice, co.orderdate, c.cousrename as cousreName
+			FROM courseorder co
+			JOIN course c ON co.coursecode = c.coursecode
+			ORDER BY orderdate DESC
+		</select>
 	</mapper>
