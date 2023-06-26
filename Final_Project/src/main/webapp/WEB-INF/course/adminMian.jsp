@@ -4,13 +4,27 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" type="text/javascript"></script>
 <!-- chart.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1:wght@100;200;300;400&family=Orbit&display=swap" rel="stylesheet">
 <div style="position: relative; top: 50px;">
 <button onclick="displayChart()" style="background-color: #0DCAF0; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 4px; cursor: pointer;">매출보기</button>
 <button onclick="accountlist()" style="background-color: #0DCAF0; color: white; border: none; padding: 10px 20px; font-size: 16px; border-radius: 4px; cursor: pointer;">가입회원보기</button>
   <canvas id="line-chart" width="900" height="600"></canvas>
 </div>
-
+<style>
+	tr:nth-child(even) {
+		background-color: #f2f2f2;
+	}
+	table{
+		font-family: 'Orbit', sans-serif;
+	}
+	a{
+		text-decoration: none;
+	}
+</style>
 
 
 
@@ -22,17 +36,15 @@
      
       <table style="background-color:#F7F7F8;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width: 400px; height:100%;">
         <tr>
-          <td>회원현황</td>
-          <td></td>
-          <td></td>
+          <td colspan="3" align="center" style="font-weight:bold; ">회원현황</td>
         </tr>
         <tr>
-          <td>신규회원</td>
-          <td>탈퇴회원</td>
-          <td>Total</td>
+          <td align="center"style="font-weight:bold; ">신규회원</td>
+          <td align="center"style="font-weight:bold; ">탈퇴회원</td>
+          <td align="center"style="font-weight:bold; ">Total</td>
         </tr>
         <tr>
-          <td>
+          <td  align="center">
           	 <c:forEach var="countAccount" items="${countAccount}" varStatus="status">
 	            <c:set var="totalaccount" value="${totalaccount + countAccount.count}" />        
 	       	 </c:forEach>
@@ -40,45 +52,41 @@
           	${formattedTotalaccount} 명
           </td>
            
-          <td>${accountLeave } 명</td>
-          <td>${accountTotal } 명</td>
+          <td align="center">${accountLeave } 명</td>
+          <td align="center">${accountTotal } 명</td>
         </tr>
       </table>
       <table style="background-color:#F7F7F8;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width: 400px; height:100%;">
         <tr>
-          <td>최근가입회원</td>
-          <td></td>
-          <td></td>
+          <td  colspan="3" align="center" style="font-weight:bold; ">최근가입회원</td>
         </tr>
         <tr>
-          <td>가입일시</td>
-          <td>아이디</td>
-          <td>이름</td>
+          <td align="center" style="font-weight:bold; ">가입일시</td>
+          <td align="center" style="font-weight:bold; ">아이디</td>
+          <td align="center" style="font-weight:bold; ">이름</td>
         </tr>
         <c:forEach var="recentlyAccount" items="${recentlyAccount }">
         	<tr>
         	
-	          <td><fmt:formatDate value="${recentlyAccount.userJoinDate}" pattern="yyyy-MM-dd" /></td>
-	          <td><a href="accountDetail.co?userId=${recentlyAccount.userId }" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">${recentlyAccount.userId }</a></td>	          
-	          <td>${recentlyAccount.userName }</td>
+	          <td align="center"><fmt:formatDate value="${recentlyAccount.userJoinDate}" pattern="yyyy-MM-dd" /></td>
+	          <td align="center"><a href="accountDetail.co?userId=${recentlyAccount.userId }" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">${recentlyAccount.userId }</a></td>	          
+	          <td align="center">${recentlyAccount.userName }</td>
         	</tr>
           </c:forEach>
       </table>
        <table style="background-color:#F7F7F8;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width:400px; height:100%;">
       	<tr>
-      		<td>등록강의 현황 ${courseCount }건</td>
-      		<td></td>
-      		<td></td>
+      		<td colspan="3" align="center" style="font-weight:bold; ">등록강의 현황 ${courseCount }건</td>
       	</tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td align="center"></td>
+          <td align="center"></td>
+          <td align="center"></td>
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td align="center"></td>
+          <td align="center"></td>
+          <td align="center"></td>
         </tr>
         <tr>
           <td>1</td>
