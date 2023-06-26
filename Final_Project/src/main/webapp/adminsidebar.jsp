@@ -157,7 +157,7 @@
         <div class="collapse show" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="write.nt" class="link-dark rounded" id="sidebarfont">공지사항 추가</a></li>
-            <li><a href="#" class="link-dark rounded" id="sidebarfont">이벤트 추가</a></li>
+            <li><a href="write.ev" class="link-dark rounded" id="sidebarfont">이벤트 추가</a></li>
             <li><a href="insert.faq" class="link-dark rounded" id="sidebarfont">FAQ 추가</a></li>
           </ul>
         </div>
