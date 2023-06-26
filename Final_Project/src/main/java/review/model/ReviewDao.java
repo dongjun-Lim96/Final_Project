@@ -1,5 +1,6 @@
 package review.model;
 
+import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -33,6 +34,12 @@ public class ReviewDao {
 
 	public void deleteReview(Map<String, Object> map) {
 		sqlSessionTemplate.delete(namespace+".DeleteReview", map);
+	}
+
+	public List<ReviewBean> getUserList(String userId) {
+		List<ReviewBean> lists = 
+		sqlSessionTemplate.selectList(namespace+".GetUserList", userId);
+		return lists;
 	}
 	
 	
