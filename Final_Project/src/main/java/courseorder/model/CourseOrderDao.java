@@ -74,5 +74,11 @@ public class CourseOrderDao {
 		}
 		return cnt;
 	}
+
+	public List<CourseOrderBean> getOrderList() {
+		List<CourseOrderBean> lists = new ArrayList<CourseOrderBean>();
+		lists = sqlSessionTemplate.selectList(namespace+".GetOrderList");
+		return lists;
+	}
 	
 }
