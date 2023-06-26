@@ -45,11 +45,11 @@
         </tr>
         <tr>
           <td  align="center">
-          	 <c:forEach var="countAccount" items="${countAccount}" varStatus="status">
-	            <c:set var="totalaccount" value="${totalaccount + countAccount.count}" />        
+          	 <c:forEach var="countAccount1" items="${countAccount}" varStatus="status">
+	            <c:set var="totalaccount1" value="${totalaccount1 + countAccount1.count}" />        
 	       	 </c:forEach>
-	         <fmt:formatNumber var="formattedTotalaccount" value="${totalaccount}" pattern="#,###" />   
-          	${formattedTotalaccount} 명
+	         <fmt:formatNumber var="formattedTotalaccount1" value="${totalaccount1}" pattern="#,###" />   
+          	${formattedTotalaccount1} 명
           </td>
            
           <td align="center">${accountLeave } 명</td>
@@ -186,7 +186,7 @@
 	        maintainAspectRatio: true, // 차트 크기 고정
 	        title: {
 	          display: true,
-	          text: '가입자(명)',
+	          text: '최근7일 가입자(명)',
 	          fontSize: 30
 	        }
 	      }
