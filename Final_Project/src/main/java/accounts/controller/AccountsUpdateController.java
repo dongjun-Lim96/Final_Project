@@ -57,7 +57,7 @@ public class AccountsUpdateController {
 		
 		
 		mav.addObject("userId", accounts.getUserId());
-		mav.setViewName(gotoPage+"?userId="+accounts.getUserId());
+		mav.setViewName(gotoPage);
 		
 		return mav;
 	}
