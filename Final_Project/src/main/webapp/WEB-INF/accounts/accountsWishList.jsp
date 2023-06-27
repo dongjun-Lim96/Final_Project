@@ -24,7 +24,7 @@
 <div class="whiteBox">  
 <h3 class="adm_tit marb30">위시리스트</h3>
   <c:forEach var="wishList" items="${wishList}">
-<div class="card" style="display: inline-block; width: 350px; margin-left: 3%; margin-right: 3%; margin-bottom: 3%; text-align: center;">
+<div class="card" style="display: inline-block; width: 350px; margin-left: 3%; margin-right: 3%; margin-bottom: 3%; text-align: center; border-top-right-radius: 20%;border-top-left-radius: 20%;">
   <a href="coursePaidDetail.cs?courseCode=${wishList.courseCode}&userId=${userId}">
   <img src="<%=request.getContextPath() %>/resources/${wishList.cousreImg}" class="card-img-top" alt="...">
 </a>
