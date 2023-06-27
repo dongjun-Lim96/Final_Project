@@ -50,7 +50,7 @@ public class CourseListController {
 		String url = request.getContextPath() + command;
 
 		//∆‰¿Ã¬°
-		Paging pageInfo = new Paging(pageNumber, "2", totalCount, url, whatColumn, keyword, null);
+		Paging pageInfo = new Paging(pageNumber, "5", totalCount, url, whatColumn, keyword, null);
 
 		
 		List<CourseBean> courseLists= coursedao.getAllCourse(pageInfo,map);

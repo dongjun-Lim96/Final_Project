@@ -118,6 +118,11 @@
 		<h3>목차 추가하기</h3>
 
 	</div>
+
+<c:if test="${empty noUnit }">
+등록할 목차가 없습니다
+</c:if>
+<c:if test="${not empty noUnit }">
 <c:forEach var="noUnit" items="${noUnit }">	
 <div class="accordion" id="accordionExample">
   <div class="accordion-item">
@@ -163,7 +168,7 @@
   
 </div>
 </c:forEach>	
-
+</c:if>
 </div>
 
     <iframe src="" name="sysfrm" id="sysfrm" width="100%" height="0" scrolling="no" frameborder="0"></iframe>

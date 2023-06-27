@@ -76,7 +76,7 @@
       </table>
        <table style="background-color:#F7F7F8;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width:400px; height:100%;">
       	<tr>
-      		<td colspan="3" align="center" style="font-weight:bold; ">등록강의 현황 ${courseCount }건</td>
+      		<td colspan="3" align="center" style="font-weight:bold; ">등록강의 현황 <a href="getlist.cs" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">${courseCount }건</a></td>
       	</tr>
         <tr>
           <td align="center"></td>
