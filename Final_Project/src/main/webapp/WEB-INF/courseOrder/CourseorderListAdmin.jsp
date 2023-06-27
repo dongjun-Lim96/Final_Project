@@ -100,6 +100,13 @@
 		dl:nth-child(even) {
 		background-color: #f2f2f2;
 		}
+		
+		dl{
+		height :50px;
+		}
+		dt{
+		height :50px;
+		}
 	</style>
 
 

@@ -42,7 +42,7 @@ public class CourseOrderListController {
 		
 		String url = request.getContextPath() + command;
 		
-		Paging pageInfo = new Paging(pageNumber, "20", totalCount, url, whatColumn, keyword, null);
+		Paging pageInfo = new Paging(pageNumber, "10", totalCount, url, whatColumn, keyword, null);
 		
 		List<CourseOrderBean> courseOrderList = courseOrderDao.getOrderList(pageInfo,map);
 		
