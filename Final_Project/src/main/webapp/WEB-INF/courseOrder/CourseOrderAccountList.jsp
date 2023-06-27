@@ -124,14 +124,14 @@
  
 		<div class="myinfo_cont refund_info" align="center">
 			
-			<dl>
+			<dl >
 				<dt> </dt>
-				<dt>아이디</dt>						
-				<dt>이름</dt>						
-				<dt>비밀번호</dt>						
-				<dt>이메일</dt>						
-				<dt>총 구매금액</dt>						
-				<dt>구매횟수</dt>						
+				<dt style="font-weight:bold; ">아이디</dt>						
+				<dt style="font-weight:bold; ">이름</dt>						
+				<dt style="font-weight:bold; ">비밀번호</dt>						
+				<dt style="font-weight:bold; ">이메일</dt>						
+				<dt style="font-weight:bold; ">총 구매금액</dt>						
+				<dt style="font-weight:bold; ">구매횟수</dt>						
 				<dt> </dt>						
 				 	
 			</dl>

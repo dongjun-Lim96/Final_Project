@@ -146,8 +146,8 @@ if (message !== "") {
 		<div class="myinfo_cont refund_info" align="center" >
 			
 			<dl>
-				<dt>목차코드</dt>
-				<dt>강의명</dt>	
+				<dt style="font-weight:bold; ">목차코드</dt>
+				<dt style="font-weight:bold; ">강의명</dt>	
 				<dt></dt>									
 			</dl>
 			

@@ -95,6 +95,11 @@
 		.mem_cont .myinfo_cont .comment .good {color: #1758e0;}
 		.mem_cont .myinfo_cont .comment .bad {color: #e01717;}
 		.check_box {width:100%;}
+		
+		
+		dl:nth-child(even) {
+		background-color: #f2f2f2;
+		}
 	</style>
 
 
@@ -114,11 +119,11 @@
 		<div class="myinfo_cont refund_info" align="center">
 			
 			<dl>
-				<dt>번호 </dt>
-				<dt>강의명</dt>						
-				<dt>결제자 명</dt>						
-				<dt>가격</dt>						
-				<dt><a  onclick="loadCourseList()">주문일자</a></dt>					
+				<dt style="font-weight:bold; ">번호 </dt>
+				<dt width="100%" style="font-weight:bold; ">강의명</dt>						
+				<dt style="font-weight:bold; ">결제자 명</dt>						
+				<dt style="font-weight:bold; ">가격</dt>						
+				<dt style="font-weight:bold; ">주문일자</dt>					
 				<dt> </dt>						
 			</dl>
 			<div id="courseList">
