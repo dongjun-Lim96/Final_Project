@@ -42,7 +42,7 @@
       		SELECT c.courseCode, c.cousreName
 			FROM course c LEFT JOIN unit u 
 			ON c.courseCode = u.courseCode
-			WHERE u.courseCode IS NULL
+			WHERE u.courseCode IS NULL and c.cousreprice > 0
       	</select>
       	
       	<insert id="InsertUnit">
