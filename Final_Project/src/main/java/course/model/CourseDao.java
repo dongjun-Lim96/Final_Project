@@ -213,4 +213,10 @@ public class CourseDao {
 		lists = sqlSessionTemplate.selectList(namespace+".recentlyAccount");
 		return lists;
 	}
+
+	public int getnotRegistUnit() {
+		int cnt =0;
+		cnt = sqlSessionTemplate.selectOne(namespace+".GetnotRegistUnit");
+		return cnt;
+	}
 }

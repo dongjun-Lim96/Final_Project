@@ -211,12 +211,14 @@ public class AdminMain {
       int courseCount = courseDao.getTotalCount(null);
       int accountLeave = courseDao.getLeaveAccount();
       int accountTotal = courseDao.getTotalCountAccount();
-
+      
+      int notRegistUnit = courseDao.getnotRegistUnit();
       List<AccountsBean> recentlyAccount = courseDao.recentlyAccount();
       
       mav.addObject("weeklist",mergedList);
       mav.addObject("countAccount", mergedList2);      
       
+      mav.addObject("notRegistUnit", notRegistUnit);
       mav.addObject("courseCount", courseCount);
       mav.addObject("accountLeave", accountLeave);
       mav.addObject("accountTotal", accountTotal);
