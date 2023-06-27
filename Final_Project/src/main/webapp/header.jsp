@@ -49,34 +49,29 @@
         z-index: -1;
     }	
 	.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-   
-  }
-  
-  
-  
-          /* top으로 가는 글씨 스타일 */
-        #scrollToTopText {
-            display: none; /* 초기에 숨김 */
-            position: fixed;
-            bottom:80px;
-            right: 80px;
-            z-index: 99;
-            font-size: 18px;
-            color: #fff;
-            background-color: #0DCAF0;
-            padding: 10px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+	    position: fixed;
+	    top: 0;
+	    left: 0;
+	    width: 100%;
+	    z-index: 999;
+   }     
+	#scrollToTopText {
+       display: none; /* 초기에 숨김 */
+       position: fixed;
+       bottom:80px;
+       right: 80px;
+       z-index: 99;
+       font-size: 18px;
+       color: #fff;
+       background-color: #0DCAF0;
+       padding: 10px;
+       border-radius: 4px;
+       cursor: pointer;
+    }
         
-        .dropdown:hover .dropdown-menu {
-  display: block;
-}
+    .dropdown:hover .dropdown-menu {
+ 		display: block;
+	}
         
 </style>
 <script type="text/javascript">
@@ -126,7 +121,12 @@ function logout() {
 function cartList(userId){
 	window.location.href="/ex/cartList.ct?userId="+userId;
 }	
-	
+function openCenteredWindow(url, name, width, height) {
+	  var left = (window.innerWidth / 2) - (width / 2);
+	  var top = (window.innerHeight / 2) - (height / 2);
+	  var options = 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top;
+	  window.open(url, name, options);
+	}
 </script>
 <%
 	String conPath = request.getContextPath();
@@ -228,7 +228,7 @@ function cartList(userId){
 						<li><a class="dropdown-item" href="/ex/list.nt">공지사항</a></li>
 						<li><a class="dropdown-item" href="/ex/list.ev">이벤트</a></li>
 						<li><a class="dropdown-item" href="/ex/list.faq">자주묻는질문</a></li>
-						<li><a class="dropdown-item" href="#">카카오톡문의</a></li>
+						<li><a class="dropdown-item" href="http://pf.kakao.com/_xhGiAG" onclick="openCenteredWindow(this.href, '카카오톡문의', 800, 600); return false;">카카오톡문의</a></li>
 					</ul>					
 				</li> 
 				<li class="nav-item" style="display: block;">
