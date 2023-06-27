@@ -195,11 +195,8 @@ function openCenteredWindow(url, name, width, height) {
 						<span style="font-size: 25px; font-weight: bold;">무료자료/자료</span>
 					</a>
 					<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="freeCourse.cs?userId=${loginInfo.userId}">전체보기</a></li>
-						<li><hr class="dropdown-divider"></li>
-						<li><a class="dropdown-item" href="#">무료 샘플강의</a></li>
-						<li><a class="dropdown-item" href="#">무료 특강</a></li>
-						<li><a class="dropdown-item" href="/ex/list.dt">무료 자료</a></li>
+						<li><a class="dropdown-item" href="/ex/freeCourse.cs">무료 샘플강의</a></li>
+                 		<li><a class="dropdown-item" href="/ex/list.dt">무료 자료</a></li>
 					</ul>
 				</li>
 				

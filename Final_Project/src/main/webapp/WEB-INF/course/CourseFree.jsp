@@ -9,17 +9,17 @@
     .bgColor {background-color:#0DCAF0;}
    
     .card-img-top {
-		border-radius: 20%;
-		width: 350px;
-		height: 240px;
-		transition: filter 0.3s;
-	 }
+      border-radius: 20%;
+      width: 350px;
+      height: 240px;
+      transition: filter 0.3s;
+    }
 
   .card-img-top:hover {
     filter: brightness(70%);
   }
 </style>
-	<div id="sub_banner" class="bgColor">
+   <div id="sub_banner" class="bgColor">
     <h2 class="page_title">
      
         
@@ -29,8 +29,8 @@
     </div>
     <br><br>
 <c:forEach var="freeCourse" items="${freeCourseLists }">
-<div class="card" style="display: inline-block; width: 350px; margin-left: 3%; margin-right: 3%; margin-bottom: 3%; text-align: center;">
-  <a href="courseFreeDetail.cs?courseCode=${freeCourse.courseCode}">
+<div class="card" style="display: inline-block; width: 350px; margin-left: 3%; margin-right: 3%; margin-bottom: 3%; text-align: center; border-top-right-radius: 20%;border-top-left-radius: 20%;">
+  <a href="goshow.cs?courseCode=${freeCourse.courseCode}">
   <img src="<%=request.getContextPath() %>/resources/${freeCourse.cousreImg}" class="card-img-top" alt="...">
 </a>  
   <div class="card-body">
@@ -40,8 +40,7 @@
     <p class="card-text">강사 : ${freeCourse.cousreTeacher }</p>
     <p class="card-text">강의기간 : ${freeCourse.cousreTerm }일</p>
 
-    	<a href="#" class="btn btn-outline-info font-weight-bold">장바구니</a>
-    	<a href="#" class="btn btn-outline-info font-weight-bold">구매하기</a> 
+       <a href="goshow.cs?courseCode=${freeCourse.courseCode}" class="btn btn-outline-info font-weight-bold">학습하기</a>
     
   </div>
 </div>

@@ -157,6 +157,14 @@ values('ECSA1', 'ECSA', '전자계산기 조직응용기사필기', 130000, '박수완', 'img11.
 insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
 values('ECSA2', 'ECSA', '전자계산기 조직응용기사실기', 160000, '이현지', 'img12.PNG', 'video12.mp4', 120);
 
+insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+values('free1', 'SQLD', '[무료]쪽집게 특강', 0, '한종구', 'img13.PNG', 'video13.mp4', 30);
+insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+values('free2', 'EIP', '[무료]정보처리기사 특강', 0, '수제비TV', 'img14.PNG', 'video14.mp4', 30);
+insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+values('free3', 'SQLD', '[무료]정보처리기사 총평', 0, '양미정', 'img15.PNG', 'video15.mp4', 30);
+insert into COURSE(courseCode, categoryCode, cousreName, cousrePrice, cousreTeacher, cousreImg, cousreVideo, cousreTerm)
+values('free4', 'CIP', '[무료]정보처리기능사 전략', 0, '권우석', 'img16.PNG', 'video16.mp4', 30);
 
 drop sequence CART_seq;
 create sequence CART_seq
