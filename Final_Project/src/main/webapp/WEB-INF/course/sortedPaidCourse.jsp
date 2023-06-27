@@ -30,7 +30,9 @@
     </div>
     <br><br>
 <c:if test="${empty paidCourseLists }">
-	없습니다
+	<center>
+		<h2><strong>등록된 강의가 없습니다</strong></h2>
+	</center>
 </c:if>
 <c:if test="${not empty paidCourseLists }">
 <c:forEach var="paidCourse" items="${paidCourseLists }">
