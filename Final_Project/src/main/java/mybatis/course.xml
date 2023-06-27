@@ -165,7 +165,7 @@
 
    <select id="GetTotalCountAccount" resultType="int">
    		SELECT count(*) from accounts
-   		where userOut = 0
+   		where userOut = 0 and admincheck = 0
    </select>
    <select id="GetLeaveAccount" resultType="int">
    		SELECT count(*) from accounts
