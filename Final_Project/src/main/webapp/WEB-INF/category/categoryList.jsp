@@ -41,8 +41,8 @@ if (message !== "") {
   <thead>
     <tr>
       <th scope="col" style="width: 200px;"></th>
-      <th scope="col" style="width: 200px;">categoryCode</th>
-      <th scope="col" style="width: 200px;">categoryName</th>
+      <th scope="col" style="width: 200px; font-weight:bold; ">카테고리 코드</th>
+      <th scope="col" style="width: 200px; font-weight:bold; ">카테고리 명</th>
       <th scope="col" style="width: 200px;"> </th>
     </tr>
   </thead>

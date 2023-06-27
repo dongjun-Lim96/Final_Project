@@ -111,11 +111,11 @@
 		
 		<div class="myinfo_cont refund_info" align="center">		
 			<dl>
-				<dt>강의명 </dt>
-				<dt>가격</dt>														
-				<dt>썸네일</dt>						
-				<dt>남은기간</dt>						
-				<dt>환불여부 </dt>										
+				<dt style="font-weight:bold; ">강의명 </dt>
+				<dt style="font-weight:bold; ">가격</dt>														
+				<dt style="font-weight:bold; ">썸네일</dt>						
+				<dt style="font-weight:bold; ">남은기간</dt>						
+				<dt style="font-weight:bold; ">환불여부 </dt>										
 			</dl>
 			<c:if test="${empty progressCousre}">
 			<dl>
@@ -159,9 +159,9 @@
 		<div class="myinfo_cont refund_info" align="center">		
 			<dl>
 				<dt></dt>
-				<dt>강의명 </dt>
-				<dt>가격</dt>															
-				<dt>썸네일</dt>						
+				<dt style="font-weight:bold; ">강의명 </dt>
+				<dt style="font-weight:bold; ">가격</dt>															
+				<dt style="font-weight:bold; ">썸네일</dt>						
 				<dt></dt>						
 			</dl>
 			<c:if test="${empty finishedCousre}">
