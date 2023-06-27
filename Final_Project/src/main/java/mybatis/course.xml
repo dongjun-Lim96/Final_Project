@@ -183,7 +183,7 @@
 	   	SELECT count(*)
 		FROM course c
 		LEFT JOIN unit u ON c.coursecode = u.coursecode
-		WHERE u.coursecode IS NULL
+		WHERE u.coursecode IS NULL and c.cousreprice > 0
    </select>
    
    <select id="GetrunningCourseCnt" resultType="int">
