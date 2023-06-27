@@ -28,7 +28,7 @@ values('park','박지성','1234','1998/11/11','park@gmail.com',01031651257,2000,1,1
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
 values('son','손흥민','7777','1996/02/22','son@gmail.com',01015123456,3000,1,1,1,'2023-06-20',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('kang','강한','1234','1986/08/26','kang@gmail.com',01015323454,3000,1,1,1,'2023-06-21',0,0);
+values('kang','강한','1234','1986/08/26','kang@gmail.com',01015323454,3000,1,1,1,'2021-06-21',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
 values('jung','정현수','1111','1994/12/02','jung@naver.com',01055553776,6000,1,1,1,'2023-06-17',0,0);
 
@@ -197,10 +197,7 @@ CREATE TABLE WISHLIST(
    FOREIGN KEY (courseCode) REFERENCES COURSE(courseCode),
    FOREIGN KEY (userId) REFERENCES ACCOUNTS(userId) ON DELETE CASCADE
 );
-insert into WISHLIST(wishNumber, courseCode, userId)
-values(WISH_seq.nextval, 'EIP2', 'jung');
-insert into WISHLIST(wishNumber, courseCode, userId)
-values(WISH_seq.nextval, 'EBDA1', 'kang');
+
 
 
 DROP TABLE UNIT CASCADE CONSTRAINTS;
