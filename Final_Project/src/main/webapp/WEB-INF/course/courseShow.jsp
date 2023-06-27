@@ -4,8 +4,8 @@
 <%@ include file="./../../header.jsp" %>
 
 <script type="text/javascript">
-   function gotolist(){
-      location.href = "list.cos";
+   function gotolist(userId){
+      location.href = "aCourse.acc?userId="+userId;
 
    }
 </script>
@@ -88,7 +88,7 @@
       <!-- <input type="button" value="뒤로가기" onClick="history.back();"> -->
       <!-- <input type="button" value="강의목록" onClick="gotolist()"> -->
       <a onclick="history.back();"><button id="button2" type="button" class="btn btn-secondary btn-sm">뒤로가기 &nbsp;<img src="<%=request.getContextPath() %>/resources/images/icon/back.png" width="20" height="20"/></button></a>
-      <a onclick="gotolist()"><button id="button1" type="button" class="btn btn-secondary btn-sm">강의목록 &nbsp;<img src="<%=request.getContextPath() %>/resources/images/icon/list.png" width="20" height="20"/></button></a>
+      <a onclick="gotolist('${loginInfo.userId}')"><button id="button1" type="button" class="btn btn-secondary btn-sm">강의목록 &nbsp;<img src="<%=request.getContextPath() %>/resources/images/icon/list.png" width="20" height="20"/></button></a>
    </div>
 </div>
 </center>
