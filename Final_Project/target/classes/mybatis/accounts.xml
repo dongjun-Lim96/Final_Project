@@ -23,10 +23,10 @@
 	  <insert id="AccountsRegister">
 	 	insert into accounts(userId ,userName ,userPw ,
 	 	userBirth ,userEmail ,userPhone ,userChkEmail ,
-	 	userChkPhone)
+	 	userChkPhone,userJoinDate)
 		values(#{userId}, #{userName}, #{userPw},
 		#{userBirth}, #{userEmail}, #{userPhone},
-		#{userChkEmail}, #{userChkPhone})
+		#{userChkEmail}, #{userChkPhone},TO_CHAR(SYSDATE, 'YYYY-MM-DD'))
 	 </insert> 
 	 
 	 <select id="GetUserIdByUserNameEmail" resultType="accounts.model.AccountsBean">
@@ -89,5 +89,27 @@
 	 
 	<select id="GetAccountsEmail" resultType="accounts.model.AccountsBean"> 
 		select * from accounts where userEmail=#{userEmail} 
-	</select>
+	</select>  
+	
+	
+	
+	<select id="OneCourseByCode" resultType="course.model.CourseBean">
+         select * from COURSE where courseCode=#{courseCode}
+      </select>
+      
+      <select id="getReviewBycourseCode" resultType="review.model.ReviewBean">
+     	select * from REVIEW 
+     	where courseCode=#{cousreCode}
+     </select>
+     
+      <select id="getUnitBycourseCode" resultType="unit.model.UnitBean">
+     	select * from unit
+     	where courseCode=#{cousreCode}
+     </select>
+     
+     
+     <select id="ReviewCount" resultType="int">
+	 	select count(*) from review where 
+	 	userId = #{userId} and courseCode = #{courseCode}
+	 </select>
 </mapper>
