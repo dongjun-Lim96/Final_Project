@@ -219,4 +219,10 @@ public class CourseDao {
 		cnt = sqlSessionTemplate.selectOne(namespace+".GetnotRegistUnit");
 		return cnt;
 	}
+
+	public int getrunningCourseCnt() {
+		int cnt =0;
+		cnt = sqlSessionTemplate.selectOne(namespace+".GetrunningCourseCnt");
+		return cnt;
+	}
 }
