@@ -11,29 +11,28 @@
 <meta name="format-detection" content="telephone=no" />
 
 
-
-<link rel="stylesheet" type="text/css" href="https://cdn.malgnlms.com/theme/6/css/common.css?t=20230619" />
+<link rel="stylesheet" type="text/css" href="resources/css/common.css" />
+<!-- <link rel="stylesheet" type="text/css" href="https://cdn.malgnlms.com/theme/6/css/common.css?t=20230619" /> -->
 <link rel="stylesheet" type="text/css" href="https://cdn.malgnlms.com/theme/6/css/font_notoSans.css?t=20230619" />
-<link rel="stylesheet" type="text/css" href="https://cdn.malgnlms.com/theme/6/css/green_theme.css?t=20230619" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css" />
+<!-- <link rel="stylesheet" type="text/css" href="https://cdn.malgnlms.com/theme/6/css/green_theme.css?t=20230619" /> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css" /> -->
 
-
+<!-- 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
 <script src="https://unpkg.com/page-scroll-to-id@1.6.8/jquery.malihu.PageScroll2id.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
-
-
+ -->
 </head>
 
 <body>
 <link rel="stylesheet" type="text/css" href="https://www.wannaedu.com/theme/6/css/shop.css" />
-
+<!-- 
 <script type='text/javascript' src="https://www.wannaedu.com/theme/6/js/webpublisher.js"></script>
 <script type="text/javascript" src="https://www.wannaedu.com/theme/6/js/ui.js"></script>
 
-
+ -->
 
     <div id="contents">
 
@@ -42,8 +41,20 @@
     #sub_banner {position:relative; height:200px; width:100%; }
     #sub_banner::after {content:''; width:100%; height:100%; background:url('/theme/6/img/main/subtop_pattern.png')no-repeat center; background-size:contain; position:absolute; top:0; left:0;}
     #sub_banner h2 {position:relative; top:50%; transform:translateY(-50%); font-size:2.941rem; color:#fff; text-align:center; letter-spacing:-0.7pt; line-height:1; font-weight:bold; z-index:99;}
-    .bgColor {background-color:#467fd7;}
+   /*  .bgColor {background-color:#467fd7;} */
     
+    .bgColor {
+        background-color: #0DCAF0;
+        border-radius: 20px;        
+        padding: 10px 20px;
+        color : white;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        /* 다른 스타일 속성 */
+    }
+    
+    .pointBorder {border:1px solid var(--point-color) !important;}
 </style>
 
 <div id="sub_banner" class="bgColor">
@@ -75,7 +86,7 @@
 					</p>
 				</div>
 
-				<div class="applyBtn">
+				<div class="bgColor" style="margin-top: 30px;">
 					<a href="mypage.acc?userId=${userId}" class="bgColor pointBorder" style="display: flex; justify-content: center; align-items: center;">확인</a>
 				</div>
 			</div>
@@ -135,12 +146,18 @@
 
 					<dl>
 						<dt>총 결제금액</dt>
-						<dd>${tot_price}원원</dd>
+						<dd>${tot_price}원</dd>
 					</dl>
 
 					<dl>
 						<dt>주문/결제일시</dt>
-						<dd>2023.06.19 09:29</dd>
+						<%
+						   java.util.Date now = new java.util.Date();
+						   pageContext.setAttribute("now", now);
+						%>
+						<dd>
+							<fmt:formatDate value="${now}" pattern="yyyy년 MM월 dd일 HH시" />
+						</dd>
 					</dl>
 				</div>
 			</div>
