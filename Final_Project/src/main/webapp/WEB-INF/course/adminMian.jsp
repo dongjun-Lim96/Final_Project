@@ -81,15 +81,9 @@
           <td colspan="3" align="center" style="font-weight:bold; ">목차 미등록 현황 <a href="insertUnit.un" onmouseover="this.style.color='red'" onmouseout="this.style.color='#0D70FD'">${notRegistUnit }건</a></td>
         </tr>
         <tr>
-          <td align="center"></td>
-          <td align="center"></td>
-          <td align="center"></td>
+			<td colspan="3" align="center" style="font-weight:bold; ">강의 수강 현황 ${runningCourseCnt }명</td>
         </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-        </tr>
+
       </table>
     </div>
   </div>

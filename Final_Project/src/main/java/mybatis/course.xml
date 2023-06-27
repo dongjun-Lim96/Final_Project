@@ -186,4 +186,10 @@
 		WHERE u.coursecode IS NULL
    </select>
    
+   <select id="GetrunningCourseCnt" resultType="int">
+   		SELECT count(*)
+		FROM course c
+		JOIN courseorder co ON c.coursecode = co.coursecode
+		WHERE <![CDATA[(sysdate - co.ORDERDATE) < c.cousreterm]]>
+   </select>
    </mapper>

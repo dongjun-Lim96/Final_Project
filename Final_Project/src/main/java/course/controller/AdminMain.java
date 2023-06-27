@@ -213,6 +213,7 @@ public class AdminMain {
       int accountTotal = courseDao.getTotalCountAccount();
       
       int notRegistUnit = courseDao.getnotRegistUnit();
+      int runningCourseCnt = courseDao.getrunningCourseCnt();
       List<AccountsBean> recentlyAccount = courseDao.recentlyAccount();
       
       mav.addObject("weeklist",mergedList);
@@ -224,6 +225,7 @@ public class AdminMain {
       mav.addObject("accountTotal", accountTotal);
       
       mav.addObject("recentlyAccount", recentlyAccount);
+      mav.addObject("runningCourseCnt", runningCourseCnt);
       mav.setViewName(getPage);
       return mav;
    }
