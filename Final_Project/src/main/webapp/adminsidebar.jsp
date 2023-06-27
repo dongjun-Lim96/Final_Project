@@ -184,39 +184,41 @@
         </div>   
       </li>
       <li class="border-top my-3"></li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed custom-button" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>카테고리
-        </button> 
-        <div class="collapse" id="account-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="categoryList.cg" class="link-dark rounded" id="sidebarfont">카테고리 목록</a></li>  
-            <li><a href="category.cg" class="link-dark rounded" id="sidebarfont">카테고리 추가</a></li>  
-          </ul>
-        </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed custom-button" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>강의관리
-        </button> 
-        <div class="collapse" id="account-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="getlist.cs" class="link-dark rounded" id="sidebarfont">강의목록</a></li>  
-            <li><a href="insertCourse.cs" class="link-dark rounded" id="sidebarfont">강의추가</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed custom-button" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-          <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>목차관리
-        </button> 
-        <div class="collapse" id="account-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="getUnit.un" class="link-dark rounded" id="sidebarfont">목차목록</a></li>  
-            <li><a href="insertUnit.un" class="link-dark rounded" id="sidebarfont">목차추가</a></li>
-          </ul>
-        </div>
-      </li>
+	 <li class="mb-1">
+		<button class="btn btn-toggle align-items-center rounded collapsed custom-button" data-bs-toggle="collapse" data-bs-target="#category-collapse" aria-expanded="false">
+			<svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>카테고리
+		</button> 
+		<div class="collapse" id="category-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+				<li><a href="categoryList.cg" class="link-dark rounded" id="sidebarfont">카테고리 목록</a></li>  
+				<li><a href="category.cg" class="link-dark rounded" id="sidebarfont">카테고리 추가</a></li>  
+			</ul>
+		</div>
+	</li>
+	
+	<li class="mb-1">
+		<button class="btn btn-toggle align-items-center rounded collapsed custom-button" data-bs-toggle="collapse" data-bs-target="#lecture-collapse" aria-expanded="false">
+			<svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>강의관리
+		</button> 
+		<div class="collapse" id="lecture-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+				<li><a href="getlist.cs" class="link-dark rounded" id="sidebarfont">강의목록</a></li>  
+				<li><a href="insertCourse.cs" class="link-dark rounded" id="sidebarfont">강의추가</a></li>
+			</ul>
+		</div>
+	</li>
+	
+	<li class="mb-1">
+		<button class="btn btn-toggle align-items-center rounded collapsed custom-button" data-bs-toggle="collapse" data-bs-target="#unit-collapse" aria-expanded="false">
+			<svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>목차관리
+		</button> 
+		<div class="collapse" id="unit-collapse">
+			<ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+				<li><a href="getUnit.un" class="link-dark rounded" id="sidebarfont">목차목록</a></li>  
+				<li><a href="insertUnit.un" class="link-dark rounded" id="sidebarfont">목차추가</a></li>
+			</ul>
+		</div>
+	</li>
     </ul>
   </div>
 
