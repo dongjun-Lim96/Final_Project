@@ -51,9 +51,8 @@
 	         <fmt:formatNumber var="formattedTotalaccount1" value="${totalaccount1}" pattern="#,###" />   
           	${formattedTotalaccount1} 명
           </td>
-           
           <td align="center">${accountLeave } 명</td>
-          <td align="center">${accountTotal } 명</td>
+          <td align="center" ><a href="courseAccountList.co " onmouseover="this.style.color='red'" onmouseout="this.style.color='#0D70FD'">${accountTotal }명</a></td>
         </tr>
       </table>
       <table style="background-color:#F7F7F8;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width: 400px; height:100%;">
@@ -69,19 +68,17 @@
         	<tr>
         	
 	          <td align="center"><fmt:formatDate value="${recentlyAccount.userJoinDate}" pattern="yyyy-MM-dd" /></td>
-	          <td align="center"><a href="accountDetail.co?userId=${recentlyAccount.userId }" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">${recentlyAccount.userId }</a></td>	          
+	          <td align="center"><a href="accountDetail.co?userId=${recentlyAccount.userId }" onmouseover="this.style.color='red'" onmouseout="this.style.color='#0D70FD'">${recentlyAccount.userId }</a></td>	          
 	          <td align="center">${recentlyAccount.userName }</td>
         	</tr>
           </c:forEach>
       </table>
        <table style="background-color:#F7F7F8;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width:400px; height:100%;">
       	<tr>
-      		<td colspan="3" align="center" style="font-weight:bold; ">등록강의 현황 <a href="getlist.cs" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">${courseCount }건</a></td>
+      		<td colspan="3" align="center" style="font-weight:bold; ">등록강의 현황 <a href="getlist.cs" onmouseover="this.style.color='red'" onmouseout="this.style.color='#0D70FD'">${courseCount }건</a></td>
       	</tr>
         <tr>
-          <td align="center"></td>
-          <td align="center"></td>
-          <td align="center"></td>
+          <td colspan="3" align="center" style="font-weight:bold; ">목차 미등록 현황 <a href="insertUnit.un" onmouseover="this.style.color='red'" onmouseout="this.style.color='#0D70FD'">${notRegistUnit }건</a></td>
         </tr>
         <tr>
           <td align="center"></td>
