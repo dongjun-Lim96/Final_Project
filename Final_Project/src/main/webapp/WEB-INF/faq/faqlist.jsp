@@ -34,7 +34,7 @@
 }
 
 .bgColor {
-   background-color: #467fd7;
+   background-color: #0DCAF0;
 }
 
 .table {
@@ -81,10 +81,7 @@
 
    <article class="stickyMenu w1230">
       <nav class="lnb">
-         <a href="/main/main.jsp" class="lnbHome" title="메인으로이동"> <img
-            src="<%=request.getContextPath()%>/resources/images/lnbHome.png"
-            alt="home"
-            style="float: right; margin-right: 10px; margin-bottom: 50px; margin-top: 40px;">
+         <a href="/main/main.jsp" class="lnbHome" title="메인으로이동">
          </a>
       </nav>
    </article>
