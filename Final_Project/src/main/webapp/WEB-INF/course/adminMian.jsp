@@ -29,64 +29,65 @@
 
 
 
-  <!-- 오른쪽 영역 -->
-  <div style="width: 50%;">
-    <!-- 오른쪽 영역 내용 -->
-    <div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-template-rows: repeat(3, 1fr); grid-gap: 30px; margin-top: 95px;">
-     
-      <table style="background-color:#F7F7F8;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width: 400px; height:100%;">
-        <tr>
-          <td colspan="3" align="center" style="font-weight:bold; ">회원현황</td>
-        </tr>
-        <tr>
-          <td align="center"style="font-weight:bold; ">신규회원</td>
-          <td align="center"style="font-weight:bold; ">탈퇴회원</td>
-          <td align="center"style="font-weight:bold; ">Total</td>
-        </tr>
-        <tr>
-          <td  align="center">
-          	 <c:forEach var="countAccount1" items="${countAccount}" varStatus="status">
-	            <c:set var="totalaccount1" value="${totalaccount1 + countAccount1.count}" />        
-	       	 </c:forEach>
-	         <fmt:formatNumber var="formattedTotalaccount1" value="${totalaccount1}" pattern="#,###" />   
-          	${formattedTotalaccount1} 명
-          </td>
-          <td align="center">${accountLeave } 명</td>
-          <td align="center" ><a href="courseAccountList.co " onmouseover="this.style.color='red'" onmouseout="this.style.color='#0D70FD'">${accountTotal }명</a></td>
-        </tr>
-      </table>
-      <table style="background-color:#F7F7F8;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width: 400px; height:100%;">
-        <tr>
-          <td  colspan="3" align="center" style="font-weight:bold; ">최근가입회원</td>
-        </tr>
-        <tr>
-          <td align="center" style="font-weight:bold; ">가입일시</td>
-          <td align="center" style="font-weight:bold; ">아이디</td>
-          <td align="center" style="font-weight:bold; ">이름</td>
-        </tr>
-        <c:forEach var="recentlyAccount" items="${recentlyAccount }">
-        	<tr>
-        	
-	          <td align="center"><fmt:formatDate value="${recentlyAccount.userJoinDate}" pattern="yyyy-MM-dd" /></td>
-	          <td align="center"><a href="accountDetail.co?userId=${recentlyAccount.userId }" onmouseover="this.style.color='red'" onmouseout="this.style.color='#0D70FD'">${recentlyAccount.userId }</a></td>	          
-	          <td align="center">${recentlyAccount.userName }</td>
-        	</tr>
-          </c:forEach>
-      </table>
-       <table style="background-color:#F7F7F8;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width:400px; height:100%;">
-      	<tr>
-      		<td colspan="3" align="center" style="font-weight:bold; ">등록강의 현황 <a href="getlist.cs" onmouseover="this.style.color='red'" onmouseout="this.style.color='#0D70FD'">${courseCount }건</a></td>
-      	</tr>
-        <tr>
-          <td colspan="3" align="center" style="font-weight:bold; ">목차 미등록 현황 <a href="insertUnit.un" onmouseover="this.style.color='red'" onmouseout="this.style.color='#0D70FD'">${notRegistUnit }건</a></td>
-        </tr>
-        <tr>
-			<td colspan="3" align="center" style="font-weight:bold; ">강의 수강 현황 ${runningCourseCnt }명</td>
-        </tr>
 
-      </table>
-    </div>
-  </div>
+<div style="width: 50%;">
+	<div style="display: grid; grid-template-columns: repeat(1, 1fr); grid-template-rows: repeat(3, 1fr); grid-gap: 30px; margin-top: 95px;">
+	
+		<table style="background-color:#F7F7F8;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width:400px; height:100%;">
+			<tr>
+				<td colspan="3" align="center" style="font-weight:bold; ">등록강의 현황 <a href="getlist.cs" onmouseover="this.style.color='red'" onmouseout="this.style.color='#0D70FD'">${courseCount }건</a></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center" style="font-weight:bold; ">목차 미등록 현황 <a href="insertUnit.un" onmouseover="this.style.color='red'" onmouseout="this.style.color='#0D70FD'">${notRegistUnit }건</a></td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center" style="font-weight:bold; ">강의 수강 현황 ${runningCourseCnt }명</td>
+			</tr>
+		</table>
+		
+		<table style="background-color:#F7F7F8;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width: 400px; height:100%;">
+			<tr>
+				<td colspan="3" align="center" style="font-weight:bold; ">회원현황</td>
+			</tr>
+			<tr>
+				<td align="center"style="font-weight:bold; ">신규회원</td>
+				<td align="center"style="font-weight:bold; ">탈퇴회원</td>
+				<td align="center"style="font-weight:bold; ">Total</td>
+			</tr>
+			<tr>
+				<td  align="center">
+				<c:forEach var="countAccount1" items="${countAccount}" varStatus="status">
+					<c:set var="totalaccount1" value="${totalaccount1 + countAccount1.count}" />        
+				</c:forEach>
+				<fmt:formatNumber var="formattedTotalaccount1" value="${totalaccount1}" pattern="#,###" />   
+					${formattedTotalaccount1} 명
+				</td>
+				<td align="center">${accountLeave } 명</td>
+				<td align="center" ><a href="courseAccountList.co " onmouseover="this.style.color='red'" onmouseout="this.style.color='#0D70FD'">${accountTotal }명</a></td>
+			</tr>
+		</table>
+		
+		<table style="background-color:#F7F7F8;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); border: none; border-radius: 10px; width: 400px; height:100%;">
+			<tr>
+				<td colspan="3" align="center" style="font-weight:bold; ">최근가입회원</td>
+			</tr>
+			<tr>
+				<td align="center" style="font-weight:bold; ">가입일시</td>
+				<td align="center" style="font-weight:bold; ">아이디</td>
+				<td align="center" style="font-weight:bold; ">이름</td>
+			</tr>
+			<c:forEach var="recentlyAccount" items="${recentlyAccount }">
+			<tr>
+			        	
+				<td align="center"><fmt:formatDate value="${recentlyAccount.userJoinDate}" pattern="yyyy-MM-dd" /></td>
+				<td align="center"><a href="accountDetail.co?userId=${recentlyAccount.userId }" onmouseover="this.style.color='red'" onmouseout="this.style.color='#0D70FD'">${recentlyAccount.userId }</a></td>	          
+				<td align="center">${recentlyAccount.userName }</td>
+			</tr>
+			</c:forEach>
+		</table>
+	
+	</div>
+</div>
 </div>
 
 
