@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import accounts.model.AccountsBean;
 import category.model.CategoryBean;
 import course.model.CourseBean;
 import course.model.CourseDao;
@@ -53,7 +54,10 @@ public class CourseSotredPaid {
 		
 		List<CourseOrderBean> CourseIdLists = courseDao.selectCourseList(userId);
 		
+		AccountsBean accounts = courseDao.getUserInfo(userId);
+		
 		mav.addObject("userId", userId);
+		mav.addObject("accounts", accounts);
 		mav.addObject("wishLists", wishLists);
 		mav.addObject("CourseIdLists", CourseIdLists);
 		mav.addObject("paidCourseLists", paidCourseLists);

@@ -41,6 +41,7 @@
     <p class="card-text">강사 : ${paidCourse.cousreTeacher }</p>
     <p class="card-text">강의기간 : ${paidCourse.cousreTerm }일</p>
 	
+	<c:if test="${!empty loginInfo.userId && accounts.adminCheck != 1}">
 	
 	<c:set var="isCourseEnrolled" value="false" />
       <c:forEach var="courseId" items="${CourseIdLists}">
@@ -56,8 +57,10 @@
         </c:when>
         <c:otherwise>
           <!-- 장바구니 또는 구매하기 버튼 -->
+          
           <a href="cartAdd.ct?courseCode=${paidCourse.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold">장바구니</a>
           <a onClick="paynow('${userId}','${paidCourse.courseCode}')" class="btn btn-outline-info font-weight-bold">구매하기</a>
+          
         </c:otherwise>
       </c:choose>
 
@@ -87,7 +90,7 @@
         </c:otherwise>
       </c:choose>
       
-     
+     </c:if>
       
     	<script>
     function toggleHeartColor(button,courseCode, userId) {

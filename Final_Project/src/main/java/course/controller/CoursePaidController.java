@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.ex.MyBean;
 
+import accounts.model.AccountsBean;
 import course.model.CourseBean;
 import course.model.CourseDao;
 import courseorder.model.CourseOrderBean;
@@ -51,7 +52,10 @@ public class CoursePaidController {
 		
 		List<CourseOrderBean> CourseIdLists = courseDao.selectCourseList(userId);
 		
+		AccountsBean accounts = courseDao.getUserInfo(userId);
+		
 		mav.addObject("userId", userId);
+		mav.addObject("accounts", accounts);
 		mav.addObject("wishLists", wishLists);
 		mav.addObject("CourseIdLists", CourseIdLists);
 		mav.addObject("paidCourseLists", paidCourseLists);

@@ -142,6 +142,9 @@
 	 --%>
 	
 	<dl>
+	
+	<c:if test="${!empty loginInfo.userId && accounts.adminCheck != 1}">
+	
 	<c:set var="isCourseEnrolled" value="false" />
         <c:if test="${CourseIdLists.courseCode eq course.courseCode}">
           <c:set var="isCourseEnrolled" value="true" />
@@ -198,6 +201,7 @@
         </c:otherwise>
       </c:choose>
     	
+    </c:if>
 	</dl>
 	
 <script>

@@ -225,4 +225,9 @@ public class CourseDao {
 		cnt = sqlSessionTemplate.selectOne(namespace+".GetrunningCourseCnt");
 		return cnt;
 	}
+
+	public AccountsBean getUserInfo(String userId) {
+		AccountsBean accounts = sqlSessionTemplate.selectOne(namespace+".GetUserInfo", userId);
+		return accounts;
+	}
 }
