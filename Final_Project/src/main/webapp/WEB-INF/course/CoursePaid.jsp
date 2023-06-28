@@ -58,8 +58,10 @@
         <c:otherwise>
           <!-- 장바구니 또는 구매하기 버튼 -->
           
-          <a href="cartAdd.ct?courseCode=${paidCourse.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold">장바구니</a>
-          <a onClick="paynow('${userId}','${paidCourse.courseCode}')" class="btn btn-outline-info font-weight-bold">구매하기</a>
+          <a onclick="cartadd('${paidCourse.courseCode}','${userId}')" class="btn btn-outline-info font-weight-bold">장바구니</a>
+          <%-- <a href="cartAdd.ct?courseCode=${paidCourse.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold">장바구니</a> --%>
+          <%-- <a onClick="paynow('${userId}','${paidCourse.courseCode}')" class="btn btn-outline-info font-weight-bold">구매하기</a> --%>
+          <a href="cartAdd.ct?courseCode=${paidCourse.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold">구매하기</a>
           
         </c:otherwise>
       </c:choose>
@@ -143,6 +145,15 @@
     	    alert("결제가 취소되었습니다.");
     	  }
     }	
+    
+    function cartadd(courseCode, userId) {
+		if (confirm("장바구니로 이동하시겠습니까?")) {
+    		
+    	    location.href = "cartAdd.ct?userId="+userId+"&courseCode="+courseCode;
+    	  } else {
+    	    
+    	  }
+	}
 </script>
   </div>
 </div>

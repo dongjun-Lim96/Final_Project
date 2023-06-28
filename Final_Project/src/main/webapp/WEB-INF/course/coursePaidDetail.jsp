@@ -163,11 +163,13 @@
         <c:otherwise>
           <!-- 장바구니 또는 구매하기 버튼 -->
         <dt>
-          <a href="cartAdd.ct?courseCode=${course.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">장바구니</a>
+          <a onclick="cartadd('${course.courseCode}','${userId}')" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">장바구니</a>
+          <%-- <a href="cartAdd.ct?courseCode=${course.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">장바구니</a> --%>
         </dt> 
         
         <dt>
-          <a onClick="paynow('${userId}','${course.courseCode}')" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">구매하기</a>
+          <a href="cartAdd.ct?courseCode=${course.courseCode}&userId=${userId}" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">구매하기</a>
+          <%-- <a onClick="paynow('${userId}','${course.courseCode}')" class="btn btn-outline-info font-weight-bold" style="font-size:25px;">구매하기</a> --%>
         </dt>
         </c:otherwise>
       </c:choose>
@@ -255,6 +257,15 @@
     	    alert("결제가 취소되었습니다.");
     	  }
     }	
+    
+    function cartadd(courseCode, userId) {
+		if (confirm("장바구니로 이동하시겠습니까?")) {
+    		
+    	    location.href = "cartAdd.ct?userId="+userId+"&courseCode="+courseCode;
+    	  } else {
+    	    
+    	  }
+	}
 </script>	
 	
 	
