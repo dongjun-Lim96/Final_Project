@@ -116,11 +116,11 @@ $(document).ready(function() {
 	<c:forEach var="lists" items="${courseLists }">
 	<div>
 		<div class="slide-h3">
-			<a href="coursePaidDetail.cs?courseCode=${lists.courseCode}&userId=${userId}" style="text-decoration: none;">
+			<a href="coursePaidDetail.cs?courseCode=${lists.courseCode}&userId=${loginInfo.userId}" style="text-decoration: none;">
 			<i class="fa fa-lg fa-trash"></i>
 			<h3 align="center">
 				<div class="card" style="width: 350px; --bs-card-border-color: none;">
-					<img src="<%=request.getContextPath() %>/resources/${lists.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style=" border-radius: 20%; width:350px; height:240px;">
+					<img src="<%=request.getContextPath() %>/resources/${lists.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에 " style=" border-radius: 20%; width:350px; height:240px;">
 					<div class="card-body">
 						<p class="card-text" style="font-size:17pt">${lists.cousreName }</p>
 						<p class="card-text" style="font-size:15pt">기간 : ${lists.cousreTerm }일</p>
@@ -149,7 +149,7 @@ $(document).ready(function() {
         <div class="text_cont">        	
             <h2 style="font-weight: bold; color: black;">정보처리기사 실기 파이널 맛보기</h2>            
             <p class="stxt" style="margin: 10px 0;">
-                정보처리기사 합격을 위한 확실한 방법!<br>모의고사와 기출문제 풀이로 실전에 대비하세요.
+                <%=request.getContextPath() %><br>모의고사와 기출문제 풀이로 실전에 대비하세요.
             </p>            
             <a href="#" class="mypage bgColor" style="margin-top: 20px;">  ***  수강신청 하러가기</a>
        	</div>     	
