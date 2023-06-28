@@ -192,4 +192,8 @@
 		JOIN courseorder co ON c.coursecode = co.coursecode
 		WHERE <![CDATA[(sysdate - co.ORDERDATE) < c.cousreterm]]>
    </select>
+   
+   <select id="GetUserInfo" resultType="accounts.model.AccountsBean">
+   		select * from accounts where userId = #{userId}
+   </select>
    </mapper>
