@@ -90,7 +90,7 @@
     </div>
 <br><br>
 <center>
-<div style="display: inline-block;" >
+<div style="display: inline-block; border-top-right-radius: 20%;border-top-left-radius: 20%;" >
 	<img src="<%=request.getContextPath() %>/resources/${course.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style="width: 550px; height: 350px; border-radius: 20%;">
 </div>
 <div class="myinfo_cont refund_info" style="display: inline-block; vertical-align: middle;">			
