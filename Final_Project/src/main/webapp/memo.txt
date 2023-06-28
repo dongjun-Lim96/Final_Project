@@ -419,19 +419,19 @@ CREATE TABLE EVENT(
 );
 
 INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
-VALUES (1, 'son', '정보처리기사 필기 30일반 오픈 기념 이벤트', '정보처리기사 필기 30일반 지금 수강신청하면 수강기간 15일 더 추가!', 'event1.png', SYSDATE, 0, '2023-06-11', '2023-06-13');
+VALUES (EVENT_seq.nextval, 'son', '정보처리기사 필기 30일반 오픈 기념 이벤트', '정보처리기사 필기 30일반 지금 수강신청하면 수강기간 15일 더 추가!', 'event1.png', SYSDATE, 0, '2023-06-11', '2023-06-13');
 INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
-values(2, 'kim', '수제비 정보처리기사 교재 구매 인증 이벤트', '책 사진과 함께 책 후기 남기기(블로그,카페 등 SNS), 쌍용에듀 카카오톡으로 후기 url 전송','event2.png', SYSDATE, 0, '2023-06-02','2023-08-11');
+values(EVENT_seq.nextval, 'kim', '수제비 정보처리기사 교재 구매 인증 이벤트', '책 사진과 함께 책 후기 남기기(블로그,카페 등 SNS), 쌍용에듀 카카오톡으로 후기 url 전송','event2.png', SYSDATE, 0, '2023-06-02','2023-08-11');
 INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
-values(3, 'kim', '환승할인 이벤트', '쌍용에듀 카카오톡으로 이름/연락처/캡처이미지 내용을 보내주세요!','event3.PNG', SYSDATE, 0, '2023-06-02','2023-08-12');
+values(EVENT_seq.nextval, 'kim', '환승할인 이벤트', '쌍용에듀 카카오톡으로 이름/연락처/캡처이미지 내용을 보내주세요!','event3.PNG', SYSDATE, 0, '2023-06-02','2023-08-12');
 INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
-values(4, 'kim', '재수강 할인', '쌍용에듀 카카오톡으로 성함/연락처/재수강 강의 내용을 보내주세요!','event4.PNG', SYSDATE, 0, '2023-06-02','2023-07-12');
+values(EVENT_seq.nextval, 'kim', '재수강 할인', '쌍용에듀 카카오톡으로 성함/연락처/재수강 강의 내용을 보내주세요!','event4.PNG', SYSDATE, 0, '2023-06-02','2023-07-12');
 INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
-values(5, 'kim', '불합격 인증 연장 이벤트', '합격자 발표 이후 카카오톡으로 불합격 화면과 실명,연락처를 남기면 확인 후 연장 진행','event5.PNG', SYSDATE, 0, '2023-06-02','2023-07-03');
+values(EVENT_seq.nextval, 'kim', '불합격 인증 연장 이벤트', '합격자 발표 이후 카카오톡으로 불합격 화면과 실명,연락처를 남기면 확인 후 연장 진행','event5.PNG', SYSDATE, 0, '2023-06-02','2023-07-03');
 INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
-values(6, 'kim', '실기 FINAL 무료 제공 이벤트', '해당 강의는 강의교안 제공이 불가합니다. 2023년 1회 실기시험이 종료된 이후 해당 무료강의는 삭제됩니다.','event6.png', SYSDATE, 0, '2023-06-02','2023-06-10');
+values(EVENT_seq.nextval, 'kim', '실기 FINAL 무료 제공 이벤트', '해당 강의는 강의교안 제공이 불가합니다. 2023년 1회 실기시험이 종료된 이후 해당 무료강의는 삭제됩니다.','event6.png', SYSDATE, 0, '2023-06-02','2023-06-10');
 INSERT INTO EVENT(eventNumber, adminId, eventTitle, eventContent, eventImage, eventDate, eventView, eventStart, eventEnd)
-values(7, 'kim', '전조기 실기 오픈 1+1 이벤트', '전조기 실기강의는 현재 업데이트 중이며 4월 중순까지 과목별로 업로드 예정입니다.','event7.PNG', SYSDATE, 0, '2023-06-02','2023-07-11');
+values(EVENT_seq.nextval, 'kim', '전조기 실기 오픈 1+1 이벤트', '전조기 실기강의는 현재 업데이트 중이며 4월 중순까지 과목별로 업로드 예정입니다.','event7.PNG', SYSDATE, 0, '2023-06-02','2023-07-11');
 
 commit;
 
@@ -456,28 +456,28 @@ CREATE TABLE NOTICE(
    FOREIGN KEY (adminId) REFERENCES ADMININFO(adminId)
 );
 insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
-values(1, 'son', '2023년 근로자의 날 휴무 안내', '쌍용에듀 휴무일 안내드립니다.2023년 4월 29일(토) ~ 2023년 5월 1일(월) 위의 휴무 기간에도 전화 상담과 카카오톡 상담은 정상적으로 운영하오니 문의 바랍니다.','notice1.png',sysdate,0);
+values(NOTICE_seq.nextval, 'son', '2023년 근로자의 날 휴무 안내', '쌍용에듀 휴무일 안내드립니다.2023년 4월 29일(토) ~ 2023년 5월 1일(월) 위의 휴무 기간에도 전화 상담과 카카오톡 상담은 정상적으로 운영하오니 문의 바랍니다.','notice1.png',sysdate,0);
 insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
-values(2, 'kim', '2023년 설연휴 휴관 안내', '안녕하세요. 쌍용에듀입니다. 휴관 안내드립니다. 2023년 1월 21일(토) ~ 2023년 1월 24일(화)','notice2.png',sysdate,0);
+values(NOTICE_seq.nextval, 'kim', '2023년 설연휴 휴관 안내', '안녕하세요. 쌍용에듀입니다. 휴관 안내드립니다. 2023년 1월 21일(토) ~ 2023년 1월 24일(화)','notice2.png',sysdate,0);
 insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
-values(3, 'kim', '쌍용에듀 휴관 안내', '안녕하세요. 쌍용에듀입니다. 휴무 안내드립니다. 2022년 12월 30일(금) ~ 2023년 1월 1일(일)','notice3.png',sysdate,0);
+values(NOTICE_seq.nextval, 'kim', '쌍용에듀 휴관 안내', '안녕하세요. 쌍용에듀입니다. 휴무 안내드립니다. 2022년 12월 30일(금) ~ 2023년 1월 1일(일)','notice3.png',sysdate,0);
 insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
-values(4, 'kim', '2022년 10월 휴무일 안내', '안녕하세요. 쌍용에듀입니다. 10월 휴무일 안내입니다. 
+values(NOTICE_seq.nextval, 'kim', '2022년 10월 휴무일 안내', '안녕하세요. 쌍용에듀입니다. 10월 휴무일 안내입니다. 
 10월 3일 월요일 - 개천절 , 10월 10일 월요일 - 대체공휴일','notice4.jpg',sysdate,0);
 insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
-values(5, 'kim', '2022년 추석 휴무일 안내', '안녕하세요. 쌍용에듀입니다. 추석 휴무일 안내입니다. 2022년 9월 9일(금) ~ 9월 12일(월)','notice5.jpg',sysdate,0);
+values(NOTICE_seq.nextval, 'kim', '2022년 추석 휴무일 안내', '안녕하세요. 쌍용에듀입니다. 추석 휴무일 안내입니다. 2022년 9월 9일(금) ~ 9월 12일(월)','notice5.jpg',sysdate,0);
 insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
-values(6, 'kim', '2021 추석 휴무일 안내', '안녕하세요. 쌍용에듀입니다. 추석 휴무일 안내입니다. 추석연휴 기간동안 전화상담과 카카오톡상담은 정상적으로 운영하오니 문의바랍니다.','notice6.jpg',sysdate,0);
+values(NOTICE_seq.nextval, 'kim', '2021 추석 휴무일 안내', '안녕하세요. 쌍용에듀입니다. 추석 휴무일 안내입니다. 추석연휴 기간동안 전화상담과 카카오톡상담은 정상적으로 운영하오니 문의바랍니다.','notice6.jpg',sysdate,0);
 insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
-values(7, 'kim', '필독)국민내일배움카드 안내사항', '2020년 1월부로 국민내일배움카드제 시행에 따라 관련사항 안내 드립니다.','notice7.png',sysdate,0);
+values(NOTICE_seq.nextval, 'kim', '필독)국민내일배움카드 안내사항', '2020년 1월부로 국민내일배움카드제 시행에 따라 관련사항 안내 드립니다.','notice7.png',sysdate,0);
 insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
-values(8, 'kim', '코로나19 대응 특별 훈련수당 안내', '안녕하세요 쌍용에듀입니다. 코로나19에 대응하여 올해 종료되는 과정부터 한시적으로 특별 훈련수당이 지급됩니다.
+values(NOTICE_seq.nextval, 'kim', '코로나19 대응 특별 훈련수당 안내', '안녕하세요 쌍용에듀입니다. 코로나19에 대응하여 올해 종료되는 과정부터 한시적으로 특별 훈련수당이 지급됩니다.
 지원대상이 확대되었고, 지원금액도 상향 조정 되었네요.','notice8.jpg',sysdate,0);
 insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
-values(9, 'kim', '추석 휴무일 안내', '안녕하세요. 쌍용에듀입니다. 추석연휴 휴무일 안내입니다.
+values(NOTICE_seq.nextval, 'kim', '추석 휴무일 안내', '안녕하세요. 쌍용에듀입니다. 추석연휴 휴무일 안내입니다.
 9/30(수)~10/4(일) 전화상담과 카카오톡상담은 정상적으로 운영하오니 문의바랍니다.','notice9.jpg',sysdate,0);
 insert into NOTICE(noticeNumber, adminId, noticeTitle, noticeContent,noticeImage,noticeDate,noticeView)
-values(10, 'kim', '국민내일배움카드 추가지원 지침 안내', '8월 개강하는 주말 재직자 교육과정도 자부담 완화 적용을 받아
+values(NOTICE_seq.nextval, 'kim', '국민내일배움카드 추가지원 지침 안내', '8월 개강하는 주말 재직자 교육과정도 자부담 완화 적용을 받아
 [변경전] 103,770원 [변경후] 69,180원 으로 자부담액이 조정 되었습니다.','notice10.jpg',sysdate,0);
 
 
