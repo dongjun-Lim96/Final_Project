@@ -212,7 +212,7 @@
 	</div>
 
 	<div class="btn_list">
-		<input type="button" class="moreBtn pointColor pointBorder" onclick="location.href= '/member/agreement.jsp'" value="이전으로" />
+		<input type="button" class="moreBtn pointColor pointBorder" onclick="window.history.back();" value="이전으로" />
 		<input type="submit" class="moreBtn bgColor pointBorder" id="btn_submit" value="회원가입하기" />
 	</div>
 
