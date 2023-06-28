@@ -178,7 +178,7 @@
 			<dl>
 				<dt></dt>
 				<dt>${fcourse.cousreName }</dt>
-				<dt>${fcourse.cousreprice }</dt>				
+				<dt>${fcourse.cousrePrice }</dt>				
 				<dt><img src="<%=request.getContextPath() %>/resources/${fcourse.cousreImg}" class="card-img-top" alt="${lists.cousreImg }사진나중에" style="width: 50px; height: 50px; border-radius: 20%;"> </dt>
 				<dt></dt>												
 			</dl>
