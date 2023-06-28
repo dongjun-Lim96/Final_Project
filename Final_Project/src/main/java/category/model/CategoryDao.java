@@ -50,9 +50,16 @@ public class CategoryDao {
 
  
 	public int deleteCategory(String categoryCode) {
-		
-		int cnt = sqlSessionTemplate.delete(namespace+".DeleteCategory", categoryCode);
-		return cnt;
+		int cnt=0;
+	    try {
+	        cnt = sqlSessionTemplate.delete(namespace + ".DeleteCategory", categoryCode);
+	        return cnt;
+	    } catch (Exception e) {
+
+	        e.printStackTrace(); 
+
+	        return -1; 
+	    }
 	}
 
 	
