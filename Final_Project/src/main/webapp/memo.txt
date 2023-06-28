@@ -22,65 +22,65 @@ CREATE TABLE ACCOUNTS(
 
 
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck )
-values('kim','김철수','1234','2002/01/01','kim@gmail.com',01042172177,5000,1,1,1,'2023-06-20',0,1);
+values('kim','김철수','1234','2002/01/01','kim@gmail.com','01042172177',5000,1,1,1,'2023-06-20',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck )
-values('park','박지성','1234','1998/11/11','park@gmail.com',01031651257,2000,1,1,1,'2023-06-20',0,1);
+values('park','박지성','1234','1998/11/11','park@gmail.com','01031651257',2000,1,1,1,'2023-06-20',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('son','손흥민','7777','1996/02/22','son@gmail.com',01015123456,3000,1,1,1,'2023-06-20',0,1);
+values('son','손흥민','7777','1996/02/22','son@gmail.com','01015123456',3000,1,1,1,'2023-06-20',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('kang','강한','1234','1986/08/26','kang@gmail.com',01015323454,3000,1,1,1,'2021-06-21',0,0);
+values('kang','강한','1234','1986/08/26','kang@gmail.com','01015323454',3000,1,1,1,'2021-06-21',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung','정현수','1111','1994/12/02','jung@naver.com',01055553776,6000,1,1,1,'2023-06-17',0,0);
+values('jung','정현수','1111','1994/12/02','jung@naver.com','01055553776',6000,1,1,1,'2023-06-17',0,0);
 
 
 
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('eun','은종욱','0907','1999/09/07','jweun@naver.com',01083371442,10000,1,1,1,'2023-05-08',0,0);
+values('eun','은종욱','0907','1999/09/07','jweun@naver.com','01083371442',10000,1,1,1,'2023-05-08',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('moon','문상윤','0903','1999/09/03','moon@naver.com',01064361783,6000,1,1,1,'2023-06-17',0,1);
+values('moon','문상윤','0903','1999/09/03','moon@naver.com','01064361783',6000,1,1,1,'2023-06-17',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('lee','이이경','1212','1990/12/02','leel2@naver.com',01024828759,6000,1,1,1,'2023-06-27',0,0);
+values('lee','이이경','1212','1990/12/02','leel2@naver.com','01024828759',6000,1,1,1,'2023-06-27',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('son1','손기훈','0102','2000/01/02','son12@naver.com',01027146566,4000,1,1,1,'2023-06-07',0,1);
+values('son1','손기훈','0102','2000/01/02','son12@naver.com','01027146566',4000,1,1,1,'2023-06-07',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jung1','정재완','0108','2000/01/27','waan@naver.com',01024898759,6000,1,1,1,'2023-04-17',0,0);
+values('jung1','정재완','0108','2000/01/27','waan@naver.com','01024898759',6000,1,1,1,'2023-04-17',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('lee1','이응욱','5274','1999/04/02','lee1@naver.com',01052745255,6000,1,1,1,'2023-05-18',0,0);
+values('lee1','이응욱','5274','1999/04/02','lee1@naver.com','01052745255',6000,1,1,1,'2023-05-18',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('kim1','김소원','0820','1999/08/20','kim1@naver.com',01094899622,3000,1,1,1,'2023-06-19',0,0);
+values('kim1','김소원','0820','1999/08/20','kim1@naver.com','01094899622',3000,1,1,1,'2023-06-19',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('park1','박정연','1111','1998/06/07','park1@naver.com',01076048909,2000,1,1,1,'2023-06-19',0,1);
+values('park1','박정연','1111','1998/06/07','park1@naver.com','01076048909',2000,1,1,1,'2023-06-19',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('yoo','유록원','1111','1999/09/24','yoo@naver.com',01052746516,3000,1,1,1,'2023-06-01',0,0);
+values('yoo','유록원','1111','1999/09/24','yoo@naver.com','01052746516',3000,1,1,1,'2023-06-01',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('choi','최현도','8808','2000/02/24','choi@naver.com',01088089231,6000,1,1,1,'2023-06-02',0,1);
+values('choi','최현도','8808','2000/02/24','choi@naver.com','01088089231',6000,1,1,1,'2023-06-02',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('ji','지현','8888','1994/12/02','ji@naver.com',01066036703,6000,1,1,1,'2023-06-07',0,0);
+values('ji','지현','8888','1994/12/02','ji@naver.com','01066036703',6000,1,1,1,'2023-06-07',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('lee2','이어현','1717','1994/12/02','lee2@naver.com',01035984649,4000,1,1,1,'2023-05-15',0,0);
+values('lee2','이어현','1717','1994/12/02','lee2@naver.com','01035984649',4000,1,1,1,'2023-05-15',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('jun','전세웅','4232','1996/12/22','jun@naver.com',01066778756,5000,1,1,1,'2023-05-25',0,1);
+values('jun','전세웅','4232','1996/12/22','jun@naver.com','01066778756',5000,1,1,1,'2023-05-25',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('lim','임국빈','4444','1997/12/23','lim@naver.com',01044766758,5000,1,1,1,'2023-04-25',0,1);
+values('lim','임국빈','4444','1997/12/23','lim@naver.com','01044766758',5000,1,1,1,'2023-04-25',0,1);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('pyo','표진주','3333','1997/12/04','pyo@naver.com',01032814422,10000,1,1,1,'2023-04-05',0,0);
+values('pyo','표진주','3333','1997/12/04','pyo@naver.com','01032814422',10000,1,1,1,'2023-04-05',0,0);
 
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('pyo1','표주진','3333','1997/12/04','pyo1@naver.com',01032814421,10000,1,1,1,'2023-06-25',0,0);
+values('pyo1','표주진','3333','1997/12/04','pyo1@naver.com','01032814421',10000,1,1,1,'2023-06-25',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('kim2','김영록','3333','1997/12/04','pyo2@naver.com',01032814423,10000,1,1,1,'2023-06-24',0,0);
+values('kim2','김영록','3333','1997/12/04','pyo2@naver.com','01032814423',10000,1,1,1,'2023-06-24',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('vitory3','강승묵','3333','1997/12/04','pyo3@naver.com',01032814424,10000,1,1,1,'2023-06-25',0,0);
+values('vitory3','강승묵','3333','1997/12/04','pyo3@naver.com','01032814424',10000,1,1,1,'2023-06-25',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('seongjiwoong','성지웅','3333','1997/12/04','pyo4@naver.com',01032814425,10000,1,1,1,'2023-06-24',0,0);
+values('seongjiwoong','성지웅','3333','1997/12/04','pyo4@naver.com','01032814425',10000,1,1,1,'2023-06-24',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('holywater','배성수','3333','1997/12/04','pyo5@naver.com',01032814426,10000,1,1,1,'2023-06-25',0,0);
+values('holywater','배성수','3333','1997/12/04','pyo5@naver.com','01032814426',10000,1,1,1,'2023-06-25',0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('holywater2','배성수','3333','1997/12/04','pyo6@naver.com',01034814426,10000,1,1,1,sysdate,0,0);
+values('holywater2','배성수','3333','1997/12/04','pyo6@naver.com','01034814426',10000,1,1,1,sysdate,0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('holywater3','배성수','3333','1997/12/04','pyo7@naver.com',01032714426,10000,1,1,1,sysdate,0,0);
+values('holywater3','배성수','3333','1997/12/04','pyo7@naver.com','01032714426',10000,1,1,1,sysdate,0,0);
 insert into accounts(userId ,userName ,userPw ,userBirth ,userEmail ,userPhone  ,userPoint ,userChkEmail ,userChkPhone ,userSubscribe ,userJoinDate ,userOut ,adminCheck  )
-values('holywater8','배성수','3333','1997/12/04','pyo8@naver.com',01030714426,10000,1,1,1,'2023-06-26',0,0);
+values('holywater8','배성수','3333','1997/12/04','pyo8@naver.com','01030714426',10000,1,1,1,'2023-06-26',0,0);
 
 DROP TABLE ADMININFO CASCADE CONSTRAINTS;
 --관리자 테이블
@@ -330,8 +330,6 @@ values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,'2023-06-23');
 insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
 values(courseorder_seq.nextval, 'EBDA2', 'kang', 120000,TO_CHAR(SYSDATE, 'YYYY-MM-DD'));
 insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
-values(courseorder_seq.nextval, 'EBDA1', 'kang', 70000,'2023-06-23');
-insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
 values(courseorder_seq.nextval, 'SQLD', 'moon', 109000,TO_CHAR(SYSDATE, 'YYYY-MM-DD'));
 insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
 values(courseorder_seq.nextval, 'ADsP', 'kang', 99000,'2023-06-23');
@@ -355,6 +353,13 @@ insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
 values(courseorder_seq.nextval, 'IEIP1', 'lee1', 89000,'2023-06-25');
 insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
 values(courseorder_seq.nextval, 'IEIP1', 'lee1', 89000,'2023-06-22');
+
+
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'CIP2', 'kang', 129000,'2023-02-23');
+insert into COURSEORDER(orderNumber, courseCode, userId, TotalPrice,orderDate)
+values(courseorder_seq.nextval, 'IEIP1', 'kang', 89000,'2023-01-25');
+
 commit;
 
 drop sequence FAQ_seq;
