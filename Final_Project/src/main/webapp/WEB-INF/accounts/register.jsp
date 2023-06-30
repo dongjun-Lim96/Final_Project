@@ -88,7 +88,7 @@
  
 <div class="login_cont member_cont">
 	<div class="login_in">
-		<a href="/main/index.jsp">
+		<a href="list.cs">
 		<h1><img src="<%=conPath%>/resources/images/logo.png" width="190" height="80"></h1>
 		</a>
 		<h3>새로운 계정으로 회원가입 하세요!</h3>
