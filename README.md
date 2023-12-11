@@ -101,3 +101,6 @@
 
 ## 기술 스택
 HTML5 / CSS3 / Javascript / jQuery / Ajax / Mybatis / Apache Tomcat 9.0 / Spring / Github / Bootstrap / Oracle / JAVA / JSP
+
+## 프로젝트 해설 링크
+https://velog.io/@jjlim96/Final-project
